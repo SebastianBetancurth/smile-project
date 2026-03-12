@@ -1,0 +1,1 @@
+C:/Users/Usuario/Desktop/Practicas Shopify/Smile Project Mx/smile-project/AGENTS.md
