@@ -79,6 +79,38 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_item_iAHmdL": {
+          "type": "mega_menu_item",
+          "settings": {
+            "menu_item_handle": "compra",
+            "left_heading": "COMPRAR",
+            "card_1_title": "Purple Strips v34",
+            "card_1_image": "shopify://shop_images/purple.webp",
+            "card_1_link": "shopify://blogs/noticias",
+            "card_2_title": "Pasta de dientes de sabores - Pack 3",
+            "card_2_image": "shopify://shop_images/mega-satu.webp",
+            "card_2_link": ""
+          }
+        },
+        "mega_menu_item_JMQiyn": {
+          "type": "mega_menu_item",
+          "settings": {
+            "menu_item_handle": "AYUDA",
+            "left_heading": "AYUDA",
+            "card_1_title": "Aprende sobre la fórmula PAP+",
+            "card_1_image": "shopify://shop_images/PAPPage_-_Nav_-_Thumbnail_370x_8.jpg",
+            "card_1_link": "",
+            "card_2_title": "Aprende sobre la investigacion Obsessive",
+            "card_2_image": "shopify://shop_images/007_Large_5fedae39-d65c-4ee1-9b51-eceb9a0c9812_jpg.webp",
+            "card_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_item_iAHmdL",
+        "mega_menu_item_JMQiyn"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
