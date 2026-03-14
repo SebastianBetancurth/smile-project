@@ -40,7 +40,7 @@
       ],
       "name": "Announcement marquee",
       "settings": {
-        "repeat_count": 12,
+        "repeat_count": 5,
         "speed": 70,
         "font_size": 15,
         "font_size_mobile": 12,
