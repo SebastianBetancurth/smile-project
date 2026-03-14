@@ -1,0 +1,239 @@
+{% liquid
+  assign repeat_count = section.settings.repeat_count | default: 8
+  assign block_count = section.blocks.size
+%}
+
+<section
+  class="os-announcement-bar color-{{ section.settings.color_scheme }}"
+  style="
+    --os-bar-bg: {{ section.settings.bg_color }};
+    --os-bar-text: {{ section.settings.text_color }};
+    --os-bar-speed: {{ section.settings.speed }}s;
+    --os-bar-font-size: {{ section.settings.font_size }}px;
+    --os-bar-padding-y: {{ section.settings.padding_y }}px;
+    --os-bar-gap: {{ section.settings.item_gap }}px;
+    --os-bar-letter-spacing: {{ section.settings.letter_spacing }}px;
+  "
+>
+  <div class="os-announcement-bar__inner">
+    <div class="os-announcement-bar__track">
+      {% for i in (1..2) %}
+        <div class="os-announcement-bar__group" aria-hidden="{% if i == 2 %}true{% else %}false{% endif %}">
+          {% for j in (1..repeat_count) %}
+            {% if block_count > 0 %}
+              {% for block in section.blocks %}
+                {% if block.settings.text != blank %}
+                  <span class="os-announcement-bar__item" {{ block.shopify_attributes }}>
+                    {{ block.settings.text | escape }}
+                  </span>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              <span class="os-announcement-bar__item"> ENVÍO GRATIS | 30 DÍAS DE REEMBOLSO </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .os-announcement-bar {
+    background: var(--os-bar-bg);
+    color: var(--os-bar-text);
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+  }
+
+  .os-announcement-bar__inner {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .os-announcement-bar__track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: osAnnouncementScroll var(--os-bar-speed) linear infinite;
+    will-change: transform;
+  }
+
+  .os-announcement-bar:hover .os-announcement-bar__track {
+    animation-play-state: paused;
+  }
+
+  .os-announcement-bar__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .os-announcement-bar__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: var(--os-bar-text);
+    font-size: var(--os-bar-font-size);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: var(--os-bar-letter-spacing);
+    padding-top: var(--os-bar-padding-y);
+    padding-bottom: var(--os-bar-padding-y);
+    margin-right: var(--os-bar-gap);
+  }
+
+  @keyframes osAnnouncementScroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .os-announcement-bar {
+      --os-bar-font-size: {{ section.settings.font_size_mobile }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement marquee",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "range",
+      "id": "repeat_count",
+      "label": "Cantidad de repeticiones del grupo",
+      "min": 3,
+      "max": 15,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Velocidad de desplazamiento",
+      "min": 8,
+      "max": 70,
+      "step": 1,
+      "unit": "s",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Tamaño de texto desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Tamaño de texto móvil",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "label": "Padding vertical",
+      "min": 6,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Espacio entre textos",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Espaciado entre letras",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#f4008c"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "background-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Texto",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "ENVÍO GRATIS | 30 DÍAS DE REEMBOLSO"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement marquee",
+      "blocks": [
+        {
+          "type": "message",
+          "settings": {
+            "text": "ENVÍO GRATIS | 30 DÍAS DE REEMBOLSO"
+          }
+        },
+        {
+          "type": "message",
+          "settings": {
+            "text": "PAGA SEGURO Y FÁCIL"
+          }
+        },
+        {
+          "type": "message",
+          "settings": {
+            "text": "RESULTADOS VISIBLES DESDE CASA"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

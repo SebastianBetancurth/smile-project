@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart-notification.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
 
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -10,7 +15,6 @@
 {%- if section.settings.menu_type_desktop == 'mega' -%}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-
 
 <style>
   header-drawer {
@@ -114,7 +118,12 @@
   endif
 %}
 
-<{{ header_tag }} {% if header_tag == 'sticky-header' %}data-sticky-type="{{ section.settings.sticky_header_type }}"{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{{ header_tag }}
+  {% if header_tag == 'sticky-header' %}
+    data-sticky-type="{{ section.settings.sticky_header_type }}"
+  {% endif %}
+  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+>
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -127,6 +136,109 @@
       assign localization_forms = true
     endif
   -%}
+  <div class="obsessive-topbar small-hide">
+    <div class="obsessive-topbar__inner page-width">
+      <div class="obsessive-topbar__left">
+        {%- if section.settings.enable_country_selector -%}
+          {%- if localization.available_countries.size > 1 -%}
+            <localization-form data-prevent-hide>
+              {%- form 'localization', id: 'ObsessiveCountryForm', class: 'localization-form' -%}
+                <div class="obsessive-topbar__country-wrap">
+                  <span class="obsessive-topbar__country-icon" aria-hidden="true">
+                    <img
+                      src="{{ 'earth-globe.webp' | asset_url }}"
+                      alt=""
+                      class="obsessive-topbar__country-icon-image"
+                      width="64"
+                      height="64"
+                      loading="lazy"
+                    >
+                  </span>
+
+                  <h2 class="visually-hidden" id="ObsessiveCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                  {%- render 'country-localization', localPosition: 'ObsessiveCountry' -%}
+                </div>
+              {%- endform -%}
+            </localization-form>
+          {%- else -%}
+            <div class="obsessive-topbar__country-static">
+              <span class="obsessive-topbar__country-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M3 12h18"></path>
+                  <path d="M12 3a14.5 14.5 0 0 1 0 18"></path>
+                  <path d="M12 3a14.5 14.5 0 0 0 0 18"></path>
+                </svg>
+              </span>
+              <span class="obsessive-topbar__country-text">
+                {{ localization.country.currency.iso_code }}
+                {{ localization.country.currency.symbol }}
+                |
+                {{ localization.country.name }}
+              </span>
+              <span class="obsessive-topbar__caret" aria-hidden="true">
+                <svg
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2.5 4.5 6 8l3.5-3.5"></path>
+                </svg>
+              </span>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+
+      <div class="obsessive-topbar__right">
+        <a
+          href="{%- if shop.customer_accounts_enabled -%}{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}{%- else -%}#{%- endif -%}"
+          class="obsessive-topbar__link link link--text"
+          rel="nofollow"
+        >
+          <span class="obsessive-topbar__icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21a8 8 0 0 0-16 0"></path>
+              <circle cx="12" cy="8" r="4"></circle>
+            </svg>
+          </span>
+          <span>
+            {%- if customer -%}
+              Mi cuenta
+            {%- else -%}
+              Iniciar sesión
+            {%- endif -%}
+          </span>
+        </a>
+
+        {%- if section.settings.topbar_help_text != blank -%}
+          <a
+            href="{{ section.settings.topbar_help_link | default: '#' }}"
+            class="obsessive-topbar__link link link--text"
+          >
+            <span class="obsessive-topbar__icon obsessive-topbar__icon--help" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9.75 9a2.6 2.6 0 1 1 4.2 2.05c-.9.68-1.45 1.15-1.45 2.2"></path>
+                <circle cx="12" cy="17" r="0.7" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </span>
+            <span>{{ section.settings.topbar_help_text }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
@@ -142,27 +254,30 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo motion-reduce',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+        {%- if settings.logo != blank -%}
+          <div class="header__heading-logo-wrapper">
+            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+            {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+            {{
+              settings.logo
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo motion-reduce',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+            }}
+          </div>
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
@@ -182,27 +297,30 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+        {%- if settings.logo != blank -%}
+          <div class="header__heading-logo-wrapper">
+            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+            {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
+            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+            {{
+              settings.logo
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+            }}
+          </div>
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
@@ -271,11 +389,20 @@
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-          {% if cart == empty %}
-            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
-          {% else %}
-            <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
-          {% endif %}
+        <span class="svg-wrapper obsessive-cart-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H7" />
+            <circle cx="10" cy="19" r="1.2" fill="currentColor" stroke="none" />
+            <circle cx="17" cy="19" r="1.2" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
@@ -290,8 +417,11 @@
   </header>
 </{{ header_tag }}>
 
-{%- if settings.cart_type == "notification" -%}
-  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+{%- if settings.cart_type == 'notification' -%}
+  {%- render 'cart-notification',
+    color_scheme: section.settings.color_scheme,
+    desktop_menu_type: section.settings.menu_type_desktop
+  -%}
 {%- endif -%}
 
 {% javascript %}
@@ -302,7 +432,9 @@
 
     connectedCallback() {
       this.header = document.querySelector('.section-header');
-      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
+      this.headerIsAlwaysSticky =
+        this.getAttribute('data-sticky-type') === 'always' ||
+        this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
       this.setHeaderHeight();
@@ -311,14 +443,14 @@
 
       if (this.headerIsAlwaysSticky) {
         this.header.classList.add('shopify-section-header-sticky');
-      };
+      }
 
       this.currentScrollTop = 0;
       this.preventReveal = false;
       this.predictiveSearch = this.querySelector('predictive-search');
 
       this.onScrollHandler = this.onScroll.bind(this);
-      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+      this.hideHeaderOnScrollUp = () => (this.preventReveal = true);
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
@@ -394,7 +526,7 @@
 
     closeMenuDisclosure() {
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
-      this.disclosures.forEach(disclosure => disclosure.close());
+      this.disclosures.forEach((disclosure) => disclosure.close());
     }
 
     closeSearchModal() {
@@ -430,7 +562,7 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -450,7 +582,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 12,
   "settings": [
     {
       "type": "select",
@@ -492,7 +624,7 @@
       ],
       "default": "center",
       "label": "t:sections.header.settings.mobile_logo_position.label"
-    },    
+    },
     {
       "type": "link_list",
       "id": "menu",
@@ -516,7 +648,7 @@
           "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
         }
       ],
-      "default": "dropdown",
+      "default": "mega",
       "label": "t:sections.header.settings.menu_type_desktop.label"
     },
     {
@@ -574,14 +706,14 @@
       "id": "enable_country_selector",
       "default": true,
       "label": "t:sections.header.settings.enable_country_selector.label",
-      "info":"t:sections.header.settings.enable_country_selector.info"
+      "info": "t:sections.header.settings.enable_country_selector.info"
     },
     {
       "type": "checkbox",
       "id": "enable_language_selector",
       "default": true,
       "label": "t:sections.header.settings.enable_language_selector.label",
-      "info":"t:sections.header.settings.enable_language_selector.info"
+      "info": "t:sections.header.settings.enable_language_selector.info"
     },
     {
       "type": "checkbox",
@@ -589,6 +721,36 @@
       "default": true,
       "label": "t:sections.header.settings.enable_customer_avatar.label",
       "info": "t:sections.header.settings.enable_customer_avatar.info"
+    },
+    {
+      "type": "header",
+      "content": "Mobile drawer"
+    },
+    {
+      "type": "text",
+      "id": "mobile_drawer_offer_text",
+      "label": "Texto botón móvil",
+      "default": "Obtén 10% Off"
+    },
+    {
+      "type": "url",
+      "id": "mobile_drawer_offer_link",
+      "label": "Link botón móvil"
+    },
+    {
+      "type": "header",
+      "content": "Top bar"
+    },
+    {
+      "type": "text",
+      "id": "topbar_help_text",
+      "label": "Texto ayuda",
+      "default": "Ayuda"
+    },
+    {
+      "type": "url",
+      "id": "topbar_help_link",
+      "label": "Link ayuda"
     },
     {
       "type": "header",
@@ -632,6 +794,56 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "mega_menu_item",
+      "name": "Mega menu item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item_handle",
+          "label": "Menu item handle",
+          "info": "Ejemplo: comprar, ayuda"
+        },
+        {
+          "type": "text",
+          "id": "left_heading",
+          "label": "Left heading",
+          "default": "COMPRAR"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Card 1 title",
+          "default": "Purple Strips v34"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Card 1 image"
+        },
+        {
+          "type": "url",
+          "id": "card_1_link",
+          "label": "Card 1 link"
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Card 2 title",
+          "default": "Pasta de dientes de sabores - Pack 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Card 2 image"
+        },
+        {
+          "type": "url",
+          "id": "card_2_link",
+          "label": "Card 2 link"
+        }
+      ]
     }
   ]
 }

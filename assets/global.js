@@ -1330,3 +1330,61 @@ class CartPerformance {
     );
   }
 }
+
+/* ================================
+   Desktop hover mega menu
+================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 990) return;
+
+  const headerMenus = document.querySelectorAll('header-menu details');
+
+  headerMenus.forEach((details) => {
+    const summary = details.querySelector('summary');
+    let closeTimer;
+
+    const closeAllOthers = () => {
+      headerMenus.forEach((item) => {
+        if (item !== details) {
+          item.removeAttribute('open');
+          const otherSummary = item.querySelector('summary');
+          if (otherSummary) otherSummary.setAttribute('aria-expanded', 'false');
+        }
+      });
+    };
+
+    const openMenu = () => {
+      clearTimeout(closeTimer);
+      closeAllOthers();
+      details.setAttribute('open', '');
+      summary.setAttribute('aria-expanded', 'true');
+
+      const headerWrapper = document.querySelector('.header-wrapper');
+      if (
+        headerWrapper &&
+        document.documentElement.style.getPropertyValue('--header-bottom-position-desktop') === ''
+      ) {
+        document.documentElement.style.setProperty(
+          '--header-bottom-position-desktop',
+          `${Math.floor(headerWrapper.getBoundingClientRect().bottom)}px`
+        );
+      }
+    };
+
+    const closeMenu = () => {
+      closeTimer = setTimeout(() => {
+        details.removeAttribute('open');
+        summary.setAttribute('aria-expanded', 'false');
+      }, 120);
+    };
+
+    details.addEventListener('mouseenter', openMenu);
+    details.addEventListener('mouseleave', closeMenu);
+
+    summary.addEventListener('click', (event) => {
+      if (window.innerWidth >= 990) {
+        event.preventDefault();
+      }
+    });
+  });
+});
