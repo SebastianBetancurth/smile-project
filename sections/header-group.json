@@ -40,9 +40,9 @@
       ],
       "name": "Announcement marquee",
       "settings": {
-        "repeat_count": 8,
+        "repeat_count": 12,
         "speed": 70,
-        "font_size": 13,
+        "font_size": 15,
         "font_size_mobile": 12,
         "padding_y": 10,
         "item_gap": 50,
@@ -66,6 +66,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -81,8 +82,8 @@
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu": "new-menu",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
