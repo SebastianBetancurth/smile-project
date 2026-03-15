@@ -1,0 +1,802 @@
+{% liquid
+  assign section_bg = section.settings.bg_color
+  assign heading_color = section.settings.heading_color
+  assign text_color = section.settings.text_color
+  assign rating_color = section.settings.rating_color
+  assign star_color = section.settings.star_color
+  assign button_bg = section.settings.button_bg
+  assign button_text = section.settings.button_text
+  assign card_radius = section.settings.media_radius
+  assign desktop_media_height = section.settings.desktop_media_height
+  assign mobile_media_height = section.settings.mobile_media_height
+
+  assign bg_image = section.settings.bg_image
+  assign bg_image_mobile = section.settings.bg_image_mobile
+%}
+
+<section
+  id="os-hero-split-{{ section.id }}"
+  class="os-hero-split{% if bg_image != blank %} os-hero-split--has-bg-image{% endif %}{% if bg_image_mobile != blank %} os-hero-split--has-mobile-bg-image{% endif %}"
+  style="
+    --bg: {{ section_bg }};
+    --heading: {{ heading_color }};
+    --text: {{ text_color }};
+    --rating: {{ rating_color }};
+    --stars: {{ star_color }};
+    --btn-bg: {{ button_bg }};
+    --btn-text: {{ button_text }};
+    --radius: {{ card_radius }}px;
+    --desktop-media-h: {{ desktop_media_height }}px;
+    --mobile-media-h: {{ mobile_media_height }}px;
+    {% if bg_image != blank %}
+      --bg-image: url('{{ bg_image | image_url: width: 2200 }}');
+    {% endif %}
+    {% if bg_image_mobile != blank %}
+      --bg-image-mobile: url('{{ bg_image_mobile | image_url: width: 1200 }}');
+    {% endif %}
+  "
+>
+  <div class="page-width">
+    <div class="os-hero-split__grid">
+      <div class="os-hero-split__content">
+        {% if section.settings.show_rating %}
+          <div class="os-hero-split__rating-row">
+            <div class="os-hero-split__stars" aria-label="{{ section.settings.rating_text }}">
+              {% for i in (1..5) %}
+                <img
+                  src="{{ 'estrella_image.png' | asset_url }}"
+                  alt="Estrella"
+                  class="os-hero-split__star-image"
+                  loading="lazy"
+                  width="24"
+                  height="24"
+                >
+              {% endfor %}
+            </div>
+            {% if section.settings.rating_text != blank %}
+              <div class="os-hero-split__rating-text">{{ section.settings.rating_text }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h1 class="os-hero-split__heading">{{ section.settings.heading }}</h1>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="os-hero-split__text rte">{{ section.settings.text }}</div>
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+          <div class="os-hero-split__button-wrap">
+            <a
+              {% if section.settings.button_link != blank %}
+                href="{{ section.settings.button_link }}"
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+              class="os-hero-split__button"
+            >
+              <span>{{ section.settings.button_label }}</span>
+              {% if section.settings.show_arrow %}
+                <span class="os-hero-split__button-arrow">→</span>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_recommendation %}
+          <div class="os-hero-split__recommendation">
+            {% if section.settings.recommendation_image != blank %}
+              <div class="os-hero-split__recommendation-image">
+                {{
+                  section.settings.recommendation_image
+                  | image_url: width: 220
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '80,120,160,220',
+                    class: 'os-hero-split__rec-img',
+                    alt: section.settings.recommendation_text
+                }}
+              </div>
+            {% endif %}
+
+            {% if section.settings.recommendation_text != blank %}
+              <div class="os-hero-split__recommendation-text">
+                {{ section.settings.recommendation_text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="os-hero-split__media-col">
+        <div class="os-hero-split__media">
+          {% if section.settings.video != blank %}
+            {{
+              section.settings.video
+              | video_tag:
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                class: 'os-hero-split__video'
+            }}
+          {% elsif section.settings.image != blank %}
+            {{
+              section.settings.image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                widths: '600,800,1000,1200,1400,1600',
+                class: 'os-hero-split__image',
+                alt: section.settings.heading
+            }}
+          {% else %}
+            <div class="os-hero-split__placeholder">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+        #os-hero-split-{{ section.id }} {
+            background-color: var(--bg);
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: {{ section.settings.bg_pos_x }}% {{ section.settings.bg_pos_y }}%;
+            background-size: {{ section.settings.bg_size }};
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+            position: relative;
+        }
+
+        #os-hero-split-{{ section.id }}.os-hero-split--has-bg-image {
+        background-image: var(--bg-image);
+        }
+        #os-hero-split-{{ section.id }}::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: {{ section.settings.bg_overlay_color }};
+        opacity: {{ section.settings.bg_overlay_opacity | divided_by: 100.0 }};
+        pointer-events: none;
+        z-index: 0;
+        }
+
+        #os-hero-split-{{ section.id }} .page-width {
+        position: relative;
+        z-index: 1;
+        }
+
+        #os-hero-split-{{ section.id }} .page-width {
+          max-width: {{ section.settings.page_width }}px;
+          margin: 0 auto;
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(440px, 620px);
+          align-items: center;
+          gap: 64px;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__content {
+      max-width: 560px;
+    }
+
+    #os-hero-split-{{ section.id }} .os-hero-split__content,
+    #os-hero-split-{{ section.id }} .os-hero-split__rating-row,
+    #os-hero-split-{{ section.id }} .os-hero-split__button-wrap,
+    #os-hero-split-{{ section.id }} .os-hero-split__recommendation {
+      text-align: inherit;
+    }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__rating-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__stars {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          line-height: 1;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__star-image {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            display: block;
+            flex: 0 0 auto;
+        }
+
+            #os-hero-split-{{ section.id }} .os-hero-split__star-image {
+            width: {{ section.settings.star_size }}px;
+            height: {{ section.settings.star_size }}px;
+            object-fit: contain;
+            display: block;
+            }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__rating-text {
+          color: var(--rating);
+          font-size: 16px;
+          line-height: 1.4;
+          font-weight: 500;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__heading {
+          margin: 0 0 24px;
+          color: var(--heading);
+          font-size: {{ section.settings.heading_size_desktop }}px;
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          font-weight: 600;
+          max-width: 620px;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__text {
+          margin: 0 0 32px;
+          color: var(--text);
+          font-size: {{ section.settings.text_size }}px;
+          line-height: 1.55;
+          max-width: 500px;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__text p {
+          margin: 0;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__button-wrap {
+          margin-bottom: 34px;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__button {
+          min-height: 74px;
+          min-width: 402px;
+          max-width: 100%;
+          padding: 18px 34px;
+          border-radius: 999px;
+          background: var(--btn-bg);
+          color: var(--btn-text);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 18px;
+          line-height: 1.2;
+          font-weight: 500;
+          transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__button:hover {
+          transform: translateY(-1px);
+          opacity: 0.96;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__button-arrow {
+          font-size: 24px;
+          line-height: 1;
+          transform: translateY(-1px);
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__recommendation {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__recommendation-image {
+          flex: 0 0 auto;
+          display: flex;
+          align-items: center;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__rec-img {
+          display: block;
+          height: auto;
+          width: 94px;
+          object-fit: contain;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__recommendation-text {
+          color: var(--text);
+          font-size: 15px;
+          line-height: 1.4;
+          font-weight: 500;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__recommendation-text strong {
+          font-weight: 700;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__media {
+          position: relative;
+          border-radius: var(--radius);
+          overflow: hidden;
+          min-height: var(--desktop-media-h);
+          background: #ddd;
+          width: 100%;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__image,
+        #os-hero-split-{{ section.id }} .os-hero-split__video,
+        #os-hero-split-{{ section.id }} .os-hero-split__placeholder,
+        #os-hero-split-{{ section.id }} .os-hero-split__placeholder svg {
+          display: block;
+          width: 100%;
+          height: var(--desktop-media-h);
+          object-fit: cover;
+        }
+
+        #os-hero-split-{{ section.id }} .os-hero-split__placeholder {
+          background: rgba(0,0,0,.04);
+        }
+
+       @media screen and (max-width: 990px) {
+      #os-hero-split-{{ section.id }} {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      #os-hero-split-{{ section.id }} .page-width {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__media-col {
+        order: 1;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__content {
+        order: 2;
+        max-width: 100%;
+        padding: 16px 24px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__media {
+        width: 100%;
+        min-height: 318px;
+        border-radius: 0;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__image,
+      #os-hero-split-{{ section.id }} .os-hero-split__video,
+      #os-hero-split-{{ section.id }} .os-hero-split__placeholder,
+      #os-hero-split-{{ section.id }} .os-hero-split__placeholder svg {
+        width: 100%;
+        height: 318px;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 0;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__rating-row {
+        gap: 8px;
+        margin-bottom: 12px;
+        justify-content: center;
+        width: 100%;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__stars {
+        gap: 2px;
+        justify-content: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__star-image {
+        width: 11px;
+        height: 11px;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__rating-text {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__heading {
+        font-size: 26px;
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        margin: 0 0 14px;
+        max-width: 320px;
+        text-align: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 20px;
+        max-width: 305px;
+        text-align: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__text p {
+        margin: 0;
+        text-align: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__button-wrap {
+        width: 100%;
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__button {
+        width: 100%;
+        min-width: 0;
+        min-height: 54px;
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-size: 15.6px;
+        font-weight: 500;
+        gap: 8px;
+        box-shadow: none;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__button-arrow {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__recommendation {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__rec-img {
+        width: 62px;
+        max-width: 62px;
+      }
+
+      #os-hero-split-{{ section.id }} .os-hero-split__recommendation-text {
+        font-size: 12px;
+        line-height: 1.25;
+        text-align: center;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "OS Hero Split",
+  "settings": [
+    {
+      "type": "range",
+      "id": "page_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Ancho de contenedor",
+      "default": 1340
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#f3f3f5"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Imagen de fondo desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Imagen de fondo móvil"
+    },
+    {
+      "type": "color",
+      "id": "bg_overlay_color",
+      "label": "Color overlay fondo",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "bg_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Opacidad overlay fondo",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "bg_pos_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Posición horizontal fondo",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "bg_pos_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Posición vertical fondo",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "bg_size",
+      "label": "Ajuste de imagen de fondo",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" },
+        { "value": "100% auto", "label": "Ancho completo" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Mostrar rating",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "star_image",
+      "label": "Imagen de estrella"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño estrella desktop",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "star_size_mobile",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño estrella móvil",
+      "default": 18
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Texto del rating",
+      "default": "4,8/5 basado en +50.000 opiniones"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Color de estrellas",
+      "default": "#ff27a8"
+    },
+    {
+      "type": "color",
+      "id": "rating_color",
+      "label": "Color texto rating",
+      "default": "#111111"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "Descubre cómo blanquear tu sonrisa donde quieras"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del título",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 34,
+      "max": 84,
+      "step": 2,
+      "unit": "px",
+      "label": "Tamaño título desktop",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 26,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título móvil",
+      "default": 38
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto",
+      "default": "<p>Con Purple Strips v34, tu rutina cambia. En minutos, consigues una sonrisa más blanca estés donde estés.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#5b6470"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño de texto",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Empieza tu blanqueamiento hoy"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link del botón"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow",
+      "label": "Mostrar flecha en botón",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Color fondo botón",
+      "default": "#3d67f3"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Color texto botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_recommendation",
+      "label": "Mostrar recomendación",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "recommendation_image",
+      "label": "Imagen recomendación/avatares"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "recommendation_text",
+      "label": "Texto recomendación",
+      "default": "Recomendado por <strong>+200 dentistas</strong>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen principal"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video principal"
+    },
+    {
+      "type": "range",
+      "id": "media_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Borde redondeado media",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "desktop_media_height",
+      "min": 380,
+      "max": 760,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura media desktop",
+      "default": 490
+    },
+    {
+      "type": "range",
+      "id": "mobile_media_height",
+      "min": 240,
+      "max": 520,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura media móvil",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior desktop",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior desktop",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior móvil",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior móvil",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Hero Split"
+    }
+  ]
+}
+{% endschema %}
