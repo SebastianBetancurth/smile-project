@@ -1,7 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "announcement_marquee_afi7JB": {
+      "type": "announcement-marquee",
+      "blocks": {
+        "message_c8DL8G": {
+          "type": "message",
+          "settings": {
+            "text": "ENVÍO GRATIS | 30 DÍAS DE REEMBOLSO"
+          }
+        },
+        "message_RhEeKk": {
+          "type": "message",
+          "settings": {
+            "text": "PAGA SEGURO Y FÁCIL"
+          }
+        },
+        "message_878jqY": {
+          "type": "message",
+          "settings": {
+            "text": "RESULTADOS VISIBLES DESDE CASA"
+          }
+        }
+      },
+      "block_order": [
+        "message_c8DL8G",
+        "message_RhEeKk",
+        "message_878jqY"
+      ],
+      "name": "Announcement marquee",
+      "settings": {
+        "repeat_count": 5,
+        "speed": 70,
+        "font_size": 15,
+        "font_size_mobile": 12,
+        "padding_y": 10,
+        "item_gap": 50,
+        "letter_spacing": 0,
+        "bg_color": "#f4008c",
+        "text_color": "#ffffff",
+        "color_scheme": ""
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -9,28 +59,74 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
             "link": ""
           }
         }
       },
       "block_order": [
         "announcement-bar-0"
-      ]
+      ],
+      "disabled": true,
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_item_iAHmdL": {
+          "type": "mega_menu_item",
+          "settings": {
+            "menu_item_handle": "compra",
+            "left_heading": "COMPRAR",
+            "card_1_title": "Purple Strips v34",
+            "card_1_image": "shopify://shop_images/purple.webp",
+            "card_1_link": "shopify://blogs/noticias",
+            "card_2_title": "Pasta de dientes de sabores - Pack 3",
+            "card_2_image": "shopify://shop_images/mega-satu.webp",
+            "card_2_link": ""
+          }
+        },
+        "mega_menu_item_JMQiyn": {
+          "type": "mega_menu_item",
+          "settings": {
+            "menu_item_handle": "AYUDA",
+            "left_heading": "AYUDA",
+            "card_1_title": "Aprende sobre la fórmula PAP+",
+            "card_1_image": "shopify://shop_images/PAPPage_-_Nav_-_Thumbnail_370x_8.jpg",
+            "card_1_link": "",
+            "card_2_title": "Aprende sobre la investigacion Obsessive",
+            "card_2_image": "shopify://shop_images/007_Large_5fedae39-d65c-4ee1-9b51-eceb9a0c9812_jpg.webp",
+            "card_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_item_iAHmdL",
+        "mega_menu_item_JMQiyn"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
         "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "mobile_logo_position": "center",
+        "menu": "new-menu",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
         "enable_country_selector": true,
         "enable_language_selector": true,
-        "mobile_logo_position": "center",
+        "enable_customer_avatar": true,
+        "mobile_drawer_offer_text": "Obtén 10% Off",
+        "mobile_drawer_offer_link": "",
+        "topbar_help_text": "Ayuda",
+        "topbar_help_link": "",
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20
@@ -38,6 +134,7 @@
     }
   },
   "order": [
+    "announcement_marquee_afi7JB",
     "announcement-bar",
     "header"
   ]
