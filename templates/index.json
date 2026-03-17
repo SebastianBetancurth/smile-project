@@ -133,7 +133,7 @@
       "name": "OS Press logos marquee",
       "settings": {
         "heading": "",
-        "full_width": true,
+        "full_width": false,
         "scroll_duration": 22,
         "pause_time": 5000,
         "slide_duration": 700,
