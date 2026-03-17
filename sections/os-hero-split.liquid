@@ -144,6 +144,13 @@
   </div>
 
   <style>
+      @font-face {
+          font-family: 'Pulp';
+          src: url('{{ "PulpDisplay-Light.woff2" | asset_url }}') format('woff2');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+      }
         #os-hero-split-{{ section.id }} {
             background-color: var(--bg);
             background-image: none;
@@ -241,8 +248,9 @@
           font-size: {{ section.settings.heading_size_desktop }}px;
           line-height: 1.05;
           letter-spacing: -0.03em;
-          font-weight: 600;
+          font-weight: 500;
           max-width: 620px;
+          font-family: 'Pulp', Helvetica;
         }
 
         #os-hero-split-{{ section.id }} .os-hero-split__text {
@@ -250,7 +258,7 @@
           color: var(--text);
           font-size: {{ section.settings.text_size }}px;
           line-height: 1.55;
-          max-width: 500px;
+          max-width: 389px;
         }
 
         #os-hero-split-{{ section.id }} .os-hero-split__text p {
@@ -423,7 +431,7 @@
         line-height: 1.04;
         letter-spacing: -0.03em;
         margin: 0 0 14px;
-        max-width: 320px;
+        max-width: 284px;
         text-align: center;
       }
 
