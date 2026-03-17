@@ -316,6 +316,47 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "os_best_sellers_slider_GJK6KU": {
+      "type": "os-best-sellers-slider",
+      "name": "OS Best sellers slider",
+      "settings": {
+        "collection": "new-collect",
+        "products_to_show": 6,
+        "heading": "Los más vendidos",
+        "subheading": "Los productos favoritos de nuestros clientes.",
+        "full_width": true,
+        "heading_size": 28,
+        "heading_size_mobile": 24,
+        "subheading_size": 16,
+        "subheading_size_mobile": 14,
+        "product_title_size": 18,
+        "product_title_size_mobile": 15,
+        "price_size": 18,
+        "price_size_mobile": 15,
+        "columns_desktop": 6,
+        "columns_mobile": "2",
+        "image_height_desktop": 340,
+        "image_height_mobile": 220,
+        "card_gap": 16,
+        "card_radius": 8,
+        "show_sold_out_badge": true,
+        "sold_out_text": "AGOTADO",
+        "show_fake_swatches": false,
+        "show_plus_counter": false,
+        "plus_counter": 6,
+        "section_bg": "#f7f7fa",
+        "card_bg": "#f2f2f6",
+        "title_color": "#111111",
+        "subtitle_color": "#7b7b86",
+        "product_title_color": "#111111",
+        "price_color": "#ff1483",
+        "badge_bg": "#d7ff00",
+        "badge_color": "#111111",
+        "arrow_color": "#9b9ba3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
@@ -325,6 +366,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "os_best_sellers_slider_GJK6KU"
   ]
 }
