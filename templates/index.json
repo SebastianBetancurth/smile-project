@@ -52,6 +52,107 @@
         "padding_bottom_mobile": 20
       }
     },
+    "os_press_logos_marquee_3W7Tmi": {
+      "type": "os-press-logos-marquee",
+      "blocks": {
+        "logo_YjpYCb": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_ccd1837c-349b-49b8-8be5-4b329f73b23d.webp",
+            "hover_logo": "shopify://shop_images/Group_ccd1837c-349b-49b8-8be5-4b329f73b23d.webp",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        },
+        "logo_mTH7mj": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/7_ELLE_Magazine_Logo_500x500_svg_dfe160c9-e777-48bd-bd26-d4ed1c280efb.png",
+            "hover_logo": "shopify://shop_images/7_ELLE_Magazine_Logo_500x500_svg_dfe160c9-e777-48bd-bd26-d4ed1c280efb.png",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        },
+        "logo_JLjXzp": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/7_VOGUE_LOGO_500x500_svg_0ae9de2b-d955-419e-abbf-87673854398b.webp",
+            "hover_logo": "shopify://shop_images/7_VOGUE_LOGO_500x500_svg_0ae9de2b-d955-419e-abbf-87673854398b.webp",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        },
+        "logo_qJq4FY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_ccd1837c-349b-49b8-8be5-4b329f73b23d.webp",
+            "hover_logo": "shopify://shop_images/Group_ccd1837c-349b-49b8-8be5-4b329f73b23d.webp",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        },
+        "logo_7bRG3g": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/7_ELLE_Magazine_Logo_500x500_svg_dfe160c9-e777-48bd-bd26-d4ed1c280efb.png",
+            "hover_logo": "shopify://shop_images/7_ELLE_Magazine_Logo_500x500_svg_dfe160c9-e777-48bd-bd26-d4ed1c280efb.png",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        },
+        "logo_hmGiyd": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/7_VOGUE_LOGO_500x500_svg_0ae9de2b-d955-419e-abbf-87673854398b.webp",
+            "hover_logo": "shopify://shop_images/Group_70dc02bf-edf7-48c8-ba59-75d6f1fd3aa1.webp",
+            "alt": "Press logo",
+            "link": "",
+            "logo_width_desktop": 128,
+            "logo_width_mobile": 84
+          }
+        }
+      },
+      "block_order": [
+        "logo_YjpYCb",
+        "logo_mTH7mj",
+        "logo_JLjXzp",
+        "logo_qJq4FY",
+        "logo_7bRG3g",
+        "logo_hmGiyd"
+      ],
+      "name": "OS Press logos marquee",
+      "settings": {
+        "heading": "",
+        "full_width": true,
+        "scroll_duration": 22,
+        "pause_time": 5000,
+        "slide_duration": 700,
+        "pause_on_hover": false,
+        "logo_gap": 60,
+        "logo_height_desktop": 50,
+        "logo_height_mobile": 24,
+        "logo_opacity": 60,
+        "default_grayscale": 100,
+        "hover_lift": 1,
+        "logo_radius": 5,
+        "use_filter_fallback": true,
+        "keep_default_on_hover": false,
+        "background_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -219,6 +320,7 @@
   },
   "order": [
     "os_hero_split_p3kYC7",
+    "os_press_logos_marquee_3W7Tmi",
     "rich_text",
     "featured_collection",
     "collage",
