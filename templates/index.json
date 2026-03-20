@@ -188,7 +188,7 @@
         "badge_color": "#111111",
         "arrow_color": "#9b9ba3",
         "padding_top": 28,
-        "padding_bottom": 80
+        "padding_bottom": 56
       }
     },
     "os_feature_split_banner_y3FgfV": {
@@ -239,7 +239,7 @@
         "padding_bottom": 40,
         "content_alignment_mobile": "left",
         "image_offset_left_mobile": 44,
-        "content_padding_top_mobile": 40,
+        "content_padding_top_mobile": 8,
         "heading_max_width_mobile": 320,
         "text_max_width_mobile": 360,
         "padding_top_mobile": 80,
