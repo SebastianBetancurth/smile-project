@@ -248,6 +248,70 @@
     },
     "os_feature_split_banner_x8AqTV": {
       "type": "os-feature-split-banner",
+      "blocks": {
+        "swatch_TALU6E": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_wxQyqQ": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/strawberry_6f14615c-87c4-4427-9ae2-8d22cc8a03c7.avif",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_bDWx6i": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/OrangeSodaSelector_80x_small_e574ecd6-1260-4344-9bb9-2e80fa318514.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_8aMgfk": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_TmpidY": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/GrapeBubblegum-Selector-Toothpaste_80x_small_6462fc7e-3c2c-4809-9f1c-2b5f6cd036cd.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_LiA3qW": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "swatch_TALU6E",
+        "swatch_wxQyqQ",
+        "swatch_bDWx6i",
+        "swatch_8aMgfk",
+        "swatch_TmpidY",
+        "swatch_LiA3qW"
+      ],
       "name": "OS Feature Split Banner",
       "settings": {
         "product_image": "shopify://shop_images/image_17.webp",
