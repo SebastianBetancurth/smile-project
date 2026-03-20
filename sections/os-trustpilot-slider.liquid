@@ -1,0 +1,1200 @@
+{% liquid
+  assign section_id = 'os-trustpilot-' | append: section.id
+  assign review_count = section.blocks.size
+%}
+
+<section id="{{ section_id }}" class="os-trustpilot">
+  <div class="os-trustpilot__inner">
+    <div class="os-trustpilot__desktop-layout">
+      <div class="os-trustpilot__summary os-trustpilot__summary--desktop">
+        {% if section.settings.summary_title != blank %}
+          <h2 class="os-trustpilot__summary-title">{{ section.settings.summary_title }}</h2>
+        {% endif %}
+
+        <div class="os-trustpilot__stars-row" aria-label="Trustpilot rating">
+          <img
+            src="{{ 'estrella_truspilot.png' | asset_url }}"
+            alt=""
+            loading="lazy"
+            width="140"
+            height="24"
+            class="os-trustpilot__stars-strip os-trustpilot__stars-strip--summary"
+          >
+        </div>
+
+        {% if section.settings.review_link_text != blank %}
+          <div class="os-trustpilot__rating-text">
+            {{ section.settings.review_prefix }}
+            <a href="{{ section.settings.review_link_url | default: '#' }}">
+              {{ section.settings.review_link_text }}
+            </a>
+          </div>
+        {% endif %}
+
+        <div class="os-trustpilot__brand">
+          <img
+            src="{{ 'trustpilot_logo.png' | asset_url }}"
+            alt="Trustpilot"
+            loading="lazy"
+            width="160"
+            height="38"
+            class="os-trustpilot__brand-logo"
+          >
+        </div>
+      </div>
+
+      <div class="os-trustpilot__slider-wrap">
+        <button
+          type="button"
+          class="os-trustpilot__nav os-trustpilot__nav--prev"
+          aria-label="{{ section.settings.prev_label }}"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11l4.29 4.3a1 1 0 1 1-1.41 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.41 0z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <div
+          class="os-trustpilot__viewport"
+          data-trustpilot-viewport
+          tabindex="0"
+          aria-roledescription="carousel"
+          aria-label="{{ section.settings.carousel_label }}"
+        >
+          <div
+            class="os-trustpilot__track"
+            data-trustpilot-track
+            data-original-count="{{ review_count }}"
+          >
+            {% for block in section.blocks %}
+              <article
+                class="os-trustpilot__slide"
+                {{ block.shopify_attributes }}
+                data-original-slide
+              >
+                <div class="os-trustpilot__card">
+                  <div class="os-trustpilot__card-stars" aria-hidden="true">
+                    {% assign block_stars = block.settings.stars | default: 5 %}
+                    {% for i in (1..5) %}
+                      <span class="os-trustpilot__review-star {% if i <= block_stars %}is-active{% else %}is-inactive{% endif %}">
+                        <svg
+                          class="tp-star"
+                          viewBox="0 0 46 46"
+                          width="20"
+                          height="20"
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <path class="tp-star__canvas" fill="var(--star-canvas)" d="M0 46.330002h46.375586V0H0z"></path>
+                          <path class="tp-star__shape" d="M39.533936 19.711433L13.230239 38.80065l3.838216-11.797827L7.02115 19.711433h12.418975l3.837417-11.798624 3.837418 11.798624h12.418975zM23.2785 31.510075l7.183595-1.509576 2.862114 8.800152L23.2785 31.510075z" fill="var(--star-on)"></path>
+                        </svg>
+                      </span>
+                    {% endfor %}
+                  </div>
+                  {% if block.settings.heading != blank %}
+                    <h3 class="os-trustpilot__card-title">{{ block.settings.heading }}</h3>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="os-trustpilot__card-text rte">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+
+                  <div class="os-trustpilot__card-meta">
+                    {% if block.settings.author != blank %}
+                      <span class="os-trustpilot__card-author">{{ block.settings.author }}</span>
+                    {% endif %}
+                    {% if block.settings.date != blank %}
+                      <span class="os-trustpilot__card-date">{{ block.settings.date }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="os-trustpilot__nav os-trustpilot__nav--next"
+          aria-label="{{ section.settings.next_label }}"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9.3 18.7a1 1 0 0 1 0-1.4L13.59 13 9.3 8.7a1 1 0 1 1 1.41-1.4l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 0 1-1.41 0z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="os-trustpilot__summary os-trustpilot__summary--mobile">
+      {% if section.settings.mobile_rating_text != blank %}
+        <div class="os-trustpilot__mobile-rating">{{ section.settings.mobile_rating_text }}</div>
+      {% endif %}
+
+      <div class="os-trustpilot__brand os-trustpilot__brand--mobile">
+        <img
+          src="{{ 'trustpilot_logo.png' | asset_url }}"
+          alt="Trustpilot"
+          loading="lazy"
+          width="160"
+          height="38"
+          class="os-trustpilot__brand-logo os-trustpilot__brand-logo--mobile"
+        >
+      </div>
+    </div>
+  </div>
+
+  <style>
+        @font-face {
+            font-family: 'Circular Custom';
+            src: url('{{ 'Delamere W01 Bold.woff' | asset_url }}') format('woff');
+            font-weight:800;
+            font-style: normal;
+            font-display: swap;
+    }
+            #{{ section_id }} {
+              --tp-bg: {{ section.settings.section_bg }};
+              --tp-card-bg: {{ section.settings.card_bg }};
+              --tp-text: {{ section.settings.text_color }};
+              --tp-muted: {{ section.settings.muted_color }};
+              --tp-border: {{ section.settings.border_color }};
+              --tp-star: {{ section.settings.star_bg }};
+              --tp-star-text: {{ section.settings.star_icon_color }};
+              --tp-brand: {{ section.settings.brand_color }};
+              --tp-gap: {{ section.settings.card_gap }}px;
+              --tp-radius: {{ section.settings.card_radius }}px;
+              --tp-card-padding: {{ section.settings.card_padding }}px;
+              --tp-desktop-summary-width: {{ section.settings.summary_width }}px;
+              --tp-slide-width-desktop: {{ section.settings.slide_width_desktop }}px;
+              --tp-slide-width-mobile: {{ section.settings.slide_width_mobile }}px;
+              --tp-nav-size: {{ section.settings.arrow_size }}px;
+              --tp-section-padding-top: {{ section.settings.padding_top }}px;
+              --tp-section-padding-bottom: {{ section.settings.padding_bottom }}px;
+              background: var(--tp-bg);
+              color: var(--tp-text);
+            }
+
+           #{{ section_id }} .os-trustpilot__inner {
+            width: 100%;
+            margin: 0 auto;
+            padding-top: var(--tp-section-padding-top);
+            padding-bottom: var(--tp-section-padding-bottom);
+            padding-left: 2rem;
+            padding-right: 2rem;
+            }
+
+
+            #{{ section_id }} .os-trustpilot__mobile-rating {
+                font-family: 'Circular Custom';
+                }
+            @media screen and (min-width: 990px) {
+            #{{ section_id }} .os-trustpilot__inner,
+            #{{ section_id }} .os-trustpilot__inner.page-width {
+                max-width: 148rem;
+            }
+            }
+            #{{ section_id }} .os-trustpilot__desktop-layout {
+                display: grid;
+                grid-template-columns: 190px minmax(0, 1fr);
+                gap: 16px;
+                align-items: center;
+                }
+
+            #{{ section_id }} .os-trustpilot__summary {
+              color: var(--tp-text);
+            }
+
+            #{{ section_id }} .os-trustpilot__summary-title {
+              margin: 0 0 14px;
+              font-size: {{ section.settings.summary_title_size }}px;
+              line-height: 1.1;
+              font-weight: 500;
+              letter-spacing: 0;
+            }
+
+            #{{ section_id }} .os-trustpilot__stars-row,
+            #{{ section_id }} .os-trustpilot__card-stars {
+              display: flex;
+              gap: 3px;
+              align-items: center;
+              flex-wrap: nowrap;
+            }
+                #{{ section_id }} .os-trustpilot__card-stars {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                line-height: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__review-star {
+                --star-canvas: #dcdce6;
+                --star-on: #ffffff;
+                display: inline-flex;
+                width: 18px;
+                height: 18px;
+                flex: 0 0 auto;
+                }
+
+                #{{ section_id }} .os-trustpilot__review-star.is-active {
+                --star-canvas: #00b67a;
+                --star-on: #ffffff;
+                }
+
+                #{{ section_id }} .os-trustpilot__review-star.is-inactive {
+                --star-canvas: #d9d9de;
+                --star-on: #ffffff;
+                }
+
+                #{{ section_id }} .os-trustpilot__review-star .tp-star {
+                width: 100%;
+                height: 100%;
+                display: block;
+                }
+                #{{ section_id }} .os-trustpilot__stars-row,
+                #{{ section_id }} .os-trustpilot__card-stars {
+                display: flex;
+                align-items: center;
+                line-height: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__stars-strip {
+                display: block;
+                width: auto;
+                height: 24px;
+                max-width: 100%;
+                object-fit: contain;
+                }
+
+                #{{ section_id }} .os-trustpilot__stars-strip--card {
+                height: 18px;
+                }
+
+            #{{ section_id }} .os-trustpilot__rating-text {
+              margin-top: 14px;
+              font-size: 14px;
+              line-height: 1.35;
+              color: var(--tp-text);
+            }
+
+            #{{ section_id }} .os-trustpilot__rating-text a {
+              color: inherit;
+              text-decoration: underline;
+              text-underline-offset: 2px;
+            }
+
+           #{{ section_id }} .os-trustpilot__summary--desktop {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+            #{{ section_id }} .os-trustpilot__summary-title {
+            margin: 0 0 14px;
+            font-size: {{ section.settings.summary_title_size }}px;
+            line-height: 1.1;
+            font-weight: 500;
+            letter-spacing: 0;
+            text-align: center;
+            }
+
+            #{{ section_id }} .os-trustpilot__stars-row {
+            justify-content: center;
+            }
+
+            #{{ section_id }} .os-trustpilot__stars-strip--summary {
+            height: 23px;
+            }
+
+            #{{ section_id }} .os-trustpilot__rating-text {
+            margin-top: 12px;
+            font-size: 15px;
+            line-height: 1.35;
+            color: var(--tp-text);
+            text-align: center;
+            max-width: 170px;
+            }
+
+            #{{ section_id }} .os-trustpilot__rating-text a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            }
+
+            #{{ section_id }} .os-trustpilot__brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 14px;
+            width: 100%;
+            }
+
+            #{{ section_id }} .os-trustpilot__brand-logo {
+            display: block;
+            width: 160px;
+            height: 20px;
+            max-width: 160px;
+            object-fit: contain;
+            }
+
+            #{{ section_id }} .os-trustpilot__slider-wrap {
+                display: grid;
+                grid-template-columns: auto minmax(0, 1fr) auto;
+                gap: 10px;
+                align-items: center;
+                min-width: 0;
+            }
+
+            #{{ section_id }} .os-trustpilot__nav {
+              width: var(--tp-nav-size);
+              height: var(--tp-nav-size);
+              border-radius: 999px;
+              border: 1.5px solid #232323;
+              background: transparent;
+              color: #232323;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              padding: 0;
+              transition: transform .2s ease, opacity .2s ease, background .2s ease;
+            }
+
+            #{{ section_id }} .os-trustpilot__nav:hover {
+              transform: scale(1.04);
+              background: rgba(0,0,0,.03);
+            }
+
+            #{{ section_id }} .os-trustpilot__nav:disabled {
+              opacity: .45;
+              cursor: not-allowed;
+            }
+
+            #{{ section_id }} .os-trustpilot__nav svg {
+              width: 18px;
+              height: 18px;
+              display: block;
+            }
+
+            #{{ section_id }} .os-trustpilot__viewport {
+              overflow: hidden;
+              min-width: 0;
+              cursor: grab;
+              user-select: none;
+              -webkit-user-select: none;
+            }
+
+            #{{ section_id }} .os-trustpilot__viewport.is-dragging {
+              cursor: grabbing;
+            }
+
+           #{{ section_id }} .os-trustpilot__track {
+            display: flex;
+            gap: var(--tp-gap);
+            will-change: transform;
+            transform: translate3d(0,0,0);
+            align-items: stretch;
+            }
+
+           #{{ section_id }} .os-trustpilot__slide {
+            flex: 0 0 calc((100% - (var(--tp-gap) * 3)) / 4);
+            min-width: 0;
+            display: flex;
+            }
+
+           #{{ section_id }} .os-trustpilot__card {
+            background: var(--tp-card-bg);
+            border: 1px solid var(--tp-border);
+            border-radius: var(--tp-radius);
+            padding: 18px 16px 18px;
+            min-height: {{ section.settings.card_min_height }}px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            }
+
+            #{{ section_id }} .os-trustpilot__card-title {
+              margin: 14px 0 10px;
+              font-size: {{ section.settings.card_title_size }}px;
+              line-height: 1.2;
+              font-weight: 500;
+              color: var(--tp-text);
+            }
+
+            #{{ section_id }} .os-trustpilot__card-text {
+              font-size: {{ section.settings.card_text_size }}px;
+              line-height: 1.35;
+              color: var(--tp-text);
+              margin: 0;
+            }
+
+            #{{ section_id }} .os-trustpilot__card-text p {
+              margin: 0;
+            }
+
+           #{{ section_id }} .os-trustpilot__card-meta {
+            margin-top: auto;
+            padding-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            line-height: 1.2;
+            }
+
+            #{{ section_id }} .os-trustpilot__card-author {
+              font-weight: 100;
+              color: #646465;
+            }
+
+            #{{ section_id }} .os-trustpilot__card-date {
+              color: var(--tp-muted);
+            }
+
+            #{{ section_id }} .os-trustpilot__summary--mobile {
+              display: none;
+            }
+
+            #{{ section_id }} .os-trustpilot__mobile-rating {
+              font-size: {{ section.settings.mobile_rating_size }}px;
+              line-height: 1.35;
+              font-weight: 500;
+              text-align: center;
+              color: var(--tp-text);
+              margin-top: 24px;
+            }
+
+            #{{ section_id }} .os-trustpilot__brand--mobile {
+             justify-content: center;
+            margin-top: 10px;
+            }
+
+            #{{ section_id }} .os-trustpilot__brand-logo--mobile {
+            height: 25px;
+            max-width: 145px;
+            }
+
+            @media screen and (max-width: 989px) {
+              #{{ section_id }} .os-trustpilot__desktop-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+              }
+
+              #{{ section_id }} .os-trustpilot__summary--desktop {
+                display: none;
+              }
+
+              #{{ section_id }} .os-trustpilot__summary--mobile {
+                display: block;
+              }
+
+              #{{ section_id }} .os-trustpilot__slider-wrap {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 0;
+              }
+
+              #{{ section_id }} .os-trustpilot__nav {
+                display: none;
+              }
+
+              #{{ section_id }} .os-trustpilot__viewport {
+                overflow: hidden;
+              }
+
+              #{{ section_id }} .os-trustpilot__slide {
+                flex: 0 0 min(var(--tp-slide-width-mobile), calc(100vw - 72px));
+              }
+
+              #{{ section_id }} .os-trustpilot__card {
+                min-height: {{ section.settings.card_min_height_mobile }}px;
+              }
+
+              #{{ section_id }} .os-trustpilot__card-title {
+                font-size: {{ section.settings.card_title_size_mobile }}px;
+              }
+
+              #{{ section_id }} .os-trustpilot__card-text {
+                font-size: {{ section.settings.card_text_size_mobile }}px;
+              }
+
+              #{{ section_id }} .os-trustpilot__brand-text {
+                font-size: 26px;
+              }
+                #{{ section_id }} .os-trustpilot__card-author {
+              font-weight: 700;
+              color: #000000;
+            }
+
+                #{{ section_id }} {
+                    overflow: hidden;
+                }
+
+                #{{ section_id }} .os-trustpilot__inner,
+                #{{ section_id }} .os-trustpilot__inner.page-width {
+                    max-width: 100%;
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__desktop-layout {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__summary--desktop {
+                    display: none;
+                }
+
+                #{{ section_id }} .os-trustpilot__summary--mobile {
+                    display: block;
+                    width: 100%;
+                    padding: 0 0 0;
+                    margin-top: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__slider-wrap {
+                    grid-template-columns: minmax(0, 1fr);
+                    gap: 0;
+                    width: 100%;
+                }
+
+                #{{ section_id }} .os-trustpilot__nav {
+                    display: none;
+                }
+
+                #{{ section_id }} .os-trustpilot__viewport {
+                    overflow: hidden;
+                    width: 100%;
+                    padding-left: 0.8rem;
+                    padding-right: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__track {
+                    align-items: stretch;
+                }
+
+                #{{ section_id }} .os-trustpilot__slide {
+                    flex: 0 0 calc(100vw - 5.2rem);
+                }
+
+                #{{ section_id }} .os-trustpilot__card {
+                    min-height: 176px;
+                }
+
+                #{{ section_id }} .os-trustpilot__card-title {
+                    font-size: 15px;
+                    line-height: 1.3;
+                }
+
+                #{{ section_id }} .os-trustpilot__card-text {
+                    font-size: 13px;
+                    line-height: 1.45;
+                }
+
+                #{{ section_id }} .os-trustpilot__mobile-rating {
+                    display: block;
+                    margin-top: 2.2rem;
+                    margin-bottom: 0.8rem;
+                    padding: 0 1.6rem;
+                    font-size: 13px;
+                    line-height: 1.35;
+                    font-weight: 600;
+                    text-align: center;
+                    color: #1f1f1f;
+                }
+
+                #{{ section_id }} .os-trustpilot__brand--mobile {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 0;
+                    width: 100%;
+                    padding-bottom: 0;
+                }
+
+                #{{ section_id }} .os-trustpilot__brand-logo--mobile {
+                    display: block;
+                    height: 30px;
+                    width: auto;
+                    max-width: 145px;
+                    object-fit: contain;
+                }
+            }
+  </style>
+
+  <script>
+    (function () {
+      const section = document.getElementById('{{ section_id }}');
+      if (!section) return;
+
+      const viewport = section.querySelector('[data-trustpilot-viewport]');
+      const track = section.querySelector('[data-trustpilot-track]');
+      const prevBtn = section.querySelector('.os-trustpilot__nav--prev');
+      const nextBtn = section.querySelector('.os-trustpilot__nav--next');
+
+      if (!viewport || !track) return;
+
+      let originalSlides = Array.from(track.querySelectorAll('[data-original-slide]'));
+      let originalCount = originalSlides.length;
+
+      if (originalCount <= 1) return;
+
+      let currentIndex = 0;
+      let cloneCount = 0;
+      let slideStep = 0;
+      let isAnimating = false;
+
+      let pointerDown = false;
+      let startX = 0;
+      let currentTranslate = 0;
+      let prevTranslate = 0;
+      let dragMoved = false;
+
+      const getGap = () => {
+        const styles = window.getComputedStyle(track);
+        return parseFloat(styles.columnGap || styles.gap || 0);
+      };
+
+      const getSlideWidth = () => {
+        const firstSlide = track.querySelector('.os-trustpilot__slide');
+        if (!firstSlide) return 0;
+        return firstSlide.getBoundingClientRect().width;
+      };
+
+      const updateStep = () => {
+        slideStep = getSlideWidth() + getGap();
+      };
+
+      const clearClones = () => {
+        Array.from(track.querySelectorAll('[data-clone="true"]')).forEach((node) => node.remove());
+      };
+
+      const buildInfinite = () => {
+        clearClones();
+
+        originalSlides = Array.from(track.querySelectorAll('[data-original-slide]'));
+        originalCount = originalSlides.length;
+
+        if (originalCount <= 1) return;
+
+        cloneCount = Math.min(originalCount, window.innerWidth <= 989 ? 2 : 4);
+
+        const headClones = originalSlides.slice(0, cloneCount).map((slide) => {
+          const clone = slide.cloneNode(true);
+          clone.setAttribute('data-clone', 'true');
+          return clone;
+        });
+
+        const tailClones = originalSlides.slice(-cloneCount).map((slide) => {
+          const clone = slide.cloneNode(true);
+          clone.setAttribute('data-clone', 'true');
+          return clone;
+        });
+
+        tailClones.forEach((clone) => track.insertBefore(clone, track.firstChild));
+        headClones.forEach((clone) => track.appendChild(clone));
+
+        currentIndex = cloneCount;
+        updateStep();
+        jumpTo(currentIndex);
+      };
+
+      const setTranslate = (value, animate = true) => {
+        track.style.transition = animate ? 'transform 0.42s ease' : 'none';
+        track.style.transform = `translate3d(${value}px, 0, 0)`;
+        currentTranslate = value;
+      };
+
+      const jumpTo = (index) => {
+        const translate = -(index * slideStep);
+        prevTranslate = translate;
+        setTranslate(translate, false);
+      };
+
+      const goTo = (index) => {
+        if (isAnimating || slideStep === 0) return;
+        isAnimating = true;
+        currentIndex = index;
+        const translate = -(currentIndex * slideStep);
+        prevTranslate = translate;
+        setTranslate(translate, true);
+      };
+
+      const next = () => goTo(currentIndex + 1);
+      const prev = () => goTo(currentIndex - 1);
+
+      track.addEventListener('transitionend', () => {
+        isAnimating = false;
+
+        if (currentIndex >= originalCount + cloneCount) {
+          currentIndex = cloneCount;
+          jumpTo(currentIndex);
+        } else if (currentIndex < cloneCount) {
+          currentIndex = originalCount + cloneCount - 1;
+          jumpTo(currentIndex);
+        }
+      });
+
+      const pointerX = (event) => {
+        if (event.touches && event.touches.length) return event.touches[0].clientX;
+        if (event.changedTouches && event.changedTouches.length) return event.changedTouches[0].clientX;
+        return event.clientX;
+      };
+
+      const onDragStart = (event) => {
+        if (isAnimating) return;
+        pointerDown = true;
+        dragMoved = false;
+        startX = pointerX(event);
+        viewport.classList.add('is-dragging');
+        track.style.transition = 'none';
+      };
+
+      const onDragMove = (event) => {
+        if (!pointerDown) return;
+
+        const currentX = pointerX(event);
+        const diff = currentX - startX;
+
+        if (Math.abs(diff) > 4) dragMoved = true;
+
+        currentTranslate = prevTranslate + diff;
+        track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+      };
+
+      const onDragEnd = () => {
+        if (!pointerDown) return;
+        pointerDown = false;
+        viewport.classList.remove('is-dragging');
+
+        const movedBy = currentTranslate - prevTranslate;
+        const threshold = Math.max(slideStep * 0.16, 28);
+
+        if (movedBy < -threshold) {
+          next();
+        } else if (movedBy > threshold) {
+          prev();
+        } else {
+          setTranslate(prevTranslate, true);
+        }
+      };
+
+      viewport.addEventListener('mousedown', onDragStart);
+      viewport.addEventListener('touchstart', onDragStart, { passive: true });
+
+      window.addEventListener('mousemove', onDragMove);
+      window.addEventListener('touchmove', onDragMove, { passive: true });
+
+      window.addEventListener('mouseup', onDragEnd);
+      window.addEventListener('touchend', onDragEnd);
+
+      viewport.addEventListener('mouseleave', () => {
+        if (pointerDown) onDragEnd();
+      });
+
+      viewport.addEventListener(
+        'click',
+        (event) => {
+          if (dragMoved) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        },
+        true
+      );
+
+      if (prevBtn) prevBtn.addEventListener('click', prev);
+      if (nextBtn) nextBtn.addEventListener('click', next);
+
+      viewport.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          prev();
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          next();
+        }
+      });
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          buildInfinite();
+        }, 120);
+      });
+
+      buildInfinite();
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "OS Trustpilot Slider",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "Título resumen",
+      "default": "Excelente"
+    },
+    {
+      "type": "range",
+      "id": "full_stars",
+      "label": "Cantidad de estrellas del resumen",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "review_prefix",
+      "label": "Texto antes del link",
+      "default": "Basado en"
+    },
+    {
+      "type": "text",
+      "id": "review_link_text",
+      "label": "Texto del link reseñas",
+      "default": "+50.000 reseñas"
+    },
+    {
+      "type": "url",
+      "id": "review_link_url",
+      "label": "Link de reseñas"
+    },
+    {
+      "type": "text",
+      "id": "carousel_label",
+      "label": "Etiqueta accesible carrusel",
+      "default": "Reseñas de clientes"
+    },
+    {
+      "type": "text",
+      "id": "prev_label",
+      "label": "Etiqueta flecha izquierda",
+      "default": "Reseña anterior"
+    },
+    {
+      "type": "text",
+      "id": "next_label",
+      "label": "Etiqueta flecha derecha",
+      "default": "Siguiente reseña"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#f5f5f7"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fondo card",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto principal",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Color texto secundario",
+      "default": "#7b7b7b"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color borde card",
+      "default": "#e4e4e4"
+    },
+    {
+      "type": "color",
+      "id": "star_bg",
+      "label": "Fondo estrellas",
+      "default": "#00b67a"
+    },
+    {
+      "type": "color",
+      "id": "star_icon_color",
+      "label": "Color icono estrella",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "brand_color",
+      "label": "Color marca estrella",
+      "default": "#00b67a"
+    },
+    {
+      "type": "range",
+      "id": "summary_width",
+      "label": "Ancho columna resumen desktop",
+      "min": 180,
+      "max": 320,
+      "step": 4,
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "slide_width_desktop",
+      "label": "Ancho card desktop",
+      "min": 180,
+      "max": 320,
+      "step": 4,
+      "default": 232
+    },
+    {
+      "type": "range",
+      "id": "slide_width_mobile",
+      "label": "Ancho card mobile",
+      "min": 220,
+      "max": 340,
+      "step": 4,
+      "default": 332
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Separación entre cards",
+      "min": 8,
+      "max": 36,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Radio borde cards",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Padding cards",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "label": "Altura mínima card desktop",
+      "min": 180,
+      "max": 320,
+      "step": 4,
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Altura mínima card mobile",
+      "min": 160,
+      "max": 320,
+      "step": 4,
+      "default": 184
+    },
+    {
+      "type": "range",
+      "id": "summary_title_size",
+      "label": "Tamaño título resumen",
+      "min": 22,
+      "max": 42,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Tamaño título reseña desktop",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Tamaño título reseña mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "label": "Tamaño texto reseña desktop",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Tamaño texto reseña mobile",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_rating_size",
+      "label": "Tamaño rating mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "Tamaño flechas desktop",
+      "min": 28,
+      "max": 52,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "text",
+      "id": "mobile_rating_text",
+      "label": "Texto rating mobile",
+      "default": "Valorado 4.8 / 5 basado en 50.000 reseñas."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espaciado superior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espaciado inferior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Estrellas",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Resultados visibles"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto reseña",
+          "default": "<p>Probé el blanqueador por recomendación y me sorprendió lo rápido que se nota el cambio.</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Autor",
+          "default": "Teresa J."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Fecha",
+          "default": "Octubre 17"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Trustpilot Slider",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "heading": "Resultados visibles",
+            "text": "<p>Probé el blanqueador por recomendación y me sorprendió lo rápido que se nota el cambio. Muy contenta.</p>",
+            "author": "Teresa J.",
+            "date": "Octubre 17"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "heading": "Experiencia increíble",
+            "text": "<p>Probé sus pastas por curiosidad y ahora no uso otra marca. Me encanta, el sabor.</p>",
+            "author": "Toni B",
+            "date": "Octubre 13"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "heading": "Buen descubrimiento",
+            "text": "<p>Lo vi en redes y me animé a probarlo. Me sorprendió lo rápido que se nota el resultado.</p>",
+            "author": "Jaime V.",
+            "date": "Septiembre 29"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "heading": "Recomendado 100 %",
+            "text": "<p>Llevo tiempo buscando algo así. Es rápido, fácil y sin sensibilidad.</p>",
+            "author": "Jose. C",
+            "date": "Septiembre 17"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "heading": "Muy buena compra",
+            "text": "<p>La diferencia se nota bastante más de lo que esperaba. Lo volvería a comprar sin duda.</p>",
+            "author": "Marta L.",
+            "date": "Septiembre 8"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
