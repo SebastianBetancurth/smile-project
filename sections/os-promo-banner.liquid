@@ -1,0 +1,569 @@
+{% liquid
+  assign section_id = 'os-promo-banner-' | append: section.id
+%}
+
+<section id="{{ section_id }}" class="os-promo-banner">
+  <div class="os-promo-banner__media">
+    {% if section.settings.bg_image != blank %}
+      <img
+        class="os-promo-banner__bg-image"
+        src="{{ section.settings.bg_image | image_url: width: 2400 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        width="2400"
+        height="1200"
+      >
+    {% endif %}
+    <div class="os-promo-banner__overlay"></div>
+  </div>
+
+  <div class="page-width">
+    <div class="os-promo-banner__inner os-align-{{ section.settings.content_alignment }} os-mobile-align-{{ section.settings.content_alignment_mobile }}">
+      <div class="os-promo-banner__content">
+        {% if section.settings.badge_text != blank %}
+          <div class="os-promo-banner__badge">
+            {{ section.settings.badge_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="os-promo-banner__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.button_label != blank %}
+          <div class="os-promo-banner__button-wrap">
+            <a
+              {% if section.settings.button_link != blank %}
+                href="{{ section.settings.button_link }}"
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+              class="os-promo-banner__button"
+            >
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #{{ section_id }} {
+    --os-section-height-desktop: {{ section.settings.section_height_desktop }}px;
+    --os-section-height-mobile: {{ section.settings.section_height_mobile }}px;
+
+    --os-content-max-width: {{ section.settings.content_max_width }}px;
+
+    --os-bg-color: {{ section.settings.bg_color }};
+    --os-overlay-color: {{ section.settings.overlay_color }};
+    --os-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+
+    --os-badge-bg: {{ section.settings.badge_bg }};
+    --os-badge-text: {{ section.settings.badge_text_color }};
+    --os-badge-size-desktop: {{ section.settings.badge_size_desktop }}px;
+    --os-badge-size-mobile: {{ section.settings.badge_size_mobile }}px;
+
+    --os-heading-color: {{ section.settings.heading_color }};
+    --os-heading-size-desktop: {{ section.settings.heading_size_desktop }}px;
+    --os-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+
+    --os-button-bg: {{ section.settings.button_bg }};
+    --os-button-text: {{ section.settings.button_text }};
+    --os-button-border: {{ section.settings.button_border }};
+    --os-button-size-desktop: {{ section.settings.button_size_desktop }}px;
+    --os-button-size-mobile: {{ section.settings.button_size_mobile }}px;
+    --os-button-radius: {{ section.settings.button_radius }}px;
+    --os-button-width: {{ section.settings.button_width }}px;
+
+    --os-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --os-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --os-padding-left-right-desktop: {{ section.settings.padding_side_desktop }}px;
+
+    --os-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --os-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --os-padding-left-right-mobile: {{ section.settings.padding_side_mobile }}px;
+  }
+
+  #{{ section_id }}.os-promo-banner {
+    position: relative;
+    background: var(--os-bg-color);
+    overflow: hidden;
+  }
+
+  #{{ section_id }} .page-width {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #{{ section_id }} .os-promo-banner__media {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--os-bg-color);
+  }
+
+  #{{ section_id }} .os-promo-banner__bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  #{{ section_id }} .os-promo-banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--os-overlay-color);
+    opacity: var(--os-overlay-opacity);
+    pointer-events: none;
+  }
+
+  #{{ section_id }} .os-promo-banner__inner {
+    min-height: var(--os-section-height-desktop);
+    display: flex;
+    align-items: center;
+    padding:
+      var(--os-padding-top-desktop)
+      var(--os-padding-left-right-desktop)
+      var(--os-padding-bottom-desktop);
+  }
+
+  #{{ section_id }} .os-promo-banner__content {
+    width: 100%;
+    max-width: var(--os-content-max-width);
+  }
+
+  #{{ section_id }} .os-align-left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  #{{ section_id }} .os-align-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #{{ section_id }} .os-align-right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  #{{ section_id }} .os-promo-banner__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 8px 18px;
+    margin-bottom: 26px;
+    background: var(--os-badge-bg);
+    color: var(--os-badge-text);
+    border-radius: 999px;
+    font-size: var(--os-badge-size-desktop);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  #{{ section_id }} .os-promo-banner__heading {
+    margin: 0;
+    color: var(--os-heading-color);
+    font-size: var(--os-heading-size-desktop);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  #{{ section_id }} .os-promo-banner__button-wrap {
+    margin-top: 32px;
+  }
+
+  #{{ section_id }} .os-promo-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, var(--os-button-width));
+    min-height: 56px;
+    padding: 14px 24px;
+    background: var(--os-button-bg);
+    color: var(--os-button-text);
+    border: 1px solid var(--os-button-border);
+    border-radius: var(--os-button-radius);
+    text-decoration: none;
+    font-size: var(--os-button-size-desktop);
+    line-height: 1.2;
+    font-weight: 600;
+    transition: transform .25s ease, opacity .25s ease, background .25s ease, color .25s ease;
+  }
+
+  #{{ section_id }} .os-promo-banner__button:hover {
+    transform: translateY(-1px);
+    opacity: .96;
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section_id }} .os-promo-banner__inner {
+      min-height: var(--os-section-height-mobile);
+      padding:
+        var(--os-padding-top-mobile)
+        var(--os-padding-left-right-mobile)
+        var(--os-padding-bottom-mobile);
+    }
+
+    #{{ section_id }} .os-mobile-align-left {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    #{{ section_id }} .os-mobile-align-center {
+      justify-content: center;
+      text-align: center;
+    }
+
+    #{{ section_id }} .os-mobile-align-right {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    #{{ section_id }} .os-promo-banner__badge {
+      margin-bottom: 18px;
+      padding: 7px 14px;
+      font-size: var(--os-badge-size-mobile);
+      min-height: 28px;
+    }
+
+    #{{ section_id }} .os-promo-banner__heading {
+      font-size: var(--os-heading-size-mobile);
+      line-height: 1.18;
+    }
+
+    #{{ section_id }} .os-promo-banner__button-wrap {
+      margin-top: 24px;
+    }
+
+    #{{ section_id }} .os-promo-banner__button {
+      width: min(100%, var(--os-button-width));
+      min-height: 50px;
+      font-size: var(--os-button-size-mobile);
+      padding: 12px 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "OS Promo Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Texto del badge",
+      "default": "RESULTADOS GARANTIZADOS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿Dientes más blancos en 5 minutos?"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Comprar ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link del botón"
+    },
+
+    {
+      "type": "header",
+      "content": "Fondo"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Imagen de fondo"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#ff47eb"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Color overlay",
+      "default": "#ff47eb"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacidad overlay",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Alineación"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Alineación desktop",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_mobile",
+      "label": "Alineación móvil",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Ancho máximo del contenido",
+      "min": 300,
+      "max": 1200,
+      "step": 20,
+      "default": 760
+    },
+
+    {
+      "type": "header",
+      "content": "Altura y espaciado"
+    },
+    {
+      "type": "range",
+      "id": "section_height_desktop",
+      "label": "Altura desktop",
+      "min": 180,
+      "max": 700,
+      "step": 10,
+      "default": 270
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile",
+      "label": "Altura móvil",
+      "min": 140,
+      "max": 500,
+      "step": 10,
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding superior desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding inferior desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_side_desktop",
+      "label": "Padding lateral desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding superior móvil",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding inferior móvil",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_side_mobile",
+      "label": "Padding lateral móvil",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 16
+    },
+
+    {
+      "type": "header",
+      "content": "Estilo del badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fondo badge",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Color texto badge",
+      "default": "#ff47eb"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_desktop",
+      "label": "Tamaño badge desktop",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Tamaño badge móvil",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+
+    {
+      "type": "header",
+      "content": "Estilo del título"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del título",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Tamaño título desktop",
+      "min": 20,
+      "max": 90,
+      "step": 2,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Tamaño título móvil",
+      "min": 18,
+      "max": 56,
+      "step": 2,
+      "default": 26
+    },
+
+    {
+      "type": "header",
+      "content": "Estilo del botón"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fondo botón",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Texto botón",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_border",
+      "label": "Borde botón",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "range",
+      "id": "button_size_desktop",
+      "label": "Tamaño texto botón desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_size_mobile",
+      "label": "Tamaño texto botón móvil",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Radio botón",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "button_width",
+      "label": "Ancho botón",
+      "min": 140,
+      "max": 700,
+      "step": 10,
+      "default": 280
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Promo Banner"
+    }
+  ]
+}
+{% endschema %}
