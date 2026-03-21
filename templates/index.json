@@ -504,6 +504,9 @@
         "swatch_TmpidY",
         "swatch_LiA3qW"
       ],
+      "custom_css": [
+        ".os-feature-split-banner__product-wrap {left: -136px; top: -46px; }"
+      ],
       "name": "OS Feature Split Banner",
       "settings": {
         "product_image": "shopify://shop_images/image_17.webp",
@@ -559,6 +562,7 @@
     },
     "os_promo_banner_qxdWnE": {
       "type": "os-promo-banner",
+      "custom_css": [],
       "name": "OS Promo Banner",
       "settings": {
         "badge_text": "RESULTADOS GARANTIZADOS",
