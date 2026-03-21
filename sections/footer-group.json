@@ -18,14 +18,14 @@
           "type": "menu_column",
           "settings": {
             "heading": "¿Necesitas ayuda?",
-            "menu": ""
+            "menu": "ayuda"
           }
         },
         "menu_column_CKmEKH": {
           "type": "menu_column",
           "settings": {
             "heading": "Políticas",
-            "menu": ""
+            "menu": "pol-ticas"
           }
         },
         "social_column_9yJpWr": {
