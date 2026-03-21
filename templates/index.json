@@ -505,7 +505,7 @@
         "swatch_LiA3qW"
       ],
       "custom_css": [
-        ".os-feature-split-banner__product-wrap {left: -136px; top: -46px; }"
+        ".os-feature-split-banner__product-wrap {left: -46px; top: -136px;}"
       ],
       "name": "OS Feature Split Banner",
       "settings": {
