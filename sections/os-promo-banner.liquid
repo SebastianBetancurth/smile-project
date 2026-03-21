@@ -52,6 +52,13 @@
 </section>
 
 <style>
+    @font-face {
+                     font-family: 'Pulp';
+                     src: url('{{ 'Pulp.woff2' | asset_url }}') format('woff2');
+                     font-weight:500;
+                     font-style: normal;
+                    font-display: swap;
+             }
   #{{ section_id }} {
     --os-section-height-desktop: {{ section.settings.section_height_desktop }}px;
     --os-section-height-mobile: {{ section.settings.section_height_mobile }}px;
@@ -181,6 +188,7 @@
     line-height: 1.15;
     font-weight: 700;
     letter-spacing: -0.02em;
+    font-family: 'Pulp', Helvetica;
   }
 
   #{{ section_id }} .os-promo-banner__button-wrap {
@@ -201,7 +209,8 @@
     text-decoration: none;
     font-size: var(--os-button-size-desktop);
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: 'Pulp', Helvetica;
     transition: transform .25s ease, opacity .25s ease, background .25s ease, color .25s ease;
   }
 
