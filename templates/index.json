@@ -369,10 +369,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 240,
         "image_width_mobile": 300,
-<<<<<<< HEAD
-=======
         "image_offset_top_mobile": -30,
->>>>>>> 485fe962843bb7131312fd4c8d3523f5f9cc36a4
         "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 13,
@@ -475,6 +472,7 @@
         "progress_track_color": "#d9d9d9",
         "progress_thumb_color": "#bdbdbd",
         "desktop_gap": 32,
+        "image_offset_top_mobile": 10,
         "mobile_gap": 18,
         "image_radius": 12,
         "card_radius": 14,
@@ -587,10 +585,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 312,
         "image_width_mobile": 400,
-<<<<<<< HEAD
-=======
         "image_offset_top_mobile": -30,
->>>>>>> 485fe962843bb7131312fd4c8d3523f5f9cc36a4
         "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 17,
@@ -633,7 +628,7 @@
         "padding_side_mobile": 16,
         "badge_bg": "#ffffff",
         "badge_text_color": "#ff47eb",
-        "badge_size_desktop": 14,
+        "badge_size_desktop": 12,
         "badge_size_mobile": 12,
         "heading_color": "#ffffff",
         "heading_size_desktop": 34,
@@ -641,7 +636,7 @@
         "button_bg": "#f2f2f2",
         "button_text": "#000000",
         "button_border": "#f2f2f2",
-        "button_size_desktop": 18,
+        "button_size_desktop": 16,
         "button_size_mobile": 16,
         "button_radius": 50,
         "button_width": 280
