@@ -462,7 +462,7 @@
         "section_width": "custom",
         "max_width": 1500,
         "side_padding_desktop": 24,
-        "side_padding_mobile": 16,
+        "side_padding_mobile": 0,
         "image_position": "center top",
         "name_size_desktop": 17,
         "name_size_mobile": 15,
@@ -473,7 +473,7 @@
         "progress_thumb_color": "#bdbdbd",
         "desktop_gap": 32,
         "mobile_gap": 18,
-        "image_radius": 14,
+        "image_radius": 0,
         "card_radius": 14,
         "padding_top": 24,
         "padding_bottom": 56
