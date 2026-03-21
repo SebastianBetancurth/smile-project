@@ -328,6 +328,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 240,
         "image_width_mobile": 300,
+        "image_offset_top_mobile": -30,
         "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 13,
@@ -342,6 +343,99 @@
         "text_max_width_mobile": 360,
         "padding_top_mobile": 80,
         "padding_bottom_mobile": 18
+      }
+    },
+    "os_professionals_recommend_b8NMF7": {
+      "type": "os-professionals-recommend",
+      "blocks": {
+        "professional_JwChbc": {
+          "type": "professional",
+          "settings": {
+            "image": "shopify://shop_images/doctora.webp",
+            "quote": "\"Muchos evitan el blanqueamiento por miedo, pero este producto logra resultados clínicos sin molestias ni dañar el esmalte.\"",
+            "name": "Dra. Irene Martinez",
+            "role": "Dentista",
+            "show_verified": true
+          }
+        },
+        "professional_brVmDK": {
+          "type": "professional",
+          "settings": {
+            "image": "shopify://shop_images/perfil-irene.webp",
+            "quote": "\"Muchos evitan el blanqueamiento por miedo, pero este producto logra resultados clínicos sin molestias ni dañar el esmalte.\"",
+            "name": "Dra. Irene Martinez",
+            "role": "Dentista",
+            "show_verified": true
+          }
+        },
+        "professional_gHz74U": {
+          "type": "professional",
+          "settings": {
+            "image": "shopify://shop_images/doctor.webp",
+            "quote": "\"Muchos evitan el blanqueamiento por miedo, pero este producto logra resultados clínicos sin molestias ni dañar el esmalte.\"",
+            "name": "Dra. Irene Martinez",
+            "role": "Dentista",
+            "show_verified": true
+          }
+        },
+        "logo_7aj6aQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/mayo-clinic-logo.svg_fill_a405e0c7-4e03-4830-ac7d-154e7f742a85.svg",
+            "alt": "Logo"
+          }
+        },
+        "logo_iybDXV": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Link_spaceapplications_logo_svg.svg",
+            "alt": "Logo"
+          }
+        },
+        "logo_qJ7rFM": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Link_university-of-oxford-logo_svg_1.svg",
+            "alt": "Logo"
+          }
+        }
+      },
+      "block_order": [
+        "professional_JwChbc",
+        "professional_brVmDK",
+        "professional_gHz74U",
+        "logo_7aj6aQ",
+        "logo_iybDXV",
+        "logo_qJ7rFM"
+      ],
+      "name": "OS Profesionales",
+      "settings": {
+        "heading": "Recomendado por profesionales",
+        "bg_color": "#f3f3f3",
+        "heading_color": "#111111",
+        "text_color": "#222222",
+        "heading_size_desktop": 28,
+        "heading_size_mobile": 22,
+        "quote_size_desktop": 16,
+        "quote_size_mobile": 14,
+        "section_width": "page",
+        "max_width": 1400,
+        "side_padding_desktop": 24,
+        "side_padding_mobile": 16,
+        "image_position": "center top",
+        "name_size_desktop": 17,
+        "name_size_mobile": 15,
+        "role_size_desktop": 14,
+        "role_size_mobile": 13,
+        "muted_color": "#6b6b6b",
+        "progress_track_color": "#d9d9d9",
+        "progress_thumb_color": "#bdbdbd",
+        "desktop_gap": 32,
+        "mobile_gap": 18,
+        "image_radius": 14,
+        "card_radius": 14,
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
     "os_feature_split_banner_x8AqTV": {
@@ -446,6 +540,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 312,
         "image_width_mobile": 400,
+        "image_offset_top_mobile": -30,
         "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 17,
@@ -469,6 +564,7 @@
     "os_best_sellers_slider_GJK6KU",
     "os_trustpilot_slider_rthTCy",
     "os_feature_split_banner_y3FgfV",
+    "os_professionals_recommend_b8NMF7",
     "os_feature_split_banner_x8AqTV"
   ]
 }
