@@ -178,9 +178,6 @@
         "card_radius": 8,
         "show_sold_out_badge": true,
         "sold_out_text": "AGOTADO",
-        "show_fake_swatches": false,
-        "show_plus_counter": false,
-        "plus_counter": 6,
         "section_bg": "#fafafc",
         "card_bg": "#f2f2f6",
         "title_color": "#111111",
@@ -191,13 +188,289 @@
         "badge_color": "#111111",
         "arrow_color": "#9b9ba3",
         "padding_top": 28,
-        "padding_bottom": 16
+        "padding_bottom": 40
+      }
+    },
+    "os_trustpilot_slider_rthTCy": {
+      "type": "os-trustpilot-slider",
+      "blocks": {
+        "review_gJVBwy": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "heading": "Resultados visibles",
+            "text": "<p>Probé el blanqueador por recomendación y me sorprendió lo rápido que se nota el cambio. Muy contenta.</p>",
+            "author": "Teresa J.",
+            "date": "Octubre 17"
+          }
+        },
+        "review_FEqpwA": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "heading": "Experiencia increíble",
+            "text": "<p>Probé sus pastas por curiosidad y ahora no uso otra marca. Me encanta, el sabor.</p>",
+            "author": "Toni B",
+            "date": "Octubre 13"
+          }
+        },
+        "review_W8kKnf": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "heading": "Buen descubrimiento",
+            "text": "<p>Lo vi en redes y me animé a probarlo. Me sorprendió lo rápido que se nota el resultado.</p>",
+            "author": "Jaime V.",
+            "date": "Septiembre 29"
+          }
+        },
+        "review_ReEdxc": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "heading": "Recomendado 100 %",
+            "text": "<p>Llevo tiempo buscando algo así. Es rápido, fácil y sin sensibilidad.</p>",
+            "author": "Jose. C",
+            "date": "Septiembre 17"
+          }
+        },
+        "review_imUiy9": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "heading": "Muy buena compra",
+            "text": "<p>La diferencia se nota bastante más de lo que esperaba. Lo volvería a comprar sin duda.</p>",
+            "author": "Marta L.",
+            "date": "Septiembre 8"
+          }
+        }
+      },
+      "block_order": [
+        "review_gJVBwy",
+        "review_FEqpwA",
+        "review_W8kKnf",
+        "review_ReEdxc",
+        "review_imUiy9"
+      ],
+      "name": "OS Trustpilot Slider",
+      "settings": {
+        "summary_title": "Excelente",
+        "full_stars": 4,
+        "review_prefix": "Basado en",
+        "review_link_text": "+50.000 reseñas",
+        "review_link_url": "",
+        "carousel_label": "Reseñas de clientes",
+        "prev_label": "Reseña anterior",
+        "next_label": "Siguiente reseña",
+        "section_bg": "#f5f5f7",
+        "card_bg": "#ffffff",
+        "text_color": "#222222",
+        "muted_color": "#7b7b7b",
+        "border_color": "#e4e4e4",
+        "star_bg": "#00b67a",
+        "star_icon_color": "#ffffff",
+        "brand_color": "#00b67a",
+        "summary_width": 220,
+        "slide_width_desktop": 232,
+        "slide_width_mobile": 332,
+        "card_gap": 12,
+        "card_radius": 16,
+        "card_padding": 16,
+        "card_min_height": 180,
+        "card_min_height_mobile": 184,
+        "summary_title_size": 24,
+        "card_title_size": 18,
+        "card_title_size_mobile": 17,
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "mobile_rating_size": 15,
+        "arrow_size": 28,
+        "mobile_rating_text": "Valorado 4.8 / 5 basado en 50.000 reseñas.",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "os_feature_split_banner_y3FgfV": {
+      "type": "os-feature-split-banner",
+      "name": "OS Feature Split Banner",
+      "settings": {
+        "product_image": "shopify://shop_images/strips_dfa8f0cf-f9be-4e16-b759-50f62f28b02d.webp",
+        "noise_image": "shopify://shop_images/92d36da6f31db50ba6f90033421449b6e172c9f4.webp",
+        "badge_text": "NUEVA FÓRMULA",
+        "heading": "Nuevas Purple Strips Blanqueadoras",
+        "text": "<p>Blanquean en solo 30 minutos gracias a la tecnología Purple V34, que corrige el tono amarillo. Fáciles de usar, cómodas y perfectas para usar donde quieras.</p>",
+        "button_label": "Ver más",
+        "button_link": "",
+        "section_bg": "#f5f5f7",
+        "swatches_heading": "ELIGE TU SABOR",
+        "swatch_count_suffix": "más",
+        "swatch_count_link": "",
+        "gradient_color_1": "#ef7ad9",
+        "gradient_color_2": "#8e69f1",
+        "gradient_color_3": "#4968ff",
+        "text_color": "#ffffff",
+        "badge_bg": "#a4ffd8",
+        "badge_text_color": "#0f1d1d",
+        "button_bg": "#ffffff",
+        "button_text_color": "#141414",
+        "card_radius": 28,
+        "desktop_min_height": 420,
+        "image_width_desktop": 520,
+        "image_offset_top": -116,
+        "image_offset_left": -52,
+        "background_image_mobile": "shopify://shop_images/Banner_conjunto_movil_png.webp",
+        "mobile_image_position": "top",
+        "mobile_bottom_image_height": 220,
+        "image_width_mobile_bottom": 320,
+        "image_offset_left_mobile_bottom": 0,
+        "content_max_width": 620,
+        "heading_size_desktop": 46,
+        "text_size_desktop": 16,
+        "mobile_media_height": 240,
+        "image_width_mobile": 300,
+        "image_offset_top_mobile": -112,
+        "heading_size_mobile": 32,
+        "text_size_mobile": 15,
+        "swatches_heading_size": 13,
+        "swatches_heading_size_mobile": 12,
+        "noise_opacity": 1,
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "content_alignment_mobile": "left",
+        "image_offset_left_mobile": 44,
+        "content_padding_top_mobile": 8,
+        "heading_max_width_mobile": 320,
+        "text_max_width_mobile": 360,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 18
+      }
+    },
+    "os_feature_split_banner_x8AqTV": {
+      "type": "os-feature-split-banner",
+      "blocks": {
+        "swatch_TALU6E": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_wxQyqQ": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/strawberry_6f14615c-87c4-4427-9ae2-8d22cc8a03c7.avif",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_bDWx6i": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/OrangeSodaSelector_80x_small_e574ecd6-1260-4344-9bb9-2e80fa318514.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_8aMgfk": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_TmpidY": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/GrapeBubblegum-Selector-Toothpaste_80x_small_6462fc7e-3c2c-4809-9f1c-2b5f6cd036cd.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        },
+        "swatch_LiA3qW": {
+          "type": "swatch",
+          "settings": {
+            "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_label": "Sabor",
+            "product": "",
+            "custom_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "swatch_TALU6E",
+        "swatch_wxQyqQ",
+        "swatch_bDWx6i",
+        "swatch_8aMgfk",
+        "swatch_TmpidY",
+        "swatch_LiA3qW"
+      ],
+      "name": "OS Feature Split Banner",
+      "settings": {
+        "product_image": "shopify://shop_images/image_17.webp",
+        "noise_image": "shopify://shop_images/Banner_conjuntoa.png_2.webp",
+        "badge_text": "RUTINA RENOVADA",
+        "heading": "Dale sabor a tu rutina diaria",
+        "text": "<p>Cepillarte ahora es divertido y fresco, con sabores como mango, sandía o menta que transforman tu rutina diaria</p><p></p><p></p>",
+        "button_label": "",
+        "button_link": "",
+        "section_bg": "#f5f5f7",
+        "swatches_heading": "ELIGE TU SABOR",
+        "swatch_count_suffix": "más",
+        "swatch_count_link": "",
+        "gradient_color_1": "#ef7ad9",
+        "gradient_color_2": "#8e69f1",
+        "gradient_color_3": "#4968ff",
+        "text_color": "#ffffff",
+        "badge_bg": "#a4ffd8",
+        "badge_text_color": "#0f1d1d",
+        "button_bg": "#ffffff",
+        "button_text_color": "#141414",
+        "card_radius": 28,
+        "desktop_min_height": 380,
+        "image_width_desktop": 530,
+        "image_offset_top": -116,
+        "image_offset_left": -44,
+        "background_image_mobile": "shopify://shop_images/Banner_conjunto_movil_png.webp",
+        "mobile_image_position": "bottom",
+        "mobile_bottom_image_height": 240,
+        "image_width_mobile_bottom": 400,
+        "image_offset_left_mobile_bottom": 0,
+        "content_max_width": 620,
+        "heading_size_desktop": 46,
+        "text_size_desktop": 16,
+        "mobile_media_height": 312,
+        "image_width_mobile": 400,
+        "image_offset_top_mobile": -14,
+        "heading_size_mobile": 32,
+        "text_size_mobile": 15,
+        "swatches_heading_size": 17,
+        "swatches_heading_size_mobile": 12,
+        "noise_opacity": 1,
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "content_alignment_mobile": "left",
+        "image_offset_left_mobile": 46,
+        "content_padding_top_mobile": 60,
+        "heading_max_width_mobile": 320,
+        "text_max_width_mobile": 360,
+        "padding_top_mobile": 22,
+        "padding_bottom_mobile": 18
       }
     }
   },
   "order": [
     "os_hero_split_p3kYC7",
     "os_press_logos_marquee_3W7Tmi",
-    "os_best_sellers_slider_GJK6KU"
+    "os_best_sellers_slider_GJK6KU",
+    "os_trustpilot_slider_rthTCy",
+    "os_feature_split_banner_y3FgfV",
+    "os_feature_split_banner_x8AqTV"
   ]
 }
