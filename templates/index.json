@@ -411,7 +411,7 @@
       "name": "OS Profesionales",
       "settings": {
         "heading": "Recomendado por profesionales",
-        "bg_color": "#f3f3f3",
+        "bg_color": "#f5f5f7",
         "heading_color": "#111111",
         "text_color": "#222222",
         "heading_size_desktop": 28,
@@ -435,7 +435,7 @@
         "image_radius": 14,
         "card_radius": 14,
         "padding_top": 24,
-        "padding_bottom": 24
+        "padding_bottom": 56
       }
     },
     "os_feature_split_banner_x8AqTV": {
