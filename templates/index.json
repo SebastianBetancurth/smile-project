@@ -155,6 +155,47 @@
     },
     "os_best_sellers_slider_GJK6KU": {
       "type": "os-best-sellers-slider",
+      "blocks": {
+        "product_swatches_gnGTyV": {
+          "type": "product_swatches",
+          "settings": {
+            "product": "pasta-de-dientes-de-sabores-pack-3",
+            "swatch_1": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_product_1": "",
+            "swatch_link_1": "",
+            "swatch_2": "shopify://shop_images/GrapeBubblegum-Selector-Toothpaste_80x_small_6462fc7e-3c2c-4809-9f1c-2b5f6cd036cd.webp",
+            "swatch_product_2": "",
+            "swatch_link_2": "",
+            "swatch_3": "shopify://shop_images/strawberry.avif",
+            "swatch_product_3": "",
+            "swatch_link_3": "",
+            "swatch_4": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
+            "swatch_product_4": "",
+            "swatch_link_4": "",
+            "swatch_5": "shopify://shop_images/OrangeSodaSelector_80x_small_e574ecd6-1260-4344-9bb9-2e80fa318514.webp",
+            "swatch_product_5": "",
+            "swatch_link_5": "",
+            "swatch_6": "shopify://shop_images/strawberry_6f14615c-87c4-4427-9ae2-8d22cc8a03c7.avif",
+            "swatch_product_6": "",
+            "swatch_link_6": "",
+            "swatch_product_7": "",
+            "swatch_link_7": "",
+            "swatch_product_8": "",
+            "swatch_link_8": "",
+            "swatch_product_9": "",
+            "swatch_link_9": "",
+            "swatch_product_10": "",
+            "swatch_link_10": "",
+            "swatch_product_11": "",
+            "swatch_link_11": "",
+            "swatch_product_12": "",
+            "swatch_link_12": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_swatches_gnGTyV"
+      ],
       "name": "OS Best sellers slider",
       "settings": {
         "collection": "new-collect",
