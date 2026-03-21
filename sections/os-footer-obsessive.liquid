@@ -228,8 +228,12 @@
     <div class="page-width">
       <div class="os-footer-obsessive__bottom-top">
         <div class="os-footer-obsessive__payments">
-          {% if section.settings.show_payment_icons %}
-            {{ shop.enabled_payment_types | payment_type_svg_tag }}
+          {% if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 %}
+            {% for type in shop.enabled_payment_types %}
+              <span class="os-footer-obsessive__payment-item">
+                {{ type | payment_type_svg_tag }}
+              </span>
+            {% endfor %}
           {% endif %}
         </div>
 
