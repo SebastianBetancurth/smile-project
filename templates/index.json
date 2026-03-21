@@ -556,6 +556,45 @@
         "padding_top_mobile": 22,
         "padding_bottom_mobile": 18
       }
+    },
+    "os_promo_banner_qxdWnE": {
+      "type": "os-promo-banner",
+      "name": "OS Promo Banner",
+      "settings": {
+        "badge_text": "RESULTADOS GARANTIZADOS",
+        "heading": "¿Dientes más blancos en 5 minutos?",
+        "button_label": "Comprar ahora",
+        "button_link": "",
+        "bg_image": "shopify://shop_images/Homepage_-_Hero_colours_reference_4000x_5545d7b2-22d9-4311-a527-3bd2a28578ff.jpg",
+        "bg_color": "#ff47eb",
+        "overlay_color": "#ff47eb",
+        "overlay_opacity": 100,
+        "content_alignment": "center",
+        "content_alignment_mobile": "center",
+        "content_max_width": 760,
+        "section_height_desktop": 270,
+        "section_height_mobile": 220,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_side_desktop": 24,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 16,
+        "padding_side_mobile": 16,
+        "badge_bg": "#ffffff",
+        "badge_text_color": "#ff47eb",
+        "badge_size_desktop": 14,
+        "badge_size_mobile": 12,
+        "heading_color": "#ffffff",
+        "heading_size_desktop": 34,
+        "heading_size_mobile": 26,
+        "button_bg": "#f2f2f2",
+        "button_text": "#000000",
+        "button_border": "#f2f2f2",
+        "button_size_desktop": 18,
+        "button_size_mobile": 16,
+        "button_radius": 50,
+        "button_width": 280
+      }
     }
   },
   "order": [
@@ -565,6 +604,7 @@
     "os_trustpilot_slider_rthTCy",
     "os_feature_split_banner_y3FgfV",
     "os_professionals_recommend_b8NMF7",
-    "os_feature_split_banner_x8AqTV"
+    "os_feature_split_banner_x8AqTV",
+    "os_promo_banner_qxdWnE"
   ]
 }
