@@ -166,7 +166,11 @@
                         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
                       </dt>
                       <dd class="unit-price">
-                        {% render 'unit-price', price: line_item.unit_price, measurement: line_item.unit_price_measurement, hide_accessibility_label: true %}
+                        {% render 'unit-price',
+                          price: line_item.unit_price,
+                          measurement: line_item.unit_price_measurement,
+                          hide_accessibility_label: true
+                        %}
                       </dd>
                     {%- endif -%}
                   </dl>

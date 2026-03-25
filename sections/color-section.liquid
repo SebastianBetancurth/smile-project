@@ -1,0 +1,88 @@
+{% if request.page_type == 'product' %}
+  <style>
+    :root {
+      --os-product-page-bg: {{ section.settings.template_bg }};
+    }
+
+    body.template-product #MainContent,
+    body[class*="template-product"] #MainContent,
+    #MainContent {
+      background: var(--os-product-page-bg) !important;
+    }
+
+    body.template-product #MainContent > .shopify-section,
+    body[class*="template-product"] #MainContent > .shopify-section,
+    #MainContent > .shopify-section {
+      background: transparent !important;
+    }
+
+    body.template-product #MainContent .page-width,
+    body[class*="template-product"] #MainContent .page-width,
+    #MainContent .page-width,
+    body.template-product #MainContent .product,
+    body[class*="template-product"] #MainContent .product,
+    #MainContent .product,
+    body.template-product #MainContent .color-background-1,
+    body[class*="template-product"] #MainContent .color-background-1,
+    #MainContent .color-background-1,
+    body.template-product #MainContent .color-background-2,
+    body[class*="template-product"] #MainContent .color-background-2,
+    #MainContent .color-background-2 {
+      background: transparent !important;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var bg = '{{ section.settings.template_bg }}';
+      var main = document.getElementById('MainContent');
+
+      if (main) {
+        main.style.background = bg;
+      }
+
+      document.documentElement.style.setProperty('--os-product-page-bg', bg);
+    });
+
+    document.addEventListener('shopify:section:load', function () {
+      var bg = '{{ section.settings.template_bg }}';
+      var main = document.getElementById('MainContent');
+
+      if (main) {
+        main.style.background = bg;
+      }
+
+      document.documentElement.style.setProperty('--os-product-page-bg', bg);
+    });
+
+    document.addEventListener('shopify:section:select', function () {
+      var bg = '{{ section.settings.template_bg }}';
+      var main = document.getElementById('MainContent');
+
+      if (main) {
+        main.style.background = bg;
+      }
+
+      document.documentElement.style.setProperty('--os-product-page-bg', bg);
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Color Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "template_bg",
+      "label": "Color fondo template producto",
+      "default": "#f3f3f3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Section"
+    }
+  ]
+}
+{% endschema %}

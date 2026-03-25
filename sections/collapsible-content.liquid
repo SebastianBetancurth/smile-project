@@ -17,7 +17,27 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
-    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
+    <div
+      class="collapsible-content__wrapper os-cc-wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+      style="
+        --os-cc-box-bg: {{ section.settings.os_box_bg }};
+        --os-cc-box-border: {{ section.settings.os_box_border }};
+        --os-cc-box-radius: {{ section.settings.os_box_radius }}px;
+        --os-cc-heading-color: {{ section.settings.os_heading_color }};
+        --os-cc-row-title-color: {{ section.settings.os_row_title_color }};
+        --os-cc-content-color: {{ section.settings.os_content_color }};
+        --os-cc-toggle-color: {{ section.settings.os_toggle_color }};
+        --os-cc-divider-color: {{ section.settings.os_divider_color }};
+        --os-cc-heading-size: {{ section.settings.os_heading_size }}px;
+        --os-cc-box-max-width: {{ section.settings.os_box_max_width }}px;
+        --os-cc-row-title-size: {{ section.settings.os_row_title_size }}px;
+        --os-cc-content-size: {{ section.settings.os_content_size }}px;
+        --os-cc-box-padding-x: {{ section.settings.os_box_padding_x }}px;
+        --os-cc-box-padding-y: {{ section.settings.os_box_padding_y }}px;
+        --os-cc-row-padding-y: {{ section.settings.os_row_padding_y }}px;
+        --os-cc-toggle-size: {{ section.settings.os_toggle_size }}px;
+      "
+    >
       <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
         <div
           class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -71,7 +91,7 @@
           <div class="grid__item">
             {%- for block in section.blocks -%}
               <div
-                class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+                class="accordion os-cc-accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 <details
@@ -81,20 +101,24 @@
                   {% endif %}
                 >
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
-                    {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h3 class="accordion__title inline-richtext h4">
-                      {{ block.settings.heading | default: block.settings.page.title | escape }}
-                    </h3>
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                    <div class="summary__title">
+                      <h3 class="accordion__title inline-richtext">
+                        {{ block.settings.heading | default: block.settings.page.title | escape }}
+                      </h3>
+                    </div>
+                    <span class="os-cc-toggle" aria-hidden="true"></span>
                   </summary>
+
                   <div
                     class="accordion__content rte"
                     id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
                     role="region"
                     aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                   >
-                    {{ block.settings.row_content }}
-                    {{ block.settings.page.content }}
+                    <div class="accordion__content-inner">
+                      {{ block.settings.row_content }}
+                      {{ block.settings.page.content }}
+                    </div>
                   </div>
                 </details>
               </div>
@@ -105,6 +129,92 @@
     </div>
   </div>
 </div>
+
+<script>
+  function initOSFaqAccordions(root) {
+    const scope = root || document;
+    const detailsList = scope.querySelectorAll('.os-cc-accordion details');
+
+    detailsList.forEach((details) => {
+      if (details.dataset.osAccordionInit === 'true') return;
+      details.dataset.osAccordionInit = 'true';
+
+      const summary = details.querySelector('summary');
+      const content = details.querySelector('.accordion__content');
+      const inner = details.querySelector('.accordion__content-inner');
+
+      if (!summary || !content || !inner) return;
+
+      if (details.hasAttribute('open')) {
+        details.classList.add('is-open');
+        content.style.height = 'auto';
+        content.style.opacity = '1';
+      } else {
+        details.classList.remove('is-open');
+        content.style.height = '0px';
+        content.style.opacity = '0';
+      }
+
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const isOpen = details.classList.contains('is-open');
+
+        if (isOpen) {
+          const startHeight = content.scrollHeight;
+
+          content.style.height = startHeight + 'px';
+          content.style.opacity = '1';
+
+          details.classList.remove('is-open');
+
+          requestAnimationFrame(() => {
+            content.style.height = '0px';
+            content.style.opacity = '0';
+          });
+
+          const onCloseEnd = function (event) {
+            if (event.propertyName !== 'height') return;
+
+            details.removeAttribute('open');
+            content.removeEventListener('transitionend', onCloseEnd);
+          };
+
+          content.addEventListener('transitionend', onCloseEnd);
+        } else {
+          details.setAttribute('open', '');
+          details.classList.add('is-open');
+
+          content.style.height = '0px';
+          content.style.opacity = '0';
+
+          requestAnimationFrame(() => {
+            const targetHeight = content.scrollHeight;
+            content.style.height = targetHeight + 'px';
+            content.style.opacity = '1';
+          });
+
+          const onOpenEnd = function (event) {
+            if (event.propertyName !== 'height') return;
+
+            content.style.height = 'auto';
+            content.removeEventListener('transitionend', onOpenEnd);
+          };
+
+          content.addEventListener('transitionend', onOpenEnd);
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initOSFaqAccordions(document);
+  });
+
+  document.addEventListener('shopify:section:load', function (event) {
+    initOSFaqAccordions(event.target);
+  });
+</script>
 
 {% schema %}
 {
@@ -177,7 +287,7 @@
     {
       "type": "header",
       "content": "t:sections.collapsible_content.settings.layout_header.content"
-    },    
+    },
     {
       "type": "select",
       "id": "layout",
@@ -203,7 +313,7 @@
       "id": "container_color_scheme",
       "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
       "default": "scheme-2"
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -260,6 +370,143 @@
       ],
       "default": "image_second",
       "label": "t:sections.collapsible_content.settings.desktop_layout.label"
+    },
+    {
+      "type": "header",
+      "content": "OS FAQ Styles"
+    },
+    {
+      "type": "color",
+      "id": "os_box_bg",
+      "label": "Fondo contenedor",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "os_box_border",
+      "label": "Color borde contenedor",
+      "default": "#e8e8e8"
+    },
+    {
+      "type": "color",
+      "id": "os_heading_color",
+      "label": "Color título principal",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "os_row_title_color",
+      "label": "Color preguntas",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "os_content_color",
+      "label": "Color respuestas",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "os_toggle_color",
+      "label": "Color símbolo + / -",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "os_divider_color",
+      "label": "Color divisores",
+      "default": "#ececec"
+    },
+    {
+      "type": "range",
+      "id": "os_box_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Radio contenedor",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "os_box_padding_x",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding horizontal contenedor",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "os_box_padding_y",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding vertical contenedor",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "os_heading_size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título principal",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "os_row_title_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño preguntas",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "os_content_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño respuestas",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "os_row_padding_y",
+      "min": 12,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding vertical de cada fila",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "os_toggle_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño símbolo + / -",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "os_box_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Ancho máximo contenedor FAQ",
+      "default": 980
     },
     {
       "type": "header",

@@ -1,0 +1,1886 @@
+{% liquid
+  assign section_id = 'os-reviews-' | append: section.id
+  assign reviews_per_page = section.settings.reviews_per_page | default: 5
+  assign review_star_asset = 'review_estrella.png' | asset_url
+  assign verified_icon_asset = 'verified.png' | asset_url
+
+  assign reviews_total = 0
+  assign rating_5_count = 0
+  assign rating_4_count = 0
+  assign rating_3_count = 0
+  assign rating_2_count = 0
+  assign rating_1_count = 0
+  assign rating_sum = 0
+
+  for block in section.blocks
+    if block.type == 'review'
+      assign review_rating = block.settings.rating | plus: 0
+      assign reviews_total = reviews_total | plus: 1
+      assign rating_sum = rating_sum | plus: review_rating
+
+      case review_rating
+        when 5
+          assign rating_5_count = rating_5_count | plus: 1
+        when 4
+          assign rating_4_count = rating_4_count | plus: 1
+        when 3
+          assign rating_3_count = rating_3_count | plus: 1
+        when 2
+          assign rating_2_count = rating_2_count | plus: 1
+        when 1
+          assign rating_1_count = rating_1_count | plus: 1
+      endcase
+    endif
+  endfor
+
+  assign average_rating_display = 0
+  if reviews_total > 0
+    assign average_rating_display = rating_sum | times: 1.0 | divided_by: reviews_total
+  endif
+
+  assign rating_5_percent = 0
+  assign rating_4_percent = 0
+  assign rating_3_percent = 0
+  assign rating_2_percent = 0
+  assign rating_1_percent = 0
+
+  if reviews_total > 0
+    assign rating_5_percent = rating_5_count | times: 100 | divided_by: reviews_total
+    assign rating_4_percent = rating_4_count | times: 100 | divided_by: reviews_total
+    assign rating_3_percent = rating_3_count | times: 100 | divided_by: reviews_total
+    assign rating_2_percent = rating_2_count | times: 100 | divided_by: reviews_total
+    assign rating_1_percent = rating_1_count | times: 100 | divided_by: reviews_total
+  endif
+%}
+
+<section id="{{ section_id }}" class="os-reviews-section">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <div class="os-reviews-section__topline">
+        <h2 class="os-reviews-section__heading">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="os-reviews-summary">
+      <div class="os-reviews-summary__rating">
+        <div class="os-reviews-summary__score-wrap">
+          <span class="os-reviews-summary__score">{{ average_rating_display | round: 1 }}</span>
+          <span class="os-reviews-summary__score-outof">/5</span>
+        </div>
+
+        <div class="os-reviews-stars" aria-label="Average rating {{ average_rating_display | round: 1 }} out of 5">
+          {% assign rounded_rating = average_rating_display | round %}
+          {% for i in (1..5) %}
+            <span class="os-star-image {% if i <= rounded_rating %}is-filled{% endif %}">
+              <img src="{{ review_star_asset }}" alt="" loading="lazy">
+            </span>
+          {% endfor %}
+        </div>
+
+        <div class="os-reviews-summary__count">From {{ reviews_total }} reviews</div>
+      </div>
+
+      <div class="os-reviews-summary__bars">
+        <div class="os-rating-bar-row">
+          <span class="os-rating-bar-row__label">5</span>
+          <span class="os-rating-bar-row__star-image">
+            <img src="{{ review_star_asset }}" alt="" loading="lazy">
+          </span>
+          <div class="os-rating-bar">
+            <div class="os-rating-bar__fill" style="width: {{ rating_5_percent }}%;"></div>
+          </div>
+          <span class="os-rating-bar-row__value">{{ rating_5_count }}</span>
+        </div>
+
+        <div class="os-rating-bar-row">
+          <span class="os-rating-bar-row__label">4</span>
+          <span class="os-rating-bar-row__star-image">
+            <img src="{{ review_star_asset }}" alt="" loading="lazy">
+          </span>
+          <div class="os-rating-bar">
+            <div
+              class="os-rating-bar__fill"
+              style="width: {% if rating_4_count > 0 and rating_4_percent < 3 %}3{% else %}{{ rating_4_percent }}{% endif %}%;"
+            ></div>
+          </div>
+          <span class="os-rating-bar-row__value">{{ rating_4_count }}</span>
+        </div>
+
+        <div class="os-rating-bar-row">
+          <span class="os-rating-bar-row__label">3</span>
+          <span class="os-rating-bar-row__star-image">
+            <img src="{{ review_star_asset }}" alt="" loading="lazy">
+          </span>
+          <div class="os-rating-bar">
+            <div
+              class="os-rating-bar__fill"
+              style="width: {% if rating_3_count > 0 and rating_3_percent < 3 %}3{% else %}{{ rating_3_percent }}{% endif %}%;"
+            ></div>
+          </div>
+          <span class="os-rating-bar-row__value">{{ rating_3_count }}</span>
+        </div>
+
+        <div class="os-rating-bar-row">
+          <span class="os-rating-bar-row__label">2</span>
+          <span class="os-rating-bar-row__star-image">
+            <img src="{{ review_star_asset }}" alt="" loading="lazy">
+          </span>
+          <div class="os-rating-bar">
+            <div
+              class="os-rating-bar__fill"
+              style="width: {% if rating_2_count > 0 and rating_2_percent < 3 %}3{% else %}{{ rating_2_percent }}{% endif %}%;"
+            ></div>
+          </div>
+          <span class="os-rating-bar-row__value">{{ rating_2_count }}</span>
+        </div>
+
+        <div class="os-rating-bar-row">
+          <span class="os-rating-bar-row__label">1</span>
+          <span class="os-rating-bar-row__star-image">
+            <img src="{{ review_star_asset }}" alt="" loading="lazy">
+          </span>
+          <div class="os-rating-bar">
+            <div
+              class="os-rating-bar__fill"
+              style="width: {% if rating_1_count > 0 and rating_1_percent < 3 %}3{% else %}{{ rating_1_percent }}{% endif %}%;"
+            ></div>
+          </div>
+          <span class="os-rating-bar-row__value">{{ rating_1_count }}</span>
+        </div>
+      </div>
+
+      <div class="os-reviews-summary__cta">
+        <button
+          type="button"
+          class="os-reviews-write-btn"
+          data-review-toggle
+          aria-expanded="false"
+          aria-controls="ReviewForm-{{ section.id }}"
+        >
+          {{ section.settings.write_review_label }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="ReviewForm-{{ section.id }}"
+      class="os-reviews-form-wrap"
+      hidden
+    >
+      <form class="os-reviews-form" data-review-form>
+        <div class="os-reviews-form__field">
+          <label for="ReviewName-{{ section.id }}">{{ section.settings.name_label }}</label>
+          <input
+            id="ReviewName-{{ section.id }}"
+            type="text"
+            placeholder="{{ section.settings.name_placeholder }}"
+          >
+        </div>
+
+        <div class="os-reviews-form__field">
+          <label for="ReviewEmail-{{ section.id }}">{{ section.settings.email_label }}</label>
+          <input
+            id="ReviewEmail-{{ section.id }}"
+            type="email"
+            placeholder="{{ section.settings.email_placeholder }}"
+          >
+        </div>
+
+        <div class="os-reviews-form__field">
+          <label>{{ section.settings.rating_label }}</label>
+
+          <div class="os-review-rating-input" data-rating-input>
+            {% for i in (1..5) %}
+              <button
+                type="button"
+                class="os-review-rating-input__star"
+                data-value="{{ i }}"
+                aria-label="Rate {{ i }} stars"
+              >
+                <img src="{{ review_star_asset }}" alt="" loading="lazy">
+              </button>
+            {% endfor %}
+            <span class="os-review-rating-input__text" data-rating-text>0/5</span>
+          </div>
+        </div>
+
+        <div class="os-reviews-form__field os-reviews-form__field--upload">
+          <label for="ReviewImages-{{ section.id }}" class="os-upload-btn">
+            <span>⬆</span>
+            {{ section.settings.image_button_label }}
+          </label>
+          <input id="ReviewImages-{{ section.id }}" type="file" multiple accept="image/*" hidden>
+        </div>
+
+        <div class="os-reviews-form__field">
+          <textarea
+            rows="6"
+            placeholder="{{ section.settings.comment_placeholder }}"
+          ></textarea>
+        </div>
+
+        <div class="os-reviews-submit-row">
+          <button type="submit" class="os-reviews-submit-btn" data-submit-btn>
+            {{ section.settings.submit_label }}
+          </button>
+
+          <div class="os-reviews-processing" data-review-processing hidden>
+            <span class="os-reviews-processing__text">{{ section.settings.processing_text }}</span>
+
+            <span class="os-reviews-gears" aria-hidden="true">
+              <span class="os-reviews-gear os-reviews-gear--big">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M10.5 2h3l.5 2.1c.5.1 1 .3 1.5.6l1.8-1.2 2.1 2.1-1.2 1.8c.3.5.5 1 .6 1.5L22 10.5v3l-2.1.5c-.1.5-.3 1-.6 1.5l1.2 1.8-2.1 2.1-1.8-1.2c-.5.3-1 .5-1.5.6L13.5 22h-3l-.5-2.1c-.5-.1-1-.3-1.5-.6l-1.8 1.2-2.1-2.1 1.2-1.8c-.3-.5-.5-1-.6-1.5L2 13.5v-3l2.1-.5c.1-.5.3-1 .6-1.5L3.5 6.7l2.1-2.1 1.8 1.2c.5-.3 1-.5 1.5-.6L10.5 2Zm1.5 6.2A3.8 3.8 0 1 0 12 15.8a3.8 3.8 0 0 0 0-7.6Z" fill="currentColor"/>
+                </svg>
+              </span>
+
+              <span class="os-reviews-gear os-reviews-gear--small">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M10.5 2h3l.5 2.1c.5.1 1 .3 1.5.6l1.8-1.2 2.1 2.1-1.2 1.8c.3.5.5 1 .6 1.5L22 10.5v3l-2.1.5c-.1.5-.3 1-.6 1.5l1.2 1.8-2.1 2.1-1.8-1.2c-.5.3-1 .5-1.5.6L13.5 22h-3l-.5-2.1c-.5-.1-1-.3-1.5-.6l-1.8 1.2-2.1-2.1 1.2-1.8c-.3-.5-.5-1-.6-1.5L2 13.5v-3l2.1-.5c.1-.5.3-1 .6-1.5L3.5 6.7l2.1-2.1 1.8 1.2c.5-.3 1-.5 1.5-.6L10.5 2Zm1.5 6.2A3.8 3.8 0 1 0 12 15.8a3.8 3.8 0 0 0 0-7.6Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="os-reviews-success" data-review-success hidden>
+      {{ section.settings.success_message }}
+    </div>
+    <div class="os-reviews-toolbar">
+      <div class="os-reviews-sort" data-sort-dropdown>
+        <button type="button" class="os-reviews-sort__toggle" data-sort-toggle aria-expanded="false">
+          <span>{{ section.settings.sort_label }}</span>
+          <span class="os-reviews-sort__arrow" data-sort-arrow>
+            <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+              <path d="M6 2.2v7.1M6 9.3 2.8 6.1M6 9.3l3.2-3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <div class="os-reviews-sort__menu" data-sort-menu hidden>
+          <button type="button" class="os-reviews-sort__option is-active" data-sort="recent">
+            <span>{{ section.settings.option_recent }}</span>
+            <span class="os-reviews-sort__option-arrow">
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                <path d="M6 2.2v7.1M6 9.3 2.8 6.1M6 9.3l3.2-3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" class="os-reviews-sort__option" data-sort="highest">
+            <span>{{ section.settings.option_highest }}</span>
+            <span class="os-reviews-sort__option-arrow">
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                <path d="M6 2.2v7.1M6 9.3 2.8 6.1M6 9.3l3.2-3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" class="os-reviews-sort__option" data-sort="lowest">
+            <span>{{ section.settings.option_lowest }}</span>
+            <span class="os-reviews-sort__option-arrow">
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                <path d="M6 2.2v7.1M6 9.3 2.8 6.1M6 9.3l3.2-3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+
+          <button type="button" class="os-reviews-sort__option" data-sort="photos">
+            <span>{{ section.settings.option_photos }}</span>
+            <span class="os-reviews-sort__option-arrow">
+              <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                <path d="M6 2.2v7.1M6 9.3 2.8 6.1M6 9.3l3.2-3.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="os-reviews-list" data-reviews-list>
+      {% for block in section.blocks %}
+        {% if block.type == 'review' %}
+          <article
+            class="os-review-card"
+            data-review-card
+            data-rating="{{ block.settings.rating }}"
+            data-has-photo="{% if block.settings.image != blank %}true{% else %}false{% endif %}"
+            data-date="{{ block.settings.review_date | escape }}"
+            data-timestamp="{{ block.settings.review_date | date: '%s' }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="os-review-card__inner">
+              <div class="os-review-card__header">
+                <div class="os-review-card__name-line">
+                  <span class="os-review-card__name">{{ block.settings.name }}</span>
+
+                  {% if block.settings.verified %}
+                    <span class="os-review-card__verified">
+                      <span class="os-review-card__verified-text">{{ section.settings.verified_text }}</span>
+                      <span class="os-review-card__verified-icon">
+                        <img src="{{ verified_icon_asset }}" alt="" loading="lazy">
+                      </span>
+                    </span>
+                  {% endif %}
+                </div>
+
+                <div class="os-review-card__stars" aria-label="{{ block.settings.rating }} out of 5">
+                  {% for i in (1..5) %}
+                    <span class="os-star-image {% if i <= block.settings.rating %}is-filled{% endif %}">
+                      <img src="{{ review_star_asset }}" alt="" loading="lazy">
+                    </span>
+                  {% endfor %}
+                </div>
+              </div>
+
+              {% if block.settings.text != blank %}
+                <div class="os-review-card__text rte">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.image != blank %}
+                <div class="os-review-card__image">
+                  {{
+                    block.settings.image
+                    | image_url: width: 700
+                    | image_tag: loading: 'lazy', alt: block.settings.name
+                  }}
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="os-reviews-pagination" data-pagination></div>
+  </div>
+
+  <style>
+     #{{ section_id }} {
+       background: {{ section.settings.section_bg }};
+       padding-top: {{ section.settings.padding_top }}px;
+       padding-bottom: {{ section.settings.padding_bottom }}px;
+       color: {{ section.settings.text_color }};
+     }
+
+     #{{ section_id }} .page-width {
+       max-width: {{ section.settings.page_width }}px;
+     }
+
+     #{{ section_id }} .os-reviews-section__topline {
+       padding-bottom: 14px;
+       margin-bottom: 26px;
+       border-bottom: 1px solid {{ section.settings.border_color }};
+     }
+
+     #{{ section_id }} .os-reviews-section__heading {
+       margin: 0;
+       font-size: {{ section.settings.heading_size }}px;
+       line-height: 1.2;
+       font-weight: 700;
+       color: {{ section.settings.heading_color }};
+     }
+
+     #{{ section_id }} .os-reviews-summary {
+       display: grid;
+       grid-template-columns: 1.1fr 1.7fr .95fr;
+       gap: 52px;
+       align-items: center;
+       padding-bottom: 26px;
+       border-bottom: 1px solid {{ section.settings.border_color }};
+         }
+         #{{ section_id }} .os-reviews-success {
+         margin-top: 18px;
+         margin-bottom: 22px;
+         padding: 20px 22px;
+         background: #f3f3f3;
+         color: #111111;
+         border-radius: 18px;
+         font-size: 15px;
+         line-height: 1.4;
+         font-weight: 600;
+         }
+
+     #{{ section_id }} .os-reviews-summary__rating,
+     #{{ section_id }} .os-reviews-summary__bars,
+     #{{ section_id }} .os-reviews-summary__cta {
+       position: relative;
+     }
+     #{{ section_id }} .os-reviews-sort__option-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        transform: rotate(-90deg);
+        flex-shrink: 0;
+        }
+
+        #{{ section_id }} .os-reviews-sort__option-arrow svg {
+        width: 14px;
+        height: 14px;
+        display: block;
+        }
+
+     #{{ section_id }} .os-reviews-summary__rating::after,
+     #{{ section_id }} .os-reviews-summary__bars::after {
+       content: "";
+       position: absolute;
+       top: 8px;
+       right: -17px;
+       width: 1px;
+       height: calc(100% - 16px);
+       background: {{ section.settings.border_color }};
+     }
+
+     #{{ section_id }} .os-reviews-summary__score-wrap {
+       display: flex;
+       align-items: flex-start;
+       gap: 2px;
+       margin-bottom: 8px;
+     }
+
+     #{{ section_id }} .os-reviews-summary__score {
+       font-size: 68px;
+       line-height: .9;
+       font-weight: 700;
+       letter-spacing: -0.03em;
+     }
+
+     #{{ section_id }} .os-reviews-summary__score-outof {
+       font-size: 24px;
+       line-height: 1;
+       font-weight: 700;
+       margin-top: 9px;
+     }
+
+    #{{ section_id }} .os-reviews-stars {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin-bottom: 2px;
+        }
+
+    #{{ section_id }} .os-star,
+     #{{ section_id }} .os-star-image {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     line-height: 1;
+     }
+
+     #{{ section_id }} .os-star-image img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        }
+        #{{ section_id }} .os-reviews-stars .os-star-image {
+        margin-right: -2px;
+        }
+
+     #{{ section_id }} .os-star-image:not(.is-filled) img {
+     opacity: 0.28;
+     }
+
+     #{{ section_id }} .os-star.is-filled {
+       color: {{ section.settings.star_color }};
+     }
+
+     #{{ section_id }} .os-reviews-summary__count {
+       font-size: 11px;
+       margin-left: 6px;
+       color: {{ section.settings.muted_text_color }};
+       font-weight: 600;
+     }
+
+     #{{ section_id }} .os-reviews-summary__bars {
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+     }
+
+     #{{ section_id }} .os-rating-bar-row {
+       display: grid;
+       grid-template-columns: 8px 16px minmax(0, 1fr) auto;
+       align-items: center;
+       gap: 12px;
+     }
+
+    #{{ section_id }} .os-rating-bar-row__label {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+        }
+
+        #{{ section_id }} .os-rating-bar-row__star-image {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        }
+
+        #{{ section_id }} .os-rating-bar-row__star-image img {
+        display: block;
+        width: 30px;
+        height: 26px;
+        object-fit: contain;
+        }
+
+     #{{ section_id }} .os-rating-bar {
+         position: relative;
+         height: 10px;
+         border-radius: 999px;
+         background: {{ section.settings.bar_bg }};
+         overflow: hidden;
+         }
+
+     #{{ section_id }} .os-rating-bar__fill {
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         width: 0;
+         background: {{ section.settings.bar_fill }};
+         border-radius: 999px;
+         display: block;
+         }
+
+     #{{ section_id }} .os-rating-bar-row__value {
+       min-width: 48px;
+       padding: 2px 10px;
+       border: 1px solid {{ section.settings.border_soft_color }};
+       border-radius: 999px;
+       text-align: center;
+       font-size: 13px;
+       font-weight: 500;
+       line-height: 1.2;
+       background: {{ section.settings.badge_bg }};
+     }
+
+     #{{ section_id }} .os-reviews-summary__cta {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+
+     #{{ section_id }} .os-reviews-write-btn,
+     #{{ section_id }} .os-reviews-submit-btn,
+     #{{ section_id }} .os-upload-btn {
+       border: 0;
+       cursor: pointer;
+       transition: all .24s ease;
+       font: inherit;
+     }
+
+     #{{ section_id }} .os-reviews-write-btn {
+       background: {{ section.settings.button_bg }};
+       color: {{ section.settings.button_text }};
+       min-width: 170px;
+       min-height: 48px;
+       border-radius: {{ section.settings.button_radius }}px;
+       font-size: 16px;
+       font-weight: 700;
+       padding: 12px 20px;
+     }
+
+     #{{ section_id }} .os-reviews-write-btn:hover,
+     #{{ section_id }} .os-reviews-submit-btn:hover,
+     #{{ section_id }} .os-upload-btn:hover {
+       opacity: .88;
+       transform: translateY(-1px);
+     }
+
+     #{{ section_id }} .os-reviews-form-wrap {
+       overflow: hidden;
+       max-height: 0;
+       opacity: 0;
+       transition: max-height .42s ease, opacity .26s ease, padding-top .26s ease;
+       padding-top: 0;
+       border-bottom: 1px solid transparent;
+     }
+
+     #{{ section_id }} .os-reviews-form-wrap.is-open {
+       max-height: 900px;
+       opacity: 1;
+       padding-top: 28px;
+       border-bottom-color: {{ section.settings.border_color }};
+       margin-bottom: 16px;
+       padding-bottom: 28px;
+     }
+
+     #{{ section_id }} .os-reviews-form {
+       display: flex;
+       flex-direction: column;
+       gap: 14px;
+     }
+
+     #{{ section_id }} .os-reviews-form__field {
+       display: flex;
+       flex-direction: column;
+       gap: 6px;
+     }
+
+     #{{ section_id }} .os-reviews-form label {
+       font-size: 14px;
+       font-weight: 700;
+       color: {{ section.settings.text_color }};
+     }
+
+     #{{ section_id }} .os-reviews-form input,
+     #{{ section_id }} .os-reviews-form textarea {
+       width: 100%;
+       border: 1px solid {{ section.settings.input_border }};
+       background: {{ section.settings.input_bg }};
+       color: {{ section.settings.text_color }};
+       font: inherit;
+       padding: 12px 14px;
+       border-radius: 0;
+       box-shadow: none;
+     }
+
+     #{{ section_id }} .os-reviews-form input::placeholder,
+     #{{ section_id }} .os-reviews-form textarea::placeholder {
+       color: {{ section.settings.placeholder_color }};
+     }
+
+     #{{ section_id }} .os-review-rating-input {
+       display: flex;
+       align-items: center;
+       gap: 6px;
+       flex-wrap: wrap;
+     }
+
+    #{{ section_id }} .os-review-rating-input__star {
+         background: transparent;
+         border: 0;
+         padding: 0;
+         cursor: pointer;
+         line-height: 1;
+         transition: transform .2s ease, opacity .2s ease;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         }
+
+         #{{ section_id }} .os-review-rating-input__star img {
+         display: block;
+         width: 18px;
+         height: 18px;
+         object-fit: contain;
+         opacity: 0.28;
+         transition: opacity .2s ease, transform .2s ease;
+         }
+
+         #{{ section_id }} .os-review-rating-input__star.is-active img {
+         opacity: 1;
+         }
+
+         #{{ section_id }} .os-review-rating-input__star:hover {
+         transform: scale(1.06);
+         }
+
+     #{{ section_id }} .os-review-rating-input__text {
+       margin-left: 6px;
+       font-size: 14px;
+       font-weight: 600;
+       color: {{ section.settings.muted_text_color }};
+     }
+
+     #{{ section_id }} .os-reviews-form__field--upload {
+       align-items: flex-start;
+     }
+
+     #{{ section_id }} .os-upload-btn {
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       background: {{ section.settings.upload_button_bg }};
+       color: {{ section.settings.upload_button_text }};
+       padding: 10px 14px;
+       border-radius: 2px;
+       font-size: 14px;
+       font-weight: 700;
+       min-width: 165px;
+       justify-content: center;
+     }
+
+     #{{ section_id }} .os-reviews-submit-btn {
+       align-self: flex-start;
+       background: {{ section.settings.submit_bg }};
+       color: {{ section.settings.submit_text }};
+       padding: 10px 16px;
+       border-radius: {{ section.settings.submit_radius }}px;
+       font-size: 14px;
+       font-weight: 700;
+       box-shadow: inset 0 0 0 1px {{ section.settings.submit_border }};
+     }
+
+     #{{ section_id }} .os-reviews-toolbar {
+       display: flex;
+       justify-content: flex-end;
+       padding: 14px 0 26px;
+     }
+
+     #{{ section_id }} .os-reviews-sort {
+       position: relative;
+     }
+
+     #{{ section_id }} .os-reviews-sort__toggle {
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       border: 0;
+       background: transparent;
+       color: {{ section.settings.text_color }};
+       font: inherit;
+       font-size: 14px;
+       font-weight: 700;
+       cursor: pointer;
+       padding: 0;
+     }
+
+     #{{ section_id }} .os-reviews-sort__arrow {
+       width: 16px;
+       height: 16px;
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       transition: transform .22s ease;
+     }
+
+     #{{ section_id }} .os-reviews-sort.is-open .os-reviews-sort__arrow {
+       transform: rotate(180deg);
+     }
+
+     #{{ section_id }} .os-reviews-sort__arrow svg {
+       width: 16px;
+       height: 16px;
+     }
+
+     #{{ section_id }} .os-reviews-sort__menu {
+       position: absolute;
+       right: 0;
+       top: calc(100% + 12px);
+       min-width: 190px;
+       background: {{ section.settings.dropdown_bg }};
+       border-radius: {{ section.settings.dropdown_radius }}px;
+       box-shadow: 0 8px 24px rgba(0,0,0,.12);
+       padding: 10px 0;
+       z-index: 10;
+     }
+
+     #{{ section_id }} .os-reviews-sort__option {
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       gap: 16px;
+       text-align: left;
+       background: transparent;
+       border: 0;
+       padding: 10px 16px;
+       cursor: pointer;
+       font: inherit;
+       font-size: 14px;
+       font-weight: 600;
+       color: {{ section.settings.dropdown_text }};
+       transition: background .2s ease, color .2s ease;
+     }
+
+     #{{ section_id }} .os-reviews-sort__option:hover,
+     #{{ section_id }} .os-reviews-sort__option.is-active {
+       background: {{ section.settings.dropdown_hover_bg }};
+     }
+
+     #{{ section_id }} .os-reviews-sort__option-arrow {
+       opacity: .85;
+     }
+
+     #{{ section_id }} .os-reviews-list {
+       display: grid;
+       grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+       gap: {{ section.settings.card_gap }}px;
+     }
+
+     #{{ section_id }} .os-review-card {
+       display: none;
+     }
+
+     #{{ section_id }} .os-review-card.is-visible {
+       display: block;
+     }
+
+     #{{ section_id }} .os-review-card__inner {
+       background: {{ section.settings.card_bg }};
+       border-radius: {{ section.settings.card_radius }}px;
+       box-shadow: 0 2px 10px rgba(0,0,0,.08);
+       padding: 16px 16px 18px;
+       height: 100%;
+     }
+
+    #{{ section_id }} .os-review-card__name-line {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        }
+
+        #{{ section_id }} .os-review-card__name {
+        font-size: 15px;
+        line-height: 1.1;
+        font-weight: 700;
+        color: {{ section.settings.text_color }};
+        }
+
+        #{{ section_id }} .os-review-card__verified {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 600;
+        color: {{ section.settings.text_color }};
+        white-space: nowrap;
+        transform: translateY(-1px);
+        }
+
+        #{{ section_id }} .os-review-card__verified-text {
+        display: inline-block;
+        }
+
+        #{{ section_id }} .os-review-card__verified-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        #{{ section_id }} .os-review-card__verified-icon img {
+            display: block;
+            width: 8px;
+            height: 8px;
+            object-fit: contain;
+            border-radius: 5px !important;
+        }
+
+     #{{ section_id }} .os-review-card__stars {
+       display: flex;
+       gap: 2px;
+       margin-bottom: 12px;
+       margin-left: -3px;
+     }
+
+     #{{ section_id }} .os-review-card__stars .os-star-image img {
+       width: 24px;
+       margin-right: -6px;
+       height: 24px;
+     }
+
+     #{{ section_id }} .os-review-card__text {
+       font-size: 14px;
+       line-height: 1.6;
+       color: {{ section.settings.card_text_color }};
+       margin-bottom: 14px;
+       word-break: break-word;
+     }
+
+     #{{ section_id }} .os-review-card__text p {
+       margin: 0;
+     }
+
+     #{{ section_id }} .os-review-card__image {
+       border-radius: {{ section.settings.image_radius }}px;
+       overflow: hidden;
+       margin-top: auto;
+     }
+
+     #{{ section_id }} .os-review-card__image img {
+       display: block;
+       width: 100%;
+       height: auto;
+       object-fit: cover;
+     }
+
+     #{{ section_id }} .os-reviews-pagination {
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       gap: 6px;
+       padding-top: 34px;
+     }
+
+     #{{ section_id }} .os-reviews-pagination button {
+       min-width: 30px;
+       height: 30px;
+       padding: 0 8px;
+       border: 1px solid {{ section.settings.pagination_border }};
+       background: {{ section.settings.pagination_bg }};
+       color: {{ section.settings.pagination_text }};
+       font: inherit;
+       font-size: 13px;
+       cursor: pointer;
+       transition: all .2s ease;
+     }
+
+     #{{ section_id }} .os-reviews-pagination button.is-active {
+       background: {{ section.settings.pagination_active_bg }};
+       color: {{ section.settings.pagination_active_text }};
+       border-color: {{ section.settings.pagination_active_bg }};
+     }
+
+     #{{ section_id }} .os-reviews-pagination button:hover {
+       opacity: .88;
+     }
+
+     @media screen and (max-width: 989px) {
+       #{{ section_id }} .os-reviews-summary {
+         grid-template-columns: 1fr;
+         gap: 22px;
+       }
+
+       #{{ section_id }} .os-reviews-summary__rating::after,
+       #{{ section_id }} .os-reviews-summary__bars::after {
+         display: none;
+       }
+
+       #{{ section_id }} .os-reviews-summary__cta {
+         justify-content: flex-start;
+       }
+
+       #{{ section_id }} .os-reviews-list {
+         grid-template-columns: repeat({{ section.settings.columns_tablet }}, minmax(0, 1fr));
+       }
+     }
+
+     @media screen and (max-width: 749px) {
+       #{{ section_id }} {
+         padding-top: {{ section.settings.padding_top_mobile }}px;
+         padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+       }
+
+       #{{ section_id }} .os-reviews-section__heading {
+         font-size: {{ section.settings.heading_size_mobile }}px;
+       }
+
+       #{{ section_id }} .os-reviews-summary__score {
+         font-size: 52px;
+       }
+
+       #{{ section_id }} .os-reviews-summary__score-outof {
+         font-size: 20px;
+       }
+
+       #{{ section_id }} .os-reviews-toolbar {
+         justify-content: flex-start;
+       }
+
+       #{{ section_id }} .os-reviews-list {
+         grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+         gap: {{ section.settings.card_gap_mobile }}px;
+       }
+
+       #{{ section_id }} .os-review-card__inner {
+         padding: 14px 14px 16px;
+       }
+
+       #{{ section_id }} .os-reviews-write-btn {
+         min-width: 160px;
+       }
+     }
+     #{{ section_id }} .os-reviews-submit-row {
+         display: flex;
+         align-items: center;
+         gap: 14px;
+         flex-wrap: wrap;
+         }
+
+         #{{ section_id }} .os-reviews-submit-btn[disabled] {
+         opacity: 0.8;
+         cursor: not-allowed;
+         transform: none;
+         }
+
+         #{{ section_id }} .os-reviews-processing {
+         display: inline-flex;
+         align-items: center;
+         gap: 10px;
+         color: {{ section.settings.muted_text_color }};
+         font-size: 15px;
+         font-weight: 600;
+         line-height: 1;
+         }
+         #{{ section_id }} .os-reviews-processing[hidden] {
+         display: none !important;
+         }
+
+         #{{ section_id }} .os-reviews-processing__text {
+         white-space: nowrap;
+         }
+
+         #{{ section_id }} .os-reviews-gears {
+         position: relative;
+         width: 30px;
+         height: 24px;
+         display: inline-block;
+         }
+
+         #{{ section_id }} .os-reviews-gear {
+         position: absolute;
+         display: inline-flex;
+         color: #8f8a86;
+         }
+
+         #{{ section_id }} .os-reviews-gear svg {
+         display: block;
+         width: 100%;
+         height: 100%;
+         }
+
+         #{{ section_id }} .os-reviews-gear--big {
+         width: 18px;
+         height: 18px;
+         top: 0;
+         left: 10px;
+         animation: osGearSpinBig 1.2s linear infinite;
+         }
+
+         #{{ section_id }} .os-reviews-gear--small {
+         width: 14px;
+         height: 14px;
+         bottom: 0;
+         left: 0;
+         animation: osGearSpinSmall 1.2s linear infinite;
+         }
+
+         @keyframes osGearSpinBig {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+
+         @keyframes osGearSpinSmall {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(-360deg); }
+         }
+  </style>
+
+  <script>
+    (() => {
+      const section = document.getElementById('{{ section_id }}');
+      if (!section) return;
+
+      const reviewToggle = section.querySelector('[data-review-toggle]');
+      const reviewFormWrap = section.querySelector('.os-reviews-form-wrap');
+      const reviewForm = section.querySelector('[data-review-form]');
+      const successMessage = section.querySelector('[data-review-success]');
+      const submitBtn = section.querySelector('[data-submit-btn]');
+      const processingBox = section.querySelector('[data-review-processing]');
+      const processingDelay = {{ section.settings.processing_seconds | times: 1000 | json }};
+
+      if (reviewToggle && reviewFormWrap) {
+        reviewToggle.addEventListener('click', () => {
+          const isOpen = reviewFormWrap.classList.contains('is-open');
+
+          if (isOpen) {
+            reviewFormWrap.classList.remove('is-open');
+            reviewToggle.setAttribute('aria-expanded', 'false');
+
+            setTimeout(() => {
+              reviewFormWrap.hidden = true;
+            }, 420);
+          } else {
+            reviewFormWrap.hidden = false;
+            requestAnimationFrame(() => {
+              reviewFormWrap.classList.add('is-open');
+              reviewToggle.setAttribute('aria-expanded', 'true');
+            });
+          }
+        });
+      }
+
+      const ratingWrap = section.querySelector('[data-rating-input]');
+      if (ratingWrap) {
+        const stars = ratingWrap.querySelectorAll('.os-review-rating-input__star');
+        const text = ratingWrap.querySelector('[data-rating-text]');
+        let selected = 0;
+
+       const paintStars = (value) => {
+        stars.forEach((star, index) => {
+            star.classList.toggle('is-active', index < value);
+        });
+        if (text) text.textContent = `${value}/5`;
+        };
+
+        stars.forEach((star) => {
+          star.addEventListener('mouseenter', () => {
+            paintStars(Number(star.dataset.value));
+          });
+
+          star.addEventListener('click', () => {
+            selected = Number(star.dataset.value);
+            paintStars(selected);
+          });
+        });
+
+        ratingWrap.addEventListener('mouseleave', () => {
+          paintStars(selected);
+        });
+      }
+      if (reviewForm && reviewFormWrap) {
+        reviewForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (submitBtn) {
+            submitBtn.disabled = true;
+            }
+
+            if (processingBox) {
+            processingBox.hidden = false;
+            }
+
+            setTimeout(() => {
+            if (successMessage) {
+                successMessage.hidden = false;
+            }
+
+            reviewFormWrap.classList.remove('is-open');
+
+            if (reviewToggle) {
+                reviewToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            setTimeout(() => {
+                reviewFormWrap.hidden = true;
+                reviewForm.reset();
+
+                const stars = section.querySelectorAll('.os-review-rating-input__star');
+                const ratingText = section.querySelector('[data-rating-text]');
+
+              if (stars.length) {
+                stars.forEach((star) => {
+                    star.classList.remove('is-active');
+                });
+                }
+
+                if (ratingText) {
+                ratingText.textContent = '0/5';
+                }
+
+                if (processingBox) {
+                processingBox.hidden = true;
+                }
+
+                if (submitBtn) {
+                submitBtn.disabled = false;
+                }
+
+                if (successMessage) {
+                successMessage.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+                }
+            }, 420);
+            }, processingDelay);
+        });
+        }
+
+      const dropdown = section.querySelector('[data-sort-dropdown]');
+      const dropdownToggle = section.querySelector('[data-sort-toggle]');
+      const dropdownMenu = section.querySelector('[data-sort-menu]');
+      const sortOptions = section.querySelectorAll('.os-reviews-sort__option');
+      const reviewsList = section.querySelector('[data-reviews-list]');
+      const reviewCards = Array.from(section.querySelectorAll('[data-review-card]'));
+      const pagination = section.querySelector('[data-pagination]');
+      const perPage = {{ reviews_per_page | json }};
+
+      let currentSort = 'recent';
+      let currentPage = 1;
+
+      function getSortedCards() {
+        const cards = [...reviewCards];
+
+        if (currentSort === 'highest') {
+          cards.sort((a, b) => Number(b.dataset.rating) - Number(a.dataset.rating));
+        } else if (currentSort === 'lowest') {
+          cards.sort((a, b) => Number(a.dataset.rating) - Number(b.dataset.rating));
+        } else if (currentSort === 'photos') {
+          return cards.filter(card => card.dataset.hasPhoto === 'true');
+        } else {
+          cards.sort((a, b) => Number(b.dataset.timestamp || 0) - Number(a.dataset.timestamp || 0));
+        }
+
+        return cards;
+      }
+
+      function renderPagination(totalPages) {
+        if (!pagination) return;
+        pagination.innerHTML = '';
+
+        if (totalPages <= 1) return;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.type = 'button';
+        prevBtn.textContent = '«';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderReviews();
+          }
+        });
+        pagination.appendChild(prevBtn);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = i;
+          if (i === currentPage) btn.classList.add('is-active');
+
+          btn.addEventListener('click', () => {
+            currentPage = i;
+            renderReviews();
+          });
+
+          pagination.appendChild(btn);
+        }
+
+        const nextBtn = document.createElement('button');
+        nextBtn.type = 'button';
+        nextBtn.textContent = '»';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderReviews();
+          }
+        });
+        pagination.appendChild(nextBtn);
+      }
+
+      function renderReviews() {
+        const sorted = getSortedCards();
+
+        reviewCards.forEach(card => {
+          card.classList.remove('is-visible');
+        });
+
+        if (!sorted.length) {
+          if (pagination) pagination.innerHTML = '';
+          return;
+        }
+
+        sorted.forEach(card => reviewsList.appendChild(card));
+
+        const totalPages = Math.ceil(sorted.length / perPage);
+        if (currentPage > totalPages) currentPage = 1;
+
+        const start = (currentPage - 1) * perPage;
+        const end = start + perPage;
+
+        sorted.slice(start, end).forEach(card => {
+          card.classList.add('is-visible');
+        });
+
+        renderPagination(totalPages);
+      }
+
+      if (dropdown && dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', () => {
+          const isOpen = dropdown.classList.contains('is-open');
+          dropdown.classList.toggle('is-open', !isOpen);
+          dropdownToggle.setAttribute('aria-expanded', String(!isOpen));
+          dropdownMenu.hidden = isOpen;
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('is-open');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+            dropdownMenu.hidden = true;
+          }
+        });
+
+        sortOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            sortOptions.forEach(opt => opt.classList.remove('is-active'));
+            option.classList.add('is-active');
+
+            currentSort = option.dataset.sort;
+            currentPage = 1;
+            renderReviews();
+
+            dropdown.classList.remove('is-open');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+            dropdownMenu.hidden = true;
+          });
+        });
+      }
+
+      renderReviews();
+    })();
+  </script>
+
+  {% schema %}
+{
+  "name": "OS Customer Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Customer Reviews"
+    },
+    {
+      "type": "range",
+      "id": "average_rating",
+      "label": "Rating promedio",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.8
+    },
+    {
+      "type": "text",
+      "id": "reviews_count_text",
+      "label": "Texto cantidad reseñas",
+      "default": "From 21,099 reviews"
+    },
+    {
+      "type": "text",
+      "id": "write_review_label",
+      "label": "Texto botón escribir reseña",
+      "default": "Write A Review"
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "Texto verificado",
+      "default": "Verified"
+    },
+    {
+      "type": "text",
+      "id": "sort_label",
+      "label": "Texto ordenar",
+      "default": "Sort"
+    },
+    {
+      "type": "text",
+      "id": "option_recent",
+      "label": "Opción más reciente",
+      "default": "Most Recent"
+    },
+    {
+      "type": "text",
+      "id": "option_highest",
+      "label": "Opción mayor rating",
+      "default": "Highest Rating"
+    },
+    {
+      "type": "text",
+      "id": "option_lowest",
+      "label": "Opción menor rating",
+      "default": "Lowest Rating"
+    },
+    {
+      "type": "text",
+      "id": "option_photos",
+      "label": "Opción con fotos",
+      "default": "With Photos"
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Label nombre",
+      "default": "Your name*"
+    },
+    {
+      "type": "text",
+      "id": "name_placeholder",
+      "label": "Placeholder nombre",
+      "default": "Your Name"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Label email",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Placeholder email",
+      "default": "Your Email"
+    },
+    {
+      "type": "text",
+      "id": "rating_label",
+      "label": "Label rating",
+      "default": "Your rating"
+    },
+    {
+      "type": "text",
+      "id": "image_button_label",
+      "label": "Texto subir imágenes",
+      "default": "Choose Images"
+    },
+    {
+      "type": "text",
+      "id": "comment_placeholder",
+      "label": "Placeholder comentario",
+      "default": "Enter Your Comment"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Texto botón enviar",
+      "default": "Send Review"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Mensaje de éxito",
+      "default": "Your comment has been inserted successfully"
+    },
+    {
+      "type": "range",
+      "id": "reviews_per_page",
+      "label": "Reseñas por página",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "processing_text",
+      "label": "Texto processing",
+      "default": "Processing..."
+    },
+    {
+      "type": "range",
+      "id": "processing_seconds",
+      "label": "Duración processing (segundos)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "page_width",
+      "label": "Ancho máximo",
+      "min": 900,
+      "max": 1600,
+      "step": 10,
+      "default": 1340
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño título desktop",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Tamaño título móvil",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columnas desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columnas tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columnas móvil",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 columna"
+        },
+        {
+          "value": "2",
+          "label": "2 columnas"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espacio entre cards desktop",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "label": "Espacio entre cards móvil",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Radio card",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio imagen",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Radio botón escribir",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "submit_radius",
+      "label": "Radio botón enviar",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "dropdown_radius",
+      "label": "Radio dropdown",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding superior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding inferior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding superior móvil",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding inferior móvil",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#efefef"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color título",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto principal",
+      "default": "#1f1f1f"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Color texto card",
+      "default": "#2a2a2a"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Color texto secundario",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color borde principal",
+      "default": "#d8d8d8"
+    },
+    {
+      "type": "color",
+      "id": "border_soft_color",
+      "label": "Color borde suave",
+      "default": "#dddddd"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Color estrellas activas",
+      "default": "#1f1f1f"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Color estrellas vacías",
+      "default": "#8d8d8d"
+    },
+    {
+      "type": "color",
+      "id": "bar_bg",
+      "label": "Color fondo barras",
+      "default": "#d6d6d6"
+    },
+    {
+      "type": "color",
+      "id": "bar_fill",
+      "label": "Color relleno barras",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fondo contador barra",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fondo botón escribir",
+      "default": "#3e3e3e"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Texto botón escribir",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fondo card reseña",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Color verificado",
+      "default": "#5fb45f"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Fondo inputs",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "color",
+      "id": "input_border",
+      "label": "Borde inputs",
+      "default": "#c9c9c9"
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Color placeholders",
+      "default": "#a1a1a1"
+    },
+    {
+      "type": "color",
+      "id": "upload_button_bg",
+      "label": "Fondo botón subir",
+      "default": "#5a5a5a"
+    },
+    {
+      "type": "color",
+      "id": "upload_button_text",
+      "label": "Texto botón subir",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "submit_bg",
+      "label": "Fondo botón enviar",
+      "default": "#5c5c5c"
+    },
+    {
+      "type": "color",
+      "id": "submit_text",
+      "label": "Texto botón enviar",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "submit_border",
+      "label": "Borde botón enviar",
+      "default": "#c12cff"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_bg",
+      "label": "Fondo dropdown",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_text",
+      "label": "Texto dropdown",
+      "default": "#1f1f1f"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_hover_bg",
+      "label": "Hover dropdown",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "pagination_bg",
+      "label": "Fondo paginación",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "pagination_text",
+      "label": "Texto paginación",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "pagination_border",
+      "label": "Borde paginación",
+      "default": "#dddddd"
+    },
+    {
+      "type": "color",
+      "id": "pagination_active_bg",
+      "label": "Fondo paginación activa",
+      "default": "#dfe5eb"
+    },
+    {
+      "type": "color",
+      "id": "pagination_active_text",
+      "label": "Texto paginación activa",
+      "default": "#1f1f1f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Noa B"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verificado",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto reseña",
+          "default": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "review_date",
+          "label": "Fecha (formato YYYY-MM-DD)",
+          "default": "2026-03-24"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Customer Reviews",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" }
+      ]
+    }
+  ]
+}
+  {% endschema %}
+</section>

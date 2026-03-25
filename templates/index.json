@@ -369,11 +369,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 240,
         "image_width_mobile": 300,
-<<<<<<< HEAD
-=======
         "image_offset_top_mobile": -30,
->>>>>>> 485fe962843bb7131312fd4c8d3523f5f9cc36a4
-        "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 13,
         "swatches_heading_size_mobile": 12,
@@ -587,11 +583,7 @@
         "text_size_desktop": 16,
         "mobile_media_height": 312,
         "image_width_mobile": 400,
-<<<<<<< HEAD
-=======
         "image_offset_top_mobile": -30,
->>>>>>> 485fe962843bb7131312fd4c8d3523f5f9cc36a4
-        "heading_size_mobile": 32,
         "text_size_mobile": 15,
         "swatches_heading_size": 17,
         "swatches_heading_size_mobile": 12,
