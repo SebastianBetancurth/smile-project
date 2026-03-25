@@ -1,7 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "os_footer_obsessive_YJBN4w": {
+      "type": "os-footer-obsessive",
+      "blocks": {
+        "menu_column_JP3RKT": {
+          "type": "menu_column",
+          "settings": {
+            "heading": "¿Necesitas ayuda?",
+            "menu": "ayuda"
+          }
+        },
+        "menu_column_CKmEKH": {
+          "type": "menu_column",
+          "settings": {
+            "heading": "Políticas",
+            "menu": "pol-ticas"
+          }
+        },
+        "social_column_9yJpWr": {
+          "type": "social_column",
+          "settings": {
+            "heading": "Síguenos",
+            "instagram_label": "Instagram",
+            "instagram_link": "",
+            "facebook_label": "Facebook",
+            "facebook_link": "",
+            "youtube_label": "Youtube",
+            "youtube_link": "",
+            "tiktok_label": "Tiktok",
+            "tiktok_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_column_JP3RKT",
+        "menu_column_CKmEKH",
+        "social_column_9yJpWr"
+      ],
+      "name": "OS Footer Obsessive",
+      "settings": {
+        "page_width": 1260,
+        "top_follow_text": "¿Todavía no nos sigues?",
+        "top_follow_handle": "@obsessive.smiles",
+        "top_follow_link": "",
+        "newsletter_heading": "Acceso exclusivo a nuevos productos",
+        "newsletter_text": "<p>Suscríbete para recibir novedades, ofertas especiales y la posibilidad de probar productos antes que nadie.</p>",
+        "newsletter_placeholder": "Correo electrónico",
+        "newsletter_button_aria": "Enviar",
+        "success_message": "Gracias por suscribirte.",
+        "show_payment_icons": true,
+        "show_country_selector": true,
+        "show_language_selector": true,
+        "rights_text": "Todos los derechos reservados",
+        "copyright_text": "© 2026, OBSESSIVE. Todos los derechos reservados",
+        "address_text": "Polígono Azasol, Calle Perú 8, Las Rozas de Madrid, Madrid, 28290",
+        "section_bg": "#fafafc",
+        "text_color": "#111111",
+        "muted_color": "#636366",
+        "newsletter_bg": "#121318",
+        "newsletter_text_color": "#ffffff",
+        "input_bg": "#f1f1f3",
+        "input_text": "#1a1a1a",
+        "input_placeholder_color": "#7f7f85",
+        "bottom_bg": "#f2f2f7",
+        "top_spacing": 52,
+        "bottom_spacing": 20,
+        "newsletter_radius": 0,
+        "newsletter_padding_y": 54,
+        "newsletter_padding_x": 84,
+        "newsletter_title_size": 26,
+        "newsletter_title_size_mobile": 28,
+        "newsletter_text_size": 15,
+        "menu_title_size": 18,
+        "menu_link_size": 13,
+        "small_text_size": 12
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -23,7 +108,7 @@
           "type": "text",
           "settings": {
             "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
         }
       },
@@ -32,10 +117,12 @@
         "footer-1",
         "footer-2"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -48,6 +135,7 @@
     }
   },
   "order": [
+    "os_footer_obsessive_YJBN4w",
     "footer"
   ]
 }
