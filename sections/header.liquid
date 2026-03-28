@@ -389,20 +389,7 @@
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        <span class="svg-wrapper obsessive-cart-icon" aria-hidden="true">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M3 4h2l2.2 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H7" />
-            <circle cx="10" cy="19" r="1.2" fill="currentColor" stroke="none" />
-            <circle cx="17" cy="19" r="1.2" fill="currentColor" stroke="none" />
-          </svg>
-        </span>
+        {% render 'custom-cart-icon' %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">

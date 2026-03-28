@@ -37,6 +37,16 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+    @media screen and (max-width: 749px) {
+       .os-pdp-right__eyebrow,
+        .os-pdp-right__panel--offer,
+        .os-pdp-feature-icons,
+        .os-pdp-description-tabs {
+          width: var(--os-mobile-width, 100%);
+          max-width: var(--os-mobile-width, 100%);
+          margin: var(--os-mobile-margin, 0 auto);
+        }
+      }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -78,6 +88,8 @@
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
+
+      <div class="os-pdp-mobile-after-media" data-mobile-after-media></div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
           id="ProductInfo-{{ section.id }}"
@@ -121,17 +133,32 @@
                     {{ block.shopify_attributes }}
                     style="
                       --os-dt-bg: {{ block.settings.block_bg }};
+                      --os-dt-bg-mobile: {{ block.settings.block_bg_mobile }};
                       --os-dt-border: {{ block.settings.border_color }};
+                      --os-dt-border-mobile: {{ block.settings.border_color_mobile }};
                       --os-dt-radius: {{ block.settings.border_radius }}px;
                       --os-dt-padding-x: {{ block.settings.padding_x }}px;
                       --os-dt-padding-y: {{ block.settings.padding_y }}px;
                       --os-dt-heading-color: {{ block.settings.heading_color }};
+                      --os-dt-heading-color-mobile: {{ block.settings.heading_color_mobile }};
                       --os-dt-text-color: {{ block.settings.text_color }};
+                      --os-dt-text-color-mobile: {{ block.settings.text_color_mobile }};
+                      --os-dt-row-title-color: {{ block.settings.row_title_color }};
+                      --os-dt-row-title-color-mobile: {{ block.settings.row_title_color_mobile }};
                       --os-dt-title-size: {{ block.settings.title_size }}px;
                       --os-dt-text-size: {{ block.settings.text_size }}px;
                       --os-dt-row-title-size: {{ block.settings.row_title_size }}px;
                       --os-dt-margin-top: {{ block.settings.block_margin_top }}px;
                       --os-dt-margin-bottom: {{ block.settings.block_margin_bottom }}px;
+                      --os-mobile-width: {{ block.settings.mobile_width }}%;
+                          {% case block.settings.mobile_align %}
+                            {% when 'left' %}
+                              --os-mobile-margin: 0 auto 0 0;
+                            {% when 'right' %}
+                              --os-mobile-margin: 0 0 0 auto;
+                            {% else %}
+                              --os-mobile-margin: 0 auto;
+                          {% endcase %}
                     "
                   >
                     {% if product.description != blank %}
@@ -245,7 +272,18 @@
                       class="os-pdp-right__eyebrow"
                       {{ block.shopify_attributes }}
                       style="
-                        color: {{ block.settings.text_color }};
+                        --os-eyebrow-text-color: {{ block.settings.text_color }};
+                        --os-eyebrow-text-color-mobile: {{ block.settings.text_color_mobile }};
+                        --os-mobile-width: {{ block.settings.mobile_width }}%;
+                        {% case block.settings.mobile_align %}
+                          {% when 'left' %}
+                            --os-mobile-margin: 0 auto 0 0;
+                          {% when 'right' %}
+                            --os-mobile-margin: 0 0 0 auto;
+                          {% else %}
+                            --os-mobile-margin: 0 auto;
+                        {% endcase %}
+                        color: var(--os-eyebrow-text-color);
                         letter-spacing: {{ block.settings.letter_spacing }}px;
                         margin-bottom: {{ block.settings.margin_bottom }}px;
                         {% if block.settings.uppercase %}text-transform: uppercase;{% endif %}
@@ -265,7 +303,9 @@
                     {{ block.shopify_attributes }}
                     style="
                       --os-fi-bg: {{ block.settings.block_bg }};
+                      --os-fi-bg-mobile: {{ block.settings.block_bg_mobile }};
                       --os-fi-border: {{ block.settings.border_color }};
+                      --os-fi-border-mobile: {{ block.settings.border_color_mobile }};
                       --os-fi-radius: {{ block.settings.border_radius }}px;
                       --os-fi-padding-x: {{ block.settings.padding_x }}px;
                       --os-fi-padding-y: {{ block.settings.padding_y }}px;
@@ -274,9 +314,20 @@
                       --os-fi-title-size: {{ block.settings.title_size }}px;
                       --os-fi-text-size: {{ block.settings.text_size }}px;
                       --os-fi-title-color: {{ block.settings.title_color }};
+                      --os-fi-title-color-mobile: {{ block.settings.title_color_mobile }};
                       --os-fi-text-color: {{ block.settings.text_color }};
+                      --os-fi-text-color-mobile: {{ block.settings.text_color_mobile }};
                       --os-fi-margin-top: {{ block.settings.block_margin_top }}px;
                       --os-fi-margin-bottom: {{ block.settings.block_margin_bottom }}px;
+                      --os-mobile-width: {{ block.settings.mobile_width }}%;
+                      {% case block.settings.mobile_align %}
+                        {% when 'left' %}
+                          --os-mobile-margin: 0 auto 0 0;
+                        {% when 'right' %}
+                          --os-mobile-margin: 0 0 0 auto;
+                        {% else %}
+                          --os-mobile-margin: 0 auto;
+                      {% endcase %}
                     "
                   >
                     <div class="os-pdp-feature-icons__grid">
@@ -329,10 +380,36 @@
                     {{ block.shopify_attributes }}
                     style="
                       --os-offer-panel-bg: {{ block.settings.offer_panel_bg }};
+                      --os-offer-panel-bg-mobile: {{ block.settings.offer_panel_bg_mobile }};
                       --os-offer-card-bg: {{ block.settings.card_bg }};
+                      --os-offer-card-bg-mobile: {{ block.settings.card_bg_mobile }};
                       --os-offer-card-active-bg: {{ block.settings.card_active_bg }};
+                      --os-offer-card-active-bg-mobile: {{ block.settings.card_active_bg_mobile }};
                       --os-offer-card-border: {{ block.settings.card_border_color }};
+                      --os-offer-card-border-mobile: {{ block.settings.card_border_color_mobile }};
                       --os-offer-card-active-border: {{ block.settings.card_active_border_color }};
+                      --os-offer-card-active-border-mobile: {{ block.settings.card_active_border_color_mobile }};
+                      --os-offer-heading-color: {{ block.settings.heading_color }};
+                      --os-offer-heading-color-mobile: {{ block.settings.heading_color_mobile }};
+                      --os-offer-price-color: {{ block.settings.price_color }};
+                      --os-offer-price-color-mobile: {{ block.settings.price_color_mobile }};
+                      --os-offer-compare-color: {{ block.settings.compare_color }};
+                      --os-offer-compare-color-mobile: {{ block.settings.compare_color_mobile }};
+                      --os-offer-badge-color: {{ block.settings.badge_color }};
+                      --os-offer-badge-color-mobile: {{ block.settings.badge_color_mobile }};
+                      --os-offer-label-color: {{ block.settings.label_color }};
+                      --os-offer-label-color-mobile: {{ block.settings.label_color_mobile }};
+                      --os-offer-text-color: {{ block.settings.text_color }};
+                      --os-offer-text-color-mobile: {{ block.settings.text_color_mobile }};
+                      --os-mobile-width: {{ block.settings.mobile_width }}%;
+                        {% case block.settings.mobile_align %}
+                          {% when 'left' %}
+                            --os-mobile-margin: 0 auto 0 0;
+                          {% when 'right' %}
+                            --os-mobile-margin: 0 0 0 auto;
+                          {% else %}
+                            --os-mobile-margin: 0 auto;
+                        {% endcase %}
                     "
                   >
                     {% if price_block %}
@@ -638,60 +715,78 @@
 
     wrappers.forEach((wrapper) => {
       const cards = wrapper.querySelectorAll('[data-purchase-card]');
-      const productContainer = wrapper.closest('.product__info-container');
-      if (!productContainer) return;
+      const productRoot = wrapper.closest('.product');
+      if (!productRoot || !cards.length) return;
 
-      const priceCurrent = productContainer.querySelector('[data-custom-price-current]');
-      const priceCompare = productContainer.querySelector('[data-custom-price-compare]');
-      const priceBadge = productContainer.querySelector('[data-custom-price-badge]');
-      const priceBadgeValue = productContainer.querySelector('[data-custom-price-badge-value]');
-      const variantWrapper = productContainer.querySelector('.os-pdp-right__variants--hidden');
+      const variantWrapper = productRoot.querySelector('.os-pdp-right__variants--hidden');
+      const hiddenPurchaseInput = productRoot.querySelector('[data-purchase-hidden-input]');
 
       const productSection = wrapper.closest('.shopify-section');
       const productForm = productSection ? productSection.querySelector('form[action*="/cart/add"]') : null;
       const variantIdInputs = productForm ? productForm.querySelectorAll('input[name="id"]') : [];
       const addToCartBtn = productForm ? productForm.querySelector('[name="add"]') : null;
 
+      function getPriceNodes() {
+        return {
+          currents: productRoot.querySelectorAll('[data-custom-price-current]'),
+          compares: productRoot.querySelectorAll('[data-custom-price-compare]'),
+          badges: productRoot.querySelectorAll('[data-custom-price-badge]'),
+          badgeValues: productRoot.querySelectorAll('[data-custom-price-badge-value]'),
+        };
+      }
+
       function moneyToNumber(value) {
         if (!value) return null;
+
         const cleaned = value
           .replace(/[^\d,.-]/g, '')
           .replace(/\./g, '')
           .replace(',', '.');
+
         const num = parseFloat(cleaned);
         return isNaN(num) ? null : num;
       }
 
-      function updateTopPrice(card) {
-        if (!priceCurrent) return;
+      function updateAllPrices(card) {
+        const { currents, compares, badges, badgeValues } = getPriceNodes();
+        if (!currents.length) return;
 
         const current = card.getAttribute('data-price') || '';
         const compare = card.getAttribute('data-compare') || '';
 
-        priceCurrent.textContent = current;
+        currents.forEach((node) => {
+          node.textContent = current;
+        });
 
-        if (priceCompare) {
+        compares.forEach((node) => {
           if (compare) {
-            priceCompare.textContent = compare;
-            priceCompare.classList.remove('is-hidden');
+            node.textContent = compare;
+            node.classList.remove('is-hidden');
           } else {
-            priceCompare.textContent = '';
-            priceCompare.classList.add('is-hidden');
+            node.textContent = '';
+            node.classList.add('is-hidden');
           }
+        });
+
+        const currentNum = moneyToNumber(current);
+        const compareNum = moneyToNumber(compare);
+        let percent = 0;
+
+        if (currentNum && compareNum && compareNum > currentNum) {
+          percent = Math.round(((compareNum - currentNum) * 100) / compareNum);
         }
 
-        if (priceBadge && priceBadgeValue) {
-          const currentNum = moneyToNumber(current);
-          const compareNum = moneyToNumber(compare);
-
-          if (currentNum && compareNum && compareNum > currentNum) {
-            const percent = Math.round(((compareNum - currentNum) * 100) / compareNum);
-            priceBadgeValue.textContent = percent + '%';
-            priceBadge.classList.remove('is-hidden');
+        badges.forEach((badge) => {
+          if (percent > 0) {
+            badge.classList.remove('is-hidden');
           } else {
-            priceBadge.classList.add('is-hidden');
+            badge.classList.add('is-hidden');
           }
-        }
+        });
+
+        badgeValues.forEach((node) => {
+          node.textContent = percent > 0 ? ' ' + percent + '%' : '';
+        });
       }
 
       function syncNativeVariant(value) {
@@ -732,6 +827,13 @@
         }
       }
 
+      function setHiddenPurchaseValue(card) {
+        if (!hiddenPurchaseInput) return;
+
+        const optionValue = card.getAttribute('data-option-value') || '';
+        hiddenPurchaseInput.value = optionValue;
+      }
+
       function setActiveCard(activeCard, syncNative = true) {
         cards.forEach((card) => {
           const isActive = card === activeCard;
@@ -740,7 +842,8 @@
           card.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         });
 
-        updateTopPrice(activeCard);
+        updateAllPrices(activeCard);
+        setHiddenPurchaseValue(activeCard);
 
         const variantId = activeCard.getAttribute('data-variant-id');
         const optionValue = activeCard.getAttribute('data-option-value');
@@ -783,13 +886,78 @@
 
           const matchingCard = wrapper.querySelector('[data-option-value="' + CSS.escape(selectedValue) + '"]');
           if (matchingCard) {
-            const variantId = matchingCard.getAttribute('data-variant-id');
-            if (variantId) syncFormVariantId(variantId);
             setActiveCard(matchingCard, false);
           }
         });
       }
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileBreakpoint = window.matchMedia('(max-width: 749px)');
+
+    function moveProductBlocksMobile() {
+      document.querySelectorAll('.product').forEach((product) => {
+        const afterMediaSlot = product.querySelector('[data-mobile-after-media]');
+        const rightCol = product.querySelector('.os-pdp-right');
+        const offerPanel = product.querySelector('.os-pdp-right__panel--offer');
+
+        if (!afterMediaSlot || !rightCol || !offerPanel) return;
+
+        if (mobileBreakpoint.matches) {
+          if (!product.dataset.mobileReordered) {
+            const children = Array.from(rightCol.children);
+            const offerIndex = children.indexOf(offerPanel);
+
+            if (offerIndex !== -1) {
+              const nodesToMove = children.slice(offerIndex);
+
+              afterMediaSlot.classList.add('os-pdp-right', 'os-pdp-mobile-after-media--styled');
+
+              const rightColInlineStyle = rightCol.getAttribute('style');
+              if (rightColInlineStyle) {
+                afterMediaSlot.setAttribute('style', rightColInlineStyle);
+              }
+
+              nodesToMove.forEach((node) => {
+                afterMediaSlot.appendChild(node);
+              });
+            }
+
+            const originalPrice = afterMediaSlot.querySelector('.os-pdp-right__price-wrap');
+
+            if (originalPrice && !rightCol.querySelector('.os-pdp-mobile-price-duplicate')) {
+              const clonedPrice = originalPrice.cloneNode(true);
+              clonedPrice.classList.add('os-pdp-mobile-price-duplicate');
+              rightCol.appendChild(clonedPrice);
+            }
+
+            product.dataset.mobileReordered = 'true';
+          }
+        } else {
+          if (product.dataset.mobileReordered === 'true') {
+            const movedNodes = Array.from(afterMediaSlot.children);
+
+            movedNodes.forEach((node) => {
+              rightCol.appendChild(node);
+            });
+
+            const duplicatedPrice = rightCol.querySelector('.os-pdp-mobile-price-duplicate');
+            if (duplicatedPrice) duplicatedPrice.remove();
+
+            afterMediaSlot.classList.remove('os-pdp-right', 'os-pdp-mobile-after-media--styled');
+            afterMediaSlot.removeAttribute('style');
+
+            delete product.dataset.mobileReordered;
+          }
+        }
+      });
+    }
+
+    moveProductBlocksMobile();
+    window.addEventListener('resize', moveProductBlocksMobile);
   });
 </script>
 
@@ -929,6 +1097,62 @@
         }
       });
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function initMobileMediaProgress() {
+      if (window.innerWidth > 749) return;
+
+      document.querySelectorAll('.product').forEach((product) => {
+        const mediaWrapper = product.querySelector('.product__media-wrapper');
+        const mediaList = product.querySelector('.product__media-list.slider');
+
+        if (!mediaWrapper || !mediaList) return;
+
+        const slides = Array.from(mediaList.querySelectorAll('.product__media-item'));
+        if (slides.length < 2) return;
+
+        const progress = document.createElement('div');
+        progress.className = 'os-pdp-mobile-progress';
+
+        const track = document.createElement('div');
+        track.className = 'os-pdp-mobile-progress__track';
+
+        const bar = document.createElement('span');
+        bar.className = 'os-pdp-mobile-progress__bar';
+
+        track.appendChild(bar);
+        progress.appendChild(track);
+        mediaWrapper.appendChild(progress);
+
+        function updateProgress() {
+          const maxScroll = mediaList.scrollWidth - mediaList.clientWidth;
+
+          if (maxScroll <= 0) {
+            bar.style.width = '100%';
+            bar.style.transform = 'translateX(0)';
+            return;
+          }
+
+          const ratioVisible = mediaList.clientWidth / mediaList.scrollWidth;
+          const barWidth = Math.max(ratioVisible * 100, 18);
+          const progressRatio = mediaList.scrollLeft / maxScroll;
+          const maxTranslate = 100 - barWidth;
+          const translate = progressRatio * maxTranslate;
+
+          bar.style.width = barWidth + '%';
+          bar.style.transform = 'translateX(' + translate + '%)';
+        }
+
+        updateProgress();
+        mediaList.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+      });
+    }
+
+    initMobileMediaProgress();
   });
 </script>
 
@@ -1133,6 +1357,42 @@
           "default": "#555555"
         },
         {
+          "type": "color",
+          "id": "block_bg_mobile",
+          "label": "Fondo bloque móvil",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "border_color_mobile",
+          "label": "Color borde móvil",
+          "default": "#e4e4e4"
+        },
+        {
+          "type": "color",
+          "id": "heading_color_mobile",
+          "label": "Color descripción móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "row_title_color",
+          "label": "Color títulos tabs",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "row_title_color_mobile",
+          "label": "Color títulos tabs móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Color contenido móvil",
+          "default": "#666666"
+        },
+        {
           "type": "range",
           "id": "border_radius",
           "min": 0,
@@ -1299,6 +1559,31 @@
           "id": "tab_content_7",
           "label": "Contenido tab 7",
           "default": "<p></p>"
+        },
+        {
+          "type": "header",
+          "content": "Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Ancho móvil",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "mobile_align",
+          "label": "Alineación ancho móvil",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "center", "label": "Centro" },
+            { "value": "right", "label": "Derecha" }
+          ]
         }
       ]
     },
@@ -1318,6 +1603,12 @@
           "type": "color",
           "id": "text_color",
           "label": "Color texto",
+          "default": "#5c5c5c"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Color texto móvil",
           "default": "#5c5c5c"
         },
         {
@@ -1344,6 +1635,31 @@
           "unit": "px",
           "label": "Margen inferior",
           "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Ancho móvil",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "mobile_align",
+          "label": "Alineación ancho móvil",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "center", "label": "Centro" },
+            { "value": "right", "label": "Derecha" }
+          ]
         }
       ]
     },
@@ -1437,6 +1753,108 @@
           "default": "#000000"
         },
         {
+          "type": "color",
+          "id": "offer_panel_bg_mobile",
+          "label": "Fondo panel móvil",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "card_bg_mobile",
+          "label": "Fondo card móvil",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "card_active_bg_mobile",
+          "label": "Fondo card activa móvil",
+          "default": "#f8f8f8"
+        },
+        {
+          "type": "color",
+          "id": "card_border_color_mobile",
+          "label": "Borde card móvil",
+          "default": "#dcdcdc"
+        },
+        {
+          "type": "color",
+          "id": "card_active_border_color_mobile",
+          "label": "Borde card activa móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color título",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "heading_color_mobile",
+          "label": "Color título móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Color precio",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "price_color_mobile",
+          "label": "Color precio móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "compare_color",
+          "label": "Color precio tachado",
+          "default": "#888888"
+        },
+        {
+          "type": "color",
+          "id": "compare_color_mobile",
+          "label": "Color precio tachado móvil",
+          "default": "#888888"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Color badge ahorro",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "badge_color_mobile",
+          "label": "Color badge ahorro móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "label": "Color títulos/card",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "label_color_mobile",
+          "label": "Color títulos/card móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Color texto secundario",
+          "default": "#666666"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Color texto secundario móvil",
+          "default": "#666666"
+        },
+        {
           "type": "header",
           "content": "Tipografía oferta"
         },
@@ -1514,6 +1932,31 @@
           "unit": "px",
           "label": "Margen inferior del bloque",
           "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Ancho móvil",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "mobile_align",
+          "label": "Alineación ancho móvil",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "center", "label": "Centro" },
+            { "value": "right", "label": "Derecha" }
+          ]
         }
       ]
     },
@@ -1546,6 +1989,30 @@
           "id": "text_color",
           "label": "Color texto",
           "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "block_bg_mobile",
+          "label": "Fondo bloque móvil",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "border_color_mobile",
+          "label": "Color borde móvil",
+          "default": "#e4e4e4"
+        },
+        {
+          "type": "color",
+          "id": "title_color_mobile",
+          "label": "Color título móvil",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Color texto móvil",
+          "default": "#666666"
         },
         {
           "type": "range",
@@ -1747,6 +2214,31 @@
           "unit": "px",
           "label": "Margen inferior del bloque",
           "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Móvil"
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Ancho móvil",
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "mobile_align",
+          "label": "Alineación ancho móvil",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "center", "label": "Centro" },
+            { "value": "right", "label": "Derecha" }
+          ]
         }
       ]
     },

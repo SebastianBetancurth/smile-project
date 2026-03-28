@@ -1451,5 +1451,158 @@
         "default": "scheme-1"
       }
     ]
-  }
+  },
+
+    {
+      "name": "Cart Drawer Custom",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Contenido"
+        },
+        {
+          "type": "collection",
+          "id": "cart_routine_collection",
+          "label": "Colección de Completa la Rutina"
+        },
+        {
+          "type": "range",
+          "id": "cart_routine_limit",
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "default": 5,
+          "label": "Cantidad de productos"
+        },
+        {
+          "type": "text",
+          "id": "cart_routine_title",
+          "label": "Título del bloque",
+          "default": "Completa la Rutina"
+        },
+        {
+          "type": "text",
+          "id": "cart_shipping_label",
+          "label": "Texto gastos de envío",
+          "default": "Gastos de envío"
+        },
+        {
+          "type": "text",
+          "id": "cart_shipping_free_text",
+          "label": "Texto envío gratis",
+          "default": "GRATIS"
+        },
+        {
+          "type": "text",
+          "id": "cart_subtotal_label",
+          "label": "Texto subtotal",
+          "default": "Subtotal"
+        },
+        {
+          "type": "text",
+          "id": "cart_checkout_text",
+          "label": "Texto botón checkout",
+          "default": "Realizar pedido"
+        },
+
+        {
+          "type": "header",
+          "content": "Colores drawer"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_bg",
+          "label": "Fondo drawer",
+          "default": "#f3f3f3"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_text",
+          "label": "Color texto principal",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_muted_text",
+          "label": "Color texto secundario",
+          "default": "#6b6b6b"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_price_color",
+          "label": "Color precios",
+          "default": "#ec008c"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_line_color",
+          "label": "Color líneas/divisores",
+          "default": "#d7d7d7"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_accent",
+          "label": "Color acento",
+          "default": "#111111"
+        },
+
+        {
+          "type": "header",
+          "content": "Colores bloque Completa la Rutina"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_block_bg",
+          "label": "Fondo bloque",
+          "default": "#f3f3f3"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_card_bg",
+          "label": "Fondo tarjetas producto",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_button_bg",
+          "label": "Botón añadir",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_button_text",
+          "label": "Texto botón añadir",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_button_added_bg",
+          "label": "Botón añadido",
+          "default": "#39b54a"
+        },
+        {
+          "type": "color",
+          "id": "cart_routine_button_added_text",
+          "label": "Texto botón añadido",
+          "default": "#ffffff"
+        },
+
+        {
+          "type": "header",
+          "content": "Colores botón checkout"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_checkout_bg",
+          "label": "Fondo botón checkout",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "cart_drawer_checkout_text",
+          "label": "Texto botón checkout",
+          "default": "#ffffff"
+        }
+      ]
+    }
 ]

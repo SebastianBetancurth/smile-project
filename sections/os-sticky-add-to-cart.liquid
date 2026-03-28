@@ -1,0 +1,884 @@
+{% liquid
+  assign current_product = product
+  if current_product == blank and section.settings.product != blank
+    assign current_product = section.settings.product
+  endif
+
+  assign current_variant = current_product.selected_or_first_available_variant
+  assign featured_media = current_variant.featured_media | default: current_product.featured_media
+%}
+
+{% if current_product != blank and current_variant != blank %}
+  <section
+    id="os-sticky-atc-{{ section.id }}"
+    class="os-sticky-atc"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ current_product.id }}"
+    data-default-variant-id="{{ current_variant.id }}"
+    data-trigger-mode="{{ section.settings.trigger_mode }}"
+    data-offset="{{ section.settings.trigger_offset }}"
+  >
+    <div class="os-sticky-atc__inner page-width">
+      <div class="os-sticky-atc__left">
+        <div class="os-sticky-atc__media{% if featured_media == blank %} is-hidden{% endif %}">
+          {% if featured_media != blank %}
+            {{
+              featured_media
+              | image_url: width: 180
+              | image_tag:
+                loading: 'lazy',
+                widths: '90,120,180',
+                class: 'os-sticky-atc__image',
+                alt: current_product.title
+            }}
+          {% endif %}
+        </div>
+
+        <div class="os-sticky-atc__info">
+          <div class="os-sticky-atc__title">
+            {{ current_product.title }}
+          </div>
+
+          <div class="os-sticky-atc__price-row">
+            <span class="os-sticky-atc__price" data-sticky-price> ${{ current_variant.price | money }} </span>
+
+            {% if current_variant.compare_at_price > current_variant.price %}
+              <span class="os-sticky-atc__compare" data-sticky-compare>
+                ${{ current_variant.compare_at_price | money }}
+              </span>
+
+              {% assign discount_amount = current_variant.compare_at_price | minus: current_variant.price %}
+              {% assign discount_percent = discount_amount
+                | times: 100.0
+                | divided_by: current_variant.compare_at_price
+                | round
+              %}
+              <span class="os-sticky-atc__badge" data-sticky-badge>
+                {{ section.settings.save_label }}
+                {{ discount_percent }}%
+              </span>
+            {% else %}
+              <span class="os-sticky-atc__compare is-hidden" data-sticky-compare></span>
+              <span class="os-sticky-atc__badge is-hidden" data-sticky-badge></span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="os-sticky-atc__right">
+        <div class="os-sticky-atc__qty-wrap{% unless section.settings.show_quantity %} is-hidden{% endunless %}">
+          <button type="button" class="os-sticky-atc__qty-btn" data-qty-minus aria-label="Decrease quantity">−</button>
+          <input
+            class="os-sticky-atc__qty-input"
+            type="number"
+            min="1"
+            value="1"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            data-qty-input
+            aria-label="Quantity"
+          >
+          <button type="button" class="os-sticky-atc__qty-btn" data-qty-plus aria-label="Increase quantity">+</button>
+        </div>
+
+        <button
+          type="button"
+          class="os-sticky-atc__button"
+          data-sticky-atc-button
+          {% unless current_variant.available %}
+            disabled
+          {% endunless %}
+        >
+          <span class="os-sticky-atc__button-text" data-sticky-button-text>
+            {% if current_variant.available %}
+              {{ section.settings.button_label }}
+            {% else %}
+              {{ section.settings.sold_out_label }}
+            {% endif %}
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <style>
+     #os-sticky-atc-{{ section.id }} {
+       --sticky-bg: {{ section.settings.bg_color }};
+       --sticky-text: {{ section.settings.text_color }};
+       --sticky-border: {{ section.settings.border_color }};
+       --sticky-price: {{ section.settings.price_color }};
+       --sticky-compare: {{ section.settings.compare_color }};
+       --sticky-badge-bg: {{ section.settings.badge_bg }};
+       --sticky-badge-text: {{ section.settings.badge_text }};
+       --sticky-button-bg: {{ section.settings.button_bg }};
+       --sticky-button-text: {{ section.settings.button_text }};
+       --sticky-qty-bg: {{ section.settings.qty_bg }};
+       --sticky-qty-border: {{ section.settings.qty_border }};
+       --sticky-shadow: 0 -4px 20px rgba(0,0,0,.08);
+       position: fixed;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       z-index: 40;
+       background: var(--sticky-bg);
+       color: var(--sticky-text);
+       border-top: 1px solid var(--sticky-border);
+       box-shadow: var(--sticky-shadow);
+       transform: translateY(110%);
+       opacity: 0;
+       visibility: hidden;
+       transition: transform .28s ease, opacity .22s ease, visibility .22s ease;
+     }
+
+     #os-sticky-atc-{{ section.id }}.is-visible {
+       transform: translateY(0);
+       opacity: 1;
+       visibility: visible;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__inner {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       gap: 24px;
+       min-height: {{ section.settings.bar_height_desktop }}px;
+       padding-top: 10px;
+       padding-bottom: 10px;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__left {
+       display: flex;
+       align-items: center;
+       gap: 14px;
+       min-width: 0;
+       flex: 1 1 auto;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__media {
+       width: 64px;
+       height: 64px;
+       flex: 0 0 64px;
+       border-radius: {{ section.settings.image_radius }}px;
+       overflow: hidden;
+       background: #f4f4f4;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__media.is-hidden {
+       display: none;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__image {
+       display: block;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__info {
+       min-width: 0;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__title {
+       font-size: {{ section.settings.title_size_desktop }}px;
+       line-height: 1.2;
+       font-weight: 600;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       margin-bottom: 8px;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__price-row {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       flex-wrap: wrap;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__price {
+       font-size: {{ section.settings.price_size_desktop }}px;
+       line-height: 1;
+       color: var(--sticky-price);
+       font-weight: 500;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__compare {
+       font-size: {{ section.settings.compare_size_desktop }}px;
+       line-height: 1;
+       color: var(--sticky-compare);
+       text-decoration: line-through;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__badge {
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 22px;
+       padding: 2px 8px;
+       border-radius: 999px;
+       background: var(--sticky-badge-bg);
+       color: var(--sticky-badge-text);
+       font-size: 11px;
+       line-height: 1;
+       font-weight: 700;
+       text-transform: uppercase;
+     }
+
+     #os-sticky-atc-{{ section.id }} .is-hidden {
+       display: none !important;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__right {
+       display: flex;
+       align-items: center;
+       gap: 16px;
+       flex: 0 0 auto;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-wrap {
+       display: inline-flex;
+       align-items: center;
+       justify-content: space-between;
+       min-width: 98px;
+       height: 54px;
+       border: 1px solid var(--sticky-qty-border);
+       background: var(--sticky-qty-bg);
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-btn {
+       width: 32px;
+       height: 100%;
+       border: 0;
+       background: transparent;
+       color: var(--sticky-text);
+       cursor: pointer;
+       font-size: 24px;
+       line-height: 1;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-input {
+       width: 34px;
+       border: 0;
+       background: transparent;
+       text-align: center;
+       font: inherit;
+       color: var(--sticky-text);
+       padding: 0;
+       -moz-appearance: textfield;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-input::-webkit-outer-spin-button,
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-input::-webkit-inner-spin-button {
+       -webkit-appearance: none;
+       margin: 0;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__button {
+       min-width: {{ section.settings.button_width_desktop }}px;
+       height: 48px;
+       padding: 0 26px;
+       border: 0;
+       border-radius: {{ section.settings.button_radius }}px;
+       background: var(--sticky-button-bg);
+       color: var(--sticky-button-text);
+       font: inherit;
+       font-size: {{ section.settings.button_text_size_desktop }}px;
+       font-weight: 700;
+       cursor: pointer;
+       transition: opacity .2s ease, transform .2s ease;
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__button:hover {
+       opacity: .92;
+       transform: translateY(-1px);
+     }
+
+     #os-sticky-atc-{{ section.id }} .os-sticky-atc__button[disabled] {
+       opacity: .65;
+       cursor: not-allowed;
+       transform: none;
+     }
+
+    @media screen and (max-width: 749px) {
+         #os-sticky-atc-{{ section.id }} {
+             left: 27px;
+             right: 27px;
+             bottom: 12px;
+             border-top: 0;
+             border-radius: 12px;
+             box-shadow: 0 10px 30px rgba(0,0,0,.18);
+             background: var(--sticky-bg);
+             overflow: hidden;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__inner {
+             min-height: auto;
+             display: block;
+             padding: 18px 16px 16px;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__left {
+             display: block;
+             min-width: 0;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__media {
+             display: none !important;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__info {
+             min-width: 0;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__title {
+             font-size: {{ section.settings.title_size_mobile }}px;
+             line-height: 1.3;
+             font-weight: 500;
+             margin-bottom: 10px;
+             white-space: normal;
+             display: block;
+             overflow: visible;
+             text-overflow: unset;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__price-row {
+             display: flex;
+             align-items: center;
+             gap: 8px;
+             flex-wrap: wrap;
+             margin-bottom: 14px;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__price {
+             font-size: {{ section.settings.price_size_mobile }}px;
+             line-height: 1;
+             font-weight: 500;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__compare {
+             font-size: {{ section.settings.compare_size_mobile }}px;
+             line-height: 1;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__badge {
+             min-height: 20px;
+             padding: 2px 7px;
+             font-size: 10px;
+             line-height: 1;
+             border-radius: 999px;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__right {
+             display: block;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-wrap {
+             display: none !important;
+         }
+
+         #os-sticky-atc-{{ section.id }} .os-sticky-atc__button {
+             width: 100%;
+             min-width: 0;
+             height: 46px;
+             padding: 0 18px;
+             border-radius: 999px;
+             font-size: {{ section.settings.button_text_size_mobile }}px;
+             font-weight: 700;
+         }
+         }
+
+     @media screen and (max-width: 560px) {
+       #os-sticky-atc-{{ section.id }} .os-sticky-atc__inner {
+         align-items: center;
+       }
+
+       #os-sticky-atc-{{ section.id }} .os-sticky-atc__media {
+         display: {% if section.settings.show_image_mobile %}block{% else %}none{% endif %};
+       }
+     }
+  </style>
+
+  <script>
+        (() => {
+          const section = document.getElementById('os-sticky-atc-{{ section.id }}');
+          if (!section) return;
+
+          const qtyInput = section.querySelector('[data-qty-input]');
+          const minusBtn = section.querySelector('[data-qty-minus]');
+          const plusBtn = section.querySelector('[data-qty-plus]');
+          const addButton = section.querySelector('[data-sticky-atc-button]');
+          const buttonText = section.querySelector('[data-sticky-button-text]');
+          const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+
+          const triggerMode = section.dataset.triggerMode;
+          const triggerOffset = Number(section.dataset.offset || 0);
+
+          const originalForm =
+            document.querySelector('form[action*="/cart/add"]') ||
+            document.querySelector('product-form form') ||
+            document.querySelector('form[data-type="add-to-cart-form"]');
+
+          const originalAddButton =
+            originalForm?.querySelector('[name="add"]') ||
+            originalForm?.querySelector('button[type="submit"]');
+
+          const variantInput =
+            originalForm?.querySelector('input[name="id"]') ||
+            document.querySelector('input[name="id"]');
+
+          const getCurrentVariantId = () => {
+            if (variantInput && variantInput.value) return variantInput.value;
+            return section.dataset.defaultVariantId;
+          };
+
+                  const updateVisibility = () => {
+                if (!originalAddButton) {
+                    section.classList.add('is-visible');
+                    return;
+                }
+
+                const rect = originalAddButton.getBoundingClientRect();
+                const passedMainAtc = rect.bottom < triggerOffset;
+
+                const footerSelectors = document.querySelector('.os-footer-obsessive__selectors');
+
+                let touchingFooterSelectors = false;
+
+                if (footerSelectors) {
+                    const footerSelectorsRect = footerSelectors.getBoundingClientRect();
+                    const stickyHeight = section.offsetHeight || 0;
+                    const stickyTopOnScreen = window.innerHeight - stickyHeight;
+
+                    if (footerSelectorsRect.top <= stickyTopOnScreen) {
+                    touchingFooterSelectors = true;
+                    }
+                }
+
+                if (triggerMode === 'always') {
+                    if (touchingFooterSelectors) {
+                    section.classList.remove('is-visible');
+                    } else {
+                    section.classList.add('is-visible');
+                    }
+                    return;
+                }
+
+                if (passedMainAtc && !touchingFooterSelectors) {
+                    section.classList.add('is-visible');
+                } else {
+                    section.classList.remove('is-visible');
+                }
+                };
+
+          const clampQty = () => {
+            let value = parseInt(qtyInput.value || '1', 10);
+            if (isNaN(value) || value < 1) value = 1;
+            qtyInput.value = value;
+            return value;
+          };
+
+          minusBtn?.addEventListener('click', () => {
+            const value = clampQty();
+            qtyInput.value = Math.max(1, value - 1);
+          });
+
+          plusBtn?.addEventListener('click', () => {
+            const value = clampQty();
+            qtyInput.value = value + 1;
+          });
+
+          qtyInput?.addEventListener('change', clampQty);
+
+        addButton?.addEventListener('click', () => {
+                const variantId = getCurrentVariantId();
+                const quantity = clampQty();
+
+                if (!variantId || !originalForm || !originalAddButton) return;
+
+                addButton.disabled = true;
+                if (buttonText) buttonText.textContent = '{{ section.settings.loading_label }}';
+
+                try {
+                    const formVariantInput =
+                    originalForm.querySelector('input[name="id"]') ||
+                    document.querySelector('input[name="id"]');
+
+                    if (formVariantInput) {
+                    formVariantInput.value = variantId;
+                    formVariantInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+
+                    let formQtyInput =
+                    originalForm.querySelector('input[name="quantity"]') ||
+                    originalForm.querySelector('quantity-input input') ||
+                    originalForm.querySelector('[name="updates[]"]');
+
+                    if (formQtyInput) {
+                    formQtyInput.value = quantity;
+                    formQtyInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    formQtyInput.dispatchEvent(new Event('input', { bubbles: true }));
+                    } else {
+                    let hiddenQtyInput = originalForm.querySelector('input[data-sticky-hidden-qty="true"]');
+
+                    if (!hiddenQtyInput) {
+                        hiddenQtyInput = document.createElement('input');
+                        hiddenQtyInput.type = 'hidden';
+                        hiddenQtyInput.name = 'quantity';
+                        hiddenQtyInput.setAttribute('data-sticky-hidden-qty', 'true');
+                        originalForm.appendChild(hiddenQtyInput);
+                    }
+
+                    hiddenQtyInput.value = quantity;
+                    }
+
+                    originalAddButton.click();
+
+                    if (buttonText) buttonText.textContent = '{{ section.settings.added_label }}';
+
+                    setTimeout(() => {
+                    if (buttonText) buttonText.textContent = '{{ section.settings.button_label }}';
+                    addButton.disabled = false;
+                    }, 1200);
+                } catch (error) {
+                    console.error('Sticky ATC submit proxy error:', error);
+
+                    if (buttonText) buttonText.textContent = '{{ section.settings.error_label }}';
+
+                    setTimeout(() => {
+                    if (buttonText) buttonText.textContent = '{{ section.settings.button_label }}';
+                    addButton.disabled = false;
+                    }, 1500);
+                }
+    });
+
+          const syncFromVariant = () => {
+            const selectedId = getCurrentVariantId();
+            if (!selectedId) return;
+
+            const variants = {{ current_product.variants | json }};
+            const activeVariant = variants.find(v => String(v.id) === String(selectedId));
+            if (!activeVariant) return;
+
+            const priceEl = section.querySelector('[data-sticky-price]');
+            const compareEl = section.querySelector('[data-sticky-compare]');
+            const badgeEl = section.querySelector('[data-sticky-badge]');
+
+            const formatMoney = (cents) => {
+              if (window.Shopify && typeof Shopify.formatMoney === 'function') {
+                return Shopify.formatMoney(cents, {{ shop.money_format | json }});
+              }
+              return (cents / 100).toFixed(2);
+            };
+
+            if (priceEl) priceEl.innerHTML = formatMoney(activeVariant.price);
+
+            if (compareEl && badgeEl) {
+              if (activeVariant.compare_at_price && activeVariant.compare_at_price > activeVariant.price) {
+                compareEl.innerHTML = formatMoney(activeVariant.compare_at_price);
+                compareEl.classList.remove('is-hidden');
+
+                const percent = Math.round(((activeVariant.compare_at_price - activeVariant.price) * 100) / activeVariant.compare_at_price);
+                badgeEl.textContent = '{{ section.settings.save_label }} ' + percent + '%';
+                badgeEl.classList.remove('is-hidden');
+              } else {
+                compareEl.classList.add('is-hidden');
+                badgeEl.classList.add('is-hidden');
+              }
+            }
+
+            if (activeVariant.available) {
+              addButton.disabled = false;
+              if (buttonText) buttonText.textContent = '{{ section.settings.button_label }}';
+            } else {
+              addButton.disabled = true;
+              if (buttonText) buttonText.textContent = '{{ section.settings.sold_out_label }}';
+            }
+          };
+
+          window.addEventListener('scroll', updateVisibility, { passive: true });
+          window.addEventListener('resize', updateVisibility);
+          document.addEventListener('change', syncFromVariant);
+
+          updateVisibility();
+          syncFromVariant();
+        })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "OS Sticky Add To Cart",
+  "templates": ["product"],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Producto fallback"
+    },
+    {
+      "type": "select",
+      "id": "trigger_mode",
+      "label": "Activación",
+      "default": "after_main_atc",
+      "options": [
+        { "value": "after_main_atc", "label": "Aparecer después del botón principal" },
+        { "value": "always", "label": "Mostrar siempre" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "trigger_offset",
+      "label": "Offset activación",
+      "min": -200,
+      "max": 300,
+      "step": 10,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Mostrar cantidad",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_mobile",
+      "label": "Mostrar imagen en móvil",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto botón",
+      "default": "Añadir al carrito"
+    },
+    {
+      "type": "text",
+      "id": "sold_out_label",
+      "label": "Texto agotado",
+      "default": "Agotado"
+    },
+    {
+      "type": "text",
+      "id": "loading_label",
+      "label": "Texto cargando",
+      "default": "Añadiendo..."
+    },
+    {
+      "type": "text",
+      "id": "added_label",
+      "label": "Texto añadido",
+      "default": "Añadido"
+    },
+    {
+      "type": "text",
+      "id": "error_label",
+      "label": "Texto error",
+      "default": "Error"
+    },
+    {
+      "type": "text",
+      "id": "save_label",
+      "label": "Texto ahorro",
+      "default": "AHORRA"
+    },
+    {
+      "type": "range",
+      "id": "bar_height_desktop",
+      "label": "Altura desktop",
+      "min": 60,
+      "max": 120,
+      "step": 2,
+      "default": 86
+    },
+    {
+      "type": "range",
+      "id": "bar_height_mobile",
+      "label": "Altura móvil",
+      "min": 54,
+      "max": 100,
+      "step": 2,
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Título desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Título móvil",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "price_size_desktop",
+      "label": "Precio desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "price_size_mobile",
+      "label": "Precio móvil",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "compare_size_desktop",
+      "label": "Compare desktop",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "compare_size_mobile",
+      "label": "Compare móvil",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "button_text_size_desktop",
+      "label": "Texto botón desktop",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_text_size_mobile",
+      "label": "Texto botón móvil",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_width_desktop",
+      "label": "Ancho botón desktop",
+      "min": 140,
+      "max": 320,
+      "step": 2,
+      "default": 178
+    },
+    {
+      "type": "range",
+      "id": "button_width_mobile",
+      "label": "Ancho botón móvil",
+      "min": 110,
+      "max": 240,
+      "step": 2,
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Radio botón",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio imagen",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fondo barra",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Texto",
+      "default": "#3b3b3b"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Borde superior",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Precio",
+      "default": "#ff1493"
+    },
+    {
+      "type": "color",
+      "id": "compare_color",
+      "label": "Compare",
+      "default": "#9e9e9e"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Fondo badge ahorro",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "badge_text",
+      "label": "Texto badge ahorro",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fondo botón",
+      "default": "#3267ee"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Texto botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "qty_bg",
+      "label": "Fondo cantidad",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "color",
+      "id": "qty_border",
+      "label": "Borde cantidad",
+      "default": "#e4e4e4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Sticky Add To Cart"
+    }
+  ]
+}
+{% endschema %}

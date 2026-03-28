@@ -1,8 +1,6 @@
 slider-component {
-  --desktop-margin-left-first-item: max(
-    5rem,
-    calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2)
-  );
+  --desktop-margin-left-first-item: max(5rem,
+      calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2));
   position: relative;
   display: block;
 }
@@ -48,7 +46,7 @@ slider-component.slider-component-full-width {
   .slider--mobile:after {
     content: '';
     width: 0;
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem;*/
   }
 
   .slider.slider--mobile .slider__slide {
@@ -318,19 +316,19 @@ slider-component.slider-component-full-width {
 }
 
 @media screen and (min-width: 990px) {
-  .slider:not(.slider--everywhere):not(.slider--desktop) + .slider-buttons {
+  .slider:not(.slider--everywhere):not(.slider--desktop)+.slider-buttons {
     display: none;
   }
 }
 
 @media screen and (max-width: 989px) {
-  .slider--desktop:not(.slider--tablet) + .slider-buttons {
+  .slider--desktop:not(.slider--tablet)+.slider-buttons {
     display: none;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .slider--mobile + .slider-buttons {
+  .slider--mobile+.slider-buttons {
     display: none;
   }
 }

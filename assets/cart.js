@@ -119,30 +119,66 @@ class CartItems extends HTMLElement {
     }
   }
 
-  getSectionsToRender() {
-    return [
-      {
-        id: 'main-cart-items',
-        section: document.getElementById('main-cart-items').dataset.id,
-        selector: '.js-contents',
-      },
-      {
-        id: 'cart-icon-bubble',
-        section: 'cart-icon-bubble',
-        selector: '.shopify-section',
-      },
-      {
-        id: 'cart-live-region-text',
-        section: 'cart-live-region-text',
-        selector: '.shopify-section',
-      },
-      {
-        id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
-        selector: '.js-contents',
-      },
-    ];
-  }
+    getSectionsToRender() {
+      if (this.tagName === 'CART-DRAWER-ITEMS') {
+        return [
+          {
+            id: 'CartDrawer-CartItems',
+            section: 'cart-drawer',
+            selector: '#CartDrawer-CartItems',
+          },
+          {
+            id: 'cart-icon-bubble',
+            section: 'cart-icon-bubble',
+            selector: '.shopify-section',
+          },
+          {
+            id: 'cart-live-region-text',
+            section: 'cart-live-region-text',
+            selector: '.shopify-section',
+          },
+          {
+            id: 'CartDrawer',
+            section: 'cart-drawer',
+            selector: '.cart-drawer__footer',
+          },
+        ];
+      }
+
+      const sections = [
+        {
+          id: 'cart-icon-bubble',
+          section: 'cart-icon-bubble',
+          selector: '.shopify-section',
+        },
+        {
+          id: 'cart-live-region-text',
+          section: 'cart-live-region-text',
+          selector: '.shopify-section',
+        },
+      ];
+
+      const mainCartItems = document.getElementById('main-cart-items');
+      const mainCartFooter = document.getElementById('main-cart-footer');
+
+      if (mainCartItems) {
+        sections.unshift({
+          id: 'main-cart-items',
+          section: mainCartItems.dataset.id,
+          selector: '.js-contents',
+        });
+      }
+
+      if (mainCartFooter) {
+        sections.push({
+          id: 'main-cart-footer',
+          section: mainCartFooter.dataset.id,
+          selector: '.js-contents',
+        });
+      }
+
+      return sections;
+    }
 
   updateQuantity(line, quantity, event, name, variantId) {
     const eventTarget = event.currentTarget instanceof CartRemoveButton ? 'clear' : 'change';
@@ -183,13 +219,18 @@ class CartItems extends HTMLElement {
           if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
           this.getSectionsToRender().forEach((section) => {
-            const elementToReplace =
-              document.getElementById(section.id).querySelector(section.selector) ||
-              document.getElementById(section.id);
-            elementToReplace.innerHTML = this.getSectionInnerHTML(
-              parsedState.sections[section.section],
-              section.selector
-            );
+            const container = document.getElementById(section.id);
+            if (!container) return;
+
+            const elementToReplace = container.querySelector(section.selector) || container;
+            const sectionHTML = parsedState.sections[section.section];
+
+            if (!sectionHTML) return;
+
+            const newInnerHTML = this.getSectionInnerHTML(sectionHTML, section.selector);
+            if (typeof newInnerHTML === 'undefined' || newInnerHTML === null) return;
+
+            elementToReplace.innerHTML = newInnerHTML;
           });
           const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
           let message = '';
@@ -215,7 +256,11 @@ class CartItems extends HTMLElement {
           }
         });
 
-        publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
+          publish(PUB_SUB_EVENTS.cartUpdate, {
+          source: 'cart-routine-upsell',
+          cartData: responseData,
+          variantId: Number(responseData.variant_id || 0),
+        });
       })
       .catch(() => {
         this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
@@ -244,9 +289,11 @@ class CartItems extends HTMLElement {
     }, 1000);
   }
 
-  getSectionInnerHTML(html, selector) {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
-  }
+    getSectionInnerHTML(html, selector) {
+      const parsed = new DOMParser().parseFromString(html, 'text/html');
+      const element = parsed.querySelector(selector);
+      return element ? element.innerHTML : '';
+    }
 
   enableLoading(line) {
     const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
@@ -295,3 +342,112 @@ if (!customElements.get('cart-note')) {
     }
   );
 }
+
+class CartDrawerRoutineUpsells {
+  constructor() {
+    document.addEventListener('click', this.onClick.bind(this));
+  }
+
+  onClick(event) {
+    const button = event.target.closest('.cart-routine__add-button');
+    if (!button) return;
+
+    event.preventDefault();
+
+    if (button.classList.contains('is-loading') || button.classList.contains('is-added')) return;
+
+    const variantId = button.dataset.variantId;
+    if (!variantId) return;
+
+    this.addItem(button, variantId);
+  }
+
+  async addItem(button, variantId) {
+    try {
+      button.classList.add('is-loading');
+
+      const formData = new FormData();
+      formData.append('id', variantId);
+      formData.append('quantity', '1');
+      formData.append('sections', 'cart-drawer,cart-icon-bubble');
+      formData.append('sections_url', window.location.pathname);
+
+      const response = await fetch(`${routes.cart_add_url}`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: formData,
+      });
+
+      const responseData = await response.json();
+
+      if (responseData.status) {
+        console.error(responseData.description || responseData.message || 'Error adding item to cart');
+        button.classList.remove('is-loading');
+        return;
+      }
+
+      button.classList.remove('is-loading');
+      button.classList.add('is-added');
+
+      const textNode = button.querySelector('.cart-routine__add-text');
+      if (textNode) {
+        textNode.textContent = button.dataset.addedText || 'Añadido';
+      }
+
+      setTimeout(() => {
+        this.renderCartDrawer(responseData);
+      }, 450);
+    } catch (error) {
+      console.error(error);
+      button.classList.remove('is-loading');
+    }
+  }
+
+  renderCartDrawer(responseData) {
+    if (responseData.sections && responseData.sections['cart-icon-bubble']) {
+      const bubbleContainer = document.getElementById('cart-icon-bubble');
+      if (bubbleContainer) {
+        const bubbleHTML = new DOMParser().parseFromString(responseData.sections['cart-icon-bubble'], 'text/html');
+        const bubbleSource =
+          bubbleHTML.querySelector('.shopify-section') || bubbleHTML.querySelector('#cart-icon-bubble');
+        if (bubbleSource) {
+          bubbleContainer.innerHTML = bubbleSource.innerHTML;
+        }
+      }
+    }
+
+    fetch(`${routes.cart_url}?section_id=cart-drawer`)
+      .then((res) => res.text())
+      .then((responseText) => {
+        const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const selectors = ['cart-drawer-items', '.cart-drawer__footer'];
+
+        selectors.forEach((selector) => {
+          const targetElement = document.querySelector(selector);
+          const sourceElement = html.querySelector(selector);
+
+          if (targetElement && sourceElement) {
+            targetElement.replaceWith(sourceElement);
+          }
+        });
+
+        const cartDrawerWrapper = document.querySelector('cart-drawer');
+        if (cartDrawerWrapper) {
+          cartDrawerWrapper.classList.remove('is-empty');
+        }
+
+        publish(PUB_SUB_EVENTS.cartUpdate, {
+          source: 'cart-routine-upsell',
+          cartData: responseData,
+          variantId: variantId,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+}
+
+new CartDrawerRoutineUpsells();
