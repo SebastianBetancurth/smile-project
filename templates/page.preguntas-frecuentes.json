@@ -32,27 +32,45 @@
         "collapsible_row_gRCHiy": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Fila desplegable",
+            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p><strong>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</strong></p>",
             "page": ""
           }
         },
         "collapsible_row_rJaLny": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Fila desplegable",
+            "heading": "¿Daña el esmalte de los dientes?",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
             "page": ""
           }
         },
         "collapsible_row_6CegNW": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Fila desplegable",
+            "heading": "¿Puedo devolver mi pedido?",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>Aunque ese es un caso muy extraño...</p><p>Nuestro equipo de atención al cliente estará encantado de ayudarte con tu devolución en el siguiente correo: <strong>atcliente@obsessivesmiles.com</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_G9a7ep": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
+            "icon": "check_mark",
+            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dT7TT9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuáles son los ingredientes?",
+            "icon": "check_mark",
+            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
             "page": ""
           }
         }
@@ -61,7 +79,9 @@
         "collapsible_row_wJ3BTD",
         "collapsible_row_gRCHiy",
         "collapsible_row_rJaLny",
-        "collapsible_row_6CegNW"
+        "collapsible_row_6CegNW",
+        "collapsible_row_G9a7ep",
+        "collapsible_row_dT7TT9"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
