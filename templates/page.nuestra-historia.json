@@ -11,13 +11,59 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "os_story_banner_split_PAA9BW": {
+      "type": "os-story-banner-split",
+      "name": "OS Story Banner Split",
+      "settings": {
+        "hero_image": "shopify://shop_images/About_Us_Hero_-_D.webp",
+        "eyebrow": "Nuestra historia",
+        "hero_heading": "Seamos sinceros. El blanqueamiento dental tradicional no es ninguna excelente experiencia.",
+        "hero_text": "<p>Es doloroso, provoca sensibilidad e incluso puede suponer una larga e incómoda visita al dentista.</p>",
+        "bottom_left_heading": "Sabíamos que tenía que haber una forma mejor de blanquear.",
+        "bottom_right_text": "<p>Así que investigamos, hablamos con expertos y aprendimos mucho sobre los métodos tradicionales de blanqueamiento. ¿La causa del problema? El peróxido.</p>",
+        "section_bg": "#fafafc",
+        "hero_text_color": "#ffffff",
+        "hero_overlay_color": "#000000",
+        "hero_overlay_opacity": 8,
+        "bottom_bg": "#ffffff",
+        "bottom_heading_color": "#000000",
+        "bottom_text_color": "#000000",
+        "eyebrow_size_desktop": 24,
+        "heading_size_desktop": 32,
+        "hero_body_size_desktop": 18,
+        "bottom_heading_size_desktop": 32,
+        "bottom_text_size_desktop": 16,
+        "eyebrow_size_mobile": 23,
+        "heading_size_mobile": 30,
+        "hero_body_size_mobile": 18,
+        "bottom_heading_size_mobile": 24,
+        "bottom_text_size_mobile": 15,
+        "section_max_width": 1520,
+        "hero_height_desktop": 510,
+        "hero_height_mobile": 420,
+        "hero_content_max_width": 900,
+        "hero_content_left_desktop": 52,
+        "hero_content_top_desktop": 124,
+        "hero_content_left_mobile": 24,
+        "hero_content_top_mobile": 58,
+        "hero_radius": 0,
+        "bottom_padding_x_desktop": 220,
+        "bottom_padding_y_desktop": 44,
+        "bottom_padding_x_mobile": 24,
+        "bottom_padding_y_mobile": 34,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "os_story_banner_split_PAA9BW"
   ]
 }
