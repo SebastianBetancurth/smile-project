@@ -11,13 +11,93 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "collapsible_content_UQ8Uwy": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wJ3BTD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_gRCHiy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_rJaLny": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_6CegNW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wJ3BTD",
+        "collapsible_row_gRCHiy",
+        "collapsible_row_rJaLny",
+        "collapsible_row_6CegNW"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Contenido desplegable",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "section",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "os_box_bg": "#fafafc",
+        "os_box_border": "#e8e8e8",
+        "os_heading_color": "#111111",
+        "os_row_title_color": "#222222",
+        "os_content_color": "#555555",
+        "os_toggle_color": "#222222",
+        "os_divider_color": "#ececec",
+        "os_box_radius": 0,
+        "os_box_padding_x": 0,
+        "os_box_padding_y": 28,
+        "os_heading_size": 24,
+        "os_row_title_size": 16,
+        "os_content_size": 15,
+        "os_row_padding_y": 22,
+        "os_toggle_size": 14,
+        "os_box_max_width": 760,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collapsible_content_UQ8Uwy"
   ]
 }
