@@ -60,10 +60,296 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "image_with_text_HtfVEb": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_KJUqjz": {
+          "type": "caption",
+          "settings": {
+            "caption": "Nuestro objetivo era sencillo:",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "heading_N8q4VW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Crear un tratamiento de blanqueamiento dental casero tan eficaz como el peróxido, pero sin los desagradables efectos secundarios.",
+            "heading_size": "h2"
+          }
+        },
+        "text_jLXPmd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>En 2014, lanzamos nuestro primer kit de blanqueamiento dental. El kit cumplía todos los requisitos. Era seguro, fácil de usar y completamente libre de peróxido.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_KJUqjz",
+        "heading_N8q4VW",
+        "text_jLXPmd"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 24px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 16px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/003_37c6f666-13e3-4bf4-b5c8-bcb424d5dede.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_BaF7CW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YEn4ch": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enviamos nuestro kit a cientos de personas de todo el mundo. ¿El veredicto? Les encantó.",
+            "heading_size": "h2"
+          }
+        },
+        "text_6BPhJ3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Era hora de iniciar una conversación acerca de las mejores formas de blanquear. Con el tiempo, creamos una comunidad de blogueros de belleza, entusiastas del blanqueamiento y, sí, incluso algunos influencers. Obsessive se había convertido en un producto básico en los baños de algunos de las personas más importantes del mundo.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YEn4ch",
+        "text_6BPhJ3"
+      ],
+      "custom_css": [
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; max-width: 26ch; width: 24ch;}",
+        "@media screen and (max-width: 749px) {.h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/003_37c6f666-13e3-4bf4-b5c8-bcb424d5dede.webp",
+        "video": "shopify://files/videos/1-1_Community.mp4",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_NEqqQB": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_wkpGCP": {
+          "type": "caption",
+          "settings": {
+            "caption": "Nuestro objetivo era sencillo:",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "heading_tg4q6P": {
+          "type": "heading",
+          "settings": {
+            "heading": "A medida que nuestra plataforma crecía, seguíamos invirtiendo en I+D a través del Centro de Investigación OBSESSIVE.",
+            "heading_size": "h2"
+          }
+        },
+        "text_3z7rxf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Con una nueva plataforma para la educación, establecimos el Centro de <a href=\"https://obsessivesmiles.com/pages/research-centre\" title=\"Research Centre\">Investigación OBSESSIVE</a>, nuestras propias instalaciones para la formulación y las pruebas de productos. Cada día, nuestro equipo sigue trabajando con reconocidos dentistas, expertos en productos y la comunidad Obsessive para dar forma al futuro del blanqueamiento dental.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_wkpGCP",
+        "heading_tg4q6P",
+        "text_3z7rxf"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 24px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 16px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        ".rte a {color: #fe44f6;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/001.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "os_community_newsletter_BBqXQP": {
+      "type": "os-community-newsletter",
+      "name": "OS Community Newsletter",
+      "settings": {
+        "eyebrow": "Presentación de",
+        "heading": "el movimiento del cuidado de la sonrisa",
+        "text": "<p>Lo que comenzó en 2014 con el Kit de Blanqueamiento Dental se ha convertido en una comunidad global de más de 3 millones de personas. ¿Y lo mejor? Está construida por personas que se preocupan tanto como nosotros por la investigación, las pruebas y los ingredientes que componen sus productos.</p>",
+        "subtext": "¿Listo para unirte al movimiento?",
+        "placeholder": "Correo electrónico",
+        "button_aria_label": "Enviar",
+        "success_message": "Gracias por suscribirte.",
+        "left_image": "shopify://shop_images/D_-_Polaroids_-_Left_504x_b919b0ed-c0c3-4227-8aac-2798761d8c4a.webp",
+        "right_image": "shopify://shop_images/D_-_Polaroids_-_Right_504x_516ac4e4-30c1-4918-bad5-ad5109a2abe0.webp",
+        "section_bg": "#fafafc",
+        "eyebrow_color": "#000000",
+        "heading_color": "#111111",
+        "text_color": "#8d8d94",
+        "subtext_color": "#7d7d84",
+        "input_bg": "#f5f5f5",
+        "input_text_color": "#111111",
+        "input_border_color": "#d8d8d8",
+        "input_placeholder_color": "#7d7d84",
+        "arrow_color": "#8c8c93",
+        "success_color": "#2e7d32",
+        "error_color": "#c62828",
+        "container_width": 1520,
+        "desktop_image_width": 410,
+        "desktop_gap": 30,
+        "content_max_width": 560,
+        "eyebrow_size_desktop": 24,
+        "heading_size_desktop": 32,
+        "text_size_desktop": 16,
+        "subtext_size_desktop": 16,
+        "input_height_desktop": 50,
+        "eyebrow_size_mobile": 11,
+        "heading_size_mobile": 28,
+        "text_size_mobile": 16,
+        "subtext_size_mobile": 16,
+        "input_height_mobile": 46,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_with_text_GFw3nb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hzYRzk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Estamos construyendo el futuro del cuidado de la sonrisa, paso a paso.",
+            "heading_size": "h2"
+          }
+        },
+        "text_WLqqCd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pasamos nuestros días en el laboratorio, aprendiendo de nuestra comunidad y trabajando con los principales odontólogos para desarrollar productos que hagan que nuestros Clientes se vean bien y se sientan aún mejor.<br/><br/>Como siempre, estamos respaldados por la ciencia e impulsados por la creencia de que el cuidado de la sonrisa puede y debe ser eficaz y seguro.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hzYRzk",
+        "text_WLqqCd"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 24px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 16px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        ".rte a {color: #fe44f6;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/collage_fotos.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_HnFYNd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pFRE97": {
+          "type": "heading",
+          "settings": {
+            "heading": "Expertos en el cuidado de la sonrisa <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@obsessive.smiles</a>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pFRE97"
+      ],
+      "custom_css": [
+        ".inline-richtext a,.rte.inline-richtext a {color: #0000ee;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_bg_color": "#fafafc",
+        "custom_heading_color": "#121212",
+        "custom_text_color": "#121212",
+        "heading_size_mobile": 22,
+        "heading_size_desktop": 27,
+        "text_size_mobile": 16,
+        "text_size_desktop": 18,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "os_story_banner_split_PAA9BW"
+    "os_story_banner_split_PAA9BW",
+    "image_with_text_HtfVEb",
+    "image_with_text_BaF7CW",
+    "image_with_text_NEqqQB",
+    "os_community_newsletter_BBqXQP",
+    "image_with_text_GFw3nb",
+    "rich_text_HnFYNd"
   ]
 }
