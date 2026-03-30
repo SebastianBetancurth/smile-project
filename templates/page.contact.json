@@ -21,6 +21,9 @@
     },
     "form": {
       "type": "contact-form",
+      "custom_css": [
+        ".button:after,.shopify-challenge__button:after,.customer button:after,.shopify-payment-button__button--unbranded:after {border-radius: 68px;}"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h1",
