@@ -1,0 +1,735 @@
+{% liquid
+  assign section_id = 'os-community-newsletter-' | append: section.id
+%}
+
+<section id="{{ section_id }}" class="os-community-newsletter">
+  <div class="os-community-newsletter__container">
+    <div class="os-community-newsletter__grid">
+      <div class="os-community-newsletter__media os-community-newsletter__media--left">
+        {% if section.settings.left_image != blank %}
+          {{
+            section.settings.left_image
+            | image_url: width: 1200
+            | image_tag:
+              class: 'os-community-newsletter__image',
+              loading: 'lazy',
+              widths: '300,400,500,700,900,1200',
+              alt: section.settings.left_image.alt
+          }}
+        {% endif %}
+      </div>
+
+      <div class="os-community-newsletter__content">
+        {% if section.settings.eyebrow != blank %}
+          <div class="os-community-newsletter__eyebrow">
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="os-community-newsletter__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="os-community-newsletter__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.subtext != blank %}
+          <div class="os-community-newsletter__subtext">
+            {{ section.settings.subtext }}
+          </div>
+        {% endif %}
+
+        <div class="os-community-newsletter__form-wrap">
+          {% form 'customer', class: 'os-community-newsletter__form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <div class="os-community-newsletter__field-wrap">
+              <input
+                type="email"
+                name="contact[email]"
+                class="os-community-newsletter__input"
+                value="{% if customer %}{{ customer.email }}{% endif %}"
+                placeholder="{{ section.settings.placeholder }}"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                required
+              >
+              <button
+                type="submit"
+                class="os-community-newsletter__submit"
+                aria-label="{{ section.settings.button_aria_label }}"
+              >
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M13 5l6 7-6 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            {% if form.posted_successfully? %}
+              <div class="os-community-newsletter__message os-community-newsletter__message--success">
+                {{ section.settings.success_message }}
+              </div>
+            {% endif %}
+
+            {% if form.errors %}
+              <div class="os-community-newsletter__message os-community-newsletter__message--error">
+                {{ form.errors | default_errors }}
+              </div>
+            {% endif %}
+          {% endform %}
+        </div>
+      </div>
+
+      <div class="os-community-newsletter__media os-community-newsletter__media--right">
+        {% if section.settings.right_image != blank %}
+          {{
+            section.settings.right_image
+            | image_url: width: 1200
+            | image_tag:
+              class: 'os-community-newsletter__image',
+              loading: 'lazy',
+              widths: '300,400,500,700,900,1200',
+              alt: section.settings.right_image.alt
+          }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="os-community-newsletter__mobile-media">
+      {% if section.settings.mobile_image != blank %}
+        {{
+          section.settings.mobile_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'os-community-newsletter__image os-community-newsletter__image--mobile',
+            loading: 'lazy',
+            widths: '300,400,500,700,900,1200',
+            alt: section.settings.mobile_image.alt
+        }}
+      {% elsif section.settings.left_image != blank %}
+        {{
+          section.settings.left_image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'os-community-newsletter__image os-community-newsletter__image--mobile',
+            loading: 'lazy',
+            widths: '300,400,500,700,900,1200',
+            alt: section.settings.left_image.alt
+        }}
+      {% endif %}
+    </div>
+  </div>
+
+  <style>
+    #{{ section_id }} {
+      --section-bg: {{ section.settings.section_bg }};
+      --eyebrow-color: {{ section.settings.eyebrow_color }};
+      --heading-color: {{ section.settings.heading_color }};
+      --text-color: {{ section.settings.text_color }};
+      --subtext-color: {{ section.settings.subtext_color }};
+      --input-bg: {{ section.settings.input_bg }};
+      --input-text: {{ section.settings.input_text_color }};
+      --input-border: {{ section.settings.input_border_color }};
+      --input-placeholder: {{ section.settings.input_placeholder_color }};
+      --arrow-color: {{ section.settings.arrow_color }};
+      --success-color: {{ section.settings.success_color }};
+      --error-color: {{ section.settings.error_color }};
+      --container-width: {{ section.settings.container_width }}px;
+      --desktop-image-width: {{ section.settings.desktop_image_width }}px;
+      --desktop-gap: {{ section.settings.desktop_gap }}px;
+      --content-max-width: {{ section.settings.content_max_width }}px;
+      --eyebrow-size-desktop: {{ section.settings.eyebrow_size_desktop }}px;
+      --heading-size-desktop: {{ section.settings.heading_size_desktop }}px;
+      --text-size-desktop: {{ section.settings.text_size_desktop }}px;
+      --subtext-size-desktop: {{ section.settings.subtext_size_desktop }}px;
+      --input-height-desktop: {{ section.settings.input_height_desktop }}px;
+      --eyebrow-size-mobile: {{ section.settings.eyebrow_size_mobile }}px;
+      --heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+      --text-size-mobile: {{ section.settings.text_size_mobile }}px;
+      --subtext-size-mobile: {{ section.settings.subtext_size_mobile }}px;
+      --input-height-mobile: {{ section.settings.input_height_mobile }}px;
+      --padding-top: {{ section.settings.padding_top }}px;
+      --padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    #{{ section_id }}.os-community-newsletter {
+      background: var(--section-bg);
+      padding-top: var(--padding-top);
+      padding-bottom: var(--padding-bottom);
+    }
+
+    #{{ section_id }} .os-community-newsletter__container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    #{{ section_id }} .os-community-newsletter__grid {
+      display: grid;
+      grid-template-columns: var(--desktop-image-width) minmax(0, 1fr) var(--desktop-image-width);
+      gap: var(--desktop-gap);
+      align-items: center;
+    }
+
+    #{{ section_id }} .os-community-newsletter__media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #{{ section_id }} .os-community-newsletter__image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    #{{ section_id }} .os-community-newsletter__content {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #{{ section_id }} .os-community-newsletter__eyebrow {
+      margin: 0 0 14px;
+      color: var(--eyebrow-color);
+      font-size: var(--eyebrow-size-desktop);
+      line-height: 1.2;
+      font-weight: 500;
+      font-family: 'Circular';
+      letter-spacing: 0;
+    }
+
+    #{{ section_id }} .os-community-newsletter__heading {
+      margin: 0 0 22px;
+      color: var(--heading-color);
+      font-size: var(--heading-size-desktop);
+      line-height: 1.18;
+      font-weight: 500;
+      font-family: 'Pulp';
+      letter-spacing: -1px;
+    }
+
+    #{{ section_id }} .os-community-newsletter__text,
+    #{{ section_id }} .os-community-newsletter__text p {
+      margin: 0;
+      color: var(--text-color);
+      font-size: var(--text-size-desktop);
+      line-height: 1.65;
+      font-weight: 400;
+      font-family: 'Circular';
+    }
+
+    #{{ section_id }} .os-community-newsletter__text p + p {
+      margin-top: 10px;
+    }
+
+    #{{ section_id }} .os-community-newsletter__subtext {
+      margin-top: 22px;
+      margin-bottom: 26px;
+      color: var(--subtext-color);
+      font-size: var(--subtext-size-desktop);
+      line-height: 1.5;
+      font-weight: 400;
+      font-family: 'Circular';
+    }
+
+    #{{ section_id }} .os-community-newsletter__form-wrap {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    #{{ section_id }} .os-community-newsletter__field-wrap {
+      position: relative;
+    }
+
+    #{{ section_id }} .os-community-newsletter__input {
+    width: 100%;
+    height: var(--input-height-desktop);
+    border: 2px solid var(--input-border);
+    border-radius: 0;
+    background: var(--input-bg);
+    color: var(--input-text);
+    padding: 0 58px 0 22px;
+    font-size: 14px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: none;
+    transition: border-color .22s ease, box-shadow .22s ease;
+    font-family: 'Circular';
+    font-weight: 400;
+    }
+
+    #{{ section_id }} .os-community-newsletter__input::placeholder {
+    color: var(--input-placeholder);
+    opacity: 1;
+    transition: opacity .18s ease;
+    }
+
+    #{{ section_id }} .os-community-newsletter__input:hover {
+    border-color: #b8b8b8;
+    }
+
+    #{{ section_id }} .os-community-newsletter__input:focus,
+    #{{ section_id }} .os-community-newsletter__input:focus-visible {
+    border-color: #8f8f8f;
+    box-shadow: 0 0 0 1px #8f8f8f;
+    }
+
+    #{{ section_id }} .os-community-newsletter__input:focus::placeholder,
+    #{{ section_id }} .os-community-newsletter__input:focus-visible::placeholder {
+    opacity: 0;
+    }
+
+    #{{ section_id }} .os-community-newsletter__submit {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border: 0;
+      background: transparent;
+      color: var(--arrow-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    #{{ section_id }} .os-community-newsletter__submit svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    #{{ section_id }} .os-community-newsletter__message {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    #{{ section_id }} .os-community-newsletter__message--success {
+      color: var(--success-color);
+    }
+
+    #{{ section_id }} .os-community-newsletter__message--error {
+      color: var(--error-color);
+    }
+
+    #{{ section_id }} .os-community-newsletter__mobile-media {
+      display: none;
+    }
+
+    @media screen and (max-width: 749px) {
+      #{{ section_id }} .os-community-newsletter__container {
+        padding: 0 14px;
+      }
+
+      #{{ section_id }} .os-community-newsletter__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      #{{ section_id }} .os-community-newsletter__media--left,
+      #{{ section_id }} .os-community-newsletter__media--right {
+        display: none;
+      }
+
+      #{{ section_id }} .os-community-newsletter__content {
+        max-width: 100%;
+      }
+
+      #{{ section_id }} .os-community-newsletter__eyebrow {
+        margin-bottom: 10px;
+        font-size: var(--eyebrow-size-mobile);
+      }
+
+      #{{ section_id }} .os-community-newsletter__heading {
+        margin-bottom: 16px;
+        font-size: var(--heading-size-mobile);
+        line-height: 1.15;
+      }
+
+      #{{ section_id }} .os-community-newsletter__text,
+      #{{ section_id }} .os-community-newsletter__text p {
+        font-size: var(--text-size-mobile);
+        line-height: 1.62;
+      }
+
+      #{{ section_id }} .os-community-newsletter__subtext {
+        margin-top: 18px;
+        margin-bottom: 20px;
+        font-size: var(--subtext-size-mobile);
+      }
+
+      #{{ section_id }} .os-community-newsletter__form-wrap {
+        max-width: 100%;
+      }
+
+      #{{ section_id }} .os-community-newsletter__input {
+        height: var(--input-height-mobile);
+        font-size: 16px;
+        padding-left: 18px;
+        padding-right: 54px;
+      }
+
+      #{{ section_id }} .os-community-newsletter__mobile-media {
+        display: block;
+        margin-top: 38px;
+      }
+
+      #{{ section_id }} .os-community-newsletter__image--mobile {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "OS Community Newsletter",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño",
+      "default": "Presentación de"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título",
+      "default": "el movimiento del cuidado de la sonrisa"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto principal",
+      "default": "<p>Lo que comenzó en 2014 con el Kit de Blanqueamiento Dental se ha convertido en una comunidad global de más de 3 millones de personas. ¿Y lo mejor? Está construida por personas que se preocupan tanto como nosotros por la investigación, las pruebas y los ingredientes que componen sus productos.</p>"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Texto antes del input",
+      "default": "¿Listo para unirte al movimiento?"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder input",
+      "default": "Correo electrónico"
+    },
+    {
+      "type": "text",
+      "id": "button_aria_label",
+      "label": "Texto accesible botón",
+      "default": "Enviar"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Mensaje éxito",
+      "default": "Gracias por suscribirte."
+    },
+
+    {
+      "type": "header",
+      "content": "Imágenes"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Imagen izquierda desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Imagen derecha desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Imagen móvil"
+    },
+
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color texto pequeño",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color título",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto principal",
+      "default": "#8d8d94"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Color texto secundario",
+      "default": "#7d7d84"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Fondo input",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Color texto input",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Color borde input",
+      "default": "#d8d8d8"
+    },
+    {
+      "type": "color",
+      "id": "input_placeholder_color",
+      "label": "Color placeholder",
+      "default": "#7d7d84"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Color flecha",
+      "default": "#8c8c93"
+    },
+    {
+      "type": "color",
+      "id": "success_color",
+      "label": "Color mensaje éxito",
+      "default": "#2e7d32"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Color mensaje error",
+      "default": "#c62828"
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 1000,
+      "max": 1900,
+      "step": 20,
+      "unit": "px",
+      "label": "Ancho máximo sección",
+      "default": 1680
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_width",
+      "min": 180,
+      "max": 460,
+      "step": 10,
+      "unit": "px",
+      "label": "Ancho imágenes laterales desktop",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Espacio entre columnas desktop",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 320,
+      "max": 760,
+      "step": 10,
+      "unit": "px",
+      "label": "Ancho máximo contenido central",
+      "default": 520
+    },
+
+    {
+      "type": "header",
+      "content": "Tamaños desktop"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_desktop",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto pequeño desktop",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título desktop",
+      "default": 33
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto principal desktop",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtext_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto secundario desktop",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "input_height_desktop",
+      "min": 44,
+      "max": 76,
+      "step": 2,
+      "unit": "px",
+      "label": "Altura input desktop",
+      "default": 50
+    },
+
+    {
+      "type": "header",
+      "content": "Tamaños móvil"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto pequeño móvil",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título móvil",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto principal móvil",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtext_size_mobile",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto secundario móvil",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "input_height_mobile",
+      "min": 44,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Altura input móvil",
+      "default": 46
+    },
+
+    {
+      "type": "header",
+      "content": "Padding sección"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Community Newsletter"
+    }
+  ]
+}
+{% endschema %}

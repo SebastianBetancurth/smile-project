@@ -377,6 +377,10 @@
     row-gap: 0;
   }
 
+  .image-with-text__grid.image-with-text__grid--mobile-reverse {
+    flex-direction: column-reverse;
+  }
+
   .image-with-text__media-item,
   .image-with-text__text-item {
     width: 100%;

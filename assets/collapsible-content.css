@@ -152,7 +152,7 @@
 
 .collapsible-content .collapsible-content__heading {
   margin: 0;
-  font-family: 'Pulp';
+  font-family: Helvetica;
   color: var(--os-cc-heading-color, #111111);
   font-size: var(--os-cc-heading-size, 24px);
   line-height: 1.2;
@@ -207,11 +207,12 @@
 .collapsible-content .os-cc-accordion .accordion__title {
   margin: 0;
   max-width: 100%;
-  font-family: 'Pulp';
+  font-family: 'Circular';
   color: var(--os-cc-row-title-color, #222222);
   font-size: var(--os-cc-row-title-size, 16px);
   line-height: 1.35;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
 .collapsible-content .os-cc-toggle {
@@ -252,21 +253,23 @@
   font-size: var(--os-cc-content-size, 15px);
   line-height: 1.55;
   padding: 0;
-  overflow: hidden;
-  height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   opacity: 0;
   transition:
-    height 0.45s ease,
-    opacity 0.28s ease;
-  will-change: height, opacity;
+    grid-template-rows 0.92s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.32s ease;
 }
 
 .collapsible-content .os-cc-accordion details.is-open .accordion__content {
+  grid-template-rows: 1fr;
   opacity: 1;
 }
 
 .collapsible-content .os-cc-accordion .accordion__content-inner {
-  padding: 0 0 2rem;
+  min-height: 0;
+  overflow: hidden;
+  /*padding: 0 0 2rem;*/
 }
 
 .collapsible-content .os-cc-accordion .accordion__content-inner>*:first-child {
@@ -274,7 +277,7 @@
 }
 
 .collapsible-content .os-cc-accordion .accordion__content-inner>*:last-child {
-  margin-bottom: 0;
+  margin-bottom: 23px;
 }
 
 @media screen and (max-width: 749px) {

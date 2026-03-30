@@ -5,7 +5,7 @@
   color: rgb(var(--color-foreground));
 }
 
-.price > * {
+.price>* {
   display: inline-block;
   vertical-align: top;
 }
@@ -88,6 +88,7 @@
   text-decoration: line-through;
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.3rem;
+  display: none;
 }
 
 .unit-price {

@@ -1,0 +1,693 @@
+{% liquid
+  assign section_id = 'os-story-banner-split-' | append: section.id
+%}
+
+<section id="{{ section_id }}" class="os-story-banner-split">
+  <div class="os-story-banner-split__wrap">
+    <div class="os-story-banner-split__hero">
+      {% if section.settings.hero_image != blank %}
+        <div class="os-story-banner-split__hero-media">
+          {{
+            section.settings.hero_image
+            | image_url: width: 2200
+            | image_tag:
+              class: 'os-story-banner-split__hero-image',
+              loading: 'lazy',
+              widths: '480,720,990,1200,1600,2200',
+              alt: section.settings.hero_image.alt
+          }}
+        </div>
+      {% else %}
+        <div class="os-story-banner-split__hero-placeholder"></div>
+      {% endif %}
+
+      <div class="os-story-banner-split__hero-overlay"></div>
+
+      <div class="os-story-banner-split__hero-content">
+        {% if section.settings.eyebrow != blank %}
+          <div class="os-story-banner-split__eyebrow">
+            {{ section.settings.eyebrow }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.hero_heading != blank %}
+          <h2 class="os-story-banner-split__heading">
+            {{ section.settings.hero_heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.hero_text != blank %}
+          <div class="os-story-banner-split__text rte">
+            {{ section.settings.hero_text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="os-story-banner-split__bottom">
+      <div class="os-story-banner-split__bottom-inner">
+        <div class="os-story-banner-split__bottom-col os-story-banner-split__bottom-col--left">
+          {% if section.settings.bottom_left_heading != blank %}
+            <h3 class="os-story-banner-split__bottom-heading">
+              {{ section.settings.bottom_left_heading }}
+            </h3>
+          {% endif %}
+        </div>
+
+        <div class="os-story-banner-split__bottom-col os-story-banner-split__bottom-col--right">
+          {% if section.settings.bottom_right_text != blank %}
+            <div class="os-story-banner-split__bottom-text rte">
+              {{ section.settings.bottom_right_text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+        #{{ section_id }} {
+          --section-bg: {{ section.settings.section_bg }};
+          --hero-min-height-desktop: {{ section.settings.hero_height_desktop }}px;
+          --hero-min-height-mobile: {{ section.settings.hero_height_mobile }}px;
+          --hero-overlay: {{ section.settings.hero_overlay_color }};
+          --hero-overlay-opacity: {{ section.settings.hero_overlay_opacity | divided_by: 100.0 }};
+          --hero-content-max-width: {{ section.settings.hero_content_max_width }}px;
+          --hero-content-left-desktop: {{ section.settings.hero_content_left_desktop }}px;
+          --hero-content-top-desktop: {{ section.settings.hero_content_top_desktop }}px;
+          --hero-content-left-mobile: {{ section.settings.hero_content_left_mobile }}px;
+          --hero-content-top-mobile: {{ section.settings.hero_content_top_mobile }}px;
+          --hero-text-color: {{ section.settings.hero_text_color }};
+          --eyebrow-size-desktop: {{ section.settings.eyebrow_size_desktop }}px;
+          --eyebrow-size-mobile: {{ section.settings.eyebrow_size_mobile }}px;
+          --heading-size-desktop: {{ section.settings.heading_size_desktop }}px;
+          --heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+          --hero-body-size-desktop: {{ section.settings.hero_body_size_desktop }}px;
+          --hero-body-size-mobile: {{ section.settings.hero_body_size_mobile }}px;
+          --bottom-bg: {{ section.settings.bottom_bg }};
+          --bottom-heading-color: {{ section.settings.bottom_heading_color }};
+          --bottom-text-color: {{ section.settings.bottom_text_color }};
+          --bottom-heading-size-desktop: {{ section.settings.bottom_heading_size_desktop }}px;
+          --bottom-heading-size-mobile: {{ section.settings.bottom_heading_size_mobile }}px;
+          --bottom-text-size-desktop: {{ section.settings.bottom_text_size_desktop }}px;
+          --bottom-text-size-mobile: {{ section.settings.bottom_text_size_mobile }}px;
+          --wrap-max-width: {{ section.settings.section_max_width }}px;
+          --hero-radius: {{ section.settings.hero_radius }}px;
+          --bottom-padding-x-desktop: {{ section.settings.bottom_padding_x_desktop }}px;
+          --bottom-padding-y-desktop: {{ section.settings.bottom_padding_y_desktop }}px;
+          --bottom-padding-x-mobile: {{ section.settings.bottom_padding_x_mobile }}px;
+          --bottom-padding-y-mobile: {{ section.settings.bottom_padding_y_mobile }}px;
+          --section-padding-top: {{ section.settings.padding_top }}px;
+          --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+
+        #{{ section_id }}.os-story-banner-split {
+          background: var(--section-bg);
+          padding-top: var(--section-padding-top);
+          padding-bottom: var(--section-padding-bottom);
+        }
+
+        #{{ section_id }} .os-story-banner-split__wrap {
+          max-width: var(--wrap-max-width);
+          margin: 0 auto;
+          width: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero {
+          position: relative;
+          min-height: var(--hero-min-height-desktop);
+          overflow: hidden;
+          border-radius: var(--hero-radius);
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero-media,
+        #{{ section_id }} .os-story-banner-split__hero-placeholder {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero-placeholder {
+          background: #d9d4cf;
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero-image {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero-overlay {
+          position: absolute;
+          inset: 0;
+          background: var(--hero-overlay);
+          opacity: var(--hero-overlay-opacity);
+          pointer-events: none;
+        }
+
+        #{{ section_id }} .os-story-banner-split__hero-content {
+          position: absolute;
+          left: var(--hero-content-left-desktop);
+          top: var(--hero-content-top-desktop);
+          z-index: 2;
+          width: min(100% - 80px, var(--hero-content-max-width));
+          color: var(--hero-text-color);
+        }
+
+        #{{ section_id }} .os-story-banner-split__eyebrow {
+          margin: 0 0 22px;
+          color: var(--hero-text-color);
+          font-size: var(--eyebrow-size-desktop);
+          line-height: 1.2;
+          font-weight: 500;
+            letter-spacing: 0.63px;
+            font-family: 'Circular';
+        }
+
+        #{{ section_id }} .os-story-banner-split__heading {
+          margin: 0 0 24px;
+          color: var(--hero-text-color);
+          font-size: var(--heading-size-desktop);
+          line-height: 1.15;
+          font-weight: 500;
+            letter-spacing: normal;
+            max-width: 46ch;
+            font-family: 'Pulp';
+        }
+
+        #{{ section_id }} .os-story-banner-split__text,
+        #{{ section_id }} .os-story-banner-split__text p {
+          color: var(--hero-text-color);
+          font-size: var(--hero-body-size-desktop);
+          line-height: 1.8;
+         font-weight: 400;
+            margin: 0;
+            font-family: 'Circular';
+            max-width: 39ch;
+        }
+
+        #{{ section_id }} .os-story-banner-split__text p + p {
+          margin-top: 12px;
+        }
+
+        #{{ section_id }} .os-story-banner-split__bottom {
+          background: var(--bottom-bg);
+          border-radius: 0 0 var(--hero-radius) var(--hero-radius);
+        }
+
+        #{{ section_id }} .os-story-banner-split__bottom-inner {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          align-items: center;
+          gap: 6rem;
+          padding: var(--bottom-padding-y-desktop) var(--bottom-padding-x-desktop);
+          padding-right: 383px;
+          padding-left: 350px;
+        }
+
+        #{{ section_id }} .os-story-banner-split__bottom-heading {
+          margin: 0;
+          color: var(--bottom-heading-color);
+          font-size: var(--bottom-heading-size-desktop);
+          line-height: 1.22;
+          font-weight: 500;
+          letter-spacing: 0;
+          max-width: 18ch;
+
+          font-family: 'Pulp';
+          letter-spacing: 0.66px;
+        }
+
+        #{{ section_id }} .os-story-banner-split__bottom-text,
+        #{{ section_id }} .os-story-banner-split__bottom-text p {
+          margin: 0;
+          color: var(--bottom-text-color);
+          font-size: var(--bottom-text-size-desktop);
+          line-height: 1.7;
+          font-weight: 500;
+          width: 58ch;
+          max-width: 64ch;
+          font-family: 'Circular';
+        }
+
+        #{{ section_id }} .os-story-banner-split__bottom-text p + p {
+          margin-top: 12px;
+        }
+
+        @media screen and (max-width: 749px) {
+          #{{ section_id }} .os-story-banner-split__wrap {
+            padding: 0 0px;
+          }
+
+          #{{ section_id }} .os-story-banner-split__hero {
+            min-height: var(--hero-min-height-mobile);
+            border-radius: 0;
+          }
+
+          #{{ section_id }} .os-story-banner-split__hero-content {
+            left: var(--hero-content-left-mobile);
+            top: var(--hero-content-top-mobile);
+            width: calc(100% - (var(--hero-content-left-mobile) * 2));
+            text-align: center;
+          }
+
+          #{{ section_id }} .os-story-banner-split__eyebrow {
+            margin-bottom: 24px;
+            font-size: var(--eyebrow-size-mobile);
+          }
+
+          #{{ section_id }} .os-story-banner-split__heading {
+            margin: 0 auto 22px;
+            font-size: var(--heading-size-mobile);
+            max-width: 18ch;
+          }
+
+          #{{ section_id }} .os-story-banner-split__text,
+          #{{ section_id }} .os-story-banner-split__text p {
+            font-size: var(--hero-body-size-mobile);
+            max-width: 100%;
+          }
+
+          #{{ section_id }} .os-story-banner-split__bottom {
+            border-radius: 0;
+          }
+
+          #{{ section_id }} .os-story-banner-split__bottom-inner {
+            grid-template-columns: 1fr;
+            gap: 28px;
+            padding: var(--bottom-padding-y-mobile) var(--bottom-padding-x-mobile);
+          }
+
+          #{{ section_id }} .os-story-banner-split__bottom-heading {
+            font-size: var(--bottom-heading-size-mobile);
+            max-width: 18ch;
+          }
+
+          #{{ section_id }} .os-story-banner-split__bottom-text,
+          #{{ section_id }} .os-story-banner-split__bottom-text p {
+            font-size: var(--bottom-text-size-mobile);
+            max-width: 35ch;
+          }
+        }
+        @media screen and (max-width: 320px) {
+         #{{ section_id }} .os-story-banner-split__bottom-text,
+          #{{ section_id }} .os-story-banner-split__bottom-text p {
+            font-size: var(--bottom-text-size-mobile);
+            max-width: 31ch;
+          }
+          .os-story-banner-split__hero-content {
+
+        top: 5px!important;
+
+    }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "OS Story Banner Split",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenido superior"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Imagen superior"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño superior",
+      "default": "Nuestra historia"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_heading",
+      "label": "Título superior",
+      "default": "Seamos sinceros. El blanqueamiento dental tradicional no es ninguna excelente experiencia."
+    },
+    {
+      "type": "richtext",
+      "id": "hero_text",
+      "label": "Texto superior",
+      "default": "<p>Es doloroso, provoca sensibilidad e incluso puede suponer una larga e incómoda visita al dentista.</p>"
+    },
+
+    {
+      "type": "header",
+      "content": "Contenido inferior"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "bottom_left_heading",
+      "label": "Título inferior izquierda",
+      "default": "Sabíamos que tenía que haber una forma mejor de blanquear."
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_right_text",
+      "label": "Texto inferior derecha",
+      "default": "<p>Así que investigamos, hablamos con expertos y aprendimos mucho sobre los métodos tradicionales de blanqueamiento. ¿La causa del problema? El peróxido.</p>"
+    },
+
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "hero_text_color",
+      "label": "Color textos sobre imagen",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_overlay_color",
+      "label": "Color overlay imagen",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "hero_overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "label": "Opacidad overlay imagen",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "bottom_bg",
+      "label": "Fondo bloque inferior",
+      "default": "#f6f6f4"
+    },
+    {
+      "type": "color",
+      "id": "bottom_heading_color",
+      "label": "Color título inferior",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bottom_text_color",
+      "label": "Color texto inferior",
+      "default": "#000000"
+    },
+
+    {
+      "type": "header",
+      "content": "Tamaños escritorio"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_desktop",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto pequeño desktop",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título superior desktop",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "hero_body_size_desktop",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto superior desktop",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "bottom_heading_size_desktop",
+      "min": 18,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título inferior desktop",
+      "default": 33
+    },
+    {
+      "type": "range",
+      "id": "bottom_text_size_desktop",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto inferior desktop",
+      "default": 18
+    },
+
+    {
+      "type": "header",
+      "content": "Tamaños móvil"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size_mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto pequeño móvil",
+      "default": 23
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título superior móvil",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "hero_body_size_mobile",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto superior móvil",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "bottom_heading_size_mobile",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título inferior móvil",
+      "default": 29
+    },
+    {
+      "type": "range",
+      "id": "bottom_text_size_mobile",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto inferior móvil",
+      "default": 16
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_max_width",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Ancho máximo sección",
+      "default": 1340
+    },
+    {
+      "type": "range",
+      "id": "hero_height_desktop",
+      "min": 320,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura imagen desktop",
+      "default": 520
+    },
+    {
+      "type": "range",
+      "id": "hero_height_mobile",
+      "min": 320,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura imagen móvil",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "hero_content_max_width",
+      "min": 300,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Ancho máximo contenido superior",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "hero_content_left_desktop",
+      "min": 20,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación izquierda contenido desktop",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "hero_content_top_desktop",
+      "min": 20,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación superior contenido desktop",
+      "default": 132
+    },
+    {
+      "type": "range",
+      "id": "hero_content_left_mobile",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación lateral contenido móvil",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "hero_content_top_mobile",
+      "min": 20,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "label": "Separación superior contenido móvil",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "hero_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Radio bordes",
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Padding bloque inferior"
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding_x_desktop",
+      "min": 20,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding horizontal inferior desktop",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding_y_desktop",
+      "min": 20,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding vertical inferior desktop",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding_x_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding horizontal inferior móvil",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding_y_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding vertical inferior móvil",
+      "default": 34
+    },
+
+    {
+      "type": "header",
+      "content": "Padding sección"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "OS Story Banner Split"
+    }
+  ]
+}
+{% endschema %}

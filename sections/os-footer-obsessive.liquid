@@ -4,23 +4,25 @@
 
 <footer id="{{ section_id }}" class="os-footer-obsessive">
   <div class="page-width">
-    {% if section.settings.top_follow_text != blank or section.settings.top_follow_handle != blank %}
-      <div class="os-footer-obsessive__topline">
-        {% if section.settings.top_follow_text != blank %}
-          <span class="os-footer-obsessive__topline-label">{{ section.settings.top_follow_text }}</span>
-        {% endif %}
-        {% if section.settings.top_follow_handle != blank %}
-          <a
-            class="os-footer-obsessive__topline-handle"
-            href="{{ section.settings.top_follow_link | default: '#' }}"
-            {% if section.settings.top_follow_link != blank %}
-              target="_blank" rel="noopener noreferrer"
-            {% endif %}
-          >
-            {{ section.settings.top_follow_handle }}
-          </a>
-        {% endif %}
-      </div>
+    {% if request.page_type == 'index' %}
+      {% if section.settings.top_follow_text != blank or section.settings.top_follow_handle != blank %}
+        <div class="os-footer-obsessive__topline">
+          {% if section.settings.top_follow_text != blank %}
+            <span class="os-footer-obsessive__topline-label">{{ section.settings.top_follow_text }}</span>
+          {% endif %}
+          {% if section.settings.top_follow_handle != blank %}
+            <a
+              class="os-footer-obsessive__topline-handle"
+              href="{{ section.settings.top_follow_link | default: '#' }}"
+              {% if section.settings.top_follow_link != blank %}
+                target="_blank" rel="noopener noreferrer"
+              {% endif %}
+            >
+              {{ section.settings.top_follow_handle }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
     {% endif %}
 
     <div class="os-footer-obsessive__newsletter">

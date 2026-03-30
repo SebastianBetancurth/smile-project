@@ -6,16 +6,50 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .section-{{ section.id }}-rich-text {
+    background: {{ section.settings.custom_bg_color }};
+  }
+
+  .section-{{ section.id }}-rich-text .rich-text__heading {
+    color: {{ section.settings.custom_heading_color }};
+    font-size: {{ section.settings.heading_size_mobile }}px;
+  }
+
+  .section-{{ section.id }}-rich-text .rich-text__caption,
+  .section-{{ section.id }}-rich-text .rich-text__text,
+  .section-{{ section.id }}-rich-text .rich-text__text p,
+  .section-{{ section.id }}-rich-text .rich-text__text li,
+  .section-{{ section.id }}-rich-text .rich-text__text a {
+    color: {{ section.settings.custom_text_color }};
+    font-size: {{ section.settings.text_size_mobile }}px;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
+    .section-{{ section.id }}-rich-text .rich-text__heading {
+      font-size: {{ section.settings.heading_size_desktop }}px;
+    }
+
+    .section-{{ section.id }}-rich-text .rich-text__caption,
+    .section-{{ section.id }}-rich-text .rich-text__text,
+    .section-{{ section.id }}-rich-text .rich-text__text p,
+    .section-{{ section.id }}-rich-text .rich-text__text li,
+    .section-{{ section.id }}-rich-text .rich-text__text a {
+      font-size: {{ section.settings.text_size_desktop }}px;
+    }
+  }
+   h2.rich-text__heading.rte.inline-richtext.h1 {
+      font-family: 'Pulp'!important;
+      letter-spacing: -1.44px!important;
   }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="rich-text section-{{ section.id }}-rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
@@ -148,6 +182,72 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Colores personalizados"
+    },
+    {
+      "type": "color",
+      "id": "custom_bg_color",
+      "label": "Color de fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "custom_heading_color",
+      "label": "Color del título",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "custom_text_color",
+      "label": "Color del texto",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Tamaños de texto"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título móvil",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño título desktop",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto móvil",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño texto desktop",
+      "default": 18
     },
     {
       "type": "checkbox",
@@ -290,9 +390,9 @@
       "limit": 2,
       "settings": [
         {
-         "type": "header",
-         "content": "t:sections.rich-text.blocks.buttons.settings.header_button1.content"
-        },        
+          "type": "header",
+          "content": "t:sections.rich-text.blocks.buttons.settings.header_button1.content"
+        },
         {
           "type": "text",
           "id": "button_label",
@@ -312,9 +412,9 @@
           "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
         },
         {
-         "type": "header",
-         "content": "t:sections.rich-text.blocks.buttons.settings.header_button2.content"
-        },          
+          "type": "header",
+          "content": "t:sections.rich-text.blocks.buttons.settings.header_button2.content"
+        },
         {
           "type": "text",
           "id": "button_label_2",

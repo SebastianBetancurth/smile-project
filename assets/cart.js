@@ -186,6 +186,9 @@ class CartItems extends HTMLElement {
 
     this.enableLoading(line);
 
+      const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+      if (errors) errors.textContent = '';
+
     const body = JSON.stringify({
       line,
       quantity,
@@ -199,6 +202,8 @@ class CartItems extends HTMLElement {
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
+         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+          if (errors) errors.textContent = '';
 
         CartPerformance.measure(`${eventTarget}:paint-updated-sections`, () => {
           const quantityElement =
@@ -262,10 +267,14 @@ class CartItems extends HTMLElement {
           variantId: Number(responseData.variant_id || 0),
         });
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
         this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
+
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        errors.textContent = window.cartStrings.error;
+        if (errors) {
+          errors.textContent = '';
+        }
       })
       .finally(() => {
         this.disableLoading(line);

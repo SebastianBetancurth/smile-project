@@ -134,74 +134,72 @@
   function initOSFaqAccordions(root) {
     const scope = root || document;
     const detailsList = scope.querySelectorAll('.os-cc-accordion details');
+    const DURATION = 480;
 
     detailsList.forEach((details) => {
       if (details.dataset.osAccordionInit === 'true') return;
       details.dataset.osAccordionInit = 'true';
 
       const summary = details.querySelector('summary');
-      const content = details.querySelector('.accordion__content');
-      const inner = details.querySelector('.accordion__content-inner');
+      if (!summary) return;
 
-      if (!summary || !content || !inner) return;
+      let isAnimating = false;
+      let closeTimer = null;
 
-      if (details.hasAttribute('open')) {
-        details.classList.add('is-open');
-        content.style.height = 'auto';
-        content.style.opacity = '1';
-      } else {
-        details.classList.remove('is-open');
-        content.style.height = '0px';
-        content.style.opacity = '0';
+      function setInitialState() {
+        if (details.hasAttribute('open')) {
+          details.classList.add('is-open');
+        } else {
+          details.classList.remove('is-open');
+        }
       }
+
+      function openAccordion() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+
+        isAnimating = true;
+        details.setAttribute('open', '');
+
+        requestAnimationFrame(() => {
+          details.classList.add('is-open');
+        });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, DURATION);
+      }
+
+      function closeAccordion() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+
+        isAnimating = true;
+        details.classList.remove('is-open');
+
+        closeTimer = setTimeout(() => {
+          details.removeAttribute('open');
+          isAnimating = false;
+          closeTimer = null;
+        }, DURATION);
+      }
+
+      setInitialState();
 
       summary.addEventListener('click', function (e) {
         e.preventDefault();
+        if (isAnimating) return;
 
         const isOpen = details.classList.contains('is-open');
 
         if (isOpen) {
-          const startHeight = content.scrollHeight;
-
-          content.style.height = startHeight + 'px';
-          content.style.opacity = '1';
-
-          details.classList.remove('is-open');
-
-          requestAnimationFrame(() => {
-            content.style.height = '0px';
-            content.style.opacity = '0';
-          });
-
-          const onCloseEnd = function (event) {
-            if (event.propertyName !== 'height') return;
-
-            details.removeAttribute('open');
-            content.removeEventListener('transitionend', onCloseEnd);
-          };
-
-          content.addEventListener('transitionend', onCloseEnd);
+          closeAccordion();
         } else {
-          details.setAttribute('open', '');
-          details.classList.add('is-open');
-
-          content.style.height = '0px';
-          content.style.opacity = '0';
-
-          requestAnimationFrame(() => {
-            const targetHeight = content.scrollHeight;
-            content.style.height = targetHeight + 'px';
-            content.style.opacity = '1';
-          });
-
-          const onOpenEnd = function (event) {
-            if (event.propertyName !== 'height') return;
-
-            content.style.height = 'auto';
-            content.removeEventListener('transitionend', onOpenEnd);
-          };
-
-          content.addEventListener('transitionend', onOpenEnd);
+          openAccordion();
         }
       });
     });
