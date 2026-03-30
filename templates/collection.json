@@ -9,6 +9,44 @@
  */
 {
   "sections": {
+    "rich_text_ewXnWJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tJbrRL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Productos",
+            "heading_size": "h1"
+          }
+        },
+        "text_6ABUeF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>¿Listo para crear tu rutina? Explora el resto de nuestra gama de productos para el cuidado de la sonrisa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tJbrRL",
+        "text_6ABUeF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_bg_color": "#ff2b85",
+        "custom_heading_color": "#ffffff",
+        "custom_text_color": "#ffffff",
+        "heading_size_mobile": 32,
+        "heading_size_desktop": 48,
+        "text_size_mobile": 16,
+        "text_size_desktop": 16,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -38,10 +76,138 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "os_best_sellers_collection_HrFznr": {
+      "type": "os-best-sellers-collection",
+      "blocks": {
+        "product_swatches_xKaH4d": {
+          "type": "product_swatches",
+          "settings": {
+            "product": "purple-v34-blanqueador-dental",
+            "invisible_view_more_trigger": true,
+            "swatch_product_1": "",
+            "swatch_link_1": "shopify://products/purple-v34-blanqueador-dental",
+            "swatch_product_2": "",
+            "swatch_link_2": "",
+            "swatch_product_3": "",
+            "swatch_link_3": "",
+            "swatch_product_4": "",
+            "swatch_link_4": "",
+            "swatch_product_5": "",
+            "swatch_link_5": "",
+            "swatch_product_6": "",
+            "swatch_link_6": "",
+            "swatch_product_7": "",
+            "swatch_link_7": "",
+            "swatch_product_8": "",
+            "swatch_link_8": "",
+            "swatch_product_9": "",
+            "swatch_link_9": "",
+            "swatch_product_10": "",
+            "swatch_link_10": "",
+            "swatch_product_11": "",
+            "swatch_link_11": "",
+            "swatch_product_12": "",
+            "swatch_link_12": ""
+          }
+        },
+        "product_swatches_K3zfEa": {
+          "type": "product_swatches",
+          "settings": {
+            "product": "pasta-de-dientes-de-sabores-pack-3",
+            "invisible_view_more_trigger": false,
+            "swatch_1": "shopify://shop_images/OrangeSodaSelector_80x_small_e574ecd6-1260-4344-9bb9-2e80fa318514.webp",
+            "swatch_product_1": "cepillo-3d-nanobrush",
+            "swatch_link_1": "",
+            "swatch_2": "shopify://shop_images/strawberry_6f14615c-87c4-4427-9ae2-8d22cc8a03c7.avif",
+            "swatch_product_2": "cepillo-electrico",
+            "swatch_link_2": "",
+            "swatch_3": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
+            "swatch_product_3": "",
+            "swatch_link_3": "",
+            "swatch_4": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
+            "swatch_product_4": "",
+            "swatch_link_4": "",
+            "swatch_5": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
+            "swatch_product_5": "",
+            "swatch_link_5": "",
+            "swatch_6": "shopify://shop_images/GrapeBubblegum-Selector-Toothpaste_80x_small_6462fc7e-3c2c-4809-9f1c-2b5f6cd036cd.webp",
+            "swatch_product_6": "",
+            "swatch_link_6": "",
+            "swatch_product_7": "",
+            "swatch_link_7": "",
+            "swatch_product_8": "",
+            "swatch_link_8": "",
+            "swatch_product_9": "",
+            "swatch_link_9": "",
+            "swatch_product_10": "",
+            "swatch_link_10": "",
+            "swatch_product_11": "",
+            "swatch_link_11": "",
+            "swatch_product_12": "",
+            "swatch_link_12": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_swatches_xKaH4d",
+        "product_swatches_K3zfEa"
+      ],
+      "name": "OS Best Sellers Col",
+      "settings": {
+        "collection": "new-collect",
+        "featured_product": "purple-v34-blanqueador-dental",
+        "products_to_show": 4,
+        "heading": "",
+        "subheading": "",
+        "full_width": true,
+        "add_to_cart_text": "AÑADIR",
+        "adding_text": "AÑADIENDO...",
+        "added_text": "AÑADIDO",
+        "view_more_text": "VER MÁS",
+        "sold_out_button_text": "Agotado",
+        "heading_size": 28,
+        "heading_size_mobile": 24,
+        "subheading_size": 16,
+        "subheading_size_mobile": 14,
+        "product_title_size": 16,
+        "product_title_size_mobile": 15,
+        "featured_product_title_size": 16,
+        "featured_product_title_size_mobile": 18,
+        "price_size": 18,
+        "price_size_mobile": 19,
+        "image_height_desktop": 340,
+        "image_height_mobile": 260,
+        "featured_image_height_desktop": 240,
+        "featured_image_height_mobile": 180,
+        "card_gap": 16,
+        "card_radius": 8,
+        "show_sold_out_badge": true,
+        "sold_out_text": "AGOTADO",
+        "section_bg": "#fafafc",
+        "card_bg": "#f2f2f6",
+        "content_bg": "#ffffff",
+        "title_color": "#111111",
+        "subtitle_color": "#7b7b86",
+        "product_title_color": "#111111",
+        "price_color": "#ec008c",
+        "badge_bg": "#d7ff00",
+        "badge_color": "#111111",
+        "add_button_bg": "#111111",
+        "add_button_text": "#ffffff",
+        "view_button_bg": "#1f75ff",
+        "view_button_text": "#ffffff",
+        "sold_out_button_bg": "#9a9a9a",
+        "sold_out_button_text_color": "#ffffff",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
+    "rich_text_ewXnWJ",
     "banner",
-    "product-grid"
+    "product-grid",
+    "os_best_sellers_collection_HrFznr"
   ]
 }
