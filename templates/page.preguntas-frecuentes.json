@@ -23,9 +23,9 @@
         "collapsible_row_wJ3BTD": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Fila desplegable",
+            "heading": "¿Cómo se usa el blanqueador V34?",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada 30 segundos</p><p><strong>5. </strong>Enguajar la boca con agua abundante</p>",
             "page": ""
           }
         },
@@ -66,7 +66,7 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Contenido desplegable",
+        "heading": "Preguntas Frecuentes",
         "heading_size": "h1",
         "heading_alignment": "left",
         "layout": "section",
