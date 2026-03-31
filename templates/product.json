@@ -12,6 +12,24 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "color_block_whEDrE": {
+          "type": "color_block",
+          "settings": {
+            "panel_bg": "#f3f3f3",
+            "card_bg": "#ffffff",
+            "border_color": "#e4e4e4",
+            "button_bg": "#3d67f2",
+            "button_text": "#ffffff",
+            "panel_max_width": 620,
+            "panel_padding_x": 24,
+            "panel_padding_y": 24,
+            "offer_box_padding": 20,
+            "offer_box_radius": 12,
+            "panel_radius": 0,
+            "panel_padding": 24,
+            "panel_gap": 20
+          }
+        },
         "eyebrow_block_W43XVc": {
           "type": "eyebrow_block",
           "settings": {
@@ -63,8 +81,8 @@
             "card_active_border_color_mobile": "#111111",
             "heading_color": "#111111",
             "heading_color_mobile": "#111111",
-            "price_color": "#111111",
-            "price_color_mobile": "#111111",
+            "price_color": "#eb028c",
+            "price_color_mobile": "#eb028c",
             "compare_color": "#888888",
             "compare_color_mobile": "#888888",
             "badge_color": "#111111",
@@ -96,6 +114,7 @@
         }
       },
       "block_order": [
+        "color_block_whEDrE",
         "eyebrow_block_W43XVc",
         "title",
         "price",
