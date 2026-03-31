@@ -11,13 +11,371 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "research_hero_nav_PNRLep": {
+      "type": "research-hero-nav",
+      "name": "Research hero nav",
+      "settings": {
+        "bg_image": "shopify://shop_images/010.webp",
+        "eyebrow": "OBSESSIVE",
+        "heading": "El cuidado de la sonrisa\ndesde dentro",
+        "description": "<p>Bienvenidos al laboratorio OBSESSIVE, donde desarrollamos y probamos nuestros productos.</p>",
+        "card_heading": "¡Consigue un blanqueador V34 GRATIS!",
+        "card_text": "<p>Regístrate con tu correo y participa en el sorteo de un blanqueador dental V34 cada semana.</p>",
+        "email_placeholder": "Correo electrónico",
+        "button_label": "Enviar",
+        "success_text": "Gracias. Tu correo se envió correctamente.",
+        "first_link_text": "Nuestro laboratorio",
+        "first_link_url": "",
+        "second_link_text": "¿Cómo funciona V34?",
+        "second_link_url": "",
+        "section_bg": "#fafafc",
+        "text_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "card_text_color": "#111111",
+        "image_overlay_opacity": 70,
+        "container_width": 1440,
+        "desktop_height": 552,
+        "mobile_image_height": 520,
+        "card_radius": 6,
+        "card_radius_mobile": 6,
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    },
+    "rich_text_heiXdG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qMhYHT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Presentamos el Centro de Investigación OBSESSIVE",
+            "heading_size": "h1"
+          }
+        },
+        "text_Ap3KPh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Toda nuestra investigación, formulación y pruebas de producto se llevan a cabo internamente en nuestra sede española, a través de nuestro propio Centro de Investigación OBSESSIVE.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qMhYHT",
+        "text_Ap3KPh"
+      ],
+      "custom_css": [
+        ".rich-text__text a {font-family: \"Circular\";}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "custom_bg_color": "#fafafc",
+        "custom_heading_color": "#121212",
+        "custom_text_color": "#636366",
+        "heading_size_mobile": 28,
+        "heading_size_desktop": 37,
+        "text_size_mobile": 16,
+        "text_size_desktop": 16,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_single_image_URVC4g": {
+      "type": "custom-single-image",
+      "name": "Custom single image",
+      "settings": {
+        "image_desktop": "shopify://shop_images/004_10df4504-f10c-4a20-8742-4d1c65627cff.webp",
+        "video_mobile": "shopify://files/videos/55d5c125f39045d9969c1f7fd5937d57.mp4",
+        "enable_autoplay": true,
+        "enable_loop": true,
+        "mute_video": true,
+        "section_bg": "#fafafc",
+        "image_bg": "#fafafc",
+        "container_width": 1440,
+        "desktop_height": 390,
+        "mobile_height": 440,
+        "desktop_object_fit": "contain",
+        "mobile_object_fit": "cover",
+        "image_radius": 120,
+        "image_radius_mobile": 0,
+        "side_padding": 24,
+        "side_padding_mobile": 0,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_EXJ37y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Dq4Gqi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Conoce a nuestro equipo de investigación",
+            "heading_size": "h1"
+          }
+        },
+        "text_bTD7nT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dirigido por el Dr. Mauro Pascolutti, el equipo de investigación de OBSESSIVE trabaja con reconocidos odontólogos, expertos del sector y toda nuestra comunidad para dar forma al futuro del cuidado de la sonrisa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Dq4Gqi",
+        "text_bTD7nT"
+      ],
+      "custom_css": [
+        ".rich-text__text a {font-family: \"Circular\";}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "custom_bg_color": "#fafafc",
+        "custom_heading_color": "#121212",
+        "custom_text_color": "#636366",
+        "heading_size_mobile": 28,
+        "heading_size_desktop": 37,
+        "text_size_mobile": 16,
+        "text_size_desktop": 16,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "research_team_slider_NDPFQq": {
+      "type": "research-team-slider",
+      "blocks": {
+        "person_HVgcAD": {
+          "type": "person",
+          "settings": {
+            "image": "shopify://shop_images/007_Large_5fedae39-d65c-4ee1-9b51-eceb9a0c9812.webp",
+            "name": "Esteban Rodríguez",
+            "role": "Director de Investigación y Desarrollo",
+            "text": "<p>El Dr. Rodriguez es responsable del desarrollo de todas las nuevas formulaciones de OBSESSIVE. Esteban tiene un doctorado y un máster en Desarrollo de Medicamentos y fue anteriormente científico jefe en el Instituto de Glicómica de una importante universidad aquí en España.</p>"
+          }
+        },
+        "person_i3L3Gz": {
+          "type": "person",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2023-08-10_at_18.06.08_Large_1.webp",
+            "name": "Alina Park",
+            "role": "Especialista en Investigación y Desarrollo",
+            "text": "<p>Con un Máster en Ciencias Farmacéuticas y más de 15 años de experiencia en Australia y Brasil. Alina es responsable del desarrollo de las formulaciones que pasan por el Centro de Investigación.</p>"
+          }
+        },
+        "person_f3tdpV": {
+          "type": "person",
+          "settings": {
+            "image": "shopify://shop_images/006_Large_c476e31d-43d7-4eaf-a023-f438518722e4.webp",
+            "name": "Elizabeth Fuentes",
+            "role": "Especialista en Ortodoncia y Ortopedia Dentofacial",
+            "text": "<p>Licenciada en Química y con más de una década de experiencia en la industria en Londres y el Reino Unido. Elizabeth es la responsable de liderar la investigación y el desarrollo de nuevos productos con los más altos estándares del cuidado de la sonrisa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "person_HVgcAD",
+        "person_i3L3Gz",
+        "person_f3tdpV"
+      ],
+      "name": "Research team slider",
+      "settings": {
+        "section_bg": "#fafafc",
+        "card_bg": "#ffffff",
+        "image_bg": "#f7f7f7",
+        "name_color": "#222222",
+        "role_color": "#111111",
+        "text_color": "#636366",
+        "container_width": 1120,
+        "side_padding": 20,
+        "side_padding_mobile": 14,
+        "desktop_gap": 18,
+        "mobile_gap": 14,
+        "image_height_desktop": 480,
+        "image_height_mobile": 340,
+        "image_fit_desktop": "cover",
+        "image_fit_mobile": "cover",
+        "image_radius": 4,
+        "content_padding_top": 12,
+        "content_padding_bottom": 14,
+        "content_padding_side": 0,
+        "content_padding_side_mobile": 0,
+        "content_padding_bottom_mobile": 12,
+        "name_size": 24,
+        "name_size_mobile": 18,
+        "name_weight": "400",
+        "role_size": 16,
+        "role_size_mobile": 14,
+        "role_weight": "400",
+        "text_size": 14,
+        "text_size_mobile": 13,
+        "text_weight": "400",
+        "text_line_height": 1.5,
+        "text_line_height_mobile": 1.5,
+        "mobile_card_width": 72,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "research_methodology_video_7zQYfQ": {
+      "type": "research-methodology-video",
+      "blocks": {
+        "bar_njKwGn": {
+          "type": "bar",
+          "settings": {
+            "label": "100% de dientes más blancos",
+            "value": 100,
+            "value_text": "100%",
+            "bar_color": "#1e46dc"
+          }
+        },
+        "bar_mRfzYg": {
+          "type": "bar",
+          "settings": {
+            "label": "consiguió más de 3 tonos de blanco",
+            "value": 61,
+            "value_text": "61.9%",
+            "bar_color": "#1e46dc"
+          }
+        },
+        "bar_Dzmhnc": {
+          "type": "bar",
+          "settings": {
+            "label": "experimentó sensibilidad",
+            "value": 0,
+            "value_text": "0%",
+            "bar_color": "#1e46dc"
+          }
+        }
+      },
+      "block_order": [
+        "bar_njKwGn",
+        "bar_mRfzYg",
+        "bar_Dzmhnc"
+      ],
+      "name": "Methodology video",
+      "settings": {
+        "video_desktop": "shopify://files/videos/28cfca5b760c4c86aa9813afc028fcef.mp4",
+        "heading": "El ensayo clínico PAP+",
+        "description": "<p>El ensayo clínico PAP+ fue un estudio realizado por odontólogos externos. Cada participante completó un único tratamiento de blanqueamiento dental de diez minutos.</p>",
+        "methodology_link_text": "Sobre nuestra metodología",
+        "popup_heading": "Ensayo clínico PAP+",
+        "popup_content": "<h4>Después de un solo tratamiento de 10 minutos...</h4><ul><li>El 100% de los participantes obtuvo resultados instantáneos.</li><li>El 61.9% de los participantes mejoró en más de 3 tonos.</li><li>El 0% de los participantes experimentó sensibilidad.</li><li>Mejora promedio de 3.4 tonos.</li><li>Mejora máxima de 8 tonos.</li></ul><h4>Sobre el ensayo clínico de PAP+</h4><p>El ensayo clínico de PAP+ fue realizado por un dentista de terceros en una instalación externa e incluyó a 44 personas con edades entre 19 y 55 años.</p><p>Cada participante completó un solo tratamiento de blanqueamiento dental de diez minutos con una \"fórmula de blanqueamiento novedosa\" en un envase sin marca.</p><p>El 50% de los participantes recibieron un placebo, mientras que el otro 50% recibió la formulación de PAP+.</p><p>El ensayo fue doble ciego, lo que significa que ni el dentista ni los participantes sabían qué tratamiento estaban recibiendo.</p><p>Antes y después del tratamiento, se evaluó el tono dental y el nivel de sensibilidad de los participantes.</p><p>Los cambios en el tono dental se midieron en persona utilizando la Guía de Blanqueamiento VITA, y digitalmente a través de fotografías de alta resolución tomadas en condiciones de iluminación controladas.</p><p>1 Basado en un informe clínico liderado por dentistas que evalúa la eficacia y seguridad del Kit de Blanqueamiento Dental PAP+ de OBSESSIVE después de un solo tratamiento de 10 minutos.</p>",
+        "section_bg": "#fafafc",
+        "panel_bg": "#ffffff",
+        "media_bg": "#d9d9d9",
+        "heading_color": "#1e1e1e",
+        "text_color": "#636366",
+        "bar_label_color": "#636366",
+        "bar_track_color": "#d4d4d4",
+        "link_color": "#111111",
+        "container_width": 1520,
+        "desktop_height": 630,
+        "mobile_media_height": 460,
+        "panel_width": 430,
+        "panel_offset_left": 56,
+        "panel_radius": 10,
+        "panel_radius_mobile": 10,
+        "media_radius": 0,
+        "media_radius_mobile": 0,
+        "desktop_media_fit": "cover",
+        "mobile_media_fit": "cover",
+        "panel_padding_top": 48,
+        "panel_padding_bottom": 50,
+        "panel_padding_side": 38,
+        "panel_padding_top_mobile": 28,
+        "panel_padding_bottom_mobile": 28,
+        "panel_padding_side_mobile": 14,
+        "heading_size": 24,
+        "heading_size_mobile": 26,
+        "text_size": 16,
+        "text_size_mobile": 15,
+        "text_line_height": 1.6,
+        "text_line_height_mobile": 1.5,
+        "bar_label_size": 14,
+        "bar_label_size_mobile": 13,
+        "bar_height": 9,
+        "link_size": 16,
+        "link_size_mobile": 15,
+        "modal_width": 610,
+        "modal_bg": "#ffffff",
+        "modal_heading_color": "#1e1e1e",
+        "modal_text_color": "#474747",
+        "modal_radius": 10,
+        "modal_overlay_opacity": 30,
+        "modal_heading_size": 20,
+        "modal_heading_size_mobile": 18,
+        "modal_text_size": 16,
+        "modal_text_size_mobile": 14,
+        "modal_text_line_height": 1.6,
+        "modal_text_line_height_mobile": 1.5,
+        "side_padding": 24,
+        "side_padding_mobile": 0,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_NM4yXP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wBwiGb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ver lo último del laboratorio <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@obsessive.smiles</a>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wBwiGb"
+      ],
+      "custom_css": [
+        ".inline-richtext a,.rte.inline-richtext a {color: #0000ee;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_bg_color": "#fafafc",
+        "custom_heading_color": "#121212",
+        "custom_text_color": "#121212",
+        "heading_size_mobile": 19,
+        "heading_size_desktop": 27,
+        "text_size_mobile": 16,
+        "text_size_desktop": 18,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "research_hero_nav_PNRLep",
+    "rich_text_heiXdG",
+    "custom_single_image_URVC4g",
+    "rich_text_EXJ37y",
+    "research_team_slider_NDPFQq",
+    "research_methodology_video_7zQYfQ",
+    "rich_text_NM4yXP"
   ]
 }
