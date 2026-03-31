@@ -611,7 +611,7 @@
         "trigger_offset": 0,
         "show_quantity": true,
         "show_image_mobile": false,
-        "button_label": "Añadir al carrito",
+        "button_label": "Agregar al carrito",
         "sold_out_label": "Agotado",
         "loading_label": "Añadiendo...",
         "added_label": "Añadido",
