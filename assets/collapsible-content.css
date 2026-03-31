@@ -152,10 +152,11 @@
 
 .collapsible-content .collapsible-content__heading {
   margin: 0;
-  font-family: Helvetica;
+  font-family: 'Pulp';
+  letter-spacing: normal;
   color: var(--os-cc-heading-color, #111111);
   font-size: var(--os-cc-heading-size, 24px);
-  line-height: 1.2;
+  line-height: 2.2;
   font-weight: 500;
 }
 

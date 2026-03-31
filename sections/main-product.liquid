@@ -46,6 +46,9 @@
           max-width: var(--os-mobile-width, 100%);
           margin: var(--os-mobile-margin, 0 auto);
         }
+        .os-pdp-right__panel--offer{
+          margin-top: -28px;
+        }
       }
   {%- endstyle -%}
 
@@ -441,8 +444,10 @@
                           class="os-pdp-right__save-badge{% if save_percentage == 0 %} is-hidden{% endif %}"
                           data-custom-price-badge
                         >
-                          {{ block.settings.badge_prefix }}
-                          <span data-custom-price-badge-value>&nbsp{{ save_percentage }}%</span>
+                          <span class="os-pdp-right__save-badge-prefix">{{ block.settings.badge_prefix }}</span>
+                          <span class="os-pdp-right__save-badge-value" data-custom-price-badge-value>
+                            {{- save_percentage }}%</span
+                          >
                         </span>
                       </div>
                     {% endif %}
@@ -1756,7 +1761,7 @@
           "type": "color",
           "id": "offer_panel_bg_mobile",
           "label": "Fondo panel móvil",
-          "default": "#ffffff"
+          "default": "#fafafc"
         },
         {
           "type": "color",
