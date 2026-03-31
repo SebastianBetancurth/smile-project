@@ -12,6 +12,19 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "eyebrow_block_W43XVc": {
+          "type": "eyebrow_block",
+          "settings": {
+            "text": "BLANQUEA EN 30MIN DONDE QUIERAS",
+            "text_color": "#5c5c5c",
+            "text_color_mobile": "#5c5c5c",
+            "uppercase": true,
+            "letter_spacing": 2,
+            "margin_bottom": 16,
+            "mobile_width": 100,
+            "mobile_align": "center"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -83,6 +96,7 @@
         }
       },
       "block_order": [
+        "eyebrow_block_W43XVc",
         "title",
         "price",
         "variant_picker",
