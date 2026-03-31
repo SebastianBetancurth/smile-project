@@ -87,10 +87,10 @@
             "left_heading": "COMPRAR",
             "card_1_title": "Purple Strips v34",
             "card_1_image": "shopify://shop_images/purple.webp",
-            "card_1_link": "shopify://blogs/noticias",
+            "card_1_link": "shopify://products/purple-strips-v34-tiras-blanqueadoras",
             "card_2_title": "Pasta de dientes de sabores - Pack 3",
             "card_2_image": "shopify://shop_images/mega-satu.webp",
-            "card_2_link": ""
+            "card_2_link": "shopify://products/tiras-blanqueadoras-pap"
           }
         },
         "mega_menu_item_JMQiyn": {
@@ -100,10 +100,10 @@
             "left_heading": "AYUDA",
             "card_1_title": "Aprende sobre la fórmula PAP+",
             "card_1_image": "shopify://shop_images/PAPPage_-_Nav_-_Thumbnail_370x_8.jpg",
-            "card_1_link": "",
+            "card_1_link": "shopify://pages/como-funciona-v34",
             "card_2_title": "Aprende sobre la investigacion Obsessive",
             "card_2_image": "shopify://shop_images/007_Large_5fedae39-d65c-4ee1-9b51-eceb9a0c9812_jpg.webp",
-            "card_2_link": ""
+            "card_2_link": "shopify://pages/laboratorio"
           }
         }
       },
