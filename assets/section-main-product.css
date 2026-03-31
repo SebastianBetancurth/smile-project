@@ -2729,11 +2729,11 @@ a.product__text {
 
 .os-pdp-purchase-card__radio {
   position: relative;
-  width: 2rem;
-  height: 2rem;
+  width: 2.35rem;
+  height: 2.35rem;
   min-width: 2rem;
   border-radius: 50%;
-  border: 0.15rem solid rgba(var(--color-foreground), 0.45);
+  border: 0.2rem solid rgba(var(--color-foreground), 0.45);
   background: #fff;
   margin-top: 0.15rem;
 }
