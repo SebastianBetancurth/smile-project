@@ -11,13 +11,113 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "collapsible_content_UQ8Uwy": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wJ3BTD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo se usa el blanqueador V34?",
+            "icon": "check_mark",
+            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada 30 segundos</p><p><strong>5. </strong>Enguajar la boca con agua abundante</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gRCHiy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "icon": "check_mark",
+            "row_content": "<p><strong>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rJaLny": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Daña el esmalte de los dientes?",
+            "icon": "check_mark",
+            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_6CegNW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo devolver mi pedido?",
+            "icon": "check_mark",
+            "row_content": "<p>Aunque ese es un caso muy extraño...</p><p>Nuestro equipo de atención al cliente estará encantado de ayudarte con tu devolución en el siguiente correo: <strong>atcliente@obsessivesmiles.com</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_G9a7ep": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
+            "icon": "check_mark",
+            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dT7TT9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuáles son los ingredientes?",
+            "icon": "check_mark",
+            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wJ3BTD",
+        "collapsible_row_gRCHiy",
+        "collapsible_row_rJaLny",
+        "collapsible_row_6CegNW",
+        "collapsible_row_G9a7ep",
+        "collapsible_row_dT7TT9"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Preguntas Frecuentes",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "section",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "os_box_bg": "#fafafc",
+        "os_box_border": "#e8e8e8",
+        "os_heading_color": "#111111",
+        "os_row_title_color": "#222222",
+        "os_content_color": "#555555",
+        "os_toggle_color": "#222222",
+        "os_divider_color": "#ececec",
+        "os_box_radius": 0,
+        "os_box_padding_x": 0,
+        "os_box_padding_y": 28,
+        "os_heading_size": 24,
+        "os_row_title_size": 16,
+        "os_content_size": 15,
+        "os_row_padding_y": 22,
+        "os_toggle_size": 14,
+        "os_box_max_width": 760,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collapsible_content_UQ8Uwy"
   ]
 }
