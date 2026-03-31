@@ -83,7 +83,7 @@
         "mega_menu_item_iAHmdL": {
           "type": "mega_menu_item",
           "settings": {
-            "menu_item_handle": "compra",
+            "menu_item_handle": "comprar",
             "left_heading": "COMPRAR",
             "card_1_title": "Purple Strips v34",
             "card_1_image": "shopify://shop_images/purple.webp",
