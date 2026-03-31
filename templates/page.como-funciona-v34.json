@@ -11,13 +11,52 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "research_hero_nav_HRUyJR": {
+      "type": "research-hero-nav",
+      "custom_css": [
+        ".research-hero-nav__signup-card {display: none;}",
+        ".research-hero-nav__content {min-height: 340px !important; background-color: #0000005c; padding: 110px 92px 114px;}",
+        ".research-hero-nav__media {min-height: 291px;}",
+        "@media screen and (max-width: 989px) {.research-hero-nav__content {min-height: 299px !important; background-color: #0000005c; padding: 0; padding-top: 127px; } .research-hero-nav__tabs {padding: 20px 16px 0; }}"
+      ],
+      "name": "Research hero nav",
+      "settings": {
+        "bg_image": "shopify://shop_images/Research_-_Whitening_-_Header_-_D_991x_3d22bb8d-45e7-4ab0-8149-a1e6bb1db695.webp",
+        "eyebrow": "",
+        "heading": "Blanqueamiento con V34",
+        "description": "",
+        "card_heading": "",
+        "card_text": "",
+        "email_placeholder": "",
+        "button_label": "",
+        "success_text": "",
+        "first_link_text": "Investigación OBSESSIVE",
+        "first_link_url": "",
+        "second_link_text": "¿Cómo funciona V34?",
+        "second_link_url": "",
+        "section_bg": "#fafafc",
+        "text_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "card_text_color": "#111111",
+        "image_overlay_opacity": 70,
+        "container_width": 1440,
+        "desktop_height": 480,
+        "mobile_image_height": 420,
+        "card_radius": 6,
+        "card_radius_mobile": 6,
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "research_hero_nav_HRUyJR"
   ]
 }
