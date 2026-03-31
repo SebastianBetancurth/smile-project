@@ -1,0 +1,702 @@
+{% liquid
+  assign current_path = request.path
+  assign first_link_active = false
+  assign second_link_active = false
+
+  if section.settings.first_link_url != blank and current_path == section.settings.first_link_url
+    assign first_link_active = true
+  endif
+
+  if section.settings.second_link_url != blank and current_path == section.settings.second_link_url
+    assign second_link_active = true
+  endif
+
+  if first_link_active == false and second_link_active == false
+    assign first_link_active = true
+  endif
+%}
+
+<section class="research-hero-nav research-hero-nav--{{ section.id }}">
+  <div class="research-hero-nav__wrap page-width">
+    <div class="research-hero-nav__hero">
+      <div class="research-hero-nav__media">
+        {% if section.settings.bg_image != blank %}
+          {{
+            section.settings.bg_image
+            | image_url: width: 2400
+            | image_tag:
+              class: 'research-hero-nav__bg-image',
+              loading: 'lazy',
+              sizes: '(min-width: 990px) 1440px, 100vw',
+              widths: '550, 750, 990, 1200, 1440, 1800, 2200, 2400',
+              alt: section.settings.bg_image.alt
+            | escape
+          }}
+        {% else %}
+          <div class="research-hero-nav__bg-placeholder"></div>
+        {% endif %}
+
+        <div class="research-hero-nav__overlay"></div>
+
+        <div class="research-hero-nav__content">
+          <div class="research-hero-nav__text">
+            {% if section.settings.eyebrow != blank %}
+              <div class="research-hero-nav__eyebrow">
+                {{ section.settings.eyebrow }}
+              </div>
+            {% endif %}
+
+            {% if section.settings.heading != blank %}
+              <h2 class="research-hero-nav__heading">
+                {{ section.settings.heading }}
+              </h2>
+            {% endif %}
+
+            {% if section.settings.description != blank %}
+              <div class="research-hero-nav__description rte">
+                {{ section.settings.description }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="research-hero-nav__signup">
+            <div class="research-hero-nav__signup-card">
+              {% if section.settings.card_heading != blank %}
+                <h3 class="research-hero-nav__signup-title">
+                  {{ section.settings.card_heading }}
+                </h3>
+              {% endif %}
+
+              {% if section.settings.card_text != blank %}
+                <div class="research-hero-nav__signup-text rte">
+                  {{ section.settings.card_text }}
+                </div>
+              {% endif %}
+
+              {% form 'customer', class: 'research-hero-nav__form' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+
+                <div class="research-hero-nav__field-wrap">
+                  <input
+                    id="ResearchHeroEmail-{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="research-hero-nav__input"
+                    value="{% if customer %}{{ customer.email }}{% endif %}"
+                    placeholder="{{ section.settings.email_placeholder }}"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      aria-invalid="true"
+                    {% endif %}
+                    required
+                  >
+
+                  <button
+                    type="submit"
+                    class="research-hero-nav__submit"
+                    aria-label="{{ section.settings.button_label | escape }}"
+                  >
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+
+                {% if form.posted_successfully? %}
+                  <div class="research-hero-nav__message research-hero-nav__message--success">
+                    {{ section.settings.success_text }}
+                  </div>
+                {% endif %}
+
+                {% if form.errors %}
+                  <div class="research-hero-nav__message research-hero-nav__message--error">
+                    {{ form.errors | default_errors }}
+                  </div>
+                {% endif %}
+              {% endform %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-hero-nav__tabs">
+        <a
+          href="{{ section.settings.first_link_url }}"
+          class="research-hero-nav__tab-link{% if first_link_active %} is-active{% endif %}"
+        >
+          <span>{{ section.settings.first_link_text }}</span>
+        </a>
+
+        <a
+          href="{{ section.settings.second_link_url }}"
+          class="research-hero-nav__tab-link{% if second_link_active %} is-active{% endif %}"
+        >
+          <span>{{ section.settings.second_link_text }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .research-hero-nav--{{ section.id }} {
+      background: {{ section.settings.section_bg }};
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__wrap {
+    max-width: {{ section.settings.container_width }}px;
+    margin: 0 auto;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__hero {
+      background: #fff;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__media {
+      position: relative;
+      min-height: {{ section.settings.desktop_height }}px;
+      overflow: visible;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__bg-image,
+    .research-hero-nav--{{ section.id }} .research-hero-nav__bg-placeholder {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__bg-placeholder {
+      background: #123b8f;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, {{ section.settings.image_overlay_opacity | divided_by: 100.0 }});
+      pointer-events: none;
+    }
+
+   .research-hero-nav--{{ section.id }} .research-hero-nav__content {
+    position: relative;
+    z-index: 2;
+    min-height: {{ section.settings.desktop_height }}px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 415px;
+    align-items: end;
+    gap: 48px;
+    padding: 110px 92px 72px;
+    min-height: 484px!important;
+  }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__text {
+      max-width: 540px;
+      color: {{ section.settings.text_color }};
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__eyebrow {
+        margin: 0 0 18px;
+        font-size: 2.8rem;
+        line-height: 1;
+        font-weight: 600;
+        font-family: 'Pulp';
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__heading {
+      margin: 0 0 28px;
+      color: {{ section.settings.text_color }};
+      font-size: 40px;
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.66px;
+        font-family: 'Pulp';
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__description {
+      color: {{ section.settings.text_color }};
+      font-size: 22px;
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: 520px;
+        letter-spacing: 0.63px;
+        font-family: 'Circular';
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__description p {
+      margin: 0;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__signup {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__signup-card {
+      width: 100%;
+      max-width: 415px;
+      background: {{ section.settings.card_bg }};
+      color: {{ section.settings.card_text_color }};
+      border-radius: {{ section.settings.card_radius }}px;
+      padding: 24px 22px 18px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__signup-title {
+      margin: 0 0 8px;
+      color: {{ section.settings.card_text_color }};
+      font-size: 18px;
+        line-height: 1.2;
+        font-weight: 500;
+        letter-spacing: 0.66px;
+        font-family: 'Pulp';
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__signup-text {
+      margin: 0 0 18px;
+      color: {{ section.settings.card_text_color }};
+      font-size: 15px;
+        line-height: 1.5;
+        letter-spacing: 0.63px;
+        font-weight: 400;
+        font-family: 'Pulp';
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__signup-text p {
+      margin: 0;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__form {
+      margin: 0;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__field-wrap {
+      position: relative;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__input {
+      width: 100%;
+      height: 50px;
+      border: 2px solid #d9d9d9;
+      border-radius: 0;
+      background: #f8f8f8;
+      color: #2b2b2b;
+     padding: 0 56px 0 22px;
+        font-size: 13.8px;
+        box-shadow: none;
+        outline: none;
+        font-weight: 400;
+        font-family: 'Circular';
+        outline: none;
+     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__input::placeholder {
+    color: #666;
+    opacity: 1;
+    transition: opacity 0.15s ease;
+    }
+    .research-hero-nav--{{ section.id }} .research-hero-nav__input:hover {
+    border-color: #bcbcbc;
+    }
+
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__input:focus {
+      border-color: #b8b8b8;
+      box-shadow: none;
+      outline: none;
+    }
+     .research-hero-nav--{{ section.id }} .research-hero-nav__input:focus,
+        .research-hero-nav--{{ section.id }} .research-hero-nav__input:focus-visible {
+        border-color: #8f8f8f;
+        box-shadow: none;
+        outline: none;
+        }
+
+     .research-hero-nav--{{ section.id }} .research-hero-nav__input:focus::placeholder,
+        .research-hero-nav--{{ section.id }} .research-hero-nav__input:focus-visible::placeholder {
+        opacity: 0;
+        }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 52px;
+      height: 50px;
+      border: 0;
+      background: transparent;
+      color: #8d8d8d;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__submit:hover {
+      color: #000;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__message {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      line-height: 1.4;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__message--success {
+      color: #1f7a35;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__message--error {
+      color: #c0392b;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      background: #fff;
+      padding: 20px 20px 0;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 160px;
+      padding: 0 0 18px;
+      text-decoration: none;
+      color: #9b9b9b;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link:hover {
+      color: #111;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link.is-active {
+      color: #111;
+    }
+
+    .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link.is-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: #222;
+    }
+
+    @media screen and (max-width: 989px) {
+      .research-hero-nav--{{ section.id }} .research-hero-nav__wrap {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        }
+        .research-hero-nav--{{ section.id }} .research-hero-nav__hero {
+        width: 100%;
+        }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__media {
+        width: 100%;
+        }
+         .research-hero-nav--{{ section.id }} .research-hero-nav__bg-image,
+        .research-hero-nav--{{ section.id }} .research-hero-nav__bg-placeholder {
+        width: 100%;
+        }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__content {
+        min-height: {{ section.settings.mobile_image_height }}px;
+        display: block;
+        padding: 38px 20px 0;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__text {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__eyebrow {
+        margin-bottom: 12px;
+        font-size: 2.8rem;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__heading {
+        margin-bottom: 18px;
+        font-size: 3.2rem;
+        line-height: 1.15;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__description {
+        max-width: 360px;
+        margin: 0 auto;
+        font-size: 1.7rem;
+        line-height: 1.55;
+        font-weight: 700;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__signup {
+        justify-content: center;
+        margin-top: 86px;
+        padding-bottom: 0;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__signup-card {
+        max-width: 100%;
+        width: calc(100% - 8px);
+        position: relative;
+        margin: 0 auto -28px;
+        padding: 28px 18px 14px;
+        border-radius: {{ section.settings.card_radius_mobile }}px;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__signup-title {
+        font-size: 2.7rem;
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__signup-text {
+        font-size: 1.5rem;
+        line-height: 1.55;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__input {
+        height: 49px;
+        font-size: 1.6rem;
+        background: #fbfbfb;
+        padding-left: 22px;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__submit {
+        height: 49px;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__tabs {
+        gap: 26px;
+        padding: 46px 16px 0;
+        flex-wrap: nowrap;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link {
+        min-width: auto;
+        font-size: 1.3rem;
+        padding-bottom: 16px;
+        white-space: nowrap;
+      }
+
+      .research-hero-nav--{{ section.id }} .research-hero-nav__tab-link.is-active::after {
+        height: 4px;
+      }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Research hero nav",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Imagen de fondo"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño superior",
+      "default": "OBSESSIVE"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Título",
+      "default": "El cuidado de la sonrisa\ndesde dentro"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Bienvenidos al laboratorio OBSESSIVE, donde desarrollamos y probamos nuestros productos.</p>"
+    },
+    {
+      "type": "text",
+      "id": "card_heading",
+      "label": "Título del formulario",
+      "default": "¡Consigue un blanqueador V34 GRATIS!"
+    },
+    {
+      "type": "richtext",
+      "id": "card_text",
+      "label": "Texto del formulario",
+      "default": "<p>Regístrate con tu correo y participa en el sorteo de un blanqueador dental V34 cada semana.</p>"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Placeholder email",
+      "default": "Correo electrónico"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Label accesible botón",
+      "default": "Enviar"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Texto de éxito",
+      "default": "Gracias. Tu correo se envió correctamente."
+    },
+    {
+      "type": "text",
+      "id": "first_link_text",
+      "label": "Texto primer link",
+      "default": "Nuestro laboratorio"
+    },
+    {
+      "type": "url",
+      "id": "first_link_url",
+      "label": "URL primer link"
+    },
+    {
+      "type": "text",
+      "id": "second_link_text",
+      "label": "Texto segundo link",
+      "default": "¿Cómo funciona V34?"
+    },
+    {
+      "type": "url",
+      "id": "second_link_url",
+      "label": "URL segundo link"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo exterior",
+      "default": "#f3f3f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto principal",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fondo card",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Color texto card",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "Oscurecer imagen",
+      "min": 0,
+      "max": 70,
+      "step": 1,
+      "unit": "%",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Ancho contenedor",
+      "min": 1200,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Alto desktop",
+      "min": 480,
+      "max": 760,
+      "step": 4,
+      "unit": "px",
+      "default": 552
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "Alto mobile",
+      "min": 420,
+      "max": 760,
+      "step": 10,
+      "unit": "px",
+      "default": 520
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Radio card desktop",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "card_radius_mobile",
+      "label": "Radio card mobile",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Research hero nav"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,436 @@
+<section class="custom-single-image custom-single-image--{{ section.id }}">
+  <div class="custom-single-image__outer">
+    <div class="custom-single-image__inner">
+      {% assign desktop_image = section.settings.image_desktop %}
+      {% assign mobile_image = section.settings.image_mobile %}
+      {% assign desktop_video = section.settings.video_desktop %}
+      {% assign mobile_video = section.settings.video_mobile %}
+
+      {% assign has_media = false %}
+      {% if desktop_image != blank or mobile_image != blank or desktop_video != blank or mobile_video != blank %}
+        {% assign has_media = true %}
+      {% endif %}
+
+      {% if has_media %}
+        <div class="custom-single-image__media">
+          {% if desktop_video != blank %}
+            <div class="custom-single-image__desktop-media custom-single-image__desktop-media--video">
+              {{
+                desktop_video
+                | video_tag:
+                  class: 'custom-single-image__video',
+                  autoplay: section.settings.enable_autoplay,
+                  loop: section.settings.enable_loop,
+                  muted: section.settings.mute_video,
+                  controls: false,
+                  playsinline: true,
+                  preload: 'metadata'
+              }}
+            </div>
+          {% elsif desktop_image != blank %}
+            <div class="custom-single-image__desktop-media custom-single-image__desktop-media--image">
+              {{
+                desktop_image
+                | image_url: width: 2200
+                | image_tag:
+                  class: 'custom-single-image__image',
+                  loading: 'lazy',
+                  sizes: '(min-width: 750px) 100vw, 100vw',
+                  widths: '480, 750, 900, 1100, 1400, 1600, 1800, 2200',
+                  alt: desktop_image.alt
+                | escape
+              }}
+            </div>
+          {% elsif mobile_video != blank %}
+            <div class="custom-single-image__desktop-media custom-single-image__desktop-media--video">
+              {{
+                mobile_video
+                | video_tag:
+                  class: 'custom-single-image__video',
+                  autoplay: section.settings.enable_autoplay,
+                  loop: section.settings.enable_loop,
+                  muted: section.settings.mute_video,
+                  controls: false,
+                  playsinline: true,
+                  preload: 'metadata'
+              }}
+            </div>
+          {% elsif mobile_image != blank %}
+            <div class="custom-single-image__desktop-media custom-single-image__desktop-media--image">
+              {{
+                mobile_image
+                | image_url: width: 2200
+                | image_tag:
+                  class: 'custom-single-image__image',
+                  loading: 'lazy',
+                  sizes: '(min-width: 750px) 100vw, 100vw',
+                  widths: '480, 750, 900, 1100, 1400, 1600, 1800, 2200',
+                  alt: mobile_image.alt
+                | escape
+              }}
+            </div>
+          {% endif %}
+
+          {% if mobile_video != blank %}
+            <div class="custom-single-image__mobile-media custom-single-image__mobile-media--video">
+              {{
+                mobile_video
+                | video_tag:
+                  class: 'custom-single-image__video',
+                  autoplay: section.settings.enable_autoplay,
+                  loop: section.settings.enable_loop,
+                  muted: section.settings.mute_video,
+                  controls: false,
+                  playsinline: true,
+                  preload: 'metadata'
+              }}
+            </div>
+          {% elsif mobile_image != blank %}
+            <div class="custom-single-image__mobile-media custom-single-image__mobile-media--image">
+              {{
+                mobile_image
+                | image_url: width: 1200
+                | image_tag:
+                  class: 'custom-single-image__image',
+                  loading: 'lazy',
+                  sizes: '100vw',
+                  widths: '360, 480, 750, 900, 1200',
+                  alt: mobile_image.alt
+                | escape
+              }}
+            </div>
+          {% elsif desktop_video != blank %}
+            <div class="custom-single-image__mobile-media custom-single-image__mobile-media--video">
+              {{
+                desktop_video
+                | video_tag:
+                  class: 'custom-single-image__video',
+                  autoplay: section.settings.enable_autoplay,
+                  loop: section.settings.enable_loop,
+                  muted: section.settings.mute_video,
+                  controls: false,
+                  playsinline: true,
+                  preload: 'metadata'
+              }}
+            </div>
+          {% elsif desktop_image != blank %}
+            <div class="custom-single-image__mobile-media custom-single-image__mobile-media--image">
+              {{
+                desktop_image
+                | image_url: width: 1200
+                | image_tag:
+                  class: 'custom-single-image__image',
+                  loading: 'lazy',
+                  sizes: '100vw',
+                  widths: '360, 480, 750, 900, 1200',
+                  alt: desktop_image.alt
+                | escape
+              }}
+            </div>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="custom-single-image__placeholder">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <style>
+    .custom-single-image--{{ section.id }} {
+      background: {{ section.settings.section_bg }};
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__outer {
+      width: 100%;
+      max-width: {{ section.settings.container_width }}px;
+      margin: 0 auto;
+      padding-left: {{ section.settings.side_padding }}px;
+      padding-right: {{ section.settings.side_padding }}px;
+      box-sizing: border-box;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: {{ section.settings.image_radius }}px;
+      background: {{ section.settings.image_bg }};
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__media,
+    .custom-single-image--{{ section.id }} .custom-single-image__placeholder {
+    display: block;
+    width: 100%;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__desktop-media,
+    .custom-single-image--{{ section.id }} .custom-single-image__mobile-media {
+    width: 100%;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__mobile-media {
+    display: none;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__image,
+    .custom-single-image--{{ section.id }} .custom-single-image__video {
+    display: block;
+    width: 100%;
+    height: {{ section.settings.desktop_height }}px;
+    object-fit: {{ section.settings.desktop_object_fit }};
+    object-position: center center;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+    object-position: inherit;
+    display: block;
+    }
+
+    .custom-single-image--{{ section.id }} .custom-single-image__placeholder {
+      height: {{ section.settings.desktop_height }}px;
+    }
+
+    .custom-single-image--{{ section.id }} .placeholder-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #e9e9e9;
+      fill: #c8c8c8;
+    }
+
+    @media screen and (max-width: 749px) {
+      .custom-single-image--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+
+      .custom-single-image--{{ section.id }} .custom-single-image__outer {
+        max-width: 100%;
+        padding-left: {{ section.settings.side_padding_mobile }}px;
+        padding-right: {{ section.settings.side_padding_mobile }}px;
+      }
+
+      .custom-single-image--{{ section.id }} .custom-single-image__inner {
+        border-radius: {{ section.settings.image_radius_mobile }}px;
+      }
+
+      .custom-single-image--{{ section.id }} .custom-single-image__desktop-media {
+        display: none;
+        }
+
+        .custom-single-image--{{ section.id }} .custom-single-image__mobile-media {
+        display: block;
+        }
+
+        .custom-single-image--{{ section.id }} .custom-single-image__image,
+        .custom-single-image--{{ section.id }} .custom-single-image__video {
+        height: {{ section.settings.mobile_height }}px;
+        object-fit: {{ section.settings.mobile_object_fit }};
+        }
+
+      .custom-single-image--{{ section.id }} .custom-single-image__placeholder {
+        height: {{ section.settings.mobile_height }}px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Custom single image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Imagen desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Imagen mobile"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video desktop"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Autoplay video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_loop",
+      "label": "Loop video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mute_video",
+      "label": "Silenciar video",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Color fondo sección",
+      "default": "#f3f3f5"
+    },
+    {
+      "type": "color",
+      "id": "image_bg",
+      "label": "Color fondo contenedor imagen",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Ancho máximo contenedor",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Alto desktop",
+      "min": 200,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 390
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Alto mobile",
+      "min": 180,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 260
+    },
+    {
+      "type": "select",
+      "id": "desktop_object_fit",
+      "label": "Ajuste imagen desktop",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_object_fit",
+      "label": "Ajuste imagen mobile",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio bordes desktop",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "image_radius_mobile",
+      "label": "Radio bordes mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Espacio lateral desktop",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Espacio lateral mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Espacio superior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Espacio inferior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom single image"
+    }
+  ]
+}
+{% endschema %}

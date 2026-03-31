@@ -1,0 +1,619 @@
+<section class="research-team research-team--{{ section.id }}">
+  <div class="research-team__wrap">
+    <div class="research-team__grid swiper-disabled">
+      {% for block in section.blocks %}
+        <article class="research-team__card" {{ block.shopify_attributes }}>
+          <div class="research-team__image-wrap">
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 1200
+                | image_tag:
+                  class: 'research-team__image',
+                  loading: 'lazy',
+                  sizes: '(min-width: 990px) 33vw, 78vw',
+                  widths: '375, 550, 750, 900, 1100, 1200',
+                  alt: block.settings.name
+                | escape
+              }}
+            {% else %}
+              <div class="research-team__image-placeholder">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="research-team__content">
+            {% if block.settings.name != blank %}
+              <h3 class="research-team__name">{{ block.settings.name }}</h3>
+            {% endif %}
+
+            {% if block.settings.role != blank %}
+              <div class="research-team__role">{{ block.settings.role }}</div>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="research-team__text rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    .research-team--{{ section.id }} {
+      background: {{ section.settings.section_bg }};
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .research-team--{{ section.id }} .research-team__wrap {
+      max-width: {{ section.settings.container_width }}px;
+      margin: 0 auto;
+      padding-left: {{ section.settings.side_padding }}px;
+      padding-right: {{ section.settings.side_padding }}px;
+      box-sizing: border-box;
+    }
+
+    .research-team--{{ section.id }} .research-team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: {{ section.settings.desktop_gap }}px;
+    align-items: stretch;
+    }
+
+    .research-team--{{ section.id }} .research-team__card {
+    background: {{ section.settings.card_bg }};
+    overflow: hidden;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .research-team--{{ section.id }} .research-team__content {
+    padding: {{ section.settings.content_padding_top }}px {{ section.settings.content_padding_side }}px {{ section.settings.content_padding_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    }
+
+    .research-team--{{ section.id }} .research-team__image-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: {{ section.settings.image_bg }};
+      border-radius: {{ section.settings.image_radius }}px 0 0 0;
+    }
+
+    .research-team--{{ section.id }} .research-team__image,
+    .research-team--{{ section.id }} .research-team__image-placeholder {
+      display: block;
+      width: 100%;
+      height: {{ section.settings.image_height_desktop }}px;
+      object-fit: {{ section.settings.image_fit_desktop }};
+      object-position: center;
+    }
+
+    .research-team--{{ section.id }} .research-team__image-placeholder .placeholder-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #ececec;
+      fill: #cfcfcf;
+    }
+
+    .research-team--{{ section.id }} .research-team__content {
+      padding: {{ section.settings.content_padding_top }}px {{ section.settings.content_padding_side }}px {{ section.settings.content_padding_bottom }}px;
+    }
+
+    .research-team--{{ section.id }} .research-team__name {
+      margin: 0 0 6px;
+      color: {{ section.settings.name_color }};
+      font-size: {{ section.settings.name_size }}px;
+      line-height: 1.15;
+      font-weight: {{ section.settings.name_weight }};
+      letter-spacing: 0.63px;
+    font-family: 'Pulp';
+    }
+
+    .research-team--{{ section.id }} .research-team__role {
+      margin: 0 0 14px;
+      color: {{ section.settings.role_color }};
+      font-size: {{ section.settings.role_size }}px;
+      line-height: 1.35;
+      font-weight: {{ section.settings.role_weight }};
+        font-family: 'Circular';
+        letter-spacing: 0.63px;
+    }
+
+    .research-team--{{ section.id }} .research-team__text {
+      color: {{ section.settings.text_color }};
+      font-size: {{ section.settings.text_size }}px;
+      line-height: {{ section.settings.text_line_height }};
+      font-weight: {{ section.settings.text_weight }};
+        font-family: 'Circular';
+       letter-spacing: 0.63px;
+    }
+
+    .research-team--{{ section.id }} .research-team__text p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 989px) {
+      .research-team--{{ section.id }} {
+        overflow: hidden;
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+
+      .research-team--{{ section.id }} .research-team__wrap {
+        max-width: 100%;
+        padding-left: {{ section.settings.side_padding_mobile }}px;
+        padding-right: 0;
+      }
+
+      .research-team--{{ section.id }} .research-team__grid {
+        display: flex;
+        gap: {{ section.settings.mobile_gap }}px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        scrollbar-width: thin;
+        }
+
+        .research-team--{{ section.id }} .research-team__grid::-webkit-scrollbar {
+        height: 4px;
+        }
+
+        .research-team--{{ section.id }} .research-team__grid::-webkit-scrollbar-track {
+        background: transparent;
+        }
+
+        .research-team--{{ section.id }} .research-team__grid::-webkit-scrollbar-thumb {
+        background: #bdbdbd;
+        border-radius: 999px;
+        }
+
+      .research-team--{{ section.id }} .research-team__card {
+        flex: 0 0 {{ section.settings.mobile_card_width }}%;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        }
+      .research-team--{{ section.id }} .research-team__image,
+      .research-team--{{ section.id }} .research-team__image-placeholder {
+        height: {{ section.settings.image_height_mobile }}px;
+        object-fit: {{ section.settings.image_fit_mobile }};
+      }
+
+      .research-team--{{ section.id }} .research-team__content {
+        padding: {{ section.settings.content_padding_top_mobile }}px {{ section.settings.content_padding_side_mobile }}px {{ section.settings.content_padding_bottom_mobile }}px;
+      }
+
+      .research-team--{{ section.id }} .research-team__name {
+        font-size: {{ section.settings.name_size_mobile }}px;
+      }
+
+      .research-team--{{ section.id }} .research-team__role {
+        font-size: {{ section.settings.role_size_mobile }}px;
+        margin-bottom: 12px;
+      }
+
+      .research-team--{{ section.id }} .research-team__text {
+        font-size: {{ section.settings.text_size_mobile }}px;
+        line-height: {{ section.settings.text_line_height_mobile }};
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Research team slider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#f3f3f5"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Fondo card",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "image_bg",
+      "label": "Fondo imagen",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Color nombre",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "role_color",
+      "label": "Color profesión",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color descripción",
+      "default": "#4a4a4a"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Ancho contenedor",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1120
+    },
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Espacio lateral desktop",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Espacio lateral mobile izquierdo",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "label": "Separación entre cards desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Separación entre cards mobile",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Alto imagen desktop",
+      "min": 220,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 480
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Alto imagen mobile",
+      "min": 180,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "default": 340
+    },
+    {
+      "type": "select",
+      "id": "image_fit_desktop",
+      "label": "Ajuste imagen desktop",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit_mobile",
+      "label": "Ajuste imagen mobile",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Radio imagen superior",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "content_padding_top",
+      "label": "Padding contenido superior desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_padding_bottom",
+      "label": "Padding contenido inferior desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "content_padding_side",
+      "label": "Padding lateral contenido desktop",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "content_padding_side_mobile",
+      "label": "Padding lateral contenido mobile",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "content_padding_bottom_mobile",
+      "label": "Padding contenido inferior mobile",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Tamaño nombre desktop",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "name_size_mobile",
+      "label": "Tamaño nombre mobile",
+      "min": 16,
+      "max": 34,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "name_weight",
+      "label": "Peso nombre",
+      "default": "500",
+      "options": [
+        { "value": "400", "label": "400" },
+        { "value": "500", "label": "500" },
+        { "value": "600", "label": "600" },
+        { "value": "700", "label": "700" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "role_size",
+      "label": "Tamaño profesión desktop",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "role_size_mobile",
+      "label": "Tamaño profesión mobile",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "role_weight",
+      "label": "Peso profesión",
+      "default": "500",
+      "options": [
+        { "value": "400", "label": "400" },
+        { "value": "500", "label": "500" },
+        { "value": "600", "label": "600" },
+        { "value": "700", "label": "700" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Tamaño descripción desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Tamaño descripción mobile",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Peso descripción",
+      "default": "400",
+      "options": [
+        { "value": "400", "label": "400" },
+        { "value": "500", "label": "500" },
+        { "value": "600", "label": "600" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "label": "Interlineado descripción desktop",
+      "min": 1.2,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "text_line_height_mobile",
+      "label": "Interlineado descripción mobile",
+      "min": 1.2,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "Ancho card mobile",
+      "min": 60,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Espacio superior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Espacio inferior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Persona",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Esteban Rodríguez"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Profesión / cargo",
+          "default": "Director de Investigación y Desarrollo"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Descripción",
+          "default": "<p>Texto descriptivo del profesional para mostrar en esta tarjeta.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Research team slider",
+      "blocks": [
+        {
+          "type": "person"
+        },
+        {
+          "type": "person"
+        },
+        {
+          "type": "person"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

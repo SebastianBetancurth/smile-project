@@ -167,3 +167,15 @@
     height: 220px;
   }
 }
+
+.mega-menu summary .icon-caret,
+.header__menu-item .icon-caret,
+.list-menu__item .icon-caret {
+  transition: transform 0.45s ease !important;
+  will-change: transform;
+}
+
+.mega-menu[open] summary .icon-caret,
+details[open]>summary .icon-caret {
+  transform: rotate(180deg);
+}

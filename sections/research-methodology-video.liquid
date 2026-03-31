@@ -1,0 +1,1217 @@
+<section class="research-methodology research-methodology--{{ section.id }}">
+  <div class="research-methodology__wrap">
+    <div class="research-methodology__layout">
+      <div class="research-methodology__panel">
+        {% if section.settings.heading != blank %}
+          <h2 class="research-methodology__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="research-methodology__description rte">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="research-methodology__bars">
+            {% for block in section.blocks %}
+              <div class="research-methodology__bar-item" {{ block.shopify_attributes }}>
+                {% if block.settings.label != blank %}
+                  <div class="research-methodology__bar-label">
+                    {% if block.settings.value_text != blank %}
+                      <span class="research-methodology__bar-value-text">
+                        {{ block.settings.value_text }}
+                      </span>
+                    {% endif %}
+                    {% if block.settings.label != blank %}
+                      <span class="research-methodology__bar-label-text">
+                        {{ block.settings.label | remove: '100%' | remove: '61.9%' | remove: '0%' | strip }}
+                      </span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                <div class="research-methodology__bar-track">
+                  <span
+                    class="research-methodology__bar-fill"
+                    style="width: {{ block.settings.value | replace: ',', '.' }}%; background: linear-gradient(90deg, {{ block.settings.bar_color }} 0%, {{ block.settings.bar_color }} 58%, #9db2ea 100%);"
+                  ></span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.methodology_link_text != blank and section.settings.popup_content != blank %}
+          <button
+            type="button"
+            class="research-methodology__open-modal"
+            data-methodology-open
+            aria-haspopup="dialog"
+            aria-controls="ResearchMethodologyModal-{{ section.id }}"
+          >
+            <span>{{ section.settings.methodology_link_text }}</span>
+            <span class="research-methodology__open-icon" aria-hidden="true">↗</span>
+          </button>
+        {% endif %}
+      </div>
+
+      <div class="research-methodology__media">
+        {% assign desktop_video = section.settings.video_desktop %}
+        {% assign mobile_video = section.settings.video_mobile %}
+        {% assign desktop_image = section.settings.fallback_image_desktop %}
+        {% assign mobile_image = section.settings.fallback_image_mobile %}
+
+        <div class="research-methodology__media-desktop">
+          {% if desktop_video != blank %}
+            {{
+              desktop_video
+              | video_tag:
+                class: 'research-methodology__video',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% elsif desktop_image != blank %}
+            {{
+              desktop_image
+              | image_url: width: 2200
+              | image_tag:
+                class: 'research-methodology__image',
+                loading: 'lazy',
+                sizes: '(min-width: 990px) 100vw, 100vw',
+                widths: '550, 750, 990, 1200, 1600, 2000, 2200',
+                alt: desktop_image.alt
+              | escape
+            }}
+          {% else %}
+            <div class="research-methodology__placeholder"></div>
+          {% endif %}
+        </div>
+
+        <div class="research-methodology__media-mobile">
+          {% if mobile_video != blank %}
+            {{
+              mobile_video
+              | video_tag:
+                class: 'research-methodology__video',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% elsif mobile_image != blank %}
+            {{
+              mobile_image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'research-methodology__image',
+                loading: 'lazy',
+                sizes: '100vw',
+                widths: '360, 480, 750, 900, 1200',
+                alt: mobile_image.alt
+              | escape
+            }}
+          {% elsif desktop_video != blank %}
+            {{
+              desktop_video
+              | video_tag:
+                class: 'research-methodology__video',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+                playsinline: true,
+                preload: 'metadata'
+            }}
+          {% elsif desktop_image != blank %}
+            {{
+              desktop_image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'research-methodology__image',
+                loading: 'lazy',
+                sizes: '100vw',
+                widths: '360, 480, 750, 900, 1200',
+                alt: desktop_image.alt
+              | escape
+            }}
+          {% else %}
+            <div class="research-methodology__placeholder"></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.popup_content != blank %}
+    <div
+      id="ResearchMethodologyModal-{{ section.id }}"
+      class="research-methodology__modal"
+      hidden
+      aria-hidden="true"
+    >
+      <div class="research-methodology__modal-overlay" data-methodology-close></div>
+
+      <div
+        class="research-methodology__modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ResearchMethodologyTitle-{{ section.id }}"
+      >
+        <div class="research-methodology__modal-header">
+          <h3 id="ResearchMethodologyTitle-{{ section.id }}" class="research-methodology__modal-title">
+            {{ section.settings.popup_heading }}
+          </h3>
+
+          <button
+            type="button"
+            class="research-methodology__modal-close"
+            data-methodology-close
+            aria-label="Cerrar"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="research-methodology__modal-content rte">
+          {{ section.settings.popup_content }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <style>
+    .research-methodology--{{ section.id }} {
+      background: {{ section.settings.section_bg }};
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      overflow: hidden;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__wrap {
+      max-width: {{ section.settings.container_width }}px;
+      margin: 0 auto;
+      padding-left: {{ section.settings.side_padding }}px;
+      padding-right: {{ section.settings.side_padding }}px;
+      box-sizing: border-box;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__layout {
+      position: relative;
+      min-height: {{ section.settings.desktop_height }}px;
+      display: grid;
+      align-items: center;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__panel {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: {{ section.settings.panel_width }}px;
+      background: {{ section.settings.panel_bg }};
+      color: {{ section.settings.text_color }};
+      border-radius: {{ section.settings.panel_radius }}px;
+      padding: {{ section.settings.panel_padding_top }}px {{ section.settings.panel_padding_side }}px {{ section.settings.panel_padding_bottom }}px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-left: {{ section.settings.panel_offset_left }}px;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__heading {
+      margin: 0 0 18px;
+      color: {{ section.settings.heading_color }};
+      font-size: {{ section.settings.heading_size }}px;
+      line-height: 1.15;
+      font-weight: 500;
+        font-family: 'Pulp';
+        letter-spacing: 0.66px;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__description {
+      margin: 0 0 28px;
+      color: {{ section.settings.text_color }};
+      font-size: {{ section.settings.text_size }}px;
+      line-height: {{ section.settings.text_line_height }};
+       font-weight: 500;
+       letter-spacing: 0.63px;
+       font-family: 'Circular';
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__description p {
+      margin: 0;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__bars {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__bar-item {
+      display: grid;
+      gap: 10px;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__bar-label {
+        display: flex;
+        align-items: baseline;
+      gap: 8px;
+      font-size: {{ section.settings.bar_label_size }}px;
+      line-height: 1.35;
+      font-weight: 500;
+        font-family: 'Pulp';
+        letter-spacing: 0.63px;
+         flex-wrap: wrap;
+    }
+     .research-methodology--{{ section.id }} .research-methodology__bar-value-text {
+        color: #111111;
+        font-weight: 500;
+        }
+
+        .research-methodology--{{ section.id }} .research-methodology__bar-label-text {
+        color: {{ section.settings.bar_label_color }};
+        font-weight: 500;
+        }
+
+    .research-methodology--{{ section.id }} .research-methodology__bar-track {
+      position: relative;
+      width: 100%;
+      height: {{ section.settings.bar_height }}px;
+      border-radius: 999px;
+      background: {{ section.settings.bar_track_color }};
+      overflow: hidden;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__bar-fill {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #002fa7 27%, #a2b9f2 90%);}
+
+
+    .research-methodology--{{ section.id }} .research-methodology__open-modal {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: {{ section.settings.link_color }};
+      font-size: {{ section.settings.link_size }}px;
+      line-height: 1.2;
+      font-weight: 500;
+      font-family: 'Circular';
+      letter-spacing: normal;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__open-modal:hover {
+      opacity: 0.75;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__open-icon {
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: {{ section.settings.media_radius }}px;
+      overflow: hidden;
+      background: {{ section.settings.media_bg }};
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__media-desktop,
+    .research-methodology--{{ section.id }} .research-methodology__media-mobile {
+      width: 100%;
+      height: 100%;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__media-mobile {
+      display: none;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__video,
+    .research-methodology--{{ section.id }} .research-methodology__image,
+    .research-methodology--{{ section.id }} .research-methodology__placeholder {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: {{ section.settings.desktop_media_fit }};
+      object-position: center center;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__video video {
+      width: 100%;
+      height: 100%;
+      object-fit: inherit;
+      object-position: inherit;
+      display: block;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__placeholder {
+      background: #d9d9d9;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        background-color: #00000082;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-overlay {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, {{ section.settings.modal_overlay_opacity | divided_by: 100.0 }});
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-dialog {
+        position: relative;
+        z-index: 2;
+        width: min(100% - 32px, {{ section.settings.modal_width }}px);
+        max-height: min(45vh, 560px);
+        margin: 8vh auto 0;
+        background: {{ section.settings.modal_bg }};
+        border-radius: {{ section.settings.modal_radius }}px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .research-methodology--{{ section.id }} .research-methodology__modal.is-visible {
+        pointer-events: auto;
+        }
+    .research-methodology--{{ section.id }} .research-methodology__modal.is-visible .research-methodology__modal-overlay {
+        opacity: 1;
+        }
+        .research-methodology--{{ section.id }} .research-methodology__modal.is-visible .research-methodology__modal-dialog {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-title {
+      margin: 0;
+      color: {{ section.settings.modal_heading_color }};
+      font-size: {{ section.settings.modal_heading_size }}px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-close {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: {{ section.settings.modal_heading_color }};
+      font-size: 3rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-content {
+      padding: 18px;
+      color: {{ section.settings.modal_text_color }};
+      font-size: {{ section.settings.modal_text_size }}px;
+      line-height: {{ section.settings.modal_text_line_height }};
+      font-weight: 500;
+      max-height: calc(min(72vh, 560px) - 72px);
+      overflow-y: auto;
+    }
+
+    .research-methodology--{{ section.id }} .research-methodology__modal-content p,
+    .research-methodology--{{ section.id }} .research-methodology__modal-content ul,
+    .research-methodology--{{ section.id }} .research-methodology__modal-content ol,
+    .research-methodology--{{ section.id }} .research-methodology__modal-content h4 {
+      margin-top: 0;
+      font-family: 'Pulp';
+      font-size: 16.5px;
+      font-weight: 500px!important;
+    }
+    .rte li {
+        list-style: inherit;
+        font-family: 'Circular';
+        font-size: 16px!important;
+        color: #636366;
+    }
+    .research-methodology__modal-content p{
+        font-size: 16px!important;
+        font-family: 'Circular';
+        font-weight: 400px;
+        color: #636366;
+    }
+
+    @media screen and (max-width: 989px) {
+      .research-methodology--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__wrap {
+        max-width: 100%;
+        padding-left: {{ section.settings.side_padding_mobile }}px;
+        padding-right: {{ section.settings.side_padding_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__layout {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__panel {
+        max-width: 100%;
+        margin-left: 0;
+        border-radius: {{ section.settings.panel_radius_mobile }}px {{ section.settings.panel_radius_mobile }}px 0 0;
+        padding: {{ section.settings.panel_padding_top_mobile }}px {{ section.settings.panel_padding_side_mobile }}px {{ section.settings.panel_padding_bottom_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__heading {
+        font-size: {{ section.settings.heading_size_mobile }}px;
+        margin-bottom: 14px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__description {
+        font-size: {{ section.settings.text_size_mobile }}px;
+        line-height: {{ section.settings.text_line_height_mobile }};
+        margin-bottom: 22px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__bar-label {
+        font-size: {{ section.settings.bar_label_size_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__open-modal {
+        font-size: {{ section.settings.link_size_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__media {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: {{ section.settings.mobile_media_height }}px;
+        border-radius: 0 0 {{ section.settings.media_radius_mobile }}px {{ section.settings.media_radius_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__media-desktop {
+        display: none;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__media-mobile {
+        display: block;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__video,
+      .research-methodology--{{ section.id }} .research-methodology__image,
+      .research-methodology--{{ section.id }} .research-methodology__placeholder {
+        object-fit: {{ section.settings.mobile_media_fit }};
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__modal-dialog {
+        width: calc(100% - 24px);
+        max-height: 48vh;
+        margin-top: 23vh;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__modal-title {
+        font-size: {{ section.settings.modal_heading_size_mobile }}px;
+      }
+
+      .research-methodology--{{ section.id }} .research-methodology__modal-content {
+        font-size: {{ section.settings.modal_text_size_mobile }}px;
+        line-height: {{ section.settings.modal_text_line_height_mobile }};
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      const section = document.querySelector('.research-methodology--{{ section.id }}');
+      if (!section) return;
+
+      const modal = section.querySelector('.research-methodology__modal');
+      const openBtn = section.querySelector('[data-methodology-open]');
+      const closeBtns = section.querySelectorAll('[data-methodology-close]');
+      const dialog = section.querySelector('.research-methodology__modal-dialog');
+
+      if (!modal || !openBtn || !dialog) return;
+
+      let isClosing = false;
+
+      const openModal = () => {
+        modal.hidden = false;
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        requestAnimationFrame(() => {
+          modal.classList.add('is-visible');
+        });
+      };
+
+      const closeModal = () => {
+        if (isClosing) return;
+        isClosing = true;
+
+        modal.classList.remove('is-visible');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+          modal.hidden = true;
+          isClosing = false;
+        }, 350);
+      };
+
+      openBtn.addEventListener('click', openModal);
+
+      closeBtns.forEach((btn) => {
+        btn.addEventListener('click', closeModal);
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (!dialog.contains(event.target)) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.hidden === false) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Methodology video",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video desktop"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image_desktop",
+      "label": "Imagen fallback desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image_mobile",
+      "label": "Imagen fallback mobile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "El ensayo clínico PAP+"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>El ensayo clínico PAP+ fue un estudio realizado por odontólogos externos. Cada participante completó un único tratamiento de blanqueamiento dental de diez minutos.</p>"
+    },
+    {
+      "type": "text",
+      "id": "methodology_link_text",
+      "label": "Texto link popup",
+      "default": "Sobre nuestra metodología"
+    },
+    {
+      "type": "text",
+      "id": "popup_heading",
+      "label": "Título popup",
+      "default": "Ensayo clínico PAP+"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_content",
+      "label": "Contenido popup",
+      "default": "<p><strong>Después de un solo tratamiento de 10 minutos...</strong></p><ul><li>El 100% de los participantes obtuvo resultados instantáneos.</li><li>El 61.9% de los participantes mejoró en más de 3 tonos.</li><li>El 0% de los participantes experimentó sensibilidad.</li><li>Mejora promedio de 3.4 tonos.</li><li>Mejora máxima de 8 tonos.</li></ul><p><strong>Sobre el ensayo clínico de PAP+</strong></p><p>El ensayo clínico de PAP+ fue realizado por un dentista de terceros en una instalación externa e incluyó a 44 personas con edades entre 19 y 55 años.</p>"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Fondo sección",
+      "default": "#f3f3f5"
+    },
+    {
+      "type": "color",
+      "id": "panel_bg",
+      "label": "Fondo bloque blanco",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "media_bg",
+      "label": "Fondo media",
+      "default": "#d9d9d9"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color título",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto",
+      "default": "#424242"
+    },
+    {
+      "type": "color",
+      "id": "bar_label_color",
+      "label": "Color labels barras",
+      "default": "#2d2d2d"
+    },
+    {
+      "type": "color",
+      "id": "bar_track_color",
+      "label": "Color fondo barras",
+      "default": "#d4d4d4"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Color link",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Ancho contenedor",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Alto desktop",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 630
+    },
+    {
+      "type": "range",
+      "id": "mobile_media_height",
+      "label": "Alto media mobile",
+      "min": 180,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "panel_width",
+      "label": "Ancho bloque blanco",
+      "min": 320,
+      "max": 760,
+      "step": 10,
+      "unit": "px",
+      "default": 430
+    },
+    {
+      "type": "range",
+      "id": "panel_offset_left",
+      "label": "Desplazamiento bloque a la izquierda desktop",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "panel_radius",
+      "label": "Radio bloque desktop",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "panel_radius_mobile",
+      "label": "Radio bloque mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "media_radius",
+      "label": "Radio media desktop",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "media_radius_mobile",
+      "label": "Radio media mobile",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "desktop_media_fit",
+      "label": "Ajuste media desktop",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_fit",
+      "label": "Ajuste media mobile",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cubrir" },
+        { "value": "contain", "label": "Contener" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_top",
+      "label": "Padding superior bloque desktop",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_bottom",
+      "label": "Padding inferior bloque desktop",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_side",
+      "label": "Padding lateral bloque desktop",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_top_mobile",
+      "label": "Padding superior bloque mobile",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_bottom_mobile",
+      "label": "Padding inferior bloque mobile",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "panel_padding_side_mobile",
+      "label": "Padding lateral bloque mobile",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño título desktop",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Tamaño título mobile",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Tamaño texto desktop",
+      "min": 13,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Tamaño texto mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "label": "Interlineado texto desktop",
+      "min": 1.3,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "text_line_height_mobile",
+      "label": "Interlineado texto mobile",
+      "min": 1.3,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "bar_label_size",
+      "label": "Tamaño label barras desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "bar_label_size_mobile",
+      "label": "Tamaño label barras mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "bar_height",
+      "label": "Alto barras",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "link_size",
+      "label": "Tamaño link desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "link_size_mobile",
+      "label": "Tamaño link mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "modal_width",
+      "label": "Ancho popup",
+      "min": 320,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 560
+    },
+    {
+      "type": "color",
+      "id": "modal_bg",
+      "label": "Fondo popup",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "modal_heading_color",
+      "label": "Color título popup",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "modal_text_color",
+      "label": "Color texto popup",
+      "default": "#474747"
+    },
+    {
+      "type": "range",
+      "id": "modal_radius",
+      "label": "Radio popup",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "modal_overlay_opacity",
+      "label": "Oscuridad overlay popup",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "modal_heading_size",
+      "label": "Tamaño título popup desktop",
+      "min": 16,
+      "max": 34,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "modal_heading_size_mobile",
+      "label": "Tamaño título popup mobile",
+      "min": 16,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "modal_text_size",
+      "label": "Tamaño texto popup desktop",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "modal_text_size_mobile",
+      "label": "Tamaño texto popup mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "modal_text_line_height",
+      "label": "Interlineado popup desktop",
+      "min": 1.3,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "modal_text_line_height_mobile",
+      "label": "Interlineado popup mobile",
+      "min": 1.3,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "side_padding",
+      "label": "Espacio lateral desktop",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "side_padding_mobile",
+      "label": "Espacio lateral mobile",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Espacio superior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Espacio inferior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bar",
+      "name": "Barra",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texto barra",
+          "default": "de dientes más blancos"
+        },
+        {
+          "type": "range",
+          "id": "value",
+          "label": "Valor barra",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 100
+        },
+        {
+          "type": "text",
+          "id": "value_text",
+          "label": "Porcentaje visible",
+          "default": "100%"
+        },
+        {
+          "type": "color",
+          "id": "bar_color",
+          "label": "Color relleno barra",
+          "default": "#1e46dc"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Methodology video",
+      "blocks": [
+        {
+          "type": "bar"
+        },
+        {
+          "type": "bar"
+        },
+        {
+          "type": "bar"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
