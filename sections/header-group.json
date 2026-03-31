@@ -42,12 +42,12 @@
       "settings": {
         "repeat_count": 5,
         "speed": 70,
-        "font_size": 15,
+        "font_size": 14,
         "font_size_mobile": 12,
-        "padding_y": 10,
+        "padding_y": 12,
         "item_gap": 50,
         "letter_spacing": 0,
-        "bg_color": "#f4008c",
+        "bg_color": "#eb008c",
         "text_color": "#ffffff",
         "color_scheme": ""
       }
