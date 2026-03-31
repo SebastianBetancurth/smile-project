@@ -218,12 +218,20 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "color_section_3Uekf4": {
+      "type": "color-section",
+      "name": "Color Section",
+      "settings": {
+        "template_bg": "#fafafc"
+      }
     }
   },
   "order": [
     "main",
     "image-with-text",
     "multicolumn",
-    "related-products"
+    "related-products",
+    "color_section_3Uekf4"
   ]
 }
