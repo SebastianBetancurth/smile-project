@@ -80,10 +80,6 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         }
       },
       "block_order": [
@@ -92,8 +88,7 @@
         "variant_picker",
         "purchase_offer_block_a3CNfV",
         "quantity_selector",
-        "buy_buttons",
-        "description"
+        "buy_buttons"
       ],
       "settings": {
         "enable_sticky_info": true,
