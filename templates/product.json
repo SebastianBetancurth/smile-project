@@ -76,7 +76,7 @@
             "card_active_border_color": "#000000",
             "offer_panel_bg_mobile": "#fafafc",
             "card_bg_mobile": "#fafafc",
-            "card_active_bg_mobile": "#f8f8f8",
+            "card_active_bg_mobile": "#eeeef1",
             "card_border_color_mobile": "#dcdcdc",
             "card_active_border_color_mobile": "#111111",
             "heading_color": "#111111",
@@ -97,7 +97,7 @@
             "details_heading": "Subscription Details - Inline CSS",
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "mobile_width": 100,
+            "mobile_width": 93,
             "mobile_align": "center"
           }
         },
