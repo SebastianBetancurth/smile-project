@@ -230,10 +230,18 @@
 
      #os-sticky-atc-{{ section.id }} .os-sticky-atc__right {
        display: flex;
-       align-items: center;
-       gap: 16px;
-       flex: 0 0 auto;
-     }
+      align-items: center;
+      gap: 16px;
+      flex: 0 0 auto;
+    }
+
+    #os-sticky-atc-{{ section.id }} .os-sticky-atc__button {
+      order: 1;
+    }
+
+    #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-wrap {
+      order: 2;
+    }
 
      #os-sticky-atc-{{ section.id }} .os-sticky-atc__qty-wrap {
        display: inline-flex;

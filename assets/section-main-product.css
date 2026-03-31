@@ -3119,7 +3119,18 @@ a.product__text {
 }
 
 .os-pdp-purchase-card__subtext {
-  margin-top: 0.8rem;
+  margin-top: 2px;
+}
+
+span.os-pdp-purchase-card__small-note {
+  font-weight: 400;
+  font-size: 12px;
+  font-family: 'Circular';
+}
+
+.os-pdp-purchase-card__details-heading {
+  color: #636366 !important;
+  font-family: 'Circular';
 }
 
 /* ===== COLLAPSE OFFER NOT SELECTED ===== */
