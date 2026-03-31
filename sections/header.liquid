@@ -223,7 +223,7 @@
 
         {%- if section.settings.topbar_help_text != blank -%}
           <a
-            href="{{ section.settings.topbar_help_link | default: '#' }}"
+            href="{{ section.settings.topbar_help_link | default: 'pages/contact' }}"
             class="obsessive-topbar__link link link--text"
           >
             <span class="obsessive-topbar__icon obsessive-topbar__icon--help" aria-hidden="true">
