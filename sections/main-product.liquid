@@ -26,30 +26,164 @@
   {%- endif -%}
 
   {%- style -%}
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+              .section-{{ section.id }}-padding {
+                padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+                padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+              }
+
+              @media screen and (min-width: 750px) {
+                .section-{{ section.id }}-padding {
+                  padding-top: {{ section.settings.padding_top }}px;
+                  padding-bottom: {{ section.settings.padding_bottom }}px;
+                }
+              }
+              @media screen and (max-width: 749px) {
+                 .os-pdp-right__eyebrow,
+                  .os-pdp-right__panel--offer,
+                  .os-pdp-feature-icons,
+                  .os-pdp-description-tabs {
+                    width: var(--os-mobile-width, 100%);
+                    max-width: var(--os-mobile-width, 100%);
+                    margin: var(--os-mobile-margin, 0 auto);
+                  }
+                  .os-pdp-right__panel--offer{
+                    margin-top: -28px;
+                  }
+                }
+
+                .os-pdp-right__panel--offer.os-pdp-right__panel--offer-soldout .os-pdp-right__purchase-box {
+              display: none !important;
+            }
+            .os-pdp-right__panel--offer.os-pdp-right__panel--offer-soldout .product-form__submit {
+          background: #ff4fa3 !important;
+          border-color: #ff4fa3 !important;
+          color: #ffffff !important;
+        }
+
+        .os-pdp-right__panel--offer.os-pdp-right__panel--offer-soldout .product-form__submit:hover {
+          background: #f03a92 !important;
+          border-color: #f03a92 !important;
+          color: #ffffff !important;
+        }
+
+        .os-stock-notify-modal[hidden] {
+      display: none !important;
     }
 
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
+    .os-stock-notify-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+          background-color: #0b0b0b78;
+    }
+
+    .os-stock-notify-modal__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .os-stock-notify-modal__dialog {
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 32px);
+      max-width: 430px;
+      margin: 8vh auto 0;
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 30px 34px 34px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .os-stock-notify-modal__close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      border: 0;
+      background: transparent;
+      font-size: 34px;
+      line-height: 1;
+      color: #bdbdbd;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .os-stock-notify-modal__title {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: #111111;
+    }
+
+    .os-stock-notify-modal__text {
+      margin: 0 0 24px;
+      font-size: 15px;
+      line-height: 1.45;
+      color: #111111;
+      max-width: 320px;
+    }
+
+    .os-stock-notify-modal__form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .os-stock-notify-modal__input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #d8d8d8;
+      border-radius: 0;
+      padding: 0 16px;
+      font-size: 15px;
+      background: #ffffff;
+      color: #111111;
+      box-sizing: border-box;
+    }
+
+    .os-stock-notify-modal__input:focus {
+      outline: none;
+      border-color: #111111;
+      box-shadow: none;
+    }
+
+    .os-stock-notify-modal__submit {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 0;
+      background: #ff1493;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .os-stock-notify-modal__submit:hover {
+      background: #e60084;
+    }
+
+    .os-stock-notify-modal__success {
+      font-size: 14px;
+      color: #111111;
+    }
+
+    body.os-stock-notify-open {
+      overflow: hidden;
+    }
+
+    @media screen and (max-width: 749px) {
+      .os-stock-notify-modal__dialog {
+        margin-top: 10vh;
+        padding: 26px 20px 24px;
+        max-width: 92vw;
+      }
+
+      .os-stock-notify-modal__title {
+        font-size: 21px;
+        padding-right: 24px;
       }
     }
-    @media screen and (max-width: 749px) {
-       .os-pdp-right__eyebrow,
-        .os-pdp-right__panel--offer,
-        .os-pdp-feature-icons,
-        .os-pdp-description-tabs {
-          width: var(--os-mobile-width, 100%);
-          max-width: var(--os-mobile-width, 100%);
-          margin: var(--os-mobile-margin, 0 auto);
-        }
-        .os-pdp-right__panel--offer{
-          margin-top: -28px;
-        }
-      }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -106,6 +240,10 @@
           {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
           {%- assign share_block = section.blocks | where: 'type', 'share' | first -%}
           {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign current_variant_available = false -%}
+          {%- if current_variant and current_variant.available -%}
+            {%- assign current_variant_available = true -%}
+          {%- endif -%}
           {%- assign color_block = section.blocks | where: 'type', 'color_block' | first -%}
 
           <div
@@ -379,7 +517,8 @@
                   </div>
                 {% when 'purchase_offer_block' %}
                   <div
-                    class="os-pdp-right__panel os-pdp-right__panel--offer"
+                    class="os-pdp-right__panel os-pdp-right__panel--offer{% unless current_variant.available %} os-pdp-right__panel--offer-soldout{% endunless %}"
+                    data-offer-panel
                     {{ block.shopify_attributes }}
                     style="
                       --os-offer-panel-bg: {{ block.settings.offer_panel_bg }};
@@ -452,7 +591,10 @@
                       </div>
                     {% endif %}
 
-                    <div class="os-pdp-right__purchase-box">
+                    <div
+                      class="os-pdp-right__purchase-box"
+                      data-purchase-box
+                    >
                       {% if block.settings.heading != blank %}
                         <h3 class="os-pdp-right__purchase-title">{{ block.settings.heading }}</h3>
                       {% endif %}
@@ -487,6 +629,7 @@
                               data-variant-id="{{ matched_variant.id }}"
                               data-price="{{ matched_variant.price | money }}"
                               data-compare="{% if matched_variant.compare_at_price > matched_variant.price %}{{ matched_variant.compare_at_price | money }}{% endif %}"
+                              data-available="{% if matched_variant.available %}true{% else %}false{% endif %}"
                               aria-pressed="{% if is_active %}true{% else %}false{% endif %}"
                             >
                               <span class="os-pdp-purchase-card__radio"></span>
@@ -659,7 +802,57 @@
         </section>
       </div>
     </div>
+    <div class="os-stock-notify-modal" data-stock-notify-modal hidden>
+      <div class="os-stock-notify-modal__overlay" data-stock-notify-close></div>
 
+      <div
+        class="os-stock-notify-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="os-stock-notify-title-{{ section.id }}"
+      >
+        <button
+          type="button"
+          class="os-stock-notify-modal__close"
+          aria-label="Cerrar"
+          data-stock-notify-close
+        >
+          ×
+        </button>
+
+        <h3 class="os-stock-notify-modal__title" id="os-stock-notify-title-{{ section.id }}">
+          {{ product.title }}
+        </h3>
+
+        <div class="os-stock-notify-modal__text">
+          Déjanos tu email para poder avisarte cuando este producto tenga stock
+        </div>
+
+        <form class="os-stock-notify-modal__form" data-stock-notify-form>
+          <input
+            type="email"
+            class="os-stock-notify-modal__input"
+            name="contact[email]"
+            placeholder="Email"
+            required
+          >
+
+          <input type="hidden" name="contact[product]" value="{{ product.title | escape }}">
+          <input
+            type="hidden"
+            name="contact[variant]"
+            value="{{ current_variant.title | escape }}"
+            data-stock-notify-variant-input
+          >
+
+          <button type="submit" class="os-stock-notify-modal__submit">Avisame cuando haya stock</button>
+
+          <div class="os-stock-notify-modal__success" data-stock-notify-success hidden>
+            Gracias. Te avisaremos cuando vuelva a haber stock.
+          </div>
+        </form>
+      </div>
+    </div>
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -725,11 +918,13 @@
 
       const variantWrapper = productRoot.querySelector('.os-pdp-right__variants--hidden');
       const hiddenPurchaseInput = productRoot.querySelector('[data-purchase-hidden-input]');
+      const purchaseBox = productRoot.querySelector('[data-purchase-box]');
 
       const productSection = wrapper.closest('.shopify-section');
       const productForm = productSection ? productSection.querySelector('form[action*="/cart/add"]') : null;
       const variantIdInputs = productForm ? productForm.querySelectorAll('input[name="id"]') : [];
       const addToCartBtn = productForm ? productForm.querySelector('[name="add"]') : null;
+      const addToCartBtnText = addToCartBtn ? addToCartBtn.querySelector('span') : null;
 
       function getPriceNodes() {
         return {
@@ -824,12 +1019,6 @@
           input.value = variantId;
           input.dispatchEvent(new Event('change', { bubbles: true }));
         });
-
-        if (addToCartBtn) {
-          addToCartBtn.disabled = false;
-          addToCartBtn.removeAttribute('disabled');
-          addToCartBtn.classList.remove('disabled');
-        }
       }
 
       function setHiddenPurchaseValue(card) {
@@ -837,6 +1026,31 @@
 
         const optionValue = card.getAttribute('data-option-value') || '';
         hiddenPurchaseInput.value = optionValue;
+      }
+
+      function updateSoldOutUI(card) {
+        const isAvailable = card.getAttribute('data-available') === 'true';
+        const offerPanel = productRoot.querySelector('[data-offer-panel]');
+
+        if (offerPanel) {
+          offerPanel.classList.toggle('os-pdp-right__panel--offer-soldout', !isAvailable);
+        }
+
+        if (addToCartBtn && addToCartBtnText) {
+          if (isAvailable) {
+            addToCartBtn.disabled = false;
+            addToCartBtn.removeAttribute('disabled');
+            addToCartBtn.classList.remove('disabled');
+            addToCartBtn.setAttribute('type', 'submit');
+            addToCartBtnText.textContent = 'Añadir al carrito';
+          } else {
+            addToCartBtn.disabled = false;
+            addToCartBtn.removeAttribute('disabled');
+            addToCartBtn.classList.remove('disabled');
+            addToCartBtn.setAttribute('type', 'button');
+            addToCartBtnText.textContent = 'Avisame cuando haya stock';
+          }
+        }
       }
 
       function setActiveCard(activeCard, syncNative = true) {
@@ -849,6 +1063,7 @@
 
         updateAllPrices(activeCard);
         setHiddenPurchaseValue(activeCard);
+        updateSoldOutUI(activeCard);
 
         const variantId = activeCard.getAttribute('data-variant-id');
         const optionValue = activeCard.getAttribute('data-option-value');
@@ -893,6 +1108,87 @@
           if (matchingCard) {
             setActiveCard(matchingCard, false);
           }
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.product').forEach(function (productRoot) {
+      const modal = productRoot.closest('.shopify-section')?.querySelector('[data-stock-notify-modal]');
+      const form = modal?.querySelector('[data-stock-notify-form]');
+      const success = modal?.querySelector('[data-stock-notify-success]');
+      const variantInput = modal?.querySelector('[data-stock-notify-variant-input]');
+      const variantWrapper = productRoot.querySelector('.os-pdp-right__variants--hidden');
+      const submitBtn = productRoot.querySelector('.product-form__submit');
+
+      if (!modal || !submitBtn) return;
+
+      function getSelectedVariantText() {
+        if (!variantWrapper) return '';
+
+        const checkedRadio = variantWrapper.querySelector('input[type="radio"]:checked');
+        if (checkedRadio) return checkedRadio.value || '';
+
+        const select = variantWrapper.querySelector('select');
+        if (select) return select.value || '';
+
+        return '';
+      }
+
+      function isSoldOutState() {
+        return submitBtn.textContent.trim().toLowerCase().includes('avisame cuando haya stock');
+      }
+
+      function openModal() {
+        if (variantInput) {
+          variantInput.value = getSelectedVariantText();
+        }
+
+        modal.hidden = false;
+        document.body.classList.add('os-stock-notify-open');
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        document.body.classList.remove('os-stock-notify-open');
+      }
+
+      submitBtn.addEventListener('click', function (e) {
+        if (isSoldOutState()) {
+          e.preventDefault();
+          openModal();
+        }
+      });
+
+      modal.querySelectorAll('[data-stock-notify-close]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          closeModal();
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hidden) {
+          closeModal();
+        }
+      });
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const emailInput = form.querySelector('input[type="email"]');
+          if (!emailInput || !emailInput.value.trim()) return;
+
+          success.hidden = false;
+          form.reset();
+
+          setTimeout(function () {
+            closeModal();
+            success.hidden = true;
+          }, 1600);
         });
       }
     });
