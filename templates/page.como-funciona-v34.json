@@ -53,10 +53,289 @@
         "padding_top": 0,
         "padding_bottom": 8
       }
+    },
+    "image_with_text_FkwUFM": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_EwVJNj": {
+          "type": "caption",
+          "settings": {
+            "caption": "¿Qué es el blanqueamiento dental?",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "heading_j39L3j": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Y cómo funciona el proceso de blanqueamiento dental?",
+            "heading_size": "h2"
+          }
+        },
+        "text_BmnCjD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La decoloración y las manchas de los dientes son el resultado de la adhesión de diversos tintes y pigmentos a la materia orgánica del diente. El proceso de eliminación de estas manchas se consigue normalmente mediante dos métodos: la eliminación física y el blanqueamiento químico.</p><p>La eliminación física actúa sobre las manchas superficiales (manchas diarias superficiales) mediante un método abrasivo. El blanqueamiento químico actúa tanto sobre las manchas superficiales como sobre las incrustadas (manchas incrustadas en el esmalte dental), por lo que es el método más común y eficaz de blanqueamiento dental.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_EwVJNj",
+        "heading_j39L3j",
+        "text_BmnCjD"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 18px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 15px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Research_-_Whitening_-_Diagram_1_v2_624x_b3f4ca53-5b4f-408d-bc8d-d781b5709d56.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Rj4LgV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mgq3Kt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Entonces, ¿cómo elimina el blanqueamiento químico las manchas de los dientes?",
+            "heading_size": "h2"
+          }
+        },
+        "text_D7CUyx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>El blanqueamiento dental mediante blanqueamiento químico oxida las manchas y altera las moléculas responsables de mantener el color. En pocas palabras, los agentes blanqueadores penetran a través del esmalte de los dientes y descomponen estas moléculas en formas más pequeñas y simples. Cuanto más pequeña es la molécula, más claro es el color, lo que da como resultado un aspecto general más blanco del diente.</p><p>Algunos agentes blanqueadores comunes son el peróxido de hidrógeno, el peróxido de carbamida y el ácido ftalimidoperoxicaproico (lo llamamos PAP+, para abreviar).</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mgq3Kt",
+        "text_D7CUyx"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 18px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 15px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Research_-_Whitening_-_Diagram_2_624x_4bddb30f-63ee-49df-8a8f-ccf0e40db694.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_9JnaD8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MjmYTm": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Cuál es la diferencia entre el peróxido y el PAP+?",
+            "heading_size": "h2"
+          }
+        },
+        "text_knewMy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tanto el blanqueamiento con PAP+ como los tratamientos de blanqueamiento dental con peróxido utilizan la acción oxidante para eliminar las manchas y aclarar el aspecto de los dientes.</p><p>Como parte de este proceso, el peróxido libera algo conocido como radicales libres. Los radicales libres atacan fácilmente las moléculas orgánicas para reducir la decoloración, pero también pueden provocar efectos secundarios no deseados como sensibilidad, irritación de las encías y desmineralización.</p><p>El PAP+ reacciona de forma similar con las manchas dentales, pero sin liberar radicales libres. Esto significa que las moléculas responsables de la decoloración se descomponen de forma segura, sin riesgo de sensibilidad, dolor o daños.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MjmYTm",
+        "text_knewMy"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 18px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 15px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Research_-_Whitening_-_Diagram_3_624x_19413f41-60c3-4aa2-affa-91ff4ae620d7.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_aKa4P8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_47QGrL": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Por qué no se utiliza más el PAP+?",
+            "heading_size": "h2"
+          }
+        },
+        "text_tLMFf6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La mayoría de los dentistas siguen utilizando en sus consultas tratamientos blanqueadores a base de peróxido, ya que lo más probable es que una aplicación profesional en la consulta limite los efectos secundarios de la oxidación por radicales libres. Sin embargo, con el aumento del acceso y la popularidad de los productos de peróxido de uso doméstico, la seguridad de estos tratamientos se vuelve cuestionable en el mejor de los casos.</p><p>El uso de PAP+ no ha sido muy explorado por los dentistas, posiblemente debido a su dificultad de formulación y estabilidad. Cuanto mayor sea el nivel de pH del PAP+, mayor será su eficacia. Lamentablemente, esto significa que la fórmula pierde su eficacia tras un breve periodo de conservación.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_47QGrL",
+        "text_tLMFf6"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 18px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 15px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Research_-_Whitening_-_Diagram_4_624x_c035902a-ccda-4b28-8d9a-972b9d478858.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_ywGEqt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_3qBUAA": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Qué hace especial al PAP+?",
+            "heading_size": "h2"
+          }
+        },
+        "text_EJVdmQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hemos dedicado años a perfeccionar el proceso de formulación óptimo que maximiza los beneficios del PAP+ manteniendo su estabilidad. El resultado es PAP+, una fórmula que blanquea eficazmente los dientes, sin ninguno de los efectos secundarios no deseados.<br/><br/>También hemos añadido a PAP+ otros ingredientes que remineralizan los dientes y combaten los efectos de la sensibilidad preexistente, como el citrato de potasio y la hidroxiapatita.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3qBUAA",
+        "text_EJVdmQ"
+      ],
+      "custom_css": [
+        ".subtitle--small {font-size: 18px; letter-spacing: 0.63px; font-family: \"Circular\"; font-weight: 500; color: black;}",
+        "h2,.h2 {font-size: 32px; letter-spacing: -1px; font-family: \"Pulp\"; font-weight: 500; max-width: 26ch; width: 22ch;}",
+        ".image-with-text__text.rte.body {font-size: 15px; font-family: \"Circular\"; letter-spacing: 0.63px; font-weight: 400; color: #636366;}",
+        "@media screen and (max-width: 749px) {.subtitle--small {font-size: 17px; } .h2 {font-size: 24px; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Research_-_Whitening_-_Diagram_5_624x_8a7316d8-d8e7-4891-abdc-3773923c0111.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "text_first",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_q4zEwT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HHNtJz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ver lo último del laboratorio <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@obsessive.smiles</a>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HHNtJz"
+      ],
+      "custom_css": [
+        ".inline-richtext a,.rte.inline-richtext a {color: #0000ee;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_bg_color": "#fafafc",
+        "custom_heading_color": "#121212",
+        "custom_text_color": "#121212",
+        "heading_size_mobile": 19,
+        "heading_size_desktop": 27,
+        "text_size_mobile": 16,
+        "text_size_desktop": 18,
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "research_hero_nav_HRUyJR"
+    "research_hero_nav_HRUyJR",
+    "image_with_text_FkwUFM",
+    "image_with_text_Rj4LgV",
+    "image_with_text_9JnaD8",
+    "image_with_text_aKa4P8",
+    "image_with_text_ywGEqt",
+    "rich_text_q4zEwT"
   ]
 }
