@@ -128,7 +128,7 @@
         "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "columns",
         "mobile_thumbnails": "hide",
         "media_position": "left",
