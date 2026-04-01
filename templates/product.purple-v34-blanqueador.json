@@ -515,9 +515,42 @@
           "settings": {
             "name": "Cristina N",
             "verified": true,
-            "rating": 4,
+            "rating": 5,
             "text": "<p>Esto es una pasada, la he usado 5 veces y he notado que los dientes están mas blancos desde la primera vez que lo use, da un poco de cosa por el color, pero esta buena y sabe a menta os dejo una foto, gracias porque estoy mas que satisfecha con el producto.</p>",
             "image": "shopify://shop_images/XDFH0wk7J1PKOlC.png",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_hxtDYz": {
+          "type": "review",
+          "settings": {
+            "name": "Carmen L ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Naturales, innovadores, sostenibles y efectivos. Así se presenta @obsessive.smile. Gracias @ivangonzalez, por dar a conocer un perfil que responde a mi filosofía y modo de vida🌏♻️😄 100% encantada con esta marca.</p>",
+            "image": "shopify://shop_images/OH70yTzXJuifvbN.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_MrqDLR": {
+          "type": "review",
+          "settings": {
+            "name": "Anais B",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Me tocó el sorteo de las 3 unidades gratis y aquí os dejo la foto la verdad que queda bien hasta en la estantería de mi casa hahaha siempre contenta con sus productos mi marido y mis hijos lo usamos como pasta de dientes habitual. Graciaaaaaaas!💜</p>",
+            "image": "shopify://shop_images/wWCsI9UoPuDyN0O_5423f21b-f874-417f-9ce4-7bc000b95673.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_FcCMin": {
+          "type": "review",
+          "settings": {
+            "name": "María E",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Muy buenas sensaciones, envío rápido, el packaging perfecto y bonito y la primera vez que lo probé ayer y ya me ha actuado y se nota, mis 5 estrellas por aquí os las dejo</p>",
+            "image": "shopify://shop_images/wWCsI9UoPuDyN0O_5423f21b-f874-417f-9ce4-7bc000b95673.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -529,7 +562,10 @@
         "review_9RhNYP",
         "review_37EnCd",
         "review_QFHteA",
-        "review_DNpgUr"
+        "review_DNpgUr",
+        "review_hxtDYz",
+        "review_MrqDLR",
+        "review_FcCMin"
       ],
       "name": "OS Customer Reviews",
       "settings": {
