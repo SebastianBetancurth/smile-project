@@ -619,6 +619,17 @@
             "image": "shopify://shop_images/0vJAqP8ncg6KQu9.jpg",
             "review_date": "2026-03-24"
           }
+        },
+        "review_8DarHe": {
+          "type": "review",
+          "settings": {
+            "name": "Maria S ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>A mi me ha llegado perfecto al día siguiente, me lo dijo mi cuñada que lo comprara y a ella le ha funcionado la verdad el paquete es super guay os dejo 4 estrellas buen trato y servicio rapido de entrega.</p>",
+            "image": "shopify://shop_images/0vJAqP8ncg6KQu9.jpg",
+            "review_date": "2026-03-24"
+          }
         }
       },
       "block_order": [
@@ -637,7 +648,8 @@
         "review_3aWgxV",
         "review_myRhNc",
         "review_43R8XW",
-        "review_ky8JQw"
+        "review_ky8JQw",
+        "review_8DarHe"
       ],
       "name": "OS Customer Reviews",
       "settings": {
