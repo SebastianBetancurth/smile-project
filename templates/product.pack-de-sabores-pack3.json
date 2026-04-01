@@ -258,6 +258,7 @@
         "heading_mqGzce",
         "text_D9zMmh"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/download.mp4",
         "height": "adapt",
@@ -297,6 +298,7 @@
         "heading_fzeinY",
         "text_A88KeY"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
         "height": "adapt",
@@ -336,6 +338,7 @@
         "heading_ep8GCK",
         "text_x7mCLW"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
         "height": "adapt",
@@ -359,45 +362,27 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p>La pasta de dientes Obsessive se siente y sabe como un auténtico placer para tus dientes: 2 minutos nunca serán suficientes. Ofrece una protección completa gracias a nuestra fórmula Fluoride+, desarrollada con ingredientes diseñados para brindar un cuidado duradero a tu sonrisa.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "heading": "¿Puedo usarla como mi pasta de dientes diaria?",
             "icon": "check_mark",
-            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
+            "row_content": "<p>¡Sí! Todas nuestras pastas de dientes Obsessive son perfectas para el uso diario. Hemos incluido ingredientes de la más alta calidad provenientes de Australia para ofrecerte una limpieza eficaz y un cuidado duradero para tu sonrisa.</p>",
             "page": ""
           }
         },
         "collapsible_row_JYCE7j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Daña el esmalte de los dientes?",
+            "heading": "¿Puedo comprarla para mis hijos?",
             "icon": "check_mark",
-            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_EcMLXd": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
-            "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_fVthmN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
-            "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "row_content": "<p>La pasta de dientes Obsessive no está recomendada para niños de 3 años o menores.</p>",
             "page": ""
           }
         }
@@ -405,9 +390,7 @@
       "block_order": [
         "collapsible_row_BPNpLh",
         "collapsible_row_JQiJLz",
-        "collapsible_row_JYCE7j",
-        "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_JYCE7j"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
@@ -621,6 +604,7 @@
     },
     "os_sticky_add_to_cart_XBTcXq": {
       "type": "os-sticky-add-to-cart",
+      "disabled": true,
       "name": "OS Sticky Add To Cart",
       "settings": {
         "product": "",
