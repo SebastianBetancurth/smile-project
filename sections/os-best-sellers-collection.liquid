@@ -166,16 +166,16 @@
                   </div>
 
                   <div class="os-bsc__actions">
-                    {% if show_featured_view_button %}
-                      <a href="{{ featured_product.url }}" class="os-bsc__button os-bsc__button--view">
+                    {% if has_product_swatches %}
+                      <a href="{{ product.url }}" class="os-bsc__button os-bsc__button--view">
                         {{ section.settings.view_more_text }}
                       </a>
-                    {% elsif featured_product.available %}
+                    {% elsif product.available %}
                       <button
                         type="button"
                         class="os-bsc__button os-bsc__button--add"
                         data-os-add
-                        data-variant-id="{{ featured_product.selected_or_first_available_variant.id }}"
+                        data-variant-id="{{ product.selected_or_first_available_variant.id }}"
                         data-added-text="{{ section.settings.added_text }}"
                         data-adding-text="{{ section.settings.adding_text }}"
                       >
@@ -1301,6 +1301,11 @@
           } else {
             window.location.href = '/cart';
           }
+
+          setTimeout(() => {
+            button.classList.remove('is-added');
+            button.textContent = originalText;
+          }, 1800);
         } catch (error) {
           console.error(error);
           button.classList.remove('is-loading');
