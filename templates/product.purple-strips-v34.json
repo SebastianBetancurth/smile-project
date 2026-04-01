@@ -359,45 +359,72 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Cuánto tardan en notarse los resultados?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p>Desde el primer uso. En solo 30 minutos verás tu sonrisa más blanca y uniforme. Con un uso continuado, notarás cómo el tono mejora cada día sin esfuerzo.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "heading": "¿Puedo usarlas todos los días?",
             "icon": "check_mark",
-            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
+            "row_content": "<p>Sí. Su fórmula sin peróxido permite un uso diario sin riesgo ni sensibilidad. Puedes incorporarlas fácilmente a tu rutina —antes de salir, en el trabajo o cuando tengas un momento libre.</p>",
             "page": ""
           }
         },
         "collapsible_row_JYCE7j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Daña el esmalte de los dientes?",
+            "heading": "¿Cómo se usan?",
             "icon": "check_mark",
-            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
+            "row_content": "<p>Coloca las tiras sobre los dientes secos, presionando para que se adhieran bien. Déjalas actuar 30 minutos mientras sigues con tu día. Al retirarlas, si quedan restos morados, cepilla suavemente para eliminarlos.</p>",
             "page": ""
           }
         },
         "collapsible_row_EcMLXd": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
+            "heading": "¿Son seguras para el esmalte?",
             "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
+            "row_content": "<p>Totalmente. La tecnología con PAP (ácido ftalimidoperoxicaproico) blanquea sin dañar el esmalte ni irritar las encías, a diferencia de los productos con peróxido.</p>",
             "page": ""
           }
         },
         "collapsible_row_fVthmN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
+            "heading": "¿De verdad no producen sensibilidad?",
             "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "row_content": "<p>No. La fórmula ha sido diseñada precisamente para evitar ese efecto. Puedes usarlas a diario sin notar molestias, incluso si tienes dientes sensibles.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RHK6nd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuánto dura el efecto?",
+            "icon": "check_mark",
+            "row_content": "<p>Depende de tus hábitos diarios. Si evitas café, vino o tabaco justo después de usarlas, el blanco se mantiene durante más tiempo. Un uso regular ayuda a conservar el resultado.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gWHKGj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuántas tiras vienen en cada caja?",
+            "icon": "check_mark",
+            "row_content": "<p>Cada pack incluye 14 tiras (7 pares), suficientes para dos semanas de uso diario o más, según la frecuencia con la que las utilices.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xmaVEf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué hago si me sobra producto morado tras retirarlas?",
+            "icon": "check_mark",
+            "row_content": "<p>Simplemente cepilla los dientes con normalidad y enjuaga con agua. El pigmento desaparece al instante y deja una sensación fresca y limpia.</p>",
             "page": ""
           }
         }
@@ -407,7 +434,10 @@
         "collapsible_row_JQiJLz",
         "collapsible_row_JYCE7j",
         "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_fVthmN",
+        "collapsible_row_RHK6nd",
+        "collapsible_row_gWHKGj",
+        "collapsible_row_xmaVEf"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
