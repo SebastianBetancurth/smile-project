@@ -258,6 +258,7 @@
         "heading_mqGzce",
         "text_D9zMmh"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/download.mp4",
         "height": "adapt",
@@ -297,6 +298,7 @@
         "heading_fzeinY",
         "text_A88KeY"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
         "height": "adapt",
@@ -336,6 +338,7 @@
         "heading_ep8GCK",
         "text_x7mCLW"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
         "height": "adapt",
@@ -409,6 +412,7 @@
         "collapsible_row_EcMLXd",
         "collapsible_row_fVthmN"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -518,6 +522,7 @@
         "review_37EnCd",
         "review_QFHteA"
       ],
+      "disabled": true,
       "name": "OS Customer Reviews",
       "settings": {
         "heading": "Reseñas de clientes",
