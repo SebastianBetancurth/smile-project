@@ -242,14 +242,14 @@
         "heading_mqGzce": {
           "type": "heading",
           "settings": {
-            "heading": "¿Estás listo para experimentar la revolución del blanqueamiento dental?",
+            "heading": "¿Estás cansado de los resultados de los cepillos de dientes comunes?",
             "heading_size": "h2"
           }
         },
         "text_D9zMmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Con Purple V34, obtendrás resultados iguales o incluso mejores que con un blanqueamiento dental sin vaciar tu cartera. Ofrece los mismos resultados que un blanqueamiento dental, pero al alcance de todos los bolsillos.</strong></p>",
+            "text": "<p><strong>¡Es hora de dar el salto a una experiencia de limpieza superior con el Obsessive 3D Nanobrush! Olvídate de los cepillos convencionales y descubre las ventajas de nuestra tecnología avanzada. Con cerdas ultra finas y diseño ergonómico, este cepillo garantiza una limpieza profunda y óptima en cada cepillado, dejando tu boca más fresca y saludable que nunca. ¡Haz el cambio hoy y disfruta de una sonrisa radiante y confiada.</strong></p>",
             "text_style": "body"
           }
         }
@@ -258,12 +258,11 @@
         "heading_mqGzce",
         "text_D9zMmh"
       ],
-      "disabled": true,
       "settings": {
-        "video": "shopify://files/videos/download.mp4",
+        "image": "shopify://shop_images/descripcion_500x500_2000x2000_31662ee3-c2d7-422b-b7d2-e69959ccb357.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -282,14 +281,14 @@
         "heading_fzeinY": {
           "type": "heading",
           "settings": {
-            "heading": "Encontramos el tono perfecto de morado intenso, que neutraliza el amarillo.",
+            "heading": "Un nuevo estándar en cepillado dental.",
             "heading_size": "h2"
           }
         },
         "text_A88KeY": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>La combinación de dos tintes V34 permite cancelar cualquier tono de amarillo para obtener la sonrisa más brillante, sin dejar ningún residuo. ¿Parece increíble, verdad?</strong></p>",
+            "text": "<p><strong>Obsessive 3D Nanobrush va más allá de lo convencional. Con su capacidad para llegar al 99% de las bacterias almacenadas en la superficie entre el diente y la encía, ofrece una solución completa para quienes desean una sonrisa más radiante y segura, combatiendo gérmenes y sarro dental gracias a sus más de 30.000 cerdas de nylon.</strong></p>",
             "text_style": "body"
           }
         }
@@ -298,9 +297,8 @@
         "heading_fzeinY",
         "text_A88KeY"
       ],
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
+        "image": "shopify://shop_images/cepillocopy_new_2000x2000_07b2edcd-6658-424e-9e10-42c0d0243e8a.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -364,25 +362,25 @@
           "settings": {
             "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p>La pasta de dientes Obsessive se siente y sabe como un auténtico placer para tus dientes: 2 minutos nunca serán suficientes. Ofrece una protección completa gracias a nuestra fórmula Fluoride+, desarrollada con ingredientes diseñados para brindar un cuidado duradero a tu sonrisa.</p>",
+            "row_content": "<p><strong>1. </strong>Cepillado normal con tu pasta de dientes habitual utilizando el cepillo de dientes.</p><p><strong>2. </strong>Aplica dos pulsaciones de la pasta de dientes en las cerdas del cepillo.</p><p><strong>3. </strong>Cepilla tus dientes con el Obsessive 3D Nanobrush durante 2-3 minutos, asegurándote de cubrir todas las áreas de tu boca.</p><p><strong>4. </strong>Continúa cepillando suavemente con el cepillo durante 30 segundos para asegurar una distribución uniforme de la pasta.</p><p><strong>5. </strong>Enjuaga la boca con agua abundante para eliminar cualquier residuo de pasta de dientes.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Puedo usarla como mi pasta de dientes diaria?",
+            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
             "icon": "check_mark",
-            "row_content": "<p>¡Sí! Todas nuestras pastas de dientes Obsessive son perfectas para el uso diario. Hemos incluido ingredientes de la más alta calidad provenientes de Australia para ofrecerte una limpieza eficaz y un cuidado duradero para tu sonrisa.</p>",
+            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
             "page": ""
           }
         },
         "collapsible_row_JYCE7j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Puedo comprarla para mis hijos?",
+            "heading": "¿Daña el esmalte de los dientes?",
             "icon": "check_mark",
-            "row_content": "<p>La pasta de dientes Obsessive no está recomendada para niños de 3 años o menores.</p>",
+            "row_content": "<p>+30.000 cerdas ultrasuaves de nylon que cuidan y protegen tu esmalte y la salud de tus dientes.</p>",
             "page": ""
           }
         }
@@ -392,11 +390,10 @@
         "collapsible_row_JQiJLz",
         "collapsible_row_JYCE7j"
       ],
-      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "¿Preguntas? Tenemos respuestas",
+        "heading": "¿Cómo se usa el cepillo Obsessive 3D Nanobrush?",
         "heading_size": "h1",
         "heading_alignment": "left",
         "layout": "section",
