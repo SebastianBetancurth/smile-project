@@ -608,6 +608,17 @@
             "image": "shopify://shop_images/M0dkn7XUrANKqoE.png",
             "review_date": "2026-03-24"
           }
+        },
+        "review_ky8JQw": {
+          "type": "review",
+          "settings": {
+            "name": "Elisabeth F",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>La calidad tanto del producto y el servicio son inmejorables soy muy crítica con las compras por internet, pero cuando se hacen las cosas bien también se tiene que decir, por aquí una clienta satisfecha que seguirá comprando😉</p>",
+            "image": "shopify://shop_images/0vJAqP8ncg6KQu9.jpg",
+            "review_date": "2026-03-24"
+          }
         }
       },
       "block_order": [
@@ -625,7 +636,8 @@
         "review_nbkUEJ",
         "review_3aWgxV",
         "review_myRhNc",
-        "review_43R8XW"
+        "review_43R8XW",
+        "review_ky8JQw"
       ],
       "name": "OS Customer Reviews",
       "settings": {
