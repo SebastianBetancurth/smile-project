@@ -430,65 +430,88 @@
         "review_EL8TAV": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Erik C",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes, lo usamos en casa como dentífrico habitual, mi dentista me lo recomendó. En casa somos clientes habituales de esta marca española, Os dejo una foto</p>",
-            "image": "shopify://shop_images/fmJ9indGNUYvMkA.jpg",
+            "text": "<p>Sabe literalmente a la tarta de Red Velvet, este sabor está muy muy conseguido. Es dulce pero sin ser empalagoso, no puedo describir lo rico que sabe. Además, el bote es bastante grande y dura muchísimo.</p>",
+            "image": "shopify://shop_images/r8cMvA4qiDWnTQj.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_dUfXDC": {
           "type": "review",
           "settings": {
-            "name": "Noelia N",
+            "name": "Marcos C",
             "verified": true,
             "rating": 5,
-            "text": "<p>Todo genial y muy buena atención al cliente, me atendió una chica llamada Aina y genial la verdad. Me ayudó a revolver todas mis dudas con este producto. Pagué el envío express y recibí el pedido al día siguiente. Nos está funcionando a mi marido y a mi. Gracias</p>",
-            "image": "shopify://shop_images/y9sTXNnLagvrMHA.jpg",
+            "text": "<p>Los botes son enormes, y el sabor... una pasada. Estoy alucinando con lo bien que saben y lo mucho que dura el sabor en la boca después del cepillado. Compré las de Coco y Fresa y estoy deseando probar otras. Un 10 de 10.</p>",
+            "image": "shopify://shop_images/gca3BVZ7DnJbiKy.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_rXTFwb": {
           "type": "review",
           "settings": {
-            "name": "Daniel G",
+            "name": "Mario M",
             "verified": true,
             "rating": 5,
-            "text": "<p>Recomendado al 100% no he visto una pasta de dientes igual que puedas usar a diario y ademas notas la calidad del producto no como las pastas de 5 euros del supermercado....</p>",
-            "image": "shopify://shop_images/bHFsyURWc4ZOarw.jpg",
+            "text": "<p>Estoy sorprendida con el sabor de estas dos pastas de dientes, sin duda, recomiendo a todo el mundo que las prueben. El bote es bastante grande y el sabor es indescriptible, refrescante, intenso, sabrosísimo, sin duda alguna, les doy un 10. Deseando probar nuevos sabores!!</p>",
+            "image": "shopify://shop_images/bd6cF9OTfAlwetz.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_9RhNYP": {
           "type": "review",
           "settings": {
-            "name": "Balma G",
+            "name": "Marisol A",
             "verified": true,
             "rating": 5,
-            "text": "<p>Hola!! mi nombre es Balma y llevo usando la pasta v34 de obsessive más de 2 meses, al principio la usaba todos los dias y el cambio en la primera semana fue una verdadera pasada! ahora la uso 3 o 4 veces a la semana y los dientes me permanecen blancos y limpios, igual o mejor que cualquier blanqueam</p>",
-            "image": "shopify://shop_images/URwEAIeVXpOr3q4.png",
+            "text": "<p>Siempre he tenido problemas con mis hijos melocotón y no gustarles el sabor tradicional de los dentífricos comunes. Decidí probar con las pastas de tarta red velvet, melocotón y vainilla y ha sido mi salvacion.</p>",
+            "image": "shopify://shop_images/4uWDkqBoxG23hPF.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_37EnCd": {
           "type": "review",
           "settings": {
-            "name": "Marta D",
+            "name": "Lola L",
             "verified": true,
             "rating": 5,
-            "text": "<p>Así tengo los dientes al cuarto dia de uso, he de decir que siempre los he tenido blancos pero en los ultimos años al ser fumadora estaban un poco amarillos, puedo decir que a desaparecido casi por completo y que el producto funciona, gracias!!</p>",
-            "image": "shopify://shop_images/w9j8QqD0MOVbYLr.jpg",
+            "text": "<p>AMO!! Compré la de sandía y la de melocotón y estoy completamente enamorada con estos sabores. Muy buena alternativa si no te termina de gustar el típico sabor mentolado de las pastas de dientes comunes. Tengo ganas de lavarme los dientes a todas horas. Simplemente increíbles.</p>",
+            "image": "shopify://shop_images/QDayxYMiRcgo3us.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Pedro R",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "text": "<p>Sabores super originales y están todas deliciosas. Deja los dientes muy muy limpios y la boca muy refrescante, el sabor dura incluso un rato después de habertelos lavado. Con ganas de seguir ampliando la colección.</p>",
+            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_QXaBGA": {
+          "type": "review",
+          "settings": {
+            "name": "Pedro R",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Una imagen vale más que mil palabras. Compré la pasta de dientes de sabor mango y me fascinó, esto se ha vuelto un vicio, me las he comprado en todos los sabores. Son brutales, cada sabor es super único y diferente, tenéis que probarlas absolutamente TODAS. Mis favoritas son red velvet, uva y vainil</p>",
+            "image": "shopify://shop_images/OdSqK8riQ69xHWk.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_6mfP4e": {
+          "type": "review",
+          "settings": {
+            "name": "Tomás S",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Estas pasta de dientes de sabor vainilla y sandía son todo lo que necesitaba. Son super dulces y refrescantes, y hace que me cepille los dientes con mucho más gusto. Deja los dientes muy limpios y la boca fresca. ¡Definitivamente seguiré comprándola! 10/10 para los que buscan algo diferente y deliciosos.</p>",
+            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -499,7 +522,9 @@
         "review_rXTFwb",
         "review_9RhNYP",
         "review_37EnCd",
-        "review_QFHteA"
+        "review_QFHteA",
+        "review_QXaBGA",
+        "review_6mfP4e"
       ],
       "name": "OS Customer Reviews",
       "settings": {
