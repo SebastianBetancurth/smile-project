@@ -1,0 +1,707 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "color_block_whEDrE": {
+          "type": "color_block",
+          "settings": {
+            "panel_bg": "#f3f3f3",
+            "card_bg": "#ffffff",
+            "border_color": "#f2f2f2",
+            "button_bg": "#3d67f2",
+            "button_text": "#ffffff",
+            "panel_max_width": 440,
+            "panel_padding_x": 24,
+            "panel_padding_y": 24,
+            "offer_box_padding": 20,
+            "offer_box_radius": 12,
+            "panel_radius": 0,
+            "panel_padding": 24,
+            "panel_gap": 20
+          }
+        },
+        "eyebrow_block_W43XVc": {
+          "type": "eyebrow_block",
+          "settings": {
+            "text": "BLANQUEA EN 30MIN DONDE QUIERAS",
+            "text_color": "#5c5c5c",
+            "text_color_mobile": "#5c5c5c",
+            "uppercase": true,
+            "letter_spacing": 2,
+            "margin_bottom": 16,
+            "mobile_width": 100,
+            "mobile_align": "center"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "purchase_offer_block_a3CNfV": {
+          "type": "purchase_offer_block",
+          "settings": {
+            "badge_prefix": "AHORRA",
+            "heading": "Opciones de compra",
+            "option_one_line_1": "1 caja cada 30 días",
+            "option_one_line_2": "Entrega mensual",
+            "option_one_line_3": "Cancela cuando quieras",
+            "option_one_line_4": "Renovación automática",
+            "show_payments": true,
+            "show_share": false,
+            "enable_flavor_picker": false,
+            "group_title_1": "Sabor 1",
+            "group_title_2": "Sabor 2",
+            "group_title_3": "Sabor 3",
+            "flavor_label_1": "Coco",
+            "flavor_label_2": "Uva",
+            "flavor_label_3": "Fresa",
+            "flavor_label_4": "Menta",
+            "flavor_label_5": "Naranja",
+            "flavor_label_6": "Pastel",
+            "flavor_label_7": "Sandía",
+            "flavor_label_8": "Mango",
+            "flavor_label_9": "Durazno",
+            "flavor_label_10": "Vainilla",
+            "offer_panel_bg": "#ffffff",
+            "card_bg": "#ffffff",
+            "card_active_bg": "#eeeef1",
+            "card_border_color": "#f2f2f2",
+            "card_active_border_color": "#000000",
+            "offer_panel_bg_mobile": "#fafafc",
+            "card_bg_mobile": "#fafafc",
+            "card_active_bg_mobile": "#eeeef1",
+            "card_border_color_mobile": "#dcdcdc",
+            "card_active_border_color_mobile": "#111111",
+            "heading_color": "#111111",
+            "heading_color_mobile": "#111111",
+            "price_color": "#eb028c",
+            "price_color_mobile": "#eb028c",
+            "compare_color": "#888888",
+            "compare_color_mobile": "#888888",
+            "badge_color": "#111111",
+            "badge_color_mobile": "#111111",
+            "label_color": "#111111",
+            "label_color_mobile": "#111111",
+            "text_color": "#666666",
+            "text_color_mobile": "#666666",
+            "small_note_size": 12,
+            "details_text_size": 13,
+            "benefit_text_size": 13,
+            "details_heading": "Subscription Details - Inline CSS",
+            "benefit_icon_1": "shopify://shop_images/box.svg",
+            "benefit_icon_2": "shopify://shop_images/redi3.svg",
+            "benefit_icon_3": "shopify://shop_images/card.svg",
+            "block_margin_top": 16,
+            "block_margin_bottom": 16,
+            "mobile_width": 93,
+            "mobile_align": "center"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "feature_icons_block_d7AdFe": {
+          "type": "feature_icons_block",
+          "settings": {
+            "block_bg": "#ffffff",
+            "border_color": "#f2f2f2",
+            "title_color": "#111111",
+            "text_color": "#111111",
+            "block_bg_mobile": "#fafafc",
+            "border_color_mobile": "#f2f2f2",
+            "title_color_mobile": "#111111",
+            "text_color_mobile": "#666666",
+            "border_radius": 6,
+            "padding_x": 20,
+            "padding_y": 18,
+            "item_gap": 16,
+            "icon_size": 22,
+            "title_size": 12,
+            "text_size": 12,
+            "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
+            "title_1": "Sabor y frescura",
+            "text_1": "",
+            "space_top_1": 0,
+            "space_bottom_1": 0,
+            "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
+            "title_2": "Fórmula Fluoride+",
+            "text_2": "",
+            "space_top_2": 0,
+            "space_bottom_2": 0,
+            "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_8d5a91a7-8bdf-49d0-a6d1-f18a4bc7a883.svg",
+            "title_3": "Previene la sensibilidad dental",
+            "text_3": "",
+            "space_top_3": 0,
+            "space_bottom_3": 0,
+            "block_margin_top": 16,
+            "block_margin_bottom": 16,
+            "mobile_width": 93,
+            "mobile_align": "center"
+          }
+        },
+        "desc_tabs_block_Re4wQ7": {
+          "type": "desc_tabs_block",
+          "settings": {
+            "block_bg": "#ffffff",
+            "border_color": "#f2f2f2",
+            "heading_color": "#111111",
+            "text_color": "#555555",
+            "block_bg_mobile": "#ffffff",
+            "border_color_mobile": "#e4e4e4",
+            "heading_color_mobile": "#111111",
+            "row_title_color": "#111111",
+            "row_title_color_mobile": "#111111",
+            "text_color_mobile": "#666666",
+            "border_radius": 10,
+            "padding_x": 22,
+            "padding_y": 22,
+            "title_size": 16,
+            "text_size": 15,
+            "row_title_size": 15,
+            "block_margin_top": 16,
+            "block_margin_bottom": 16,
+            "tab_title_1": "¿Cómo funciona Purple V34?",
+            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
+            "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
+            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
+            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
+            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_title_4": "",
+            "tab_content_4": "",
+            "tab_title_5": "",
+            "tab_content_5": "",
+            "tab_title_6": "",
+            "tab_content_6": "",
+            "tab_title_7": "",
+            "tab_content_7": "",
+            "mobile_width": 93,
+            "mobile_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "color_block_whEDrE",
+        "eyebrow_block_W43XVc",
+        "title",
+        "price",
+        "variant_picker",
+        "purchase_offer_block_a3CNfV",
+        "quantity_selector",
+        "buy_buttons",
+        "feature_icons_block_d7AdFe",
+        "desc_tabs_block_Re4wQ7"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "columns",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "image_with_text_wWtLmD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mqGzce": {
+          "type": "heading",
+          "settings": {
+            "heading": "Descubre lo que se siente al ver tu sonrisa más blanca al instante",
+            "heading_size": "h2"
+          }
+        },
+        "text_D9zMmh": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Resultados visibles sin complicaciones. En pocos minutos consigues una sonrisa más blanca y luminosa, sin tratamientos, sin esperas y sin dejarte un dineral en dentistas. Nuestra fórmula incorpora la última tecnología en blanqueamiento dental, con acción dual V34 + PAP+, que corrige el tono al instante y actúa progresivamente sobre el esmalte para realzar el blanco natural sin sensibilidad. Es tan fácil que no te costará hacerlo todos los días.</strong></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mqGzce",
+        "text_D9zMmh"
+      ],
+      "settings": {
+        "video": "shopify://files/videos/d0cc7e2e2e5147caa21e3c4a1bc33c80.mp4",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "image_first",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_DD4gdc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fzeinY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Innovación que combina doble acción para un blanco inmediato y duradero",
+            "heading_size": "h2"
+          }
+        },
+        "text_A88KeY": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>La fórmula combina V34, que corrige el tono al instante, y PAP+, que actúa sobre el esmalte y la dentina para realzar el color natural sin causar sensibilidad. En nuestras fórmulas usamos PAP+ (ftalimidoperoxicaproico), un componente con funciones idénticas al peróxido pero sin sus efectos secundarios. Además, incorporamos ingredientes que remineralizan el esmalte y combaten la sensibilidad preexistente, como el citrato de potasio y la hidroxiapatita.</strong></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fzeinY",
+        "text_A88KeY"
+      ],
+      "settings": {
+        "video": "shopify://files/videos/b3fca49b5411495f9716530b502b35a7.mp4",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "image_first",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_xFd4e7": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ep8GCK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Una sonrisa que habla por ti, sin tener que decir una palabra",
+            "heading_size": "h2"
+          }
+        },
+        "text_x7mCLW": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>En pocos minutos verás cómo cambia el tono y mejora el blanco natural. Un resultado real, seguro y respaldado por la garantía de 30 días para probarlo sin compromiso.</strong></p><p><em><strong>*Resultados después del tratamiento de 14 días.</strong></em></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ep8GCK",
+        "text_x7mCLW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2_2000x2000_55e016dd-638a-4ebd-ba0e-160077d237cc.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "mobile_layout": "image_first",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_mBUAq8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_BPNpLh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuánto tardan en notarse los resultados?",
+            "icon": "check_mark",
+            "row_content": "<p>Desde el primer uso. En solo 30 minutos verás tu sonrisa más blanca y uniforme. Con un uso continuado, notarás cómo el tono mejora cada día sin esfuerzo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JQiJLz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo usarlas todos los días?",
+            "icon": "check_mark",
+            "row_content": "<p>Sí. Su fórmula sin peróxido permite un uso diario sin riesgo ni sensibilidad. Puedes incorporarlas fácilmente a tu rutina —antes de salir, en el trabajo o cuando tengas un momento libre.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JYCE7j": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo se usan?",
+            "icon": "check_mark",
+            "row_content": "<p>Coloca las tiras sobre los dientes secos, presionando para que se adhieran bien. Déjalas actuar 30 minutos mientras sigues con tu día. Al retirarlas, si quedan restos morados, cepilla suavemente para eliminarlos.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EcMLXd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Son seguras para el esmalte?",
+            "icon": "check_mark",
+            "row_content": "<p>Totalmente. La tecnología con PAP (ácido ftalimidoperoxicaproico) blanquea sin dañar el esmalte ni irritar las encías, a diferencia de los productos con peróxido.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fVthmN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿De verdad no producen sensibilidad?",
+            "icon": "check_mark",
+            "row_content": "<p>No. La fórmula ha sido diseñada precisamente para evitar ese efecto. Puedes usarlas a diario sin notar molestias, incluso si tienes dientes sensibles.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RHK6nd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuánto dura el efecto?",
+            "icon": "check_mark",
+            "row_content": "<p>Depende de tus hábitos diarios. Si evitas café, vino o tabaco justo después de usarlas, el blanco se mantiene durante más tiempo. Un uso regular ayuda a conservar el resultado.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gWHKGj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuántas tiras vienen en cada caja?",
+            "icon": "check_mark",
+            "row_content": "<p>Cada pack incluye 14 tiras (7 pares), suficientes para dos semanas de uso diario o más, según la frecuencia con la que las utilices.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xmaVEf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué hago si me sobra producto morado tras retirarlas?",
+            "icon": "check_mark",
+            "row_content": "<p>Simplemente cepilla los dientes con normalidad y enjuaga con agua. El pigmento desaparece al instante y deja una sensación fresca y limpia.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_BPNpLh",
+        "collapsible_row_JQiJLz",
+        "collapsible_row_JYCE7j",
+        "collapsible_row_EcMLXd",
+        "collapsible_row_fVthmN",
+        "collapsible_row_RHK6nd",
+        "collapsible_row_gWHKGj",
+        "collapsible_row_xmaVEf"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "¿Preguntas? Tenemos respuestas",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "os_box_bg": "#fafafc",
+        "os_box_border": "#e8e8e8",
+        "os_heading_color": "#111111",
+        "os_row_title_color": "#222222",
+        "os_content_color": "#555555",
+        "os_toggle_color": "#222222",
+        "os_divider_color": "#ececec",
+        "os_box_radius": 0,
+        "os_box_padding_x": 28,
+        "os_box_padding_y": 30,
+        "os_heading_size": 24,
+        "os_row_title_size": 16,
+        "os_content_size": 15,
+        "os_row_padding_y": 20,
+        "os_toggle_size": 20,
+        "os_box_max_width": 760,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "os_customer_reviews_ihXzyq": {
+      "type": "os-customer-reviews",
+      "blocks": {
+        "review_EL8TAV": {
+          "type": "review",
+          "settings": {
+            "name": "Noa B",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes, lo usamos en casa como dentífrico habitual, mi dentista me lo recomendó. En casa somos clientes habituales de esta marca española, Os dejo una foto</p>",
+            "image": "shopify://shop_images/fmJ9indGNUYvMkA.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_dUfXDC": {
+          "type": "review",
+          "settings": {
+            "name": "Noelia N",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Todo genial y muy buena atención al cliente, me atendió una chica llamada Aina y genial la verdad. Me ayudó a revolver todas mis dudas con este producto. Pagué el envío express y recibí el pedido al día siguiente. Nos está funcionando a mi marido y a mi. Gracias</p>",
+            "image": "shopify://shop_images/y9sTXNnLagvrMHA.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_rXTFwb": {
+          "type": "review",
+          "settings": {
+            "name": "Daniel G",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Recomendado al 100% no he visto una pasta de dientes igual que puedas usar a diario y ademas notas la calidad del producto no como las pastas de 5 euros del supermercado....</p>",
+            "image": "shopify://shop_images/bHFsyURWc4ZOarw.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_9RhNYP": {
+          "type": "review",
+          "settings": {
+            "name": "Balma G",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Hola!! mi nombre es Balma y llevo usando la pasta v34 de obsessive más de 2 meses, al principio la usaba todos los dias y el cambio en la primera semana fue una verdadera pasada! ahora la uso 3 o 4 veces a la semana y los dientes me permanecen blancos y limpios, igual o mejor que cualquier blanqueam</p>",
+            "image": "shopify://shop_images/URwEAIeVXpOr3q4.png",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_37EnCd": {
+          "type": "review",
+          "settings": {
+            "name": "Marta D",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Así tengo los dientes al cuarto dia de uso, he de decir que siempre los he tenido blancos pero en los ultimos años al ser fumadora estaban un poco amarillos, puedo decir que a desaparecido casi por completo y que el producto funciona, gracias!!</p>",
+            "image": "shopify://shop_images/w9j8QqD0MOVbYLr.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_QFHteA": {
+          "type": "review",
+          "settings": {
+            "name": "Noa B",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "review_date": "2026-03-24"
+          }
+        }
+      },
+      "block_order": [
+        "review_EL8TAV",
+        "review_dUfXDC",
+        "review_rXTFwb",
+        "review_9RhNYP",
+        "review_37EnCd",
+        "review_QFHteA"
+      ],
+      "disabled": true,
+      "name": "OS Customer Reviews",
+      "settings": {
+        "heading": "Reseñas de clientes",
+        "average_rating": 4.8,
+        "reviews_count_text": "De 21,099 reseñas",
+        "write_review_label": "Escribe una reseña",
+        "verified_text": "Verificado",
+        "sort_label": "Sort",
+        "option_recent": "Más recientes",
+        "option_highest": "Mejor Valoradas",
+        "option_lowest": "Peor Valoadas",
+        "option_photos": "Con imágenes",
+        "name_label": "Tu nombre*",
+        "name_placeholder": "Tu nombre",
+        "email_label": "Email",
+        "email_placeholder": "Tu correo",
+        "rating_label": "Tu valoración",
+        "image_button_label": "Elegir imágenes",
+        "comment_placeholder": "Escribe tu comentario",
+        "submit_label": "Enviar reseña",
+        "success_message": "Tu mensaje ha sido enviado correctamente.",
+        "reviews_per_page": 5,
+        "processing_text": "Procesando...",
+        "processing_seconds": 3,
+        "page_width": 1090,
+        "heading_size": 24,
+        "heading_size_mobile": 18,
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "card_gap": 16,
+        "card_gap_mobile": 14,
+        "card_radius": 16,
+        "image_radius": 8,
+        "button_radius": 12,
+        "submit_radius": 14,
+        "dropdown_radius": 6,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
+        "section_bg": "#fafafc",
+        "heading_color": "#1e1e1e",
+        "text_color": "#1f1f1f",
+        "card_text_color": "#2a2a2a",
+        "muted_text_color": "#555555",
+        "border_color": "#d8d8d8",
+        "border_soft_color": "#dddddd",
+        "star_color": "#1f1f1f",
+        "star_empty_color": "#8d8d8d",
+        "bar_bg": "#d6d6d6",
+        "bar_fill": "#222222",
+        "badge_bg": "#fafafc",
+        "button_bg": "#3e3e3e",
+        "button_text": "#ffffff",
+        "card_bg": "#ffffff",
+        "verified_color": "#5fb45f",
+        "input_bg": "#ffffff",
+        "input_border": "#c9c9c9",
+        "placeholder_color": "#a1a1a1",
+        "upload_button_bg": "#5a5a5a",
+        "upload_button_text": "#ffffff",
+        "submit_bg": "#5c5c5c",
+        "submit_text": "#ffffff",
+        "submit_border": "#c12cff",
+        "dropdown_bg": "#ffffff",
+        "dropdown_text": "#1f1f1f",
+        "dropdown_hover_bg": "#f4f4f4",
+        "pagination_bg": "#f3f3f3",
+        "pagination_text": "#222222",
+        "pagination_border": "#dddddd",
+        "pagination_active_bg": "#dfe5eb",
+        "pagination_active_text": "#1f1f1f"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "color_section_3Uekf4": {
+      "type": "color-section",
+      "name": "Color Section",
+      "settings": {
+        "template_bg": "#fafafc"
+      }
+    },
+    "os_sticky_add_to_cart_XBTcXq": {
+      "type": "os-sticky-add-to-cart",
+      "name": "OS Sticky Add To Cart",
+      "settings": {
+        "product": "",
+        "trigger_mode": "after_main_atc",
+        "trigger_offset": 0,
+        "show_quantity": true,
+        "show_image_mobile": false,
+        "button_label": "Añadir al carrito",
+        "sold_out_label": "Agotado",
+        "loading_label": "Añadiendo...",
+        "added_label": "Añadido",
+        "error_label": "Error",
+        "save_label": "AHORRA",
+        "bar_height_desktop": 86,
+        "bar_height_mobile": 74,
+        "title_size_desktop": 16,
+        "title_size_mobile": 11,
+        "price_size_desktop": 16,
+        "price_size_mobile": 12,
+        "compare_size_desktop": 14,
+        "compare_size_mobile": 10,
+        "button_text_size_desktop": 14,
+        "button_text_size_mobile": 12,
+        "button_width_desktop": 178,
+        "button_width_mobile": 150,
+        "button_radius": 30,
+        "image_radius": 0,
+        "bg_color": "#f7f7f7",
+        "text_color": "#3b3b3b",
+        "border_color": "#e6e6e6",
+        "price_color": "#ff1493",
+        "compare_color": "#9e9e9e",
+        "badge_bg": "#111111",
+        "badge_text": "#ffffff",
+        "button_bg": "#3267ee",
+        "button_text": "#ffffff",
+        "qty_bg": "#f7f7f7",
+        "qty_border": "#e4e4e4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_wWtLmD",
+    "image_with_text_DD4gdc",
+    "image_with_text_xFd4e7",
+    "collapsible_content_mBUAq8",
+    "os_customer_reviews_ihXzyq",
+    "related-products",
+    "color_section_3Uekf4",
+    "os_sticky_add_to_cart_XBTcXq"
+  ]
+}
