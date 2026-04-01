@@ -502,10 +502,11 @@
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Sergio C",
             "verified": true,
-            "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "rating": 4,
+            "text": "<p>Nuevo envase Eco-friendly graciass</p>",
+            "image": "shopify://shop_images/yQcS9neJgvVhNjx.jpg",
             "review_date": "2026-03-24"
           }
         }
