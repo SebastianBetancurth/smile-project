@@ -550,7 +550,62 @@
             "verified": true,
             "rating": 5,
             "text": "<p>Muy buenas sensaciones, envío rápido, el packaging perfecto y bonito y la primera vez que lo probé ayer y ya me ha actuado y se nota, mis 5 estrellas por aquí os las dejo</p>",
-            "image": "shopify://shop_images/wWCsI9UoPuDyN0O_5423f21b-f874-417f-9ce4-7bc000b95673.jpg",
+            "image": "shopify://shop_images/ygu3FDPxAIpmC40.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_nDYcqC": {
+          "type": "review",
+          "settings": {
+            "name": "Marco A ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Ya tengo aquí mi pedido, comparto la foto porque estoy súper contento con ellos, siempre que pido algo funciona genial y me envían detalles y descuentos.</p>",
+            "image": "shopify://shop_images/geLaOKr8uUjTi6h.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_nbkUEJ": {
+          "type": "review",
+          "settings": {
+            "name": "Verónica P ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Segunda vez que compro, tiene un sabor que te deja la boca super fresca y desde el primer uso ya notas como va actuando y desaparece el amarillo de los dientes, la verdad que es un buen producto y pueden comprarlo sin problema, recomendable 100% en base a mi experiencia.</p>",
+            "image": "shopify://shop_images/mvPqw7SuyjYVnOr.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_3aWgxV": {
+          "type": "review",
+          "settings": {
+            "name": "Antonio J",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Presentación y producto de 10!!</p>",
+            "image": "shopify://shop_images/Ie9uNKh67wOmZUX.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_myRhNc": {
+          "type": "review",
+          "settings": {
+            "name": "Esteban S",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Es super morada en la boca jaja esta vez he comprado 2 unidades y funciona la primera vez que lo pruebas yo estuve unos 3 o 4 minutos cepillando para dejarla actuar en los dientes como me dijo la chica de atencion al cliente, el producto es de calidad además sabe suuuuuper bien, encantado con el pro</p>",
+            "image": "shopify://shop_images/S0fIU73tbJk6zuY.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_43R8XW": {
+          "type": "review",
+          "settings": {
+            "name": "Marta B",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Antes de usarla los tenia amarillos porque soy fumador y también bebo cafe, en el primer uso notas al momento como ya ha cambiado el color, yo la llevare usando 2 semanas y aqui os dejo la foto de como tengo los dientes actualmente, estoy mas que contento y me alegro que aun se vendan cosas.</p>",
+            "image": "shopify://shop_images/M0dkn7XUrANKqoE.png",
             "review_date": "2026-03-24"
           }
         }
@@ -565,7 +620,12 @@
         "review_DNpgUr",
         "review_hxtDYz",
         "review_MrqDLR",
-        "review_FcCMin"
+        "review_FcCMin",
+        "review_nDYcqC",
+        "review_nbkUEJ",
+        "review_3aWgxV",
+        "review_myRhNc",
+        "review_43R8XW"
       ],
       "name": "OS Customer Reviews",
       "settings": {
