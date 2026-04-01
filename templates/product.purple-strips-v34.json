@@ -148,17 +148,17 @@
             "title_size": 12,
             "text_size": 12,
             "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
-            "title_1": "Sabor y frescura",
+            "title_1": "Tecnología Purple V34",
             "text_1": "",
             "space_top_1": 0,
             "space_bottom_1": 0,
             "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
-            "title_2": "Fórmula Fluoride+",
+            "title_2": "Resultado instantáneo",
             "text_2": "",
             "space_top_2": 0,
             "space_bottom_2": 0,
             "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_8d5a91a7-8bdf-49d0-a6d1-f18a4bc7a883.svg",
-            "title_3": "Previene la sensibilidad dental",
+            "title_3": "100% libre de peróxido",
             "text_3": "",
             "space_top_3": 0,
             "space_bottom_3": 0,
@@ -189,12 +189,12 @@
             "row_title_size": 15,
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "tab_title_1": "¿Cómo funciona Purple V34?",
-            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
+            "tab_title_1": "Lista de ingredientes",
+            "tab_content_1": "<p><strong>Glicerina, Agua, Goma de celulosa, Hidroxipropilmetilcelulosa, Ácido ftalimidoperoxicaproico (PAP), EDTA disódico, Hidróxido de sodio, Mentol, Citrato monosódico, Goma xantana, Copolímero PVM/MA, C12-15 Pareth-3, C Rojo nº 33 (CI 17200), C Azul nº 1 (CI 42090)</strong></p>",
             "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
-            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
-            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
-            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_content_2": "<p><strong>Utilizando la última tecnología del mercado para el blanqueamiento dental, puedes usarla diariamente para mantener el blanco de los dientes o darle ese impulso de brillo siempre que lo necesites.</strong></p>",
+            "tab_title_3": "¿Cómo y cuándo debo usar las Purple Strips V34?",
+            "tab_content_3": "<p><strong>Úsalas cuando quieras, donde quieras. Purple Strips v34 se adaptan a tu rutina: antes de salir, en la oficina o incluso después de comer. Colócalas sobre los dientes secos para asegurar una buena adhesión y deja que actúen durante 30 minutos. Mientras tanto, la tecnología Purple v34 neutraliza los tonos amarillos para un efecto más blanco inmediato, y el PAP+ actúa sobre las manchas superficiales, aclarando el esmalte sin peróxido ni sensibilidad. Son cómodas, discretas y tan fáciles de usar que podrás incluirlas en tu día a día sin esfuerzo.</strong></p>",
             "tab_title_4": "",
             "tab_content_4": "",
             "tab_title_5": "",
@@ -242,14 +242,14 @@
         "heading_mqGzce": {
           "type": "heading",
           "settings": {
-            "heading": "¿Estás listo para experimentar la revolución del blanqueamiento dental?",
+            "heading": "Descubre lo que se siente al ver tu sonrisa más blanca al instante",
             "heading_size": "h2"
           }
         },
         "text_D9zMmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Con Purple V34, obtendrás resultados iguales o incluso mejores que con un blanqueamiento dental sin vaciar tu cartera. Ofrece los mismos resultados que un blanqueamiento dental, pero al alcance de todos los bolsillos.</strong></p>",
+            "text": "<p><strong>Resultados visibles sin complicaciones. En pocos minutos consigues una sonrisa más blanca y luminosa, sin tratamientos, sin esperas y sin dejarte un dineral en dentistas. Nuestra fórmula incorpora la última tecnología en blanqueamiento dental, con acción dual V34 + PAP+, que corrige el tono al instante y actúa progresivamente sobre el esmalte para realzar el blanco natural sin sensibilidad. Es tan fácil que no te costará hacerlo todos los días.</strong></p>",
             "text_style": "body"
           }
         }
@@ -259,7 +259,7 @@
         "text_D9zMmh"
       ],
       "settings": {
-        "video": "shopify://files/videos/download.mp4",
+        "video": "shopify://files/videos/d0cc7e2e2e5147caa21e3c4a1bc33c80.mp4",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -281,14 +281,14 @@
         "heading_fzeinY": {
           "type": "heading",
           "settings": {
-            "heading": "Encontramos el tono perfecto de morado intenso, que neutraliza el amarillo.",
+            "heading": "Innovación que combina doble acción para un blanco inmediato y duradero",
             "heading_size": "h2"
           }
         },
         "text_A88KeY": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>La combinación de dos tintes V34 permite cancelar cualquier tono de amarillo para obtener la sonrisa más brillante, sin dejar ningún residuo. ¿Parece increíble, verdad?</strong></p>",
+            "text": "<p><strong>La fórmula combina V34, que corrige el tono al instante, y PAP+, que actúa sobre el esmalte y la dentina para realzar el color natural sin causar sensibilidad. En nuestras fórmulas usamos PAP+ (ftalimidoperoxicaproico), un componente con funciones idénticas al peróxido pero sin sus efectos secundarios. Además, incorporamos ingredientes que remineralizan el esmalte y combaten la sensibilidad preexistente, como el citrato de potasio y la hidroxiapatita.</strong></p>",
             "text_style": "body"
           }
         }
@@ -298,7 +298,7 @@
         "text_A88KeY"
       ],
       "settings": {
-        "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
+        "video": "shopify://files/videos/b3fca49b5411495f9716530b502b35a7.mp4",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -320,14 +320,14 @@
         "heading_ep8GCK": {
           "type": "heading",
           "settings": {
-            "heading": "¡Despierta tu sonrisa! Una pasta de dientes que desafía lo convencional.",
+            "heading": "Una sonrisa que habla por ti, sin tener que decir una palabra",
             "heading_size": "h2"
           }
         },
         "text_x7mCLW": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Obsessive ha blanqueado e iluminado más de 2 millones de sonrisas, y nos sentimos orgullosos de ello. Gracias por formar parte de esta gran familia.</strong></p>",
+            "text": "<p><strong>En pocos minutos verás cómo cambia el tono y mejora el blanco natural. Un resultado real, seguro y respaldado por la garantía de 30 días para probarlo sin compromiso.</strong></p><p><em><strong>*Resultados después del tratamiento de 14 días.</strong></em></p>",
             "text_style": "body"
           }
         }
@@ -337,7 +337,7 @@
         "text_x7mCLW"
       ],
       "settings": {
-        "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
+        "image": "shopify://shop_images/2_2000x2000_55e016dd-638a-4ebd-ba0e-160077d237cc.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -359,45 +359,72 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Cuánto tardan en notarse los resultados?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p>Desde el primer uso. En solo 30 minutos verás tu sonrisa más blanca y uniforme. Con un uso continuado, notarás cómo el tono mejora cada día sin esfuerzo.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "heading": "¿Puedo usarlas todos los días?",
             "icon": "check_mark",
-            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
+            "row_content": "<p>Sí. Su fórmula sin peróxido permite un uso diario sin riesgo ni sensibilidad. Puedes incorporarlas fácilmente a tu rutina —antes de salir, en el trabajo o cuando tengas un momento libre.</p>",
             "page": ""
           }
         },
         "collapsible_row_JYCE7j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Daña el esmalte de los dientes?",
+            "heading": "¿Cómo se usan?",
             "icon": "check_mark",
-            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
+            "row_content": "<p>Coloca las tiras sobre los dientes secos, presionando para que se adhieran bien. Déjalas actuar 30 minutos mientras sigues con tu día. Al retirarlas, si quedan restos morados, cepilla suavemente para eliminarlos.</p>",
             "page": ""
           }
         },
         "collapsible_row_EcMLXd": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
+            "heading": "¿Son seguras para el esmalte?",
             "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
+            "row_content": "<p>Totalmente. La tecnología con PAP (ácido ftalimidoperoxicaproico) blanquea sin dañar el esmalte ni irritar las encías, a diferencia de los productos con peróxido.</p>",
             "page": ""
           }
         },
         "collapsible_row_fVthmN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
+            "heading": "¿De verdad no producen sensibilidad?",
             "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "row_content": "<p>No. La fórmula ha sido diseñada precisamente para evitar ese efecto. Puedes usarlas a diario sin notar molestias, incluso si tienes dientes sensibles.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RHK6nd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuánto dura el efecto?",
+            "icon": "check_mark",
+            "row_content": "<p>Depende de tus hábitos diarios. Si evitas café, vino o tabaco justo después de usarlas, el blanco se mantiene durante más tiempo. Un uso regular ayuda a conservar el resultado.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gWHKGj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuántas tiras vienen en cada caja?",
+            "icon": "check_mark",
+            "row_content": "<p>Cada pack incluye 14 tiras (7 pares), suficientes para dos semanas de uso diario o más, según la frecuencia con la que las utilices.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xmaVEf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué hago si me sobra producto morado tras retirarlas?",
+            "icon": "check_mark",
+            "row_content": "<p>Simplemente cepilla los dientes con normalidad y enjuaga con agua. El pigmento desaparece al instante y deja una sensación fresca y limpia.</p>",
             "page": ""
           }
         }
@@ -407,7 +434,10 @@
         "collapsible_row_JQiJLz",
         "collapsible_row_JYCE7j",
         "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_fVthmN",
+        "collapsible_row_RHK6nd",
+        "collapsible_row_gWHKGj",
+        "collapsible_row_xmaVEf"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
@@ -518,6 +548,7 @@
         "review_37EnCd",
         "review_QFHteA"
       ],
+      "disabled": true,
       "name": "OS Customer Reviews",
       "settings": {
         "heading": "Reseñas de clientes",

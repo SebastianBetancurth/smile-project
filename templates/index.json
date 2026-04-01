@@ -488,7 +488,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         },
@@ -497,7 +497,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/strawberry_6f14615c-87c4-4427-9ae2-8d22cc8a03c7.avif",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         },
@@ -506,7 +506,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/OrangeSodaSelector_80x_small_e574ecd6-1260-4344-9bb9-2e80fa318514.webp",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         },
@@ -515,7 +515,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/SmoothMint-Selector-Toothpaste_80x_small_27a5009c-22d5-4091-a6b2-14444319db70.webp",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         },
@@ -524,7 +524,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/GrapeBubblegum-Selector-Toothpaste_80x_small_6462fc7e-3c2c-4809-9f1c-2b5f6cd036cd.webp",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         },
@@ -533,7 +533,7 @@
           "settings": {
             "swatch_image": "shopify://shop_images/coconut-icon_small_464530df-ebf8-4eca-9894-0f73dfafff52.webp",
             "swatch_label": "Sabor",
-            "product": "",
+            "product": "pasta-de-dientes-de-sabores-pack-3",
             "custom_link": ""
           }
         }
@@ -561,7 +561,7 @@
         "section_bg": "#fafafc",
         "swatches_heading": "ELIGE TU SABOR",
         "swatch_count_suffix": "más",
-        "swatch_count_link": "",
+        "swatch_count_link": "shopify://products/pasta-de-dientes-de-sabores-pack-3",
         "gradient_color_1": "#ef7ad9",
         "gradient_color_2": "#8e69f1",
         "gradient_color_3": "#4968ff",

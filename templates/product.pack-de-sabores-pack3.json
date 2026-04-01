@@ -69,20 +69,30 @@
             "option_one_line_4": "Renovación automática",
             "show_payments": true,
             "show_share": false,
-            "enable_flavor_picker": false,
+            "enable_flavor_picker": true,
             "group_title_1": "Sabor 1",
             "group_title_2": "Sabor 2",
             "group_title_3": "Sabor 3",
             "flavor_label_1": "Coco",
+            "flavor_image_1": "shopify://shop_images/download_6125bc28-4edf-4985-a28b-0bfe259ed7b4.webp",
             "flavor_label_2": "Uva",
+            "flavor_image_2": "shopify://shop_images/download_5ef313e6-7947-4670-99c3-7254ec8340b0.webp",
             "flavor_label_3": "Fresa",
+            "flavor_image_3": "shopify://shop_images/strawberry_2f40f8c8-9ddc-4109-b1ee-ff58db35d2a2.avif",
             "flavor_label_4": "Menta",
+            "flavor_image_4": "shopify://shop_images/download_94eff895-ab09-4a86-90b1-f88c00ac04f7.webp",
             "flavor_label_5": "Naranja",
+            "flavor_image_5": "shopify://shop_images/download_a204f08e-b17c-4306-b514-2954d9ee5237.webp",
             "flavor_label_6": "Pastel",
+            "flavor_image_6": "shopify://shop_images/download_e09018b6-975c-4392-ac4f-45bdf91bba20.webp",
             "flavor_label_7": "Sandía",
+            "flavor_image_7": "shopify://shop_images/download_1a03f0cf-7f6b-4a8e-8f7e-32545e481bfc.webp",
             "flavor_label_8": "Mango",
+            "flavor_image_8": "shopify://shop_images/download_440d4783-4b09-4892-abe6-d70fba570d78.webp",
             "flavor_label_9": "Durazno",
+            "flavor_image_9": "shopify://shop_images/download_fdee9b4b-07d1-47b4-90ae-bebde93a4040.webp",
             "flavor_label_10": "Vainilla",
+            "flavor_image_10": "shopify://shop_images/download_45d15f3b-a429-4695-809c-4506debbafc6.webp",
             "offer_panel_bg": "#ffffff",
             "card_bg": "#ffffff",
             "card_active_bg": "#eeeef1",
@@ -114,7 +124,7 @@
             "benefit_icon_3": "shopify://shop_images/card.svg",
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "mobile_width": 100,
+            "mobile_width": 93,
             "mobile_align": "center"
           }
         },
@@ -147,17 +157,17 @@
             "icon_size": 22,
             "title_size": 12,
             "text_size": 12,
-            "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
+            "icon_1": "shopify://shop_images/050045b6e215725e6f9b6f4cad8428e7_4000x_89453879-0844-4b47-b895-478a8788cd07.png",
             "title_1": "Sabor y frescura",
             "text_1": "",
             "space_top_1": 0,
             "space_bottom_1": 0,
-            "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
+            "icon_2": "shopify://shop_images/a2d97f28c26e9484bee764bb4675c2f3_4000x_5e910eea-db3f-4668-8fc3-f62d67d31c42.png",
             "title_2": "Fórmula Fluoride+",
             "text_2": "",
             "space_top_2": 0,
             "space_bottom_2": 0,
-            "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_8d5a91a7-8bdf-49d0-a6d1-f18a4bc7a883.svg",
+            "icon_3": "shopify://shop_images/9d1583a1a036e2ff19c380a893082648_4000x_578adb51-daab-4057-9129-918aede7c619.webp",
             "title_3": "Previene la sensibilidad dental",
             "text_3": "",
             "space_top_3": 0,
@@ -189,12 +199,12 @@
             "row_title_size": 15,
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "tab_title_1": "¿Cómo funciona Purple V34?",
-            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
-            "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
-            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
-            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
-            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_title_1": "Qué hace a esta pasta de dientes diferente?",
+            "tab_content_1": "<p><strong>La pasta de dientes con sabor de Obsessive se siente y sabe como un placer para tus dientes: 2 minutos nunca serán suficientes. Protección múltiple: nuestra fórmula Fluoride+ ha sido desarrollada con ingredientes para una sonrisa duradera. Descubre tu favorito y haz que cada cepillado sea una experiencia que querrás repetir. Porque cuidar tu sonrisa nunca fue tan delicioso.</strong></p>",
+            "tab_title_2": " Lista de ingredientes",
+            "tab_content_2": "<p><strong>Aqua (agua), sorbitol, sílice hidratada, xilitol, glicerina, sabor (aroma), fosfato disódico, sarcosinato de laurilo de sodio, glicerofosfato de calcio, goma xantana, goma celulosa, pirofosfato de tetrapotasio, alcohol bencílico, caprilil glicol, sucralosa, mentol, fluoruro de sodio, gluconato de sodio, pentilenglicol, lactato de zinc, metil diisopropil propionamida, ácido benzoico.</strong></p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
             "tab_title_4": "",
             "tab_content_4": "",
             "tab_title_5": "",
@@ -258,6 +268,7 @@
         "heading_mqGzce",
         "text_D9zMmh"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/download.mp4",
         "height": "adapt",
@@ -297,6 +308,7 @@
         "heading_fzeinY",
         "text_A88KeY"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
         "height": "adapt",
@@ -336,6 +348,7 @@
         "heading_ep8GCK",
         "text_x7mCLW"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
         "height": "adapt",
@@ -359,45 +372,27 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p>La pasta de dientes Obsessive se siente y sabe como un auténtico placer para tus dientes: 2 minutos nunca serán suficientes. Ofrece una protección completa gracias a nuestra fórmula Fluoride+, desarrollada con ingredientes diseñados para brindar un cuidado duradero a tu sonrisa.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "heading": "¿Puedo usarla como mi pasta de dientes diaria?",
             "icon": "check_mark",
-            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
+            "row_content": "<p>¡Sí! Todas nuestras pastas de dientes Obsessive son perfectas para el uso diario. Hemos incluido ingredientes de la más alta calidad provenientes de Australia para ofrecerte una limpieza eficaz y un cuidado duradero para tu sonrisa.</p>",
             "page": ""
           }
         },
         "collapsible_row_JYCE7j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Daña el esmalte de los dientes?",
+            "heading": "¿Puedo comprarla para mis hijos?",
             "icon": "check_mark",
-            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_EcMLXd": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
-            "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_fVthmN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
-            "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "row_content": "<p>La pasta de dientes Obsessive no está recomendada para niños de 3 años o menores.</p>",
             "page": ""
           }
         }
@@ -405,9 +400,7 @@
       "block_order": [
         "collapsible_row_BPNpLh",
         "collapsible_row_JQiJLz",
-        "collapsible_row_JYCE7j",
-        "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_JYCE7j"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
@@ -415,7 +408,7 @@
         "heading": "¿Preguntas? Tenemos respuestas",
         "heading_size": "h1",
         "heading_alignment": "left",
-        "layout": "none",
+        "layout": "section",
         "container_color_scheme": "",
         "color_scheme": "scheme-2",
         "open_first_collapsible_row": false,
@@ -447,65 +440,88 @@
         "review_EL8TAV": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Erik C",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes, lo usamos en casa como dentífrico habitual, mi dentista me lo recomendó. En casa somos clientes habituales de esta marca española, Os dejo una foto</p>",
-            "image": "shopify://shop_images/fmJ9indGNUYvMkA.jpg",
+            "text": "<p>Sabe literalmente a la tarta de Red Velvet, este sabor está muy muy conseguido. Es dulce pero sin ser empalagoso, no puedo describir lo rico que sabe. Además, el bote es bastante grande y dura muchísimo.</p>",
+            "image": "shopify://shop_images/r8cMvA4qiDWnTQj.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_dUfXDC": {
           "type": "review",
           "settings": {
-            "name": "Noelia N",
+            "name": "Marcos C",
             "verified": true,
             "rating": 5,
-            "text": "<p>Todo genial y muy buena atención al cliente, me atendió una chica llamada Aina y genial la verdad. Me ayudó a revolver todas mis dudas con este producto. Pagué el envío express y recibí el pedido al día siguiente. Nos está funcionando a mi marido y a mi. Gracias</p>",
-            "image": "shopify://shop_images/y9sTXNnLagvrMHA.jpg",
+            "text": "<p>Los botes son enormes, y el sabor... una pasada. Estoy alucinando con lo bien que saben y lo mucho que dura el sabor en la boca después del cepillado. Compré las de Coco y Fresa y estoy deseando probar otras. Un 10 de 10.</p>",
+            "image": "shopify://shop_images/gca3BVZ7DnJbiKy.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_rXTFwb": {
           "type": "review",
           "settings": {
-            "name": "Daniel G",
+            "name": "Mario M",
             "verified": true,
             "rating": 5,
-            "text": "<p>Recomendado al 100% no he visto una pasta de dientes igual que puedas usar a diario y ademas notas la calidad del producto no como las pastas de 5 euros del supermercado....</p>",
-            "image": "shopify://shop_images/bHFsyURWc4ZOarw.jpg",
+            "text": "<p>Estoy sorprendida con el sabor de estas dos pastas de dientes, sin duda, recomiendo a todo el mundo que las prueben. El bote es bastante grande y el sabor es indescriptible, refrescante, intenso, sabrosísimo, sin duda alguna, les doy un 10. Deseando probar nuevos sabores!!</p>",
+            "image": "shopify://shop_images/bd6cF9OTfAlwetz.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_9RhNYP": {
           "type": "review",
           "settings": {
-            "name": "Balma G",
+            "name": "Marisol A",
             "verified": true,
             "rating": 5,
-            "text": "<p>Hola!! mi nombre es Balma y llevo usando la pasta v34 de obsessive más de 2 meses, al principio la usaba todos los dias y el cambio en la primera semana fue una verdadera pasada! ahora la uso 3 o 4 veces a la semana y los dientes me permanecen blancos y limpios, igual o mejor que cualquier blanqueam</p>",
-            "image": "shopify://shop_images/URwEAIeVXpOr3q4.png",
+            "text": "<p>Siempre he tenido problemas con mis hijos melocotón y no gustarles el sabor tradicional de los dentífricos comunes. Decidí probar con las pastas de tarta red velvet, melocotón y vainilla y ha sido mi salvacion.</p>",
+            "image": "shopify://shop_images/4uWDkqBoxG23hPF.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_37EnCd": {
           "type": "review",
           "settings": {
-            "name": "Marta D",
+            "name": "Lola L",
             "verified": true,
             "rating": 5,
-            "text": "<p>Así tengo los dientes al cuarto dia de uso, he de decir que siempre los he tenido blancos pero en los ultimos años al ser fumadora estaban un poco amarillos, puedo decir que a desaparecido casi por completo y que el producto funciona, gracias!!</p>",
-            "image": "shopify://shop_images/w9j8QqD0MOVbYLr.jpg",
+            "text": "<p>AMO!! Compré la de sandía y la de melocotón y estoy completamente enamorada con estos sabores. Muy buena alternativa si no te termina de gustar el típico sabor mentolado de las pastas de dientes comunes. Tengo ganas de lavarme los dientes a todas horas. Simplemente increíbles.</p>",
+            "image": "shopify://shop_images/QDayxYMiRcgo3us.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Pedro R",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "text": "<p>Sabores super originales y están todas deliciosas. Deja los dientes muy muy limpios y la boca muy refrescante, el sabor dura incluso un rato después de habertelos lavado. Con ganas de seguir ampliando la colección.</p>",
+            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_QXaBGA": {
+          "type": "review",
+          "settings": {
+            "name": "Pedro R",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Una imagen vale más que mil palabras. Compré la pasta de dientes de sabor mango y me fascinó, esto se ha vuelto un vicio, me las he comprado en todos los sabores. Son brutales, cada sabor es super único y diferente, tenéis que probarlas absolutamente TODAS. Mis favoritas son red velvet, uva y vainil</p>",
+            "image": "shopify://shop_images/OdSqK8riQ69xHWk.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_6mfP4e": {
+          "type": "review",
+          "settings": {
+            "name": "Tomás S",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Estas pasta de dientes de sabor vainilla y sandía son todo lo que necesitaba. Son super dulces y refrescantes, y hace que me cepille los dientes con mucho más gusto. Deja los dientes muy limpios y la boca fresca. ¡Definitivamente seguiré comprándola! 10/10 para los que buscan algo diferente y deliciosos.</p>",
+            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -516,7 +532,9 @@
         "review_rXTFwb",
         "review_9RhNYP",
         "review_37EnCd",
-        "review_QFHteA"
+        "review_QFHteA",
+        "review_QXaBGA",
+        "review_6mfP4e"
       ],
       "name": "OS Customer Reviews",
       "settings": {
@@ -621,6 +639,7 @@
     },
     "os_sticky_add_to_cart_XBTcXq": {
       "type": "os-sticky-add-to-cart",
+      "disabled": true,
       "name": "OS Sticky Add To Cart",
       "settings": {
         "product": "",

@@ -114,7 +114,7 @@
             "benefit_icon_3": "shopify://shop_images/card.svg",
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "mobile_width": 100,
+            "mobile_width": 93,
             "mobile_align": "center"
           }
         },
@@ -148,12 +148,12 @@
             "title_size": 12,
             "text_size": 12,
             "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
-            "title_1": "Sabor y frescura",
+            "title_1": "Blanqueamiento PAP+",
             "text_1": "",
             "space_top_1": 0,
             "space_bottom_1": 0,
             "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
-            "title_2": "Fórmula Fluoride+",
+            "title_2": "Blanqueamiento en cualquier lugar",
             "text_2": "",
             "space_top_2": 0,
             "space_bottom_2": 0,
@@ -189,12 +189,12 @@
             "row_title_size": 15,
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "tab_title_1": "¿Cómo funciona Purple V34?",
-            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
-            "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
-            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
-            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
-            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_title_1": "¿Cómo blanquean las tiras PAP+?",
+            "tab_content_1": "<p><strong>Cuando se aplican en los dientes, cada tira se adhiere firmemente a la superficie dental y libera los ingredientes activos de la fórmula PAP+ en la estructura del diente, logrando un blanqueamiento eficaz.</strong></p>",
+            "tab_title_2": "¿Las tiras blanqueadoras causan sensibilidad dental?",
+            "tab_content_2": "<p><strong>Las tiras tradicionales utilizan una fórmula a base de peróxido, la cual puede provocar sensibilidad dental. Sin embargo, nuestra fórmula PAP+ contiene un componente con funciones idénticas al peróxido pero sin sus efectos secundarios.</strong></p>",
+            "tab_title_3": "¿Cómo y cuándo debo usar las tiras PAP+?",
+            "tab_content_3": "<p><strong>Seca los dientes completamente antes de usar. Retira la tira larga y aplica el lado adhesivo sobre los dientes superiores. Presiona firmemente la tira y dóblala por detrás de los dientes para fijarla. Repite el proceso con la tira corta en los dientes inferiores. Deja actuar durante 30 minutos para el tratamiento blanqueador. Retira las tiras y enjuaga la boca con agua. Usa las tiras PAP+ tan a menudo como lo necesites.</strong></p>",
             "tab_title_4": "",
             "tab_content_4": "",
             "tab_title_5": "",
@@ -236,111 +236,13 @@
         "padding_bottom": 12
       }
     },
-    "image_with_text_wWtLmD": {
+    "image_with_text_xFd4e7": {
       "type": "image-with-text",
-      "blocks": {
-        "heading_mqGzce": {
-          "type": "heading",
-          "settings": {
-            "heading": "¿Estás listo para experimentar la revolución del blanqueamiento dental?",
-            "heading_size": "h2"
-          }
-        },
-        "text_D9zMmh": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Con Purple V34, obtendrás resultados iguales o incluso mejores que con un blanqueamiento dental sin vaciar tu cartera. Ofrece los mismos resultados que un blanqueamiento dental, pero al alcance de todos los bolsillos.</strong></p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_mqGzce",
-        "text_D9zMmh"
-      ],
       "settings": {
-        "video": "shopify://files/videos/download.mp4",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "mobile_layout": "image_first",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_DD4gdc": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_fzeinY": {
-          "type": "heading",
-          "settings": {
-            "heading": "Encontramos el tono perfecto de morado intenso, que neutraliza el amarillo.",
-            "heading_size": "h2"
-          }
-        },
-        "text_A88KeY": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>La combinación de dos tintes V34 permite cancelar cualquier tono de amarillo para obtener la sonrisa más brillante, sin dejar ningún residuo. ¿Parece increíble, verdad?</strong></p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_fzeinY",
-        "text_A88KeY"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
+        "image": "shopify://shop_images/pap_2000x2000_550173e0-46a0-44d4-8a26-119bfb3312db.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "mobile_layout": "image_first",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_xFd4e7": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_ep8GCK": {
-          "type": "heading",
-          "settings": {
-            "heading": "¡Despierta tu sonrisa! Una pasta de dientes que desafía lo convencional.",
-            "heading_size": "h2"
-          }
-        },
-        "text_x7mCLW": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Obsessive ha blanqueado e iluminado más de 2 millones de sonrisas, y nos sentimos orgullosos de ello. Gracias por formar parte de esta gran familia.</strong></p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_ep8GCK",
-        "text_x7mCLW"
-      ],
-      "settings": {
-        "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -359,18 +261,18 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Cómo blanquea la fórmula PAP+?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p>La fórmula PAP+ blanquea oxidando las manchas dentales sin liberar moléculas conocidas como radicales libres. Estos radicales son los que pueden causar sensibilidad en algunas personas.<br/><br/>Durante el proceso de blanqueamiento con PAP+, no se produce daño ni erosión en el esmalte, lo que significa que las capas exteriores del diente permanecen intactas y pueden seguir protegiendo los nervios mientras se blanquean de manera efectiva.<br/><br/>El proceso de blanqueamiento con PAP+ actúa sobre una amplia variedad de manchas dentales, tanto internas como externas.</p>",
             "page": ""
           }
         },
         "collapsible_row_JQiJLz": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Se puede usar con carillas, empastes, fundas u ortodoncia?",
+            "heading": "¿Cuánto tiempo se tarda en ver resultados con las tiras PAP+?",
             "icon": "check_mark",
-            "row_content": "<p>Todos nuestros productos son compatibles tanto con fundas y carillas, así como con empastes y cualquier tipo de ortodoncia.</p>",
+            "row_content": "<p>Las tiras PAP+ ofrecen un tratamiento blanqueador limpio y sin residuos en solo 30 minutos. Los resultados de blanqueamiento pueden variar, pero es posible notarlos después de un solo uso.</p>",
             "page": ""
           }
         },
@@ -382,32 +284,12 @@
             "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
             "page": ""
           }
-        },
-        "collapsible_row_EcMLXd": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
-            "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_fVthmN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
-            "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_BPNpLh",
         "collapsible_row_JQiJLz",
-        "collapsible_row_JYCE7j",
-        "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_JYCE7j"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
@@ -447,65 +329,121 @@
         "review_EL8TAV": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Paco Z",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes, lo usamos en casa como dentífrico habitual, mi dentista me lo recomendó. En casa somos clientes habituales de esta marca española, Os dejo una foto</p>",
-            "image": "shopify://shop_images/fmJ9indGNUYvMkA.jpg",
+            "text": "<p>Son muy efectivas, muy contento con la compra y los resultados. Se ven cambios desde el primer uso.</p>",
+            "image": "shopify://shop_images/GeZ8Xf6y2lwJCrB.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_dUfXDC": {
           "type": "review",
           "settings": {
-            "name": "Noelia N",
+            "name": "Polixena B",
             "verified": true,
             "rating": 5,
-            "text": "<p>Todo genial y muy buena atención al cliente, me atendió una chica llamada Aina y genial la verdad. Me ayudó a revolver todas mis dudas con este producto. Pagué el envío express y recibí el pedido al día siguiente. Nos está funcionando a mi marido y a mi. Gracias</p>",
-            "image": "shopify://shop_images/y9sTXNnLagvrMHA.jpg",
+            "text": "<p>Sencillamente una pasada. Estoy muy contenta con esta compra, fáciles de usar, sin peróxido y las más efectivas que he probado hasta ahora con diferencia. El blanqueamiento se nota desde el primer uso, pero cuando llevas unos 6/7 usos es brutal. Un 10 es poco</p>",
+            "image": "shopify://shop_images/Deiu1pv5T8m9XqB.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_rXTFwb": {
           "type": "review",
           "settings": {
-            "name": "Daniel G",
+            "name": "Leire O",
             "verified": true,
             "rating": 5,
-            "text": "<p>Recomendado al 100% no he visto una pasta de dientes igual que puedas usar a diario y ademas notas la calidad del producto no como las pastas de 5 euros del supermercado....</p>",
-            "image": "shopify://shop_images/bHFsyURWc4ZOarw.jpg",
+            "text": "<p>Estos son mis dientes después del uso de las tiras PAP+ de obsesive me las recomendó un familiar y os dejo por aquí lo resultados, mis amigos se piensan que me he hecho un blanqueamiento dental en una clinica jajaj quiero daros un 10, encantada con esta marca Española</p>",
+            "image": "shopify://shop_images/Eqwu1srtXgvJSmL.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_9RhNYP": {
           "type": "review",
           "settings": {
-            "name": "Balma G",
+            "name": "Ana M",
             "verified": true,
             "rating": 5,
-            "text": "<p>Hola!! mi nombre es Balma y llevo usando la pasta v34 de obsessive más de 2 meses, al principio la usaba todos los dias y el cambio en la primera semana fue una verdadera pasada! ahora la uso 3 o 4 veces a la semana y los dientes me permanecen blancos y limpios, igual o mejor que cualquier blanqueam</p>",
-            "image": "shopify://shop_images/URwEAIeVXpOr3q4.png",
+            "text": "<p>Me hice un blanqueamiento en una clínica dental hace 3 años y estas tiras me han dado el mismo resultado pero mucho más cómodo y por mucho menos de la mitad. Muy recomendable</p>",
+            "image": "shopify://shop_images/F0BtD5oCnlUH12h.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_37EnCd": {
           "type": "review",
           "settings": {
-            "name": "Marta D",
+            "name": "Carlos G",
             "verified": true,
             "rating": 5,
-            "text": "<p>Así tengo los dientes al cuarto dia de uso, he de decir que siempre los he tenido blancos pero en los ultimos años al ser fumadora estaban un poco amarillos, puedo decir que a desaparecido casi por completo y que el producto funciona, gracias!!</p>",
-            "image": "shopify://shop_images/w9j8QqD0MOVbYLr.jpg",
+            "text": "<p>Van fenomenal, se notan los resultados enseguida y no dañan el esmalte. Me llegaron enseguida!</p>",
+            "image": "shopify://shop_images/1psIDr3FGMvgXWu.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Paula D",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "text": "<p>Os dejo una reseña usándolas, encantada 🥰</p>",
+            "image": "shopify://shop_images/5ax4JTKFWiSrGby.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_3A8m83": {
+          "type": "review",
+          "settings": {
+            "name": "Lucia L",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>llevo poco tiempo utilizándolo pero las veces que me lo he puesto no me da sensibilidad y de momento parece que funciona</p>",
+            "image": "shopify://shop_images/90HQiRmbPBoty1L.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_j3m9NT": {
+          "type": "review",
+          "settings": {
+            "name": "Carla M",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Muy contenta tanto por los resultados como con la atención cliente, que es excepcional. Utilice las tiras durante 28 días es decir 2 cajas y mis dientes se ven más claros y brillantes. Mayor sensación de limpieza. Nada de sensibilidad, super super recomendable chicas!</p>",
+            "image": "shopify://shop_images/SeiTvU4oDK62jra.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_HFRFc8": {
+          "type": "review",
+          "settings": {
+            "name": "Laura H",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Muy efectivo, nada que ver con otras tiras que había probado.</p>",
+            "image": "shopify://shop_images/swS0XvE7kMUOFbd.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_H6LHa4": {
+          "type": "review",
+          "settings": {
+            "name": "Luca T",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>me llegaron al día siguiente, esto son 6 aplicaciones. En la caja vienen para 14 días, he usado el primero y muy buen feedback por ahora. SUPER</p>",
+            "image": "shopify://shop_images/yd51EXbG6mgshAO.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_aGQXdx": {
+          "type": "review",
+          "settings": {
+            "name": "Daniela R",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Agradecer a esta marca porque es de las pocas que cumplen lo que prometen en sus anuncios y me gusta tanto porque son un equipo de especialistas odontólogos de España y me ayudaron en todo momento. Una aplicación super fácil y no causan nada de sensibilidad</p>",
+            "image": "shopify://shop_images/ciLwrYlBEdGkAyv.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -516,7 +454,12 @@
         "review_rXTFwb",
         "review_9RhNYP",
         "review_37EnCd",
-        "review_QFHteA"
+        "review_QFHteA",
+        "review_3A8m83",
+        "review_j3m9NT",
+        "review_HFRFc8",
+        "review_H6LHa4",
+        "review_aGQXdx"
       ],
       "name": "OS Customer Reviews",
       "settings": {
@@ -664,8 +607,6 @@
   },
   "order": [
     "main",
-    "image_with_text_wWtLmD",
-    "image_with_text_DD4gdc",
     "image_with_text_xFd4e7",
     "collapsible_content_mBUAq8",
     "os_customer_reviews_ihXzyq",

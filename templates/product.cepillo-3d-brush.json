@@ -147,18 +147,18 @@
             "icon_size": 22,
             "title_size": 12,
             "text_size": 12,
-            "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
-            "title_1": "Sabor y frescura",
+            "icon_1": "shopify://shop_images/micro_4000x_28e0f301-fe91-4f3b-91b8-d717878a163c.webp",
+            "title_1": "Tecnología 3D Nanobrush",
             "text_1": "",
             "space_top_1": 0,
             "space_bottom_1": 0,
             "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
-            "title_2": "Fórmula Fluoride+",
+            "title_2": "+30,000 cerdas de nylon",
             "text_2": "",
             "space_top_2": 0,
             "space_bottom_2": 0,
-            "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_8d5a91a7-8bdf-49d0-a6d1-f18a4bc7a883.svg",
-            "title_3": "Previene la sensibilidad dental",
+            "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_ce1c7274-9ea2-4a32-9eb6-0737c4590b3e.svg",
+            "title_3": "Cepillado cómodo y efectivo",
             "text_3": "",
             "space_top_3": 0,
             "space_bottom_3": 0,
@@ -189,12 +189,12 @@
             "row_title_size": 15,
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "tab_title_1": "¿Cómo funciona Purple V34?",
-            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
-            "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
-            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
-            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
-            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_title_1": "¿Cómo funciona Obsessive 3D Nanobrush?",
+            "tab_content_1": "<p><strong>El Obsessive 3D Nanobrush funciona utilizando tecnología 3D y más de 30.000 cerdas ultra finas de nylon para una limpieza profunda y precisa, eliminando la suciedad sin dañar el esmalte dental, y promoviendo una sonrisa impecable y saludable.</strong></p>",
+            "tab_title_2": "Una nueva forma de limpiar tus dientes",
+            "tab_content_2": "<p><strong>Con la última tecnología en cuidado dental, el cepillo Obsessive 3D Nanobrush mantiene tus dientes blancos y limpios todos los días para darles un impulso extra de brillo cuando lo necesites.</strong></p>",
+            "tab_title_3": "¿Cómo y cuándo debo usar Obsessive 3D Nanobrush?",
+            "tab_content_3": "<p><strong>Utiliza el Obsessive 3D Nanobrush, como cualquier otro cepillo de dientes. Aplica pasta dental y cepilla tus dientes durante dos minutos, dos veces al día, después de las comidas.</strong></p>",
             "tab_title_4": "",
             "tab_content_4": "",
             "tab_title_5": "",
@@ -242,14 +242,14 @@
         "heading_mqGzce": {
           "type": "heading",
           "settings": {
-            "heading": "¿Estás listo para experimentar la revolución del blanqueamiento dental?",
+            "heading": "¿Estás cansado de los resultados de los cepillos de dientes comunes?",
             "heading_size": "h2"
           }
         },
         "text_D9zMmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Con Purple V34, obtendrás resultados iguales o incluso mejores que con un blanqueamiento dental sin vaciar tu cartera. Ofrece los mismos resultados que un blanqueamiento dental, pero al alcance de todos los bolsillos.</strong></p>",
+            "text": "<p><strong>¡Es hora de dar el salto a una experiencia de limpieza superior con el Obsessive 3D Nanobrush! Olvídate de los cepillos convencionales y descubre las ventajas de nuestra tecnología avanzada. Con cerdas ultra finas y diseño ergonómico, este cepillo garantiza una limpieza profunda y óptima en cada cepillado, dejando tu boca más fresca y saludable que nunca. ¡Haz el cambio hoy y disfruta de una sonrisa radiante y confiada.</strong></p>",
             "text_style": "body"
           }
         }
@@ -259,10 +259,10 @@
         "text_D9zMmh"
       ],
       "settings": {
-        "video": "shopify://files/videos/download.mp4",
+        "image": "shopify://shop_images/descripcion_500x500_2000x2000_31662ee3-c2d7-422b-b7d2-e69959ccb357.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -281,14 +281,14 @@
         "heading_fzeinY": {
           "type": "heading",
           "settings": {
-            "heading": "Encontramos el tono perfecto de morado intenso, que neutraliza el amarillo.",
+            "heading": "Un nuevo estándar en cepillado dental.",
             "heading_size": "h2"
           }
         },
         "text_A88KeY": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>La combinación de dos tintes V34 permite cancelar cualquier tono de amarillo para obtener la sonrisa más brillante, sin dejar ningún residuo. ¿Parece increíble, verdad?</strong></p>",
+            "text": "<p><strong>Obsessive 3D Nanobrush va más allá de lo convencional. Con su capacidad para llegar al 99% de las bacterias almacenadas en la superficie entre el diente y la encía, ofrece una solución completa para quienes desean una sonrisa más radiante y segura, combatiendo gérmenes y sarro dental gracias a sus más de 30.000 cerdas de nylon.</strong></p>",
             "text_style": "body"
           }
         }
@@ -298,7 +298,7 @@
         "text_A88KeY"
       ],
       "settings": {
-        "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
+        "image": "shopify://shop_images/cepillocopy_new_2000x2000_07b2edcd-6658-424e-9e10-42c0d0243e8a.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -336,6 +336,7 @@
         "heading_ep8GCK",
         "text_x7mCLW"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
         "height": "adapt",
@@ -359,9 +360,9 @@
         "collapsible_row_BPNpLh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Cómo se usa el blanqueador V34?",
+            "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con nuestra pasta de dientes habitual</p><p><strong>2. </strong>Aplicar dos pulsaciones del blanqueador Purple V34</p><p><strong>3. </strong>Cepillado de 2-3 minutos de duración</p><p><strong>4. </strong>Dejar actuar la espuma morada durante 30 segundos</p><p><strong>5. </strong>Enjuagar la boca con agua abundante</p>",
+            "row_content": "<p><strong>1. </strong>Cepillado normal con tu pasta de dientes habitual utilizando el cepillo de dientes.</p><p><strong>2. </strong>Aplica dos pulsaciones de la pasta de dientes en las cerdas del cepillo.</p><p><strong>3. </strong>Cepilla tus dientes con el Obsessive 3D Nanobrush durante 2-3 minutos, asegurándote de cubrir todas las áreas de tu boca.</p><p><strong>4. </strong>Continúa cepillando suavemente con el cepillo durante 30 segundos para asegurar una distribución uniforme de la pasta.</p><p><strong>5. </strong>Enjuaga la boca con agua abundante para eliminar cualquier residuo de pasta de dientes.</p>",
             "page": ""
           }
         },
@@ -379,25 +380,7 @@
           "settings": {
             "heading": "¿Daña el esmalte de los dientes?",
             "icon": "check_mark",
-            "row_content": "<p>No, todos nuestros productos están libres de peróxido, respetando y cuidando tanto la salud del diente, como de la encía.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_EcMLXd": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Si tengo empastes o carillas, ¿blanqueará por igual o dejará mis dientes de diferente tonalidad?",
-            "icon": "check_mark",
-            "row_content": "<p>No te preocupes por eso, al ser un blanqueado 100 % libre de peróxido, es capaz de igualar los tonos de los dientes, ya sean carillas o empastes, para que quede totalmente igualada la tonalidad de tus dientes.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_fVthmN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Cuáles son los ingredientes?",
-            "icon": "check_mark",
-            "row_content": "<p>Glicerina, agua/agua, sorbitol, sílice hidratada, ácido ftalimidoperoxicaproico, xilitol, polisorbato 80, goma de celulosa, aceite de menta piperita (hierbabuena), fenoxietanol, sucralosa, pirofosfato tetrasódico, CI17200/D& C Rojo No. 33, CI42090/FD&C Azul No.1, Etilhexilglicerina.</p>",
+            "row_content": "<p>+30.000 cerdas ultrasuaves de nylon que cuidan y protegen tu esmalte y la salud de tus dientes.</p>",
             "page": ""
           }
         }
@@ -405,17 +388,15 @@
       "block_order": [
         "collapsible_row_BPNpLh",
         "collapsible_row_JQiJLz",
-        "collapsible_row_JYCE7j",
-        "collapsible_row_EcMLXd",
-        "collapsible_row_fVthmN"
+        "collapsible_row_JYCE7j"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "¿Preguntas? Tenemos respuestas",
+        "heading": "¿Cómo se usa el cepillo Obsessive 3D Nanobrush?",
         "heading_size": "h1",
         "heading_alignment": "left",
-        "layout": "none",
+        "layout": "section",
         "container_color_scheme": "",
         "color_scheme": "scheme-2",
         "open_first_collapsible_row": false,
@@ -447,65 +428,99 @@
         "review_EL8TAV": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Carla R",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes, lo usamos en casa como dentífrico habitual, mi dentista me lo recomendó. En casa somos clientes habituales de esta marca española, Os dejo una foto</p>",
-            "image": "shopify://shop_images/fmJ9indGNUYvMkA.jpg",
+            "text": "<p>envio de 10, atencion al cliente perfecta, y los cepillos se ven perfectos, asi que os dejo 5 estrellas.</p>",
+            "image": "shopify://shop_images/idYTwHr9xf74Vq0.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_dUfXDC": {
           "type": "review",
           "settings": {
-            "name": "Noelia N",
+            "name": "Diego M ",
             "verified": true,
             "rating": 5,
-            "text": "<p>Todo genial y muy buena atención al cliente, me atendió una chica llamada Aina y genial la verdad. Me ayudó a revolver todas mis dudas con este producto. Pagué el envío express y recibí el pedido al día siguiente. Nos está funcionando a mi marido y a mi. Gracias</p>",
-            "image": "shopify://shop_images/y9sTXNnLagvrMHA.jpg",
+            "text": "<p>Solo como viene el envio ya denota una calidad excepcional, los compro un amigo, que es dentista, y me comento que ya no solo estos cepillos, sino todos los productos que envuelven esta marca os podeis fiar, pasan procesos de calidad y absolutamente todo lo necesario para dar la máxima calidad.</p>",
+            "image": "shopify://shop_images/8V1F7G2tE4BXNaJ.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_rXTFwb": {
           "type": "review",
           "settings": {
-            "name": "Daniel G",
+            "name": "Sara J",
             "verified": true,
             "rating": 5,
-            "text": "<p>Recomendado al 100% no he visto una pasta de dientes igual que puedas usar a diario y ademas notas la calidad del producto no como las pastas de 5 euros del supermercado....</p>",
-            "image": "shopify://shop_images/bHFsyURWc4ZOarw.jpg",
+            "text": "<p>Mirar como quedan en el baño, perfectos con el negro jaja, me encanta este cepilo y se nota que lo que valen es porque la calidad del producto se nota no me duele gastarme algo mas de dinero cuando algo es de calidad y menos en los productos para la boca. Gracias estoy encantada y voy a compraros una pasta de dientes también.</p>",
+            "image": "shopify://shop_images/2WvhsSPDbxjqBT7.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_9RhNYP": {
           "type": "review",
           "settings": {
-            "name": "Balma G",
+            "name": "Fabio R",
             "verified": true,
             "rating": 5,
-            "text": "<p>Hola!! mi nombre es Balma y llevo usando la pasta v34 de obsessive más de 2 meses, al principio la usaba todos los dias y el cambio en la primera semana fue una verdadera pasada! ahora la uso 3 o 4 veces a la semana y los dientes me permanecen blancos y limpios, igual o mejor que cualquier blanqueam</p>",
-            "image": "shopify://shop_images/URwEAIeVXpOr3q4.png",
+            "text": "<p>En la boca la textura es mucho mas comoda y diferente, notas que limpia mayormente la zona de los dientes, muy contento con la compra os lo puedo recomendar sin problema.</p>",
+            "image": "shopify://shop_images/4nsdTN6w0egcQ7J.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_37EnCd": {
           "type": "review",
           "settings": {
-            "name": "Marta D",
+            "name": "Alvaro C",
             "verified": true,
             "rating": 5,
-            "text": "<p>Así tengo los dientes al cuarto dia de uso, he de decir que siempre los he tenido blancos pero en los ultimos años al ser fumadora estaban un poco amarillos, puedo decir que a desaparecido casi por completo y que el producto funciona, gracias!!</p>",
-            "image": "shopify://shop_images/w9j8QqD0MOVbYLr.jpg",
+            "text": "<p>5 estrellas os pongo, diseño diferente, las cerdas parecen una nube y noto la diferencia de un cepillo normal y este, tanto en los dientes como en la lengua.</p>",
+            "image": "shopify://shop_images/TLvGrUZVz1gudYC.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Noa B",
+            "name": "Tania F",
             "verified": true,
             "rating": 5,
-            "text": "<p>Me encanta, tanto el sabor como el color que deja en mis dientes.</p>",
+            "text": "<p>No me llegaba el pedido, Diana de atencion al cliente me envio otro nuevo y al dia siguiente en casa chapó por la atención al cliente, ahora ya lo tengo jeje.</p>",
+            "image": "shopify://shop_images/MetoP34ajpbXwn8.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_QXaBGA": {
+          "type": "review",
+          "settings": {
+            "name": "Julia S",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Segunda vez que los compro, soy un poco rara pero cambio los cepillos de dientes cada 2 o 3 meses😅 me gusta mucho la textura que tienen en la boca y notas que la boca se queda maaas limpia y que son de mejor calidad que cualquier cepillo normal del supermercado.</p>",
+            "image": "shopify://shop_images/xo4RyM3Hfwpe8ag.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_6mfP4e": {
+          "type": "review",
+          "settings": {
+            "name": "David G",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Me lo ha comprado mi novia, si os digo la verdad nunca he visto un cepillo de dientes así, parece un poco raro y me falta probarlo pero bueno, la presencia y la calidad se ve perfecta, falta probarlo pero tiene buena pinta.</p>",
+            "image": "shopify://shop_images/P7d193GqvgS5t46.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_94QyFX": {
+          "type": "review",
+          "settings": {
+            "name": "Alba G",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>este cepillo es suuuuuuuper😍</p>",
+            "image": "shopify://shop_images/7YR9u4dXcxSWbwp.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -516,7 +531,10 @@
         "review_rXTFwb",
         "review_9RhNYP",
         "review_37EnCd",
-        "review_QFHteA"
+        "review_QFHteA",
+        "review_QXaBGA",
+        "review_6mfP4e",
+        "review_94QyFX"
       ],
       "name": "OS Customer Reviews",
       "settings": {
@@ -621,6 +639,7 @@
     },
     "os_sticky_add_to_cart_XBTcXq": {
       "type": "os-sticky-add-to-cart",
+      "disabled": true,
       "name": "OS Sticky Add To Cart",
       "settings": {
         "product": "",

@@ -148,17 +148,17 @@
             "title_size": 12,
             "text_size": 12,
             "icon_1": "shopify://shop_images/a4b3fd07d12bb98c276b9ee37f0b4a01_4000x_ea0d69bd-8427-4c0c-b1e0-827a901e043d.svg",
-            "title_1": "Sabor y frescura",
+            "title_1": "Aliento fresco",
             "text_1": "",
             "space_top_1": 0,
             "space_bottom_1": 0,
             "icon_2": "shopify://shop_images/7e81922d8855af8b4d108b62edf5590e_4000x_ca258654-0252-4c03-9c40-bb6485a98be3.svg",
-            "title_2": "Fórmula Fluoride+",
+            "title_2": "Limpieza profunda",
             "text_2": "",
             "space_top_2": 0,
             "space_bottom_2": 0,
             "icon_3": "shopify://shop_images/f54306d9b3ace345c3d7bccb17b64959_4000x_8d5a91a7-8bdf-49d0-a6d1-f18a4bc7a883.svg",
-            "title_3": "Previene la sensibilidad dental",
+            "title_3": "Cuidado bucal",
             "text_3": "",
             "space_top_3": 0,
             "space_bottom_3": 0,
@@ -189,12 +189,12 @@
             "row_title_size": 15,
             "block_margin_top": 16,
             "block_margin_bottom": 16,
-            "tab_title_1": "¿Cómo funciona Purple V34?",
-            "tab_content_1": "<p>Explica aquí cómo funciona el producto.</p>",
-            "tab_title_2": "Una nueva forma de iluminar tu sonrisa",
-            "tab_content_2": "<p>Agrega aquí el contenido del segundo acordeón.</p>",
-            "tab_title_3": "¿Cómo y cuándo debo usar Purple V34?",
-            "tab_content_3": "<p>Agrega aquí el contenido del tercer acordeón.</p>",
+            "tab_title_1": "¿Cómo se utiliza el gel limpiador de lengua?",
+            "tab_content_1": "<p>Aplica una pequeña cantidad sobre el limpiador de lengua o directamente sobre la lengua, extiéndelo suavemente y luego enjuaga la boca con agua.</p>",
+            "tab_title_2": "¿Se puede usar todos los días?",
+            "tab_content_2": "<p>Sí, su fórmula suave está pensada para el uso diario y ayuda a mantener una mejor higiene bucal y una sensación de frescura prolongada.</p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
             "tab_title_4": "",
             "tab_content_4": "",
             "tab_title_5": "",
@@ -224,8 +224,8 @@
         "enable_sticky_info": true,
         "color_scheme": "",
         "media_size": "small",
-        "constrain_to_viewport": true,
-        "media_fit": "cover",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
         "gallery_layout": "columns",
         "mobile_thumbnails": "hide",
         "media_position": "left",
@@ -258,6 +258,7 @@
         "heading_mqGzce",
         "text_D9zMmh"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/download.mp4",
         "height": "adapt",
@@ -297,6 +298,7 @@
         "heading_fzeinY",
         "text_A88KeY"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
         "height": "adapt",
@@ -336,6 +338,7 @@
         "heading_ep8GCK",
         "text_x7mCLW"
       ],
+      "disabled": true,
       "settings": {
         "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
         "height": "adapt",
@@ -409,6 +412,7 @@
         "collapsible_row_EcMLXd",
         "collapsible_row_fVthmN"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -518,6 +522,7 @@
         "review_37EnCd",
         "review_QFHteA"
       ],
+      "disabled": true,
       "name": "OS Customer Reviews",
       "settings": {
         "heading": "Reseñas de clientes",
