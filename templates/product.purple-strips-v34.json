@@ -242,14 +242,14 @@
         "heading_mqGzce": {
           "type": "heading",
           "settings": {
-            "heading": "¿Estás listo para experimentar la revolución del blanqueamiento dental?",
+            "heading": "Descubre lo que se siente al ver tu sonrisa más blanca al instante",
             "heading_size": "h2"
           }
         },
         "text_D9zMmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Con Purple V34, obtendrás resultados iguales o incluso mejores que con un blanqueamiento dental sin vaciar tu cartera. Ofrece los mismos resultados que un blanqueamiento dental, pero al alcance de todos los bolsillos.</strong></p>",
+            "text": "<p><strong>Resultados visibles sin complicaciones. En pocos minutos consigues una sonrisa más blanca y luminosa, sin tratamientos, sin esperas y sin dejarte un dineral en dentistas. Nuestra fórmula incorpora la última tecnología en blanqueamiento dental, con acción dual V34 + PAP+, que corrige el tono al instante y actúa progresivamente sobre el esmalte para realzar el blanco natural sin sensibilidad. Es tan fácil que no te costará hacerlo todos los días.</strong></p>",
             "text_style": "body"
           }
         }
@@ -259,7 +259,7 @@
         "text_D9zMmh"
       ],
       "settings": {
-        "video": "shopify://files/videos/download.mp4",
+        "video": "shopify://files/videos/d0cc7e2e2e5147caa21e3c4a1bc33c80.mp4",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -281,14 +281,14 @@
         "heading_fzeinY": {
           "type": "heading",
           "settings": {
-            "heading": "Encontramos el tono perfecto de morado intenso, que neutraliza el amarillo.",
+            "heading": "Innovación que combina doble acción para un blanco inmediato y duradero",
             "heading_size": "h2"
           }
         },
         "text_A88KeY": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>La combinación de dos tintes V34 permite cancelar cualquier tono de amarillo para obtener la sonrisa más brillante, sin dejar ningún residuo. ¿Parece increíble, verdad?</strong></p>",
+            "text": "<p><strong>La fórmula combina V34, que corrige el tono al instante, y PAP+, que actúa sobre el esmalte y la dentina para realzar el color natural sin causar sensibilidad. En nuestras fórmulas usamos PAP+ (ftalimidoperoxicaproico), un componente con funciones idénticas al peróxido pero sin sus efectos secundarios. Además, incorporamos ingredientes que remineralizan el esmalte y combaten la sensibilidad preexistente, como el citrato de potasio y la hidroxiapatita.</strong></p>",
             "text_style": "body"
           }
         }
@@ -298,7 +298,7 @@
         "text_A88KeY"
       ],
       "settings": {
-        "image": "shopify://shop_images/circulos_8_2000x2000_a3b08837-32fc-45ec-a327-574a42fc42bd.webp",
+        "video": "shopify://files/videos/b3fca49b5411495f9716530b502b35a7.mp4",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -320,14 +320,14 @@
         "heading_ep8GCK": {
           "type": "heading",
           "settings": {
-            "heading": "¡Despierta tu sonrisa! Una pasta de dientes que desafía lo convencional.",
+            "heading": "Una sonrisa que habla por ti, sin tener que decir una palabra",
             "heading_size": "h2"
           }
         },
         "text_x7mCLW": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Obsessive ha blanqueado e iluminado más de 2 millones de sonrisas, y nos sentimos orgullosos de ello. Gracias por formar parte de esta gran familia.</strong></p>",
+            "text": "<p><strong>En pocos minutos verás cómo cambia el tono y mejora el blanco natural. Un resultado real, seguro y respaldado por la garantía de 30 días para probarlo sin compromiso.</strong></p><p><em><strong>*Resultados después del tratamiento de 14 días.</strong></em></p>",
             "text_style": "body"
           }
         }
@@ -337,7 +337,7 @@
         "text_x7mCLW"
       ],
       "settings": {
-        "video": "shopify://files/videos/0e7d0c52b89f4808941f1b4659bdbc83.mp4",
+        "image": "shopify://shop_images/2_2000x2000_55e016dd-638a-4ebd-ba0e-160077d237cc.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
