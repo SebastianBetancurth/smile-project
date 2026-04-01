@@ -509,6 +509,17 @@
             "image": "shopify://shop_images/yQcS9neJgvVhNjx.jpg",
             "review_date": "2026-03-24"
           }
+        },
+        "review_DNpgUr": {
+          "type": "review",
+          "settings": {
+            "name": "Cristina N",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Esto es una pasada, la he usado 5 veces y he notado que los dientes están mas blancos desde la primera vez que lo use, da un poco de cosa por el color, pero esta buena y sabe a menta os dejo una foto, gracias porque estoy mas que satisfecha con el producto.</p>",
+            "image": "shopify://shop_images/XDFH0wk7J1PKOlC.png",
+            "review_date": "2026-03-24"
+          }
         }
       },
       "block_order": [
@@ -517,7 +528,8 @@
         "review_rXTFwb",
         "review_9RhNYP",
         "review_37EnCd",
-        "review_QFHteA"
+        "review_QFHteA",
+        "review_DNpgUr"
       ],
       "name": "OS Customer Reviews",
       "settings": {
