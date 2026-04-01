@@ -392,6 +392,7 @@
         "collapsible_row_JQiJLz",
         "collapsible_row_JYCE7j"
       ],
+      "disabled": true,
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
@@ -430,55 +431,55 @@
         "review_EL8TAV": {
           "type": "review",
           "settings": {
-            "name": "Erik C",
+            "name": "Teresa B",
             "verified": true,
             "rating": 5,
-            "text": "<p>Sabe literalmente a la tarta de Red Velvet, este sabor está muy muy conseguido. Es dulce pero sin ser empalagoso, no puedo describir lo rico que sabe. Además, el bote es bastante grande y dura muchísimo.</p>",
-            "image": "shopify://shop_images/r8cMvA4qiDWnTQj.jpg",
+            "text": "<p>La mejor compra que he hecho este mes sin lugar a dudas. Es muy muy bonito y funciona mejor que cualquier otro cepillo eléctrico, la batería parece infinita, todavía no lo he cargado después de 2 semanas y media usándolo.</p>",
+            "image": "shopify://shop_images/hc0kmBpwCAefi9s.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_dUfXDC": {
           "type": "review",
           "settings": {
-            "name": "Marcos C",
+            "name": "RMG",
             "verified": true,
             "rating": 5,
-            "text": "<p>Los botes son enormes, y el sabor... una pasada. Estoy alucinando con lo bien que saben y lo mucho que dura el sabor en la boca después del cepillado. Compré las de Coco y Fresa y estoy deseando probar otras. Un 10 de 10.</p>",
-            "image": "shopify://shop_images/gca3BVZ7DnJbiKy.jpg",
+            "text": "<p>Tal y como se muestra y describe. Cepillo electrónico perfecto para usar y el color lila ideal. Buena marca y calidad. Llevo usándolo más de 3 meses y recomiendo su compra. La batería dura bastante, incluye cable tipo-C y te lo puedes llevar a viajes sin necesidad de llevar cargador</p>",
+            "image": "shopify://shop_images/FSHkQ6LMOZbJTpx.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_rXTFwb": {
           "type": "review",
           "settings": {
-            "name": "Mario M",
+            "name": "Jose R ",
             "verified": true,
             "rating": 5,
-            "text": "<p>Estoy sorprendida con el sabor de estas dos pastas de dientes, sin duda, recomiendo a todo el mundo que las prueben. El bote es bastante grande y el sabor es indescriptible, refrescante, intenso, sabrosísimo, sin duda alguna, les doy un 10. Deseando probar nuevos sabores!!</p>",
-            "image": "shopify://shop_images/bd6cF9OTfAlwetz.jpg",
+            "text": "<p>Buen producto de calidad a buen precio. Llegó rápido y packaging muy bonito. Todo perfecto. Cumple con lo descrito.</p>",
+            "image": "shopify://shop_images/uNnt3EQSpLFoc7z.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_9RhNYP": {
           "type": "review",
           "settings": {
-            "name": "Marisol A",
+            "name": "Luis ",
             "verified": true,
             "rating": 5,
-            "text": "<p>Siempre he tenido problemas con mis hijos melocotón y no gustarles el sabor tradicional de los dentífricos comunes. Decidí probar con las pastas de tarta red velvet, melocotón y vainilla y ha sido mi salvacion.</p>",
-            "image": "shopify://shop_images/4uWDkqBoxG23hPF.jpg",
+            "text": "<p>Muy contento con el cepillo, me encanta este producto, puedes hacer programas personalizados o utilizar las funciones del cepillo, que son muy buenas, es muy recomendable y está a muy buen precio, es muy bonito y cómodo</p>",
+            "image": "shopify://shop_images/Tlmw37CdhJxz6XS.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_37EnCd": {
           "type": "review",
           "settings": {
-            "name": "Lola L",
+            "name": "Marisa R",
             "verified": true,
             "rating": 5,
-            "text": "<p>AMO!! Compré la de sandía y la de melocotón y estoy completamente enamorada con estos sabores. Muy buena alternativa si no te termina de gustar el típico sabor mentolado de las pastas de dientes comunes. Tengo ganas de lavarme los dientes a todas horas. Simplemente increíbles.</p>",
-            "image": "shopify://shop_images/QDayxYMiRcgo3us.jpg",
+            "text": "<p>Compré 2 y no decepciona. Nada que envidiar a los más caros del mercado. Recomendable al cien por cien!</p>",
+            "image": "shopify://shop_images/UYy7Euc2lxAftIr.jpg",
             "review_date": "2026-03-24"
           }
         },
