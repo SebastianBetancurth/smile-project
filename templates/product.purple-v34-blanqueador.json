@@ -630,6 +630,37 @@
             "image": "shopify://shop_images/h2xPigzkpsOyNMD.jpg",
             "review_date": "2026-03-24"
           }
+        },
+        "review_Ltga8K": {
+          "type": "review",
+          "settings": {
+            "name": "Maria A ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>SOLO PUEDO DECIR GRACIAS POR EL TRATO DE AINA DE ATENCIÓN AL CLIENTE Y POR COMO FUNCIONA ESTO, OS JURO QUE ES DE LO MEJOR QUE HE COMPRADO ESTE AÑO🤣</p>",
+            "image": "shopify://shop_images/vsebaKqIJELZApj.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_3Tzmf6": {
+          "type": "review",
+          "settings": {
+            "name": "Angy F",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Este es mi cambio usandolo dos semanas, antes de irme a dormir durante unos 2 o 3 minutos, ya veis el cambio realmente es una pasada lo que han conseguido hacer con este producto, estoy mas que contenta!!</p>",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_V7jjeB": {
+          "type": "review",
+          "settings": {
+            "name": "Alberto B ",
+            "verified": true,
+            "rating": 5,
+            "text": "<p>Me lo compro mi pareja porque fumo y bebo bastante café, entonces los dientes los tengo un poco amarillos y ya me gasté 400 euros en un blanqueamiento de dentista el año pasado, lo he usado durante 1 semana y los resultados son iguales o mejores, es una pasada. Os dejo una foto de como es el bote.</p>",
+            "review_date": "2026-03-24"
+          }
         }
       },
       "block_order": [
@@ -649,7 +680,10 @@
         "review_myRhNc",
         "review_43R8XW",
         "review_ky8JQw",
-        "review_8DarHe"
+        "review_8DarHe",
+        "review_Ltga8K",
+        "review_3Tzmf6",
+        "review_V7jjeB"
       ],
       "name": "OS Customer Reviews",
       "settings": {
