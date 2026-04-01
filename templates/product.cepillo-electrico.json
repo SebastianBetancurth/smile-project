@@ -486,33 +486,44 @@
         "review_QFHteA": {
           "type": "review",
           "settings": {
-            "name": "Pedro R",
+            "name": "Mª José E",
             "verified": true,
             "rating": 5,
-            "text": "<p>Sabores super originales y están todas deliciosas. Deja los dientes muy muy limpios y la boca muy refrescante, el sabor dura incluso un rato después de habertelos lavado. Con ganas de seguir ampliando la colección.</p>",
-            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
+            "text": "<p>Muy práctico y fácil de usar, al tener 3 modos de limpieza puedes adaptártelo a tu gusto y encima con la función memoria se queda guardado. El cabezal es muy suave por lo que si tienes las encías retrotraídas (como yo) es muy positivo. Lo que más me ha sorprendido es la batería dura muchísimo</p>",
+            "image": "shopify://shop_images/WKuJZ52BIc8CAsG.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_QXaBGA": {
           "type": "review",
           "settings": {
-            "name": "Pedro R",
+            "name": "Eduardo M",
             "verified": true,
             "rating": 4,
-            "text": "<p>Una imagen vale más que mil palabras. Compré la pasta de dientes de sabor mango y me fascinó, esto se ha vuelto un vicio, me las he comprado en todos los sabores. Son brutales, cada sabor es super único y diferente, tenéis que probarlas absolutamente TODAS. Mis favoritas son red velvet, uva y vainil</p>",
-            "image": "shopify://shop_images/OdSqK8riQ69xHWk.jpg",
+            "text": "<p>Me apetecía empezar a usar cepillo eléctrico y es una de las mejores decisiones que he tomado. Limpia muy en profundidad y notas que los dientes lucen mucho más limpios, es muy cómodo que tenga la función memoria para no tener que programar todos los días el modo que quieres.</p>",
+            "image": "shopify://shop_images/n5vdaKM3mgVhQt0.jpg",
             "review_date": "2026-03-24"
           }
         },
         "review_6mfP4e": {
           "type": "review",
           "settings": {
-            "name": "Tomás S",
+            "name": "Paula C",
             "verified": true,
             "rating": 4,
-            "text": "<p>Estas pasta de dientes de sabor vainilla y sandía son todo lo que necesitaba. Son super dulces y refrescantes, y hace que me cepille los dientes con mucho más gusto. Deja los dientes muy limpios y la boca fresca. ¡Definitivamente seguiré comprándola! 10/10 para los que buscan algo diferente y deliciosos.</p>",
-            "image": "shopify://shop_images/HaubRliQA074Ert.jpg",
+            "text": "<p>AMO! El color es monísimo y funciona genial, la batería dura mucho y me gusta que se pueda cargar con el cable Tipo C. Todas los modos de limpieza son muy respetuosos con las encías ya que las púas del cabezal son muy muy suaves, lo que hace que el cepillado sea muy agradable.</p>",
+            "image": "shopify://shop_images/WECBnHTXJw03VDx.jpg",
+            "review_date": "2026-03-24"
+          }
+        },
+        "review_94QyFX": {
+          "type": "review",
+          "settings": {
+            "name": "Yaret P",
+            "verified": true,
+            "rating": 4,
+            "text": "<p>Me gusta mucho que el cabezal sea más grande de lo que lo suelen ser los cepillos eléctricos, las cerdas son muy suaves y no irritan en absoluto las encías (sufro de mucha sensibilidad desde toda la vida).</p>",
+            "image": "shopify://shop_images/WECBnHTXJw03VDx.jpg",
             "review_date": "2026-03-24"
           }
         }
@@ -525,7 +536,8 @@
         "review_37EnCd",
         "review_QFHteA",
         "review_QXaBGA",
-        "review_6mfP4e"
+        "review_6mfP4e",
+        "review_94QyFX"
       ],
       "name": "OS Customer Reviews",
       "settings": {
