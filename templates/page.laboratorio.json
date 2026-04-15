@@ -22,9 +22,9 @@
       "name": "Research hero nav",
       "settings": {
         "bg_image": "shopify://shop_images/010.webp",
-        "eyebrow": "OBSESSIVE",
+        "eyebrow": "SMILE PROJECT",
         "heading": "El cuidado de la sonrisa\ndesde dentro",
-        "description": "<p>Bienvenidos al laboratorio OBSESSIVE, donde desarrollamos y probamos nuestros productos.</p>",
+        "description": "<p>Bienvenidos al laboratorio SMILE PROJECT, donde desarrollamos y probamos nuestros productos.</p>",
         "card_heading": "¡Consigue un blanqueador V34 GRATIS!",
         "card_text": "<p>Regístrate con tu correo y participa en el sorteo de un blanqueador dental V34 cada semana.</p>",
         "email_placeholder": "Correo electrónico",
@@ -54,14 +54,14 @@
         "heading_qMhYHT": {
           "type": "heading",
           "settings": {
-            "heading": "Presentamos el Centro de Investigación OBSESSIVE",
+            "heading": "Presentamos el Centro de Investigación   SMILE PROJECT",
             "heading_size": "h1"
           }
         },
         "text_Ap3KPh": {
           "type": "text",
           "settings": {
-            "text": "<p>Toda nuestra investigación, formulación y pruebas de producto se llevan a cabo internamente en nuestra sede española, a través de nuestro propio Centro de Investigación OBSESSIVE.</p>"
+            "text": "<p>Toda nuestra investigación, formulación y pruebas de producto se llevan a cabo internamente en nuestra sede española, a través de nuestro propio Centro de Investigación SMILE PROJECT.</p>"
           }
         }
       },
@@ -128,7 +128,7 @@
         "text_bTD7nT": {
           "type": "text",
           "settings": {
-            "text": "<p>Dirigido por el Dr. Mauro Pascolutti, el equipo de investigación de OBSESSIVE trabaja con reconocidos odontólogos, expertos del sector y toda nuestra comunidad para dar forma al futuro del cuidado de la sonrisa.</p>"
+            "text": "<p>Dirigido por el Dr. Mauro Pascolutti, el equipo de investigación de SMILE PROJECT trabaja con reconocidos odontólogos, expertos del sector y toda nuestra comunidad para dar forma al futuro del cuidado de la sonrisa.</p>"
           }
         }
       },
@@ -165,7 +165,7 @@
             "image": "shopify://shop_images/007_Large_5fedae39-d65c-4ee1-9b51-eceb9a0c9812.webp",
             "name": "Esteban Rodríguez",
             "role": "Director de Investigación y Desarrollo",
-            "text": "<p>El Dr. Rodriguez es responsable del desarrollo de todas las nuevas formulaciones de OBSESSIVE. Esteban tiene un doctorado y un máster en Desarrollo de Medicamentos y fue anteriormente científico jefe en el Instituto de Glicómica de una importante universidad aquí en España.</p>"
+            "text": "<p>El Dr. Rodriguez es responsable del desarrollo de todas las nuevas formulaciones de SMILE PROJECT. Esteban tiene un doctorado y un máster en Desarrollo de Medicamentos y fue anteriormente científico jefe en el Instituto de Glicómica de una importante universidad aquí en España.</p>"
           }
         },
         "person_i3L3Gz": {
@@ -339,7 +339,7 @@
         "heading_wBwiGb": {
           "type": "heading",
           "settings": {
-            "heading": "Ver lo último del laboratorio <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@obsessive.smiles</a>",
+            "heading": "Ver lo último del laboratorio <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@smile.project</a>",
             "heading_size": "h1"
           }
         }
