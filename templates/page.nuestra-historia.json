@@ -182,7 +182,7 @@
         "text_3z7rxf": {
           "type": "text",
           "settings": {
-            "text": "<p>Con una nueva plataforma para la educación, establecimos el Centro de I<a href=\"https://obsessivesmiles.com/pages/research-centre\" title=\"Research Centre\">nvestigación SMILE PROJECT</a>, nuestras propias instalaciones para la formulación y las pruebas de productos. Cada día, nuestro equipo sigue trabajando con reconocidos dentistas, expertos en productos y la comunidad Obsessive para dar forma al futuro del blanqueamiento dental.</p>",
+            "text": "<p>Con una nueva plataforma para la educación, establecimos el Centro de <a href=\"#\" title=\"#\">Investigación SMILE PROJECT</a>, nuestras propias instalaciones para la formulación y las pruebas de productos. Cada día, nuestro equipo sigue trabajando con reconocidos dentistas, expertos en productos y la comunidad Obsessive para dar forma al futuro del blanqueamiento dental.</p>",
             "text_style": "body"
           }
         }
