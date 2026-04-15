@@ -249,7 +249,7 @@
         "text_D9zMmh": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>¡Es hora de dar el salto a una experiencia de limpieza superior con el Obsessive 3D Nanobrush! Olvídate de los cepillos convencionales y descubre las ventajas de nuestra tecnología avanzada. Con cerdas ultra finas y diseño ergonómico, este cepillo garantiza una limpieza profunda y óptima en cada cepillado, dejando tu boca más fresca y saludable que nunca. ¡Haz el cambio hoy y disfruta de una sonrisa radiante y confiada.</strong></p>",
+            "text": "<p><strong>¡Es hora de dar el salto a una experiencia de limpieza superior con el Smile Project 3D Nanobrush! Olvídate de los cepillos convencionales y descubre las ventajas de nuestra tecnología avanzada. Con cerdas ultra finas y diseño ergonómico, este cepillo garantiza una limpieza profunda y óptima en cada cepillado, dejando tu boca más fresca y saludable que nunca. ¡Haz el cambio hoy y disfruta de una sonrisa radiante y confiada.</strong></p>",
             "text_style": "body"
           }
         }
@@ -288,7 +288,7 @@
         "text_A88KeY": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Obsessive 3D Nanobrush va más allá de lo convencional. Con su capacidad para llegar al 99% de las bacterias almacenadas en la superficie entre el diente y la encía, ofrece una solución completa para quienes desean una sonrisa más radiante y segura, combatiendo gérmenes y sarro dental gracias a sus más de 30.000 cerdas de nylon.</strong></p>",
+            "text": "<p><strong>SmileProject 3D Nanobrush va más allá de lo convencional. Con su capacidad para llegar al 99% de las bacterias almacenadas en la superficie entre el diente y la encía, ofrece una solución completa para quienes desean una sonrisa más radiante y segura, combatiendo gérmenes y sarro dental gracias a sus más de 30.000 cerdas de nylon.</strong></p>",
             "text_style": "body"
           }
         }
@@ -362,7 +362,7 @@
           "settings": {
             "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p><strong>1. </strong>Cepillado normal con tu pasta de dientes habitual utilizando el cepillo de dientes.</p><p><strong>2. </strong>Aplica dos pulsaciones de la pasta de dientes en las cerdas del cepillo.</p><p><strong>3. </strong>Cepilla tus dientes con el Obsessive 3D Nanobrush durante 2-3 minutos, asegurándote de cubrir todas las áreas de tu boca.</p><p><strong>4. </strong>Continúa cepillando suavemente con el cepillo durante 30 segundos para asegurar una distribución uniforme de la pasta.</p><p><strong>5. </strong>Enjuaga la boca con agua abundante para eliminar cualquier residuo de pasta de dientes.</p>",
+            "row_content": "<p><strong>1. </strong>Cepillado normal con tu pasta de dientes habitual utilizando el cepillo de dientes.</p><p><strong>2. </strong>Aplica dos pulsaciones de la pasta de dientes en las cerdas del cepillo.</p><p><strong>3. </strong>Cepilla tus dientes con el Smile Project 3D Nanobrush durante 2-3 minutos, asegurándote de cubrir todas las áreas de tu boca.</p><p><strong>4. </strong>Continúa cepillando suavemente con el cepillo durante 30 segundos para asegurar una distribución uniforme de la pasta.</p><p><strong>5. </strong>Enjuaga la boca con agua abundante para eliminar cualquier residuo de pasta de dientes.</p>",
             "page": ""
           }
         },
@@ -393,7 +393,7 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "¿Cómo se usa el cepillo Obsessive 3D Nanobrush?",
+        "heading": "¿Cómo se usa el cepillo Smile Project 3D Nanobrush?",
         "heading_size": "h1",
         "heading_alignment": "left",
         "layout": "section",
