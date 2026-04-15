@@ -200,7 +200,7 @@
             "block_margin_top": 16,
             "block_margin_bottom": 16,
             "tab_title_1": "Qué hace a esta pasta de dientes diferente?",
-            "tab_content_1": "<p><strong>La pasta de dientes con sabor de Obsessive se siente y sabe como un placer para tus dientes: 2 minutos nunca serán suficientes. Protección múltiple: nuestra fórmula Fluoride+ ha sido desarrollada con ingredientes para una sonrisa duradera. Descubre tu favorito y haz que cada cepillado sea una experiencia que querrás repetir. Porque cuidar tu sonrisa nunca fue tan delicioso.</strong></p>",
+            "tab_content_1": "<p><strong>La pasta de dientes con sabor de Smile Project se siente y sabe como un placer para tus dientes: 2 minutos nunca serán suficientes. Protección múltiple: nuestra fórmula Fluoride+ ha sido desarrollada con ingredientes para una sonrisa duradera. Descubre tu favorito y haz que cada cepillado sea una experiencia que querrás repetir. Porque cuidar tu sonrisa nunca fue tan delicioso.</strong></p>",
             "tab_title_2": " Lista de ingredientes",
             "tab_content_2": "<p><strong>Aqua (agua), sorbitol, sílice hidratada, xilitol, glicerina, sabor (aroma), fosfato disódico, sarcosinato de laurilo de sodio, glicerofosfato de calcio, goma xantana, goma celulosa, pirofosfato de tetrapotasio, alcohol bencílico, caprilil glicol, sucralosa, mentol, fluoruro de sodio, gluconato de sodio, pentilenglicol, lactato de zinc, metil diisopropil propionamida, ácido benzoico.</strong></p>",
             "tab_title_3": "",
@@ -374,7 +374,7 @@
           "settings": {
             "heading": "¿Qué hace diferente a esta pasta de dientes?",
             "icon": "check_mark",
-            "row_content": "<p>La pasta de dientes Obsessive se siente y sabe como un auténtico placer para tus dientes: 2 minutos nunca serán suficientes. Ofrece una protección completa gracias a nuestra fórmula Fluoride+, desarrollada con ingredientes diseñados para brindar un cuidado duradero a tu sonrisa.</p>",
+            "row_content": "<p>La pasta de dientes <strong> Smile Project </strong>se siente y sabe como un auténtico placer para tus dientes: 2 minutos nunca serán suficientes. Ofrece una protección completa gracias a nuestra fórmula Fluoride+, desarrollada con ingredientes diseñados para brindar un cuidado duradero a tu sonrisa.</p>",
             "page": ""
           }
         },
@@ -383,7 +383,7 @@
           "settings": {
             "heading": "¿Puedo usarla como mi pasta de dientes diaria?",
             "icon": "check_mark",
-            "row_content": "<p>¡Sí! Todas nuestras pastas de dientes Obsessive son perfectas para el uso diario. Hemos incluido ingredientes de la más alta calidad provenientes de Australia para ofrecerte una limpieza eficaz y un cuidado duradero para tu sonrisa.</p>",
+            "row_content": "<p>¡Sí! Todas nuestras pastas de dientes <strong> Smile Project </strong>son perfectas para el uso diario. Hemos incluido ingredientes de la más alta calidad provenientes de Australia para ofrecerte una limpieza eficaz y un cuidado duradero para tu sonrisa.</p>",
             "page": ""
           }
         },
@@ -392,7 +392,7 @@
           "settings": {
             "heading": "¿Puedo comprarla para mis hijos?",
             "icon": "check_mark",
-            "row_content": "<p>La pasta de dientes Obsessive no está recomendada para niños de 3 años o menores.</p>",
+            "row_content": "<p>La pasta de dientes <strong>Smile Project </strong>no está recomendada para niños de 3 años o menores.</p>",
             "page": ""
           }
         }
