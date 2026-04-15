@@ -313,7 +313,7 @@
         "heading_pFRE97": {
           "type": "heading",
           "settings": {
-            "heading": "Expertos en el cuidado de la sonrisa <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@smile.project</a>",
+            "heading": "Expertos en el cuidado de la sonrisa <a href=\"#\" target=\"_blank\" title=\"#\">@smile.project</a>",
             "heading_size": "h1"
           }
         }
