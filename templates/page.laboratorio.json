@@ -339,7 +339,7 @@
         "heading_wBwiGb": {
           "type": "heading",
           "settings": {
-            "heading": "Ver lo último del laboratorio <a href=\"https://www.instagram.com/obsessive.smiles\" target=\"_blank\">@smile.project</a>",
+            "heading": "Ver lo último del laboratorio <a href=\"#\" target=\"_blank\" title=\"#\">@smile.project</a>",
             "heading_size": "h1"
           }
         }
